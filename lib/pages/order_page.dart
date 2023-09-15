@@ -9,10 +9,10 @@ class OrderPage extends StatelessWidget {
       body: Column(
         children: [
           Container(
-            width: 430,
-            height: 75,
+            width: 500,
+            height: 60,
             decoration:
-                BoxDecoration(color: Color.fromARGB(255, 255, 255, 255)),
+                BoxDecoration(color: Color.fromARGB(255, 255, 129, 129)),
             child: Align(
               alignment: Alignment.centerLeft,
               child: Padding(
@@ -21,6 +21,7 @@ class OrderPage extends StatelessWidget {
                 child: Text(
                   "ORDER",
                   style: TextStyle(
+                    // fontFamily: "Poppins-Bold",  //custom fonts masi gbs
                     fontSize: 27,
                     fontWeight: FontWeight.w800,
                     color: Colors.black,
@@ -29,13 +30,23 @@ class OrderPage extends StatelessWidget {
               ),
             ),
           ),
-          Container(
-            width: 430,
-            height: 5,
-            color: Color(0xFF213A82),
-            // child: Image.asset(
-            //   'lib/assets/images/1.png',
-            // )
+          Row(
+            children: [
+              Expanded(
+                child: Container(
+                  height: 5,
+                  color: Color(0xFF213A82),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 0, left: 0),
+                child: Image.asset(
+                  'lib/assets/images/flashicon_rounded.png',
+                  width: 80, // Adjust the width of the image as needed
+                  height: 80, // Adjust the height of the image as needed
+                ),
+              ),
+            ],
           ),
         ],
       ),
