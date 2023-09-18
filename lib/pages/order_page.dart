@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'templatehead.dart';
 
 class OrderPage extends StatelessWidget {
@@ -18,19 +19,41 @@ class OrderPage extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              // ElevatedButton(
-              //     style: ElevatedButton.styleFrom(
-              //         // primary: Colors.redAccent, //background color of button
-              //         side: BorderSide(
-              //             width: 3,
-              //             color: Colors.brown), //border width and color
-              //         elevation: 3, //elevation of button
-              //         shape: RoundedRectangleBorder(
-              //             //to set border radius to button
-              //             borderRaius: BorderRadius.circular(30)),
-              //         padding:
-              //             EdgeInsets.all(20) //content padding inside button
-              //         ))
+              Container(
+                width: 386,
+                height: 154,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(25),
+                    color: Colors.white),
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    side: BorderSide(
+                      width: 2,
+                      color: Colors.red,
+                    ),
+                    elevation: 15,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(25)),
+                  ),
+                  child: Row(
+                    children: [
+                      SvgPicture.asset(
+                        'lib/assets/images/flashride.svg',
+                        height: 100,
+                        width: 100,
+                      ),
+                      Text(
+                        'test',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              )
             ],
           ),
         ],

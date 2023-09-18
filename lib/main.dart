@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'pages/starting_page.dart';
+import 'pages/startingpage.dart';
 import 'pages/flashcar_page.dart';
 import 'pages/order_page.dart';
 import 'pages/templatehead.dart';
@@ -19,6 +19,6 @@ class MyApp extends StatelessWidget {
           fontFamily: "Poppins",
         ),
         debugShowCheckedModeBanner: false,
-        home: StartingPage());
+        home: OrderPage());
   }
 }
