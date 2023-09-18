@@ -1,8 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:project_uts_online_transportation/pages/order_page.dart';
 // import 'package:flutter/widgets.dart';
 
-class StartingPage extends StatelessWidget {
-  const StartingPage({super.key});
+class LoadingPage extends StatefulWidget {
+  const LoadingPage({super.key});
+
+  @override
+  State<LoadingPage> createState() => _LoadingPageState();
+}
+
+class _LoadingPageState extends State<LoadingPage> {
+  @override
+  void initState() {
+    super.initState();
+    _navigatetohome();
+  }
+
+_navigatetohome()async{
+  await Future.delayed(Duration(milliseconds: 1500), () {});
+  Navigator.pushReplacement(
+    context, 
+    MaterialPageRoute(
+      builder: (context)=>OrderPage()));
+}
 
   @override
   Widget build(BuildContext context) {
