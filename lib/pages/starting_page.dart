@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 class StartingPage extends StatelessWidget {
   const StartingPage({super.key});
+  static const String idScreen = "startingpage_1";
 
   @override
   Widget build(BuildContext context) {
