@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 class FlashCarPage extends StatelessWidget {
   const FlashCarPage({super.key});
+  static const String idScreen = "flashcar";
 
   @override
   Widget build(BuildContext context) {

@@ -14,10 +14,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-        // theme: ThemeData(
-        //   fontFamily: "Poppins",
-        // ),
+    return MaterialApp(
+        theme: ThemeData(
+          fontFamily: "Poppins",
+        ),
         debugShowCheckedModeBanner: false,
         home: StartingPage());
   }
