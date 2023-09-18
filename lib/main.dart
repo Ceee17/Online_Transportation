@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'pages/starting_page.dart';
+import 'pages/loadingpage.dart';
 import 'pages/flashcar_page.dart';
 import 'pages/order_page.dart';
 import 'pages/templatehead.dart';
+import 'pages/startingpage.dart';
 
 void main() {
   runApp(const MyApp());
