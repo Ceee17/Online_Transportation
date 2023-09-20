@@ -1,11 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:project_uts_online_transportation/pages/template/template-card-button.dart';
+import 'package:water_drop_nav_bar/water_drop_nav_bar.dart';
 import 'template/templatehead.dart';
 
 class OrderPage extends StatelessWidget {
   const OrderPage({super.key});
   static const String idScreen = "order";
+
+  class _OrderPageState extends State<OrderPage> {
+    final Color navBarColor = Colors.red;
+    int selectedIndex = 0;
+    late PageController pageController;
+    @override
+    void initState(){
+      super.initState(){
+        super.initState();
+        pageController = PageController(initialPage: selectedIndex);
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,11 +68,36 @@ class OrderPage extends StatelessWidget {
                   height: 20,
                 ),
                 CustomCardButton(
-                    svgAsset: 'lib/assets/images/flashtaxi.svg',
-                    svgHeight: 80,
-                    title: 'FlashTaxi',
-                    description: 'test',
-                    color: 0xFF111D41)
+                  svgAsset: 'lib/assets/images/flashtaxi.svg',
+                  svgHeight: 80,
+                  title: 'FlashTaxi',
+                  description: 'test',
+                  color: 0xFF111D41,
+                ),
+                WaterDropNavBar(
+                  backgroundColor: Colors.red,
+                  onItemSelected: (index) {
+                    setState(() {
+                      selectedIndex = index;
+                    });
+                    PageController.animateToPage(
+                      selectedIndex,
+                      duration: const Duration(milliseconds: 500),
+                      curve: Curves.easeOutQuart,
+                    );
+                  },
+                  selectedIndex: selectedIndex,
+                  barItems: [
+                    BarItem(
+                      filledIcon: Icons.home_filled,
+                      outlinedIcon: Icons.home_max_outlined,
+                    ),
+                    BarItem(
+                      filledIcon: Icons.chat_bubble,
+                      outlinedIcon: Icons.chat_bubble_outlined,
+                    ),
+                  ],
+                )
               ],
             ),
           ),

@@ -1,8 +1,10 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
 import 'pages/startingpage.dart';
 import 'pages/flashcar_page.dart';
 import 'pages/order_page.dart';
-import 'pages/templatehead.dart';
+import 'pages/template/templatehead.dart';
 
 void main() {
   runApp(const MyApp());
