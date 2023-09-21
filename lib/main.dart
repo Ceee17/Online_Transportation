@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:project_uts_online_transportation/pages/loginpage.dart';
 import 'pages/loadingpage.dart';
 import 'pages/flashcar_page.dart';
 import 'pages/order_page.dart';
 import 'pages/templatehead.dart';
 import 'pages/startingpage.dart';
-import 'pages/loginpage.dart';
 
 void main() {
   runApp(const MyApp());
