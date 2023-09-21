@@ -38,28 +38,6 @@ _navigatetohome()async{
             height: 110,
           ),
         ),
-        // SizedBox(height: 100),
-        // Row(
-        //   children: [
-        //     Text(
-        //       'Fla',
-        //       style: TextStyle(
-        //         fontSize: 30,
-        //       ),
-        //     ),
-        //     Icon(
-        //       Icons.bolt,
-        //       size: 100,
-        //       color: Color(0xFFE5FF70),
-        //     ),
-        //     Text(
-        //       'hMover',
-        //       style: TextStyle(
-        //         fontSize: 30,
-        //       ),
-        //     )
-        //   ],
-        // )
       ]),
     );
   }
