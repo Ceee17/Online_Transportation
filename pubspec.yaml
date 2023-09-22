@@ -66,6 +66,12 @@ flutter:
     - lib/assets/images/waiting.png
     # - lib/assets/images/1.png
     - lib/assets/images/startingpage.png
+    - lib/assets/images/FlashrideLogo.png
+    - lib/assets/images/location1.png
+    - lib/assets/images/location2.png
+    - lib/assets/images/moto1.png
+    - lib/assets/images/moto2.png
+    - lib/assets/images/moto3.png
 
       # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
