@@ -1,8 +1,11 @@
 // ignore_for_file: unused_import
 
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:project_uts_online_transportation/pages/history_page.dart';
 import 'package:project_uts_online_transportation/pages/template/template-card-button.dart';
 import 'package:water_drop_nav_bar/water_drop_nav_bar.dart';
 import 'template/templatehead.dart';
@@ -60,10 +63,12 @@ class _OrderPageState extends State<OrderPage> {
                     CustomCardButton(
                       svgAsset: 'lib/assets/images/flashride.svg',
                       svgHeight: 80,
+                      svgWidth: 80,
                       title: 'FlashRide',
                       description:
                           'On The Way\nETA : 5 Mins\nPickup : Untar\nDestination : Mcdonald',
-                      color: 0xFF213A82,
+                      color: 0xFFffffff,
+                      textColor: Color(0xFF000000),
                     ),
                     SizedBox(
                       height: 20,
@@ -71,10 +76,12 @@ class _OrderPageState extends State<OrderPage> {
                     CustomCardButton(
                       svgAsset: 'lib/assets/images/flashcar.svg',
                       svgHeight: 101,
+                      svgWidth: 101,
                       title: 'FlashCar',
                       description:
                           'On The Way\nETA : 5 Mins\nPickup : Untar\nDestination : Mcdonald',
-                      color: 0xFF3B60CE,
+                      color: 0xFFffffff,
+                      textColor: Color(0xFF000000),
                     ),
                     SizedBox(
                       height: 20,
@@ -82,21 +89,41 @@ class _OrderPageState extends State<OrderPage> {
                     CustomCardButton(
                       svgAsset: 'lib/assets/images/flashtaxi.svg',
                       svgHeight: 80,
+                      svgWidth: 80,
                       title: 'FlashTaxi',
-                      description: 'test',
-                      color: 0xFF111D41,
+                      description:
+                          'On The Way\nETA : 5 Mins\nPickup : Untar\nDestination : Mcdonald',
+                      color: 0xFFFFFFFF,
+                      textColor: Color(0xFF000000),
                     ),
                   ],
                 ),
               ),
               Positioned(
-                bottom: 65,
-                right: 20,
-                child: OutlinedButton(
-                  onPressed: () {},
-                  child: Text(
-                    'View History',
-                    style: TextStyle(fontSize: 16),
+                bottom: 10,
+                right: 0,
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => HistoryPage()),
+                    );
+                  },
+                  child: Row(
+                    children: [
+                      Text(
+                        'View History',
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600,
+                            color: Color(0xFF3B60CE)),
+                      ),
+                      Icon(
+                        Icons.navigate_next,
+                        size: 30,
+                        color: Color(0xFF3B60CE),
+                      ),
+                    ],
                   ),
                 ),
               )
