@@ -1,4 +1,7 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:project_uts_online_transportation/pages/template/template-card-button.dart';
 import 'package:water_drop_nav_bar/water_drop_nav_bar.dart';
@@ -27,67 +30,83 @@ class _OrderPageState extends State<OrderPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        // disini menggunakan stack widget karena biar templatehead() tetep diatas, soalnya widget lainnya mw dibkin centered
-        children: [
-          Positioned(
-            //positioned widget cuma bisa dipake di dlm stack widget, mangknya harus pake stack
-            top: 0,
-            left: 0,
-            right: 0,
-            child: TemplateHead(
-              title: "ORDER",
-            ),
+    return AnnotatedRegion(
+        value: const SystemUiOverlayStyle(
+          systemNavigationBarColor: Colors.white,
+          systemNavigationBarIconBrightness: Brightness.dark,
+        ),
+        child: Scaffold(
+          body: Stack(
+            // disini menggunakan stack widget karena biar templatehead() tetep diatas, soalnya widget lainnya mw dibkin centered
+            children: [
+              Positioned(
+                //positioned widget cuma bisa dipake di dlm stack widget, mangknya harus pake stack
+                top: 0,
+                left: 0,
+                right: 0,
+                child: TemplateHead(
+                  title: "ORDER",
+                ),
+              ),
+              Center(
+                child: Column(
+                  mainAxisAlignment:
+                      MainAxisAlignment.center, // centered semua widgetnya
+                  children: [
+                    SizedBox(
+                      height: 80,
+                    ),
+                    // backup()
+                    CustomCardButton(
+                      svgAsset: 'lib/assets/images/flashride.svg',
+                      svgHeight: 80,
+                      title: 'FlashRide',
+                      description:
+                          'On The Way\nETA : 5 Mins\nPickup : Untar\nDestination : Mcdonald',
+                      color: 0xFF213A82,
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    CustomCardButton(
+                      svgAsset: 'lib/assets/images/flashcar.svg',
+                      svgHeight: 101,
+                      title: 'FlashCar',
+                      description:
+                          'On The Way\nETA : 5 Mins\nPickup : Untar\nDestination : Mcdonald',
+                      color: 0xFF3B60CE,
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    CustomCardButton(
+                      svgAsset: 'lib/assets/images/flashtaxi.svg',
+                      svgHeight: 80,
+                      title: 'FlashTaxi',
+                      description: 'test',
+                      color: 0xFF111D41,
+                    ),
+                  ],
+                ),
+              ),
+              Positioned(
+                bottom: 65,
+                right: 20,
+                child: OutlinedButton(
+                  onPressed: () {},
+                  child: Text(
+                    'View History',
+                    style: TextStyle(fontSize: 16),
+                  ),
+                ),
+              )
+            ],
           ),
-          Center(
-            child: Column(
-              mainAxisAlignment:
-                  MainAxisAlignment.center, // centered semua widgetnya
-              children: [
-                SizedBox(
-                  height: 80,
-                ),
-                // backup()
-                CustomCardButton(
-                  svgAsset: 'lib/assets/images/flashride.svg',
-                  svgHeight: 80,
-                  title: 'FlashRide',
-                  description:
-                      'On The Way\nETA : 5 Mins\nPickup : Untar\nDestination : Mcdonald',
-                  color: 0xFF213A82,
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                CustomCardButton(
-                  svgAsset: 'lib/assets/images/flashcar.svg',
-                  svgHeight: 101,
-                  title: 'FlashCar',
-                  description:
-                      'On The Way\nETA : 5 Mins\nPickup : Untar\nDestination : Mcdonald',
-                  color: 0xFF3B60CE,
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                CustomCardButton(
-                  svgAsset: 'lib/assets/images/flashtaxi.svg',
-                  svgHeight: 80,
-                  title: 'FlashTaxi',
-                  description: 'test',
-                  color: 0xFF111D41,
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-      // <BOTTOM-NAVBAR>
-      bottomNavigationBar: CustomNavBar(
-          selectedIndex: _selectedIndex, onItemSelected: _onItemTapped),
-      //</BOTTOM-NAVBAR>
-    );
+          // <BOTTOM-NAVBAR>
+          bottomNavigationBar: CustomNavBar(
+              selectedIndex: _selectedIndex, onItemSelected: _onItemTapped),
+          //</BOTTOM-NAVBAR>
+        ));
   }
 }
 
