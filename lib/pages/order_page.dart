@@ -1,7 +1,5 @@
 // ignore_for_file: unused_import
 
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -59,7 +57,6 @@ class _OrderPageState extends State<OrderPage> {
                     SizedBox(
                       height: 80,
                     ),
-                    // backup()
                     CustomCardButton(
                       svgAsset: 'lib/assets/images/flashride.svg',
                       svgHeight: 80,
