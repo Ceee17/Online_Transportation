@@ -17,73 +17,142 @@ class _HistoryPageState extends State<HistoryPage> {
   @override
   Widget build(BuildContext context) {
     return AnnotatedRegion<SystemUiOverlayStyle>(
-        value: const SystemUiOverlayStyle(
-          systemNavigationBarColor: Colors.white,
-          systemNavigationBarIconBrightness: Brightness.dark,
-        ),
-        child: Scaffold(
-          body: Stack(
-            // disini menggunakan stack widget karena biar templatehead() tetep diatas, soalnya widget lainnya mw dibkin centered
-            children: [
-              Positioned(
-                //positioned widget cuma bisa dipake di dlm stack widget, mangknya harus pake stack
+      value: const SystemUiOverlayStyle(
+        systemNavigationBarColor: Colors.white,
+        systemNavigationBarIconBrightness: Brightness.dark,
+      ),
+      child: Scaffold(
+        body: Column(
+          children: [
+            TemplateHead(
+              title: "HISTORY",
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
                 top: 0,
                 left: 0,
-                right: 0,
-                child: TemplateHead(
-                  title: "HISTORY",
-                ),
+                right: 320,
+                bottom: 20,
               ),
-              // SizedBox(
-              //   height: 50,
-              // ),
-
-              Positioned(
-                top: 100,
-                left: 25,
-                child: Container(
-                  width: 35,
-                  height: 35,
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      width: 1,
-                      color: Colors.black,
-                    ),
-                    shape: BoxShape.circle,
-                    color: Color(0xFF3B60CE),
+              child: Container(
+                width: 35,
+                height: 35,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    width: 1,
+                    color: Colors.black,
                   ),
-                  child: TextButton(
-                    onPressed: () {
-                      // Navigate to the order page
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => OrderPage()),
-                      );
-                    },
-                    style: ButtonStyle(
-                        padding: MaterialStatePropertyAll<EdgeInsetsGeometry>(
-                            EdgeInsets.only(left: 8))),
-                    child: Icon(
-                      Icons.arrow_back_ios,
-                      size: 20,
-                      color: Colors.white,
-                    ),
+                  shape: BoxShape.circle,
+                  color: Color(0xFF3B60CE),
+                ),
+                child: TextButton(
+                  onPressed: () {
+                    // Navigate to the order page
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => OrderPage()),
+                    );
+                  },
+                  style: ButtonStyle(
+                      padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                          EdgeInsets.only(left: 8))),
+                  child: Icon(
+                    Icons.arrow_back_ios,
+                    size: 20,
+                    color: Colors.white,
                   ),
                 ),
               ),
-
-              Center(
+            ),
+            Expanded(
+              child: SingleChildScrollView(
+                // padding: const EdgeInsets.only(top: 0, left: 0),
                 child: Column(
-                  mainAxisAlignment:
-                      MainAxisAlignment.center, // centered semua widgetnya
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('test'),
-                    Text('data'),
-                  ], // tinggal ganti ini jadi button card yang baru dan jangan lupa wrap semuanya pake single child scroll view
+                    CustomCardButton(
+                      svgAsset: 'lib/assets/images/flashride.svg',
+                      svgHeight: 60,
+                      svgWidth: 60,
+                      title: 'Completed',
+                      description: 'Pickup : Untar\nDestination : McDonald',
+                      color: Color(0xFFffffff),
+                      textColor: Color(0xFF000000),
+                      heightButton: 100,
+                    ),
+                    SizedBox(height: 20),
+                    CustomCardButton(
+                      svgAsset: 'lib/assets/images/flashcar.svg',
+                      svgHeight: 60,
+                      svgWidth: 60,
+                      title: 'Completed',
+                      description: 'Pickup : Untar\nDestination : McDonald',
+                      color: Color(0xFFffffff),
+                      textColor: Color(0xFF000000),
+                      heightButton: 100,
+                    ),
+                    SizedBox(height: 20),
+                    CustomCardButton(
+                      svgAsset: 'lib/assets/images/flashtaxi.svg',
+                      svgHeight: 50,
+                      svgWidth: 50,
+                      title: 'Completed',
+                      description: 'Pickup : Untar\nDestination : McDonald',
+                      color: Color(0xFFffffff),
+                      textColor: Color(0xFF000000),
+                      heightButton: 100,
+                    ),
+                    SizedBox(height: 20),
+                    CustomCardButton(
+                      svgAsset: 'lib/assets/images/flashcar.svg',
+                      svgHeight: 60,
+                      svgWidth: 60,
+                      title: 'Completed',
+                      description: 'Pickup : Untar\nDestination : McDonald',
+                      color: Color(0xFFffffff),
+                      textColor: Color(0xFF000000),
+                      heightButton: 100,
+                    ),
+                    SizedBox(height: 20),
+                    CustomCardButton(
+                      svgAsset: 'lib/assets/images/flashtaxi.svg',
+                      svgHeight: 50,
+                      svgWidth: 50,
+                      title: 'Completed',
+                      description: 'Pickup : Untar\nDestination : McDonald',
+                      color: Color(0xFFffffff),
+                      textColor: Color(0xFF000000),
+                      heightButton: 100,
+                    ),
+                    SizedBox(height: 20),
+                    CustomCardButton(
+                      svgAsset: 'lib/assets/images/flashride.svg',
+                      svgHeight: 60,
+                      svgWidth: 60,
+                      title: 'Completed',
+                      description: 'Pickup : Untar\nDestination : McDonald',
+                      color: Color(0xFFffffff),
+                      textColor: Color(0xFF000000),
+                      heightButton: 100,
+                    ),
+                    SizedBox(height: 20),
+                    CustomCardButton(
+                      svgAsset: 'lib/assets/images/flashtaxi.svg',
+                      svgHeight: 50,
+                      svgWidth: 50,
+                      title: 'Completed',
+                      description: 'Pickup : Untar\nDestination : McDonald',
+                      color: Color(0xFFffffff),
+                      textColor: Color(0xFF000000),
+                      heightButton: 100,
+                    ),
+                  ],
                 ),
               ),
-            ],
-          ),
-        ));
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
