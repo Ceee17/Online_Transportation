@@ -62,9 +62,6 @@ flutter:
     # - lib/assets/images/flashicon_rounded.png
     # - lib/assets/images/flashicon.png
     # - lib/assets/images/1.png
-    - lib/assets/images/carmovepeople.png
-    - lib/assets/images/carmoveitem.png
-    - lib/assets/images/sheetline.svg
     - lib/assets/images/
     - lib/assets/images/startingpage.png
     - lib/assets/images/flashcarlogo.png
