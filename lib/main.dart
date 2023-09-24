@@ -21,6 +21,6 @@ class MyApp extends StatelessWidget {
           fontFamily: "Poppins",
         ),
         debugShowCheckedModeBanner: false,
-        home: OrderPage());
+        home: FlashCarPage());
   }
 }
