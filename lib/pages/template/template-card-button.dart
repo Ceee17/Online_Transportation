@@ -7,8 +7,9 @@ class CustomCardButton extends StatelessWidget {
   final double svgWidth;
   final String title;
   final String description;
-  final int color;
+  final Color color;
   final Color textColor;
+  final double heightButton;
 
   const CustomCardButton({
     Key? key,
@@ -19,13 +20,14 @@ class CustomCardButton extends StatelessWidget {
     required this.description,
     required this.color,
     this.textColor = const Color(0xFFffffff),
+    this.heightButton = 154,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 386,
-      height: 154,
+      height: heightButton,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(25),
         color: Colors.white,
@@ -33,17 +35,19 @@ class CustomCardButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: () {},
         style: ElevatedButton.styleFrom(
-          backgroundColor: Color(color),
-          side: BorderSide(
-            width: 2,
-            color: Colors.black,
-          ),
+          backgroundColor: color,
+          // side: BorderSide(
+          //   width: 2,
+          //   color: Colors.black,
+          // ),
           elevation: 15,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(25),
           ),
         ),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SvgPicture.asset(
               svgAsset,
