@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'flashbtnimg.dart';
 
-class FlashRidePage extends StatelessWidget {
-  const FlashRidePage({Key? key}) : super(key: key);
+class MoveitemPage extends StatelessWidget {
+  const MoveitemPage({Key? key}) : super(key: key);
   static const String idScreen = "flashride";
 
   @override
@@ -26,7 +26,7 @@ class FlashRidePage extends StatelessWidget {
                 top: 50,
                 child: Container(
                   width: 130,
-                  child: Image.asset('lib/assets/images/FlashrideLogo.png'),
+                  child: Image.asset('lib/assets/images/moveitembtn.png'),
                 ),
               ),
               Positioned(
@@ -42,7 +42,7 @@ class FlashRidePage extends StatelessWidget {
                 left: 200,
                 child: Container(
                   child: Text(
-                    'order flashride from\nanywhere and anytime for\ntravel or delivery of items',
+                    'Experience smoother\nitem transfers using\nFlashRide',
                     style: TextStyle(
                       fontSize: 14,
                     ),
@@ -61,7 +61,7 @@ class FlashRidePage extends StatelessWidget {
               child: Align(
                 alignment: Alignment(0.0, -0.9),
                 child: Text(
-                  'Choose Flashride Service',
+                  'Flashride Delivery',
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
@@ -70,15 +70,6 @@ class FlashRidePage extends StatelessWidget {
               ),
             ),
           ),
-           Positioned(
-      top: 100, // Adjust the top value to position the image vertically
-      left: 50, // Adjust the left value to position the image horizontally
-      child: Image.asset(
-        'lib/assets/images/movepeoplebtn.png', // Replace with your image path
-        width: 300, // Adjust the width as needed
-        height: 300, // Adjust the height as needed
-      ),
-    ),
           SizedBox.expand(
             child: DraggableScrollableSheet(
               initialChildSize: 0.4,
@@ -120,7 +111,7 @@ class FlashRidePage extends StatelessWidget {
                             );
                           case 1:
                             return Positioned(
-                              top: 50,
+                              top: 35,
                               child: Column(
                                 children: <Widget>[
                                   SizedBox(height: 50),
@@ -143,7 +134,7 @@ class FlashRidePage extends StatelessWidget {
                             );
                           case 2:
                             return Positioned(
-                              top: 40,
+                              top: 35,
                               child: Column(
                                 children: <Widget>[
                                   SizedBox(height: 50),

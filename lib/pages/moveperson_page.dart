@@ -53,21 +53,30 @@ class MovePersonPage extends StatelessWidget {
           ),
         ),
       ),
-      body: Container(
-        padding: EdgeInsets.all(0.0),
-        child: Center(
-          child: Align(
-            alignment: Alignment(0.0, -0.9),
-            child: Text(
-              'Choose Flashride Service',
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-        ),
-      ),
+    //   body: Column(
+    //     children: [
+    //   TextField(
+    //     controller: _searchController,
+    //     onChanged: (query) => _onSearchTextChanged(query),
+    //     decoration: InputDecoration(
+    //       hintText: 'Search for a location',
+    //     ),
+    //   ),
+    //   Expanded(
+    //     child: ListView.builder(
+    //       itemCount: _suggestions.length,
+    //       itemBuilder: (context, index) {
+    //         final suggestion = _suggestions[index];
+    //         return ListTile(
+    //           title: Text(suggestion.description),
+    //           onTap: () {
+    //           },
+    //         );
+    //       },
+    //     ),
+    //   ),
+    // ],
+    //   ),
     );
   }
 }

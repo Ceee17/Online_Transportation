@@ -8,6 +8,7 @@ import 'pages/searchingdriver.dart';
 import 'pages/templatehead.dart';
 import 'pages/flashride_page.dart';
 import 'pages/moveperson_page.dart';
+import 'pages/imagebutton.dart';
 
 
 void main() {
@@ -24,6 +25,6 @@ class MyApp extends StatelessWidget {
           fontFamily: "Poppins",
         ),
         debugShowCheckedModeBanner: false,
-        home: FlashRidePage());
+        home: FlashpickPage());
   }
 }
