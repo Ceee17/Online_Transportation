@@ -1,4 +1,8 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
+import 'package:project_uts_online_transportation/pages/account_page.dart';
+import 'package:project_uts_online_transportation/pages/history_page.dart';
 import 'pages/startingpage.dart';
 import 'pages/flashcar_page.dart';
 import 'pages/order_page.dart';
@@ -19,6 +23,11 @@ class MyApp extends StatelessWidget {
           fontFamily: "Poppins",
         ),
         debugShowCheckedModeBanner: false,
-        home: FlashCarPage());
+        routes: {
+          OrderPage.idScreen: (context) => OrderPage(),
+          HistoryPage.idScreen: (context) => HistoryPage(),
+          AccountPage.idScreen: (context) => AccountPage(),
+        },
+        home: OrderPage());
   }
 }
