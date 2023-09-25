@@ -4,6 +4,7 @@ import 'pages/flashcar_page.dart';
 import 'pages/order_page.dart';
 import 'pages/templatehead.dart';
 import 'pages/startingpage.dart';
+import 'pages/loginpage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,6 +21,6 @@ class MyApp extends StatelessWidget {
           fontFamily: "Poppins",
         ),
         debugShowCheckedModeBanner: false,
-        home: LoadingPage());
+        home: LoginPage());
   }
 }
