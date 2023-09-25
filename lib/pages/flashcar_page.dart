@@ -63,7 +63,7 @@ class FlashCarPage extends StatelessWidget {
           child: Align(
             alignment: Alignment(0.0, -0.9),
             child: Text(
-              'Choose Flashride Service',
+              'Choose Flashcar Service',
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
