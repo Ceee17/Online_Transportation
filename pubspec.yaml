@@ -35,6 +35,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   flutter_svg: ^2.0.7
+  water_drop_nav_bar: ^2.2.0+5
 
 dev_dependencies:
   flutter_test:
@@ -65,15 +66,8 @@ flutter:
     - lib/assets/images/waitingdriver.png
     - lib/assets/images/waiting.png
     # - lib/assets/images/1.png
+    - lib/assets/images/
     - lib/assets/images/startingpage.png
-    - lib/assets/images/FlashrideLogo.png
-    - lib/assets/images/location1.png
-    - lib/assets/images/location2.png
-    - lib/assets/images/moto1.png
-    - lib/assets/images/moto2.png
-    - lib/assets/images/moto3.png
-    - lib/assets/images/movepeoplebtn.png
-    - lib/assets/images/moveitembtn.png
 
       # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -1,15 +1,19 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
-import 'pages/flashcar_page.dart';
+
+
+import 'package:project_uts_online_transportation/pages/account_page.dart';
+import 'package:project_uts_online_transportation/pages/history_page.dart';
 import 'pages/startingpage.dart';
 import 'pages/flashcar_page.dart';
 import 'pages/order_page.dart';
 import 'pages/flashpick.dart';
 import 'pages/searchingdriver.dart';
-import 'pages/templatehead.dart';
 import 'pages/flashride_page.dart';
-import 'pages/moveperson_page.dart';
 import 'pages/imagebutton.dart';
-
+import 'pages/moveperson_page.dart';
+import 'pages/template/templatehead.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,6 +29,11 @@ class MyApp extends StatelessWidget {
           fontFamily: "Poppins",
         ),
         debugShowCheckedModeBanner: false,
-        home: FlashpickPage());
+        routes: {
+          OrderPage.idScreen: (context) => OrderPage(),
+          HistoryPage.idScreen: (context) => HistoryPage(),
+          AccountPage.idScreen: (context) => AccountPage(),
+        },
+        home: OrderPage());
   }
 }
