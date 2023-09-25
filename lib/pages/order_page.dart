@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:project_uts_online_transportation/pages/account_page.dart';
 import 'package:project_uts_online_transportation/pages/history_page.dart';
 import 'package:project_uts_online_transportation/pages/template/template-card-button.dart';
 import 'package:water_drop_nav_bar/water_drop_nav_bar.dart';
@@ -26,6 +27,9 @@ class _OrderPageState extends State<OrderPage> {
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
+      // if (index == 3) {
+      //   Navigator.pushNamed(context, AccountPage.idScreen);
+      // }
     });
   }
 
@@ -64,7 +68,7 @@ class _OrderPageState extends State<OrderPage> {
                       title: 'FlashRide',
                       description:
                           'On The Way\nETA : 5 Mins\nPickup : Untar\nDestination : Mcdonald',
-                      color: 0xFFffffff,
+                      color: Color(0xFFffffff),
                       textColor: Color(0xFF000000),
                     ),
                     SizedBox(
@@ -77,7 +81,7 @@ class _OrderPageState extends State<OrderPage> {
                       title: 'FlashCar',
                       description:
                           'On The Way\nETA : 5 Mins\nPickup : Untar\nDestination : Mcdonald',
-                      color: 0xFFffffff,
+                      color: Color(0xFFffffff),
                       textColor: Color(0xFF000000),
                     ),
                     SizedBox(
@@ -90,7 +94,7 @@ class _OrderPageState extends State<OrderPage> {
                       title: 'FlashTaxi',
                       description:
                           'On The Way\nETA : 5 Mins\nPickup : Untar\nDestination : Mcdonald',
-                      color: 0xFFFFFFFF,
+                      color: Color(0xFFffffff),
                       textColor: Color(0xFF000000),
                     ),
                   ],
