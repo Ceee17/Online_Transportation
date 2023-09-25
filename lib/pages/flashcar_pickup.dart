@@ -7,20 +7,29 @@ class CarPickupPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      body: Stack(
         children: [
+          Positioned(
+            top: 20,
+            left: 83,
+            child: Container(
+              width: 600,
+              height: 160,
+              child: Image.asset('lib/assets/images/flashcarlogo.png'),
+            ),
+          ),
           // Add your other widgets here
         ],
       ),
       bottomNavigationBar: Stack(
         children: [
           Container(
-            height: 607, // Set the desired height of the first bottom bar
+            height: 607,
             decoration: BoxDecoration(
-              color: Color(0xff8DA2E2), // Set the color you want
+              color: Color(0xff8DA2E2),
               borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(25.0), // Adjust the radius as needed
-                topRight: Radius.circular(25.0), // Adjust the radius as needed
+                topLeft: Radius.circular(24.0),
+                topRight: Radius.circular(24.0),
               ),
             ),
           ),
@@ -29,13 +38,12 @@ class CarPickupPage extends StatelessWidget {
             left: 0,
             right: 0,
             child: Container(
-              height: 488, // Set the desired height of the second bottom bar
+              height: 488,
               decoration: BoxDecoration(
-                color: Color(0xff213A82), // Set the color you want
+                color: Color(0xff213A82),
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(25.0), // Adjust the radius as needed
-                  topRight:
-                      Radius.circular(25.0), // Adjust the radius as needed
+                  topLeft: Radius.circular(34.0),
+                  topRight: Radius.circular(34.0),
                 ),
               ),
             ),

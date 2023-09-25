@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'templatehead.dart';
+import 'template/templatehead.dart';
 import 'flashbtntxt.dart';
 // import 'top_circular_clipper.dart';
 
@@ -13,11 +13,10 @@ class FlashpickPage extends StatelessWidget {
       body: Column(
         children: [
           TemplateHead(title: "Flash Pick"),
-
           Image.asset(
-            'lib/assets/images/waitingdriver.png', 
+            'lib/assets/images/waitingdriver.png',
             width: 350,
-            height: 400, 
+            height: 400,
             alignment: Alignment.center,
           ),
           SizedBox(height: 150),
@@ -41,10 +40,9 @@ class FlashpickPage extends StatelessWidget {
                           child: Text(
                             'Your Driver is On The Way',
                             style: TextStyle(
-                              fontSize: 18.0,
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold
-                            ),
+                                fontSize: 18.0,
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
                           ),
                         ),
                       ),

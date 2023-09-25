@@ -24,10 +24,10 @@ class FlashCarPage extends StatelessWidget {
                 centerTitle: true,
               ),
               Positioned(
-                top: 60,
-                left: -24,
+                top: 23,
+                left: 288,
                 child: Container(
-                  width: 170,
+                  width: 190,
                   child: Image.asset('lib/assets/images/flashcarlogo.png'),
                 ),
               ),
