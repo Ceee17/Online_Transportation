@@ -60,7 +60,7 @@ class LoginPage extends StatelessWidget {
             left: 0,
             right: 0,
             child: Container(
-              height: 465,
+              height: 560,
               decoration: BoxDecoration(
                 color: Color(0xff213a82),
                 borderRadius: BorderRadius.only(
@@ -126,7 +126,7 @@ class LoginPage extends StatelessWidget {
                     ),
                     ElevatedButton(
                       onPressed: () {
-                        print('"Login" button pressed');
+                        // print('"Login" button pressed');
                       },
                       style: ElevatedButton.styleFrom(
                         primary: Color(0xFF111d41), // Ubah backgroundColor
@@ -146,7 +146,7 @@ class LoginPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(height: 15),
+                    SizedBox(height: 50),
                     Align(
                       alignment: Alignment.center,
                       child: Text(
@@ -156,7 +156,7 @@ class LoginPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(height: 3),
+                    SizedBox(height: 15),
                     ClipRRect(
                       borderRadius: BorderRadius.circular(
                           5), // Half of the height or width to make it a circle
@@ -178,7 +178,7 @@ class LoginPage extends StatelessWidget {
                     //   'lib/assets/images/search.png'
                     // )
                     SizedBox(
-                      height: 38,
+                      height: 80,
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
