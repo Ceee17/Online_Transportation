@@ -25,6 +25,8 @@ class _AccountPageState extends State<AccountPage> {
       ..width = 360
       ..height = 360
       ..borderRadius = 100
+      ..gravityAnimationEnable = true
+      ..gravity = Gravity.center
       ..widget(Padding(
         padding: EdgeInsets.only(
           top: 100,
@@ -50,7 +52,9 @@ class _AccountPageState extends State<AccountPage> {
               // color: Colors.red,
 
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pop(context);
+                },
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(35),
@@ -72,7 +76,12 @@ class _AccountPageState extends State<AccountPage> {
               height: 10,
             ),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                // var yyDialog = YYDialog();
+                // yyDialog?.dismiss();
+
+                Navigator.pop(context);
+              },
               child: Text(
                 'NO',
                 style: TextStyle(
@@ -87,35 +96,6 @@ class _AccountPageState extends State<AccountPage> {
       ))
       ..show();
   }
-
-  // void _showLogoutConfirmationDialog() {
-  //   showDialog(
-  //     context: context,
-  //     builder: (BuildContext context) {
-  //       return AlertDialog(
-  //         title: Text('Confirm Logout'),
-  //         content: Text('Are you sure you want to log out?'),
-  //         actions: <Widget>[
-  //           TextButton(
-  //             onPressed: () {
-  //               // Close the dialog and log out
-  //               Navigator.of(context).pop();
-  //               // Add the log out logic here
-  //             },
-  //             child: Text('Yes'),
-  //           ),
-  //           TextButton(
-  //             onPressed: () {
-  //               // Close the dialog
-  //               Navigator.of(context).pop();
-  //             },
-  //             child: Text('No'),
-  //           ),
-  //         ],
-  //       );
-  //     },
-  //   );
-  // }
 
   @override
   void initState() {
@@ -141,7 +121,7 @@ class _AccountPageState extends State<AccountPage> {
 
   @override
   Widget build(BuildContext context) {
-    YYDialog.init(context);
+    // YYDialog.init(context);
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: const SystemUiOverlayStyle(
         systemNavigationBarColor: Colors.white,
@@ -293,7 +273,9 @@ class _AccountPageState extends State<AccountPage> {
           height: 100,
         ),
         ElevatedButton(
-          onPressed: CustomDialog,
+          onPressed: () {
+            CustomDialog();
+          },
           style: ElevatedButton.styleFrom(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(50),
