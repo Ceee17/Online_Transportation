@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'templatehead.dart';
+import 'template/templatehead.dart';
 import 'flashbtntxt.dart';
 // import 'top_circular_clipper.dart';
 
@@ -13,11 +13,10 @@ class SearchingDrivPage extends StatelessWidget {
       body: Column(
         children: [
           TemplateHead(title: "Searching Driver"),
-
           Image.asset(
-            'lib/assets/images/waiting.png', 
+            'lib/assets/images/waiting.png',
             width: 350,
-            height: 400, 
+            height: 400,
             alignment: Alignment.center,
           ),
           SizedBox(height: 150),
@@ -41,10 +40,9 @@ class SearchingDrivPage extends StatelessWidget {
                           child: Text(
                             'Searching for Driver...',
                             style: TextStyle(
-                              fontSize: 18.0,
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold
-                            ),
+                                fontSize: 18.0,
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
                           ),
                         ),
                       ),

@@ -12,8 +12,8 @@ class _DragSheetState extends State<DragSheet> {
   Widget build(BuildContext context) {
     return SizedBox.expand(
       child: DraggableScrollableSheet(
-        initialChildSize: 0.4,
-        minChildSize: 0.34,
+        initialChildSize: 0.32,
+        minChildSize: 0.32,
         maxChildSize: 0.622,
         builder: (BuildContext context, ScrollController scrollController) {
           return ClipRRect(
