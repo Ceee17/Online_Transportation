@@ -17,13 +17,11 @@ class _LoadingPageState extends State<LoadingPage> {
     _navigatetohome();
   }
 
-_navigatetohome() async {
-  await Future.delayed(Duration(milliseconds: 1500), () {});
-  Navigator.pushReplacement(
-    context, 
-    MaterialPageRoute(
-      builder: (context)=>StartingPage()));
-}
+  _navigatetohome() async {
+    await Future.delayed(Duration(milliseconds: 2000), () {});
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => StartingPage()));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,9 +31,9 @@ _navigatetohome() async {
         // SizedBox(height: 50),
         Center(
           child: Image.asset(
-            'lib/assets/images/1.png',
-            width: 110,
-            height: 110,
+            'lib/assets/images/2.png',
+            width: 200,
+            height: 200,
           ),
         ),
       ]),
