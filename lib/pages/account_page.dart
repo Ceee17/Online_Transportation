@@ -5,6 +5,7 @@ import 'package:project_uts_online_transportation/pages/order_page.dart';
 import 'package:project_uts_online_transportation/pages/template/template_nav_bar.dart';
 import 'package:project_uts_online_transportation/pages/template/templatehead.dart';
 import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
+import 'edit_profile_page.dart';
 import 'template/template-icon-card-button.dart';
 
 class AccountPage extends StatefulWidget {
@@ -159,10 +160,18 @@ class _AccountPageState extends State<AccountPage> {
           child: Row(
             children: [
               Padding(padding: EdgeInsets.only(left: 10)),
-              SvgPicture.asset(
-                'lib/assets/images/profile_picture.svg',
-                height: 150,
-                width: 150,
+              Container(
+                // color: Colors.black,
+                decoration: ShapeDecoration(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(100),
+                  ),
+                ),
+                child: SvgPicture.asset(
+                  'lib/assets/images/profile_picture.svg',
+                  height: 150,
+                  width: 150,
+                ),
               ),
               Column(
                 children: [
@@ -205,7 +214,14 @@ class _AccountPageState extends State<AccountPage> {
           ),
         ),
         IconCardButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => EditProfile(),
+              ),
+            );
+          },
           icon: Icon(
             Icons.edit_outlined,
             size: 30,
