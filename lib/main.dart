@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 
+import 'package:project_uts_online_transportation/pages/landingpage.dart';
 import 'pages/loginpage.dart';
 import 'pages/loadingpage.dart';
 import 'package:project_uts_online_transportation/pages/account_page.dart';
@@ -16,6 +17,8 @@ import 'pages/searchingdriver.dart';
 import 'pages/flashride_page.dart';
 import 'pages/imagebutton.dart';
 import 'pages/moveperson_page.dart';
+import 'pages/signuppage.dart';
+import 'pages/landingpage.dart';
 import 'pages/template/templatehead.dart';
 
 void main() {
