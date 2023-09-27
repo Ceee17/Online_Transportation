@@ -24,10 +24,10 @@ class FlashCarPage extends StatelessWidget {
                 centerTitle: true,
               ),
               Positioned(
-                top: 60,
-                left: -24,
+                top: 23,
+                left: 288,
                 child: Container(
-                  width: 170,
+                  width: 190,
                   child: Image.asset('lib/assets/images/flashcarlogo.png'),
                 ),
               ),
@@ -63,7 +63,7 @@ class FlashCarPage extends StatelessWidget {
           child: Align(
             alignment: Alignment(0.0, -0.9),
             child: Text(
-              'Choose Flashride Service',
+              'Choose Flashcar Service',
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,

@@ -20,16 +20,33 @@ class OrderPage extends StatefulWidget {
 }
 
 class _OrderPageState extends State<OrderPage> {
+  late PageController _pageController;
   int _selectedIndex = 2;
   // index gw 2 karna order page urutan ke-3
   // 0 - 1 - 2 - 3
 
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController(initialPage: _selectedIndex);
+  }
+
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
-      // if (index == 3) {
-      //   Navigator.pushNamed(context, AccountPage.idScreen);
-      // }
+      if (index == 3) {
+        Navigator.pushNamed(
+          context,
+          AccountPage.idScreen,
+        );
+        return;
+      }
+
+      _pageController.animateToPage(
+        _selectedIndex,
+        duration: Duration(milliseconds: 500),
+        curve: Curves.easeOutQuad,
+      );
     });
   }
 
@@ -41,100 +58,109 @@ class _OrderPageState extends State<OrderPage> {
           systemNavigationBarIconBrightness: Brightness.dark,
         ),
         child: Scaffold(
-          body: Stack(
-            // disini menggunakan stack widget karena biar templatehead() tetep diatas, soalnya widget lainnya mw dibkin centered
-            children: [
-              Positioned(
-                //positioned widget cuma bisa dipake di dlm stack widget, mangknya harus pake stack
-                top: 0,
-                left: 0,
-                right: 0,
-                child: TemplateHead(
-                  title: "ORDER",
-                ),
-              ),
-              Center(
-                child: Column(
-                  mainAxisAlignment:
-                      MainAxisAlignment.center, // centered semua widgetnya
-                  children: [
-                    SizedBox(
-                      height: 80,
-                    ),
-                    CustomCardButton(
-                      svgAsset: 'lib/assets/images/flashride.svg',
-                      svgHeight: 80,
-                      svgWidth: 80,
-                      title: 'FlashRide',
-                      description:
-                          'On The Way\nETA : 5 Mins\nPickup : Untar\nDestination : Mcdonald',
-                      color: Color(0xFFffffff),
-                      textColor: Color(0xFF000000),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    CustomCardButton(
-                      svgAsset: 'lib/assets/images/flashcar.svg',
-                      svgHeight: 101,
-                      svgWidth: 101,
-                      title: 'FlashCar',
-                      description:
-                          'On The Way\nETA : 5 Mins\nPickup : Untar\nDestination : Mcdonald',
-                      color: Color(0xFFffffff),
-                      textColor: Color(0xFF000000),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    CustomCardButton(
-                      svgAsset: 'lib/assets/images/flashtaxi.svg',
-                      svgHeight: 80,
-                      svgWidth: 80,
-                      title: 'FlashTaxi',
-                      description:
-                          'On The Way\nETA : 5 Mins\nPickup : Untar\nDestination : Mcdonald',
-                      color: Color(0xFFffffff),
-                      textColor: Color(0xFF000000),
-                    ),
-                  ],
-                ),
-              ),
-              Positioned(
-                bottom: 10,
-                right: 0,
-                child: TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => HistoryPage()),
-                    );
-                  },
-                  child: Row(
-                    children: [
-                      Text(
-                        'View History',
-                        style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w600,
-                            color: Color(0xFF3B60CE)),
-                      ),
-                      Icon(
-                        Icons.navigate_next,
-                        size: 30,
-                        color: Color(0xFF3B60CE),
-                      ),
-                    ],
-                  ),
-                ),
-              )
-            ],
-          ),
+          body: PageView(
+              physics: NeverScrollableScrollPhysics(),
+              controller: _pageController,
+              children: [
+                _OrderPageContent(context),
+              ]),
           // <BOTTOM-NAVBAR>
           bottomNavigationBar: CustomNavBar(
               selectedIndex: _selectedIndex, onItemSelected: _onItemTapped),
           //</BOTTOM-NAVBAR>
         ));
+  }
+
+  Stack _OrderPageContent(BuildContext context) {
+    return Stack(
+      // disini menggunakan stack widget karena biar templatehead() tetep diatas, soalnya widget lainnya mw dibkin centered
+      children: [
+        Positioned(
+          //positioned widget cuma bisa dipake di dlm stack widget, mangknya harus pake stack
+          top: 0,
+          left: 0,
+          right: 0,
+          child: TemplateHead(
+            title: "ORDER",
+          ),
+        ),
+        Center(
+          child: Column(
+            mainAxisAlignment:
+                MainAxisAlignment.center, // centered semua widgetnya
+            children: [
+              SizedBox(
+                height: 80,
+              ),
+              CustomCardButton(
+                svgAsset: 'lib/assets/images/flashride.svg',
+                svgHeight: 80,
+                svgWidth: 80,
+                title: 'FlashRide',
+                description:
+                    'On The Way\nETA : 5 Mins\nPickup : Untar\nDestination : Mcdonald',
+                color: Color(0xFFffffff),
+                textColor: Color(0xFF000000),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              CustomCardButton(
+                svgAsset: 'lib/assets/images/flashcar.svg',
+                svgHeight: 101,
+                svgWidth: 101,
+                title: 'FlashCar',
+                description:
+                    'On The Way\nETA : 5 Mins\nPickup : Untar\nDestination : Mcdonald',
+                color: Color(0xFFffffff),
+                textColor: Color(0xFF000000),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              CustomCardButton(
+                svgAsset: 'lib/assets/images/flashtaxi.svg',
+                svgHeight: 80,
+                svgWidth: 80,
+                title: 'FlashTaxi',
+                description:
+                    'On The Way\nETA : 5 Mins\nPickup : Untar\nDestination : Mcdonald',
+                color: Color(0xFFffffff),
+                textColor: Color(0xFF000000),
+              ),
+            ],
+          ),
+        ),
+        Positioned(
+          bottom: 10,
+          right: 0,
+          child: TextButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => HistoryPage()),
+              );
+            },
+            child: Row(
+              children: [
+                Text(
+                  'View History',
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600,
+                      color: Color(0xFF3B60CE)),
+                ),
+                Icon(
+                  Icons.navigate_next,
+                  size: 30,
+                  color: Color(0xFF3B60CE),
+                ),
+              ],
+            ),
+          ),
+        )
+      ],
+    );
   }
 }
 
