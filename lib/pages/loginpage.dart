@@ -30,23 +30,7 @@ class LoginPage extends StatelessWidget {
             child: Container(
               child: Center(
                 child: Text(
-                  'Welcome Flasher ^^',
-                  style: TextStyle(
-                    fontSize: 22,
-                    fontWeight: FontWeight.w900,
-                  ),
-                ),
-              ),
-            ),
-          ),
-          Positioned(
-            top: 150,
-            left: 0,
-            right: 0,
-            child: Container(
-              child: Center(
-                child: Text(
-                  'Have a Good Day!',
+                  'Welcome Flasher ^^\nHave a Good Day',
                   style: TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.w900,

@@ -15,7 +15,7 @@ class StartingPage extends StatelessWidget {
             margin: EdgeInsets.only(left: 6, right: 6),
             child: Center(
               child: Text(
-                '“Motor Vehicles Contribute 60% of Pollution”',
+                '“Motor Vehicles Contribute 60%\nof Pollution”',
                 textDirection: TextDirection.ltr,
                 style: TextStyle(
                   fontSize: 22,
@@ -38,7 +38,9 @@ class StartingPage extends StatelessWidget {
             margin: EdgeInsets.only(left: 25, right: 25, top: 15, bottom: 10),
             child: Center(
               child: Text(
-                'Statement above from a published article. Are you ready to reduce motor vehicle pollution with us?🚗💨',
+                "Statement above from a published article.\n"
+                "Are you ready to reduce motor vehicle pollution\n"
+                "with us?🚗💨",
                 textDirection: TextDirection.ltr,
                 style: TextStyle(
                   fontSize: 13,
@@ -53,20 +55,16 @@ class StartingPage extends StatelessWidget {
           SizedBox(height: 20),
           ElevatedButton(
             onPressed: () {
-              // print('"Get Started!" button already pressed');
-              Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => LoginPage(),
-                  ));
+              print('"Get Started!" button already pressed');
             },
             style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xFF111d41),
-                foregroundColor: Colors.white,
-                padding: EdgeInsets.symmetric(horizontal: 80, vertical: 5),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(50),
-                )),
+              backgroundColor: Color(0xFF111d41),
+              foregroundColor: Colors.white,
+              padding: EdgeInsets.symmetric(horizontal: 80, vertical: 5),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(50),
+              ),
+            ),
             child: Text('Get Started!',
                 style: TextStyle(
                   fontSize: 22,
