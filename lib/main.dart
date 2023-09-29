@@ -19,6 +19,8 @@ import 'pages/moveperson_page.dart';
 import 'pages/signuppage.dart';
 import 'pages/landingpage.dart';
 import 'pages/template/templatehead.dart';
+import 'pages/template/back-button.dart';
+import 'pages/edit_profile_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -39,6 +41,6 @@ class MyApp extends StatelessWidget {
           HistoryPage.idScreen: (context) => HistoryPage(),
           AccountPage.idScreen: (context) => AccountPage(),
         },
-        home: LoadingPage());
+        home: OrderPage());
   }
 }
