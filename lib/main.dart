@@ -1,8 +1,8 @@
 // ignore_for_file: unused_import
 
 import 'package:flutter/material.dart';
-
-import 'package:project_uts_online_transportation/pages/landingpage.dart';
+import 'package:project_uts_online_transportation/pages/flashride_items_page.dart';
+import 'package:project_uts_online_transportation/pages/flashtaxi.dart';
 import 'pages/loginpage.dart';
 import 'pages/loadingpage.dart';
 import 'package:project_uts_online_transportation/pages/account_page.dart';
@@ -40,6 +40,6 @@ class MyApp extends StatelessWidget {
           HistoryPage.idScreen: (context) => HistoryPage(),
           AccountPage.idScreen: (context) => AccountPage(),
         },
-        home: LoadingPage());
+        home: FlashTaxiPage());
   }
 }
