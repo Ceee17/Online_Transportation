@@ -15,11 +15,12 @@ import 'pages/order_page.dart';
 import 'pages/flashpick.dart';
 import 'pages/searchingdriver.dart';
 import 'pages/flashride_page.dart';
-import 'pages/imagebutton.dart';
 import 'pages/moveperson_page.dart';
 import 'pages/signuppage.dart';
 import 'pages/landingpage.dart';
+import 'pages/flashride_items_page.dart';
 import 'pages/template/templatehead.dart';
+import 'pages/paymenmethod.dart';
 
 void main() {
   runApp(const MyApp());
@@ -40,6 +41,6 @@ class MyApp extends StatelessWidget {
           HistoryPage.idScreen: (context) => HistoryPage(),
           AccountPage.idScreen: (context) => AccountPage(),
         },
-        home: LoadingPage());
+        home: MoveitemPage());
   }
 }
