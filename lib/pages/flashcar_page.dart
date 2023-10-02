@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:project_uts_online_transportation/pages/template/DraggableScrollableSheet.dart';
+import 'package:project_uts_online_transportation/pages/template/back-button.dart';
 
 class FlashCarPage extends StatelessWidget {
   const FlashCarPage({Key? key});
@@ -22,6 +23,11 @@ class FlashCarPage extends StatelessWidget {
                 backgroundColor: Color(0xff8DA2E2),
                 elevation: 0.0,
                 centerTitle: true,
+              ),
+              Positioned(
+                top: 40,
+                left: 20,
+                child: BackBtn(),
               ),
               Positioned(
                 top: 23,
