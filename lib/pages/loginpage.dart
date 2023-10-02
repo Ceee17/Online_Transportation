@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
+  static const String idScreen = "login";
   const LoginPage({Key? key}) : super(key: key);
 
   @override
