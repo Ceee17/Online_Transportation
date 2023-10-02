@@ -4,6 +4,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:project_uts_online_transportation/pages/order_page.dart';
 import 'package:project_uts_online_transportation/pages/template/template_nav_bar.dart';
 import 'package:project_uts_online_transportation/pages/template/templatehead.dart';
+import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
+import 'edit_profile_page.dart';
+import 'template/template-icon-card-button.dart';
 
 class AccountPage extends StatefulWidget {
   const AccountPage({super.key});
@@ -17,6 +20,83 @@ class _AccountPageState extends State<AccountPage> {
   late PageController _pageController;
 
   int _selectedIndex = 3;
+
+  YYDialog CustomDialog() {
+    return YYDialog().build(context)
+      ..width = 360
+      ..height = 360
+      ..borderRadius = 100
+      ..gravityAnimationEnable = true
+      ..gravity = Gravity.center
+      ..widget(Padding(
+        padding: EdgeInsets.only(
+          top: 100,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              'Are you sure?',
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.w800,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Container(
+              height: 52,
+              width: 234,
+              // color: Colors.red,
+
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(35),
+                  ),
+                  backgroundColor: Colors.red,
+                  elevation: 10,
+                ),
+                child: Text(
+                  'YES',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w800,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            TextButton(
+              onPressed: () {
+                // var yyDialog = YYDialog();
+                // yyDialog?.dismiss();
+
+                Navigator.pop(context);
+              },
+              child: Text(
+                'NO',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w800,
+                  color: Colors.black,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ))
+      ..show();
+  }
 
   @override
   void initState() {
@@ -42,6 +122,7 @@ class _AccountPageState extends State<AccountPage> {
 
   @override
   Widget build(BuildContext context) {
+    // YYDialog.init(context);
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: const SystemUiOverlayStyle(
         systemNavigationBarColor: Colors.white,
@@ -79,10 +160,18 @@ class _AccountPageState extends State<AccountPage> {
           child: Row(
             children: [
               Padding(padding: EdgeInsets.only(left: 10)),
-              SvgPicture.asset(
-                'lib/assets/images/profile_picture.svg',
-                height: 150,
-                width: 150,
+              Container(
+                // color: Colors.black,
+                decoration: ShapeDecoration(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(100),
+                  ),
+                ),
+                child: SvgPicture.asset(
+                  'lib/assets/images/profile_picture.svg',
+                  height: 150,
+                  width: 150,
+                ),
               ),
               Column(
                 children: [
@@ -124,15 +213,103 @@ class _AccountPageState extends State<AccountPage> {
             ],
           ),
         ),
-        Container(
-          height: 76,
-          width: 400,
-          color: Colors.black,
-          child: TextButton.icon(
-            onPressed: () {},
-            icon: Icon(Icons.payment),
-            label: Text('Payment Method'),
-            style: ButtonStyle(),
+        IconCardButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => EditProfile(),
+              ),
+            );
+          },
+          icon: Icon(
+            Icons.edit_outlined,
+            size: 30,
+          ),
+          text: Text(
+            'Edit Profile',
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ),
+        SizedBox(
+          height: 0,
+        ),
+        IconCardButton(
+          onPressed: () {},
+          icon: Icon(
+            Icons.payment_outlined,
+            size: 30,
+          ),
+          text: Text(
+            'Payment Method',
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ),
+        SizedBox(
+          height: 0,
+        ),
+        IconCardButton(
+          onPressed: () {},
+          icon: Icon(
+            Icons.assignment_outlined,
+            size: 30,
+          ),
+          text: Text(
+            'My Orders',
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ),
+        SizedBox(
+          height: 0,
+        ),
+        IconCardButton(
+          onPressed: () {},
+          icon: Icon(
+            Icons.help_outline,
+            size: 30,
+          ),
+          text: Text(
+            'Frequently Ask Question',
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ),
+        SizedBox(
+          height: 120,
+        ),
+        ElevatedButton(
+          onPressed: () {
+            CustomDialog();
+          },
+          style: ElevatedButton.styleFrom(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(50),
+            ),
+            backgroundColor: Colors.red,
+            padding: EdgeInsets.symmetric(
+              vertical: 14,
+              horizontal: 140,
+            ),
+            elevation: 10,
+          ),
+          child: Text(
+            'Log Out',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 22,
+              fontWeight: FontWeight.w700,
+            ),
           ),
         ),
       ],

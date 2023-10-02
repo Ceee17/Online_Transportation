@@ -4,6 +4,7 @@ import 'package:project_uts_online_transportation/pages/order_page.dart';
 import 'package:project_uts_online_transportation/pages/template/template-card-button.dart';
 import 'package:project_uts_online_transportation/pages/template/template_nav_bar.dart';
 import 'package:project_uts_online_transportation/pages/template/templatehead.dart';
+import 'template/back-button.dart';
 
 class HistoryPage extends StatefulWidget {
   const HistoryPage({super.key});
@@ -27,43 +28,7 @@ class _HistoryPageState extends State<HistoryPage> {
             TemplateHead(
               title: "HISTORY",
             ),
-            Padding(
-              padding: const EdgeInsets.only(
-                top: 0,
-                left: 0,
-                right: 320,
-                bottom: 20,
-              ),
-              child: Container(
-                width: 35,
-                height: 35,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    width: 1,
-                    color: Colors.black,
-                  ),
-                  shape: BoxShape.circle,
-                  color: Color(0xFF3B60CE),
-                ),
-                child: TextButton(
-                  onPressed: () {
-                    // Navigate to the order page
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => OrderPage()),
-                    );
-                  },
-                  style: ButtonStyle(
-                      padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
-                          EdgeInsets.only(left: 8))),
-                  child: Icon(
-                    Icons.arrow_back_ios,
-                    size: 20,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-            ),
+            BackBtn(),
             Expanded(
               child: SingleChildScrollView(
                 // padding: const EdgeInsets.only(top: 0, left: 0),
