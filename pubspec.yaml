@@ -70,6 +70,9 @@ flutter:
     - lib/assets/images/
     - lib/assets/images/startingpage.png
     - lib/assets/images/search.png
+    - lib/assets/images/taxi.png
+    - lib/assets/images/car.png
+    - lib/assets/images/2taxi.png
 
       # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -16,7 +16,7 @@ class CustomNavBar extends StatelessWidget {
       selectedIndex: selectedIndex,
       onItemSelected: onItemSelected,
       backgroundColor: Color(0xFFffffff),
-      waterDropColor: Color(0xFF3B60CE),
+      waterDropColor: Color(0xFF111D41),
       iconSize: 30,
       barItems: [
         BarItem(

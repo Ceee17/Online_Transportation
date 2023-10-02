@@ -17,6 +17,7 @@ import 'pages/flashride_page.dart';
 import 'pages/imagebutton.dart';
 import 'pages/moveperson_page.dart';
 import 'pages/signuppage.dart';
+import 'pages/forgotpasswordpage.dart';
 import 'pages/landingpage.dart';
 import 'pages/template/templatehead.dart';
 
@@ -39,6 +40,6 @@ class MyApp extends StatelessWidget {
           HistoryPage.idScreen: (context) => HistoryPage(),
           AccountPage.idScreen: (context) => AccountPage(),
         },
-        home: LoadingPage());
+        home: ForgotPasswordPage());
   }
 }
