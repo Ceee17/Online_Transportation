@@ -4,6 +4,13 @@ import 'package:project_uts_online_transportation/pages/template/template_nav_ba
 class SignupPage extends StatelessWidget {
   const SignupPage({Key? key}) : super(key: key);
 
+  TextEditingController fullnameTextEditingController = TextEditingController();
+  TextEditingController emailTextEditingController = TextEditingController();
+  TextEditingController phonenumberTextEditingController =
+      TextEditingController();
+  TextEditingController usernameTextEditingController = TextEditingController();
+  TextEditingController passwordTextEditingController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,6 +73,7 @@ class SignupPage extends StatelessWidget {
                     children: [
                       SizedBox(height: 50),
                       TextField(
+                        controller: fullnameTextEditingController,
                         decoration: InputDecoration(
                           // enabledBorder: OutlineInputBorder(
                           // borderSide: BorderSide(width: 13, color: Colors.black),
@@ -83,6 +91,7 @@ class SignupPage extends StatelessWidget {
                       ),
                       SizedBox(height: 15),
                       TextField(
+                        controller: emailTextEditingController,
                         obscureText: true,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
@@ -97,6 +106,7 @@ class SignupPage extends StatelessWidget {
                       ),
                       SizedBox(height: 15),
                       TextField(
+                        controller: phonenumberTextEditingController,
                         obscureText: true,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
@@ -111,6 +121,7 @@ class SignupPage extends StatelessWidget {
                       ),
                       SizedBox(height: 15),
                       TextField(
+                        controller: usernameTextEditingController,
                         obscureText: true,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
@@ -125,6 +136,7 @@ class SignupPage extends StatelessWidget {
                       ),
                       SizedBox(height: 15),
                       TextField(
+                        controller: passwordTextEditingController,
                         obscureText: true,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
@@ -142,7 +154,8 @@ class SignupPage extends StatelessWidget {
                       ),
                       ElevatedButton(
                         onPressed: () {
-                          print('"Login" button pressed');
+                          if (fullnameTextEditingController.text.length < 4) {}
+                          registerNewUser(context);
                         },
                         style: ElevatedButton.styleFrom(
                           primary: Color(0xFF111d41), // Ubah backgroundColor
@@ -202,5 +215,17 @@ class SignupPage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+
+  void registerNewUser(BuildContext context) async {
+    final firebaseUser = (await _firebaseAuth.createUserWithEmailAndPassword(
+            email: emailTextEditingController.text,
+            password: passwordTextEditingController.text))
+        .user;
+
+    if (firebaseUser != null) {
+    } else {}
   }
 }

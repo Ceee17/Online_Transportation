@@ -73,7 +73,7 @@ class LoginPage extends StatelessWidget {
                             EdgeInsets.symmetric(vertical: 8, horizontal: 20),
                         filled: true,
                         fillColor: Color(0xffffffff),
-                        labelText: 'Username',
+                        labelText: 'E-mail',
                       ),
                     ),
                     SizedBox(height: 15),
@@ -109,9 +109,7 @@ class LoginPage extends StatelessWidget {
                       height: 0,
                     ),
                     ElevatedButton(
-                      onPressed: () {
-                        // print('"Login" button pressed');
-                      },
+                      onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         primary: Color(0xFF111d41), // Ubah backgroundColor
                         onPrimary: Colors.white, // Ubah textColor
