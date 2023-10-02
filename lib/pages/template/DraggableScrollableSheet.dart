@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:project_uts_online_transportation/pages/flashcar_pickup.dart';
+import 'package:project_uts_online_transportation/pages/history_page.dart';
+import 'package:project_uts_online_transportation/pages/loadingpage.dart';
 
 class DragSheet extends StatefulWidget {
   const DragSheet({Key? key});
@@ -56,6 +59,12 @@ class _DragSheetState extends State<DragSheet> {
                             SizedBox(height: 45),
                             ElevatedButton(
                               onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          CarPickupPage()), // Navigate to CarPickupPage
+                                );
                                 // Add your onPressed logic here for Move People
                               },
                               style: ElevatedButton.styleFrom(
@@ -96,6 +105,12 @@ class _DragSheetState extends State<DragSheet> {
                             SizedBox(height: 55),
                             ElevatedButton(
                               onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          HistoryPage()), // Navigate to CarPickupPage
+                                );
                                 // Add your onPressed logic here for Move Items
                               },
                               style: ElevatedButton.styleFrom(

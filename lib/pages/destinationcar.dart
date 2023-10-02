@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:project_uts_online_transportation/pages/template/back-button.dart';
 
-class DestinationCarPage extends StatelessWidget {
+class DestinationCarPage extends StatefulWidget {
   const DestinationCarPage({Key? key});
   static const String idScreen = 'destinationcar';
 
+  @override
+  State<DestinationCarPage> createState() => _DestinationCarPageState();
+}
+
+class _DestinationCarPageState extends State<DestinationCarPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,6 +27,11 @@ class DestinationCarPage extends StatelessWidget {
                 backgroundColor: Color(0xff8DA2E2),
                 elevation: 0.0,
                 centerTitle: true,
+              ),
+              Positioned(
+                top: 80,
+                left: 20,
+                child: BackBtn(),
               ),
               Positioned(
                 top: 23,
@@ -90,129 +101,148 @@ class DestinationCarPage extends StatelessWidget {
             top: 108,
             child: Column(
               children: [
-                Container(
-                  width: 370,
-                  height: 79,
-                  margin: EdgeInsets.only(bottom: 40),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(36),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.2),
-                        spreadRadius: 2,
-                        blurRadius: 4,
-                        offset: Offset(0, 3),
-                      ),
-                    ],
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 14),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Tarumanagara university1',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                        SizedBox(height: 6),
-                        Text(
-                          'Letjen S. Parman St no.1, RT.6/RW.16, Tomang, Grogol',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 11,
-                            fontWeight: FontWeight.w400,
-                          ),
+                GestureDetector(
+                  onTap: () {
+                    // Add action for Tarumanagara University 1
+                  },
+                  child: Container(
+                    width: 370,
+                    height: 79,
+                    margin: EdgeInsets.only(bottom: 40),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(36),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.2),
+                          spreadRadius: 2,
+                          blurRadius: 4,
+                          offset: Offset(0, 3),
                         ),
                       ],
                     ),
-                  ),
-                ),
-                Container(
-                  width: 360,
-                  height: 79,
-                  margin: EdgeInsets.only(bottom: 40),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(36),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.2),
-                        spreadRadius: 2,
-                        blurRadius: 4,
-                        offset: Offset(0, 3),
+                    child: Padding(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Tarumanagara university1',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          SizedBox(height: 6),
+                          Text(
+                            'Letjen S. Parman St no.1, RT.6/RW.16, Tomang, Grogol',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 11,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 14),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Tarumanagara university2',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                        SizedBox(height: 6),
-                        Text(
-                          'Letjen S. Parman St no.1, RT.6/RW.16, Tomang, Grogol',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 11,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                      ],
                     ),
                   ),
                 ),
-                Container(
-                  width: 360,
-                  height: 79,
-                  margin: EdgeInsets.only(bottom: 50),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(36),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.2),
-                        spreadRadius: 2,
-                        blurRadius: 4,
-                        offset: Offset(0, 3),
-                      ),
-                    ],
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 14),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Tarumanagara university3',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                        SizedBox(height: 6),
-                        Text(
-                          'Letjen S. Parman St no.1, RT.6/RW.16, Tomang, Grogol',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 11,
-                            fontWeight: FontWeight.w400,
-                          ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                    // Add action for Tarumanagara University 2
+                  },
+                  child: Container(
+                    width: 360,
+                    height: 79,
+                    margin: EdgeInsets.only(bottom: 40),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(36),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.2),
+                          spreadRadius: 2,
+                          blurRadius: 4,
+                          offset: Offset(0, 3),
                         ),
                       ],
+                    ),
+                    child: Padding(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Tarumanagara university2',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          SizedBox(height: 6),
+                          Text(
+                            'Letjen S. Parman St no.1, RT.6/RW.16, Tomang, Grogol',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 11,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    // Add action for Tarumanagara University 3
+                  },
+                  child: Container(
+                    width: 360,
+                    height: 79,
+                    margin: EdgeInsets.only(bottom: 50),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(36),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.2),
+                          spreadRadius: 2,
+                          blurRadius: 4,
+                          offset: Offset(0, 3),
+                        ),
+                      ],
+                    ),
+                    child: Padding(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Tarumanagara university3',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          SizedBox(height: 6),
+                          Text(
+                            'Letjen S. Parman St no.1, RT.6/RW.16, Tomang, Grogol',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 11,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
