@@ -22,7 +22,7 @@ class _EditProfileState extends State<EditProfile> {
               padding: EdgeInsets.only(
                 left: 15,
                 right: 15,
-                top: 50,
+                top: 45,
               ),
               child: GestureDetector(
                 onTap: () {
@@ -32,8 +32,8 @@ class _EditProfileState extends State<EditProfile> {
                   child: Stack(
                     children: [
                       Container(
-                        width: 130,
-                        height: 130,
+                        width: 150,
+                        height: 150,
                         decoration: BoxDecoration(
                           border: Border.all(
                             width: 4,
@@ -67,7 +67,7 @@ class _EditProfileState extends State<EditProfile> {
                               width: 4,
                               color: Colors.white,
                             ),
-                            color: Colors.blue,
+                            color: Color(0xFF3B60CE),
                           ),
                           child: Icon(
                             Icons.edit,

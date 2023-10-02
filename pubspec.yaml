@@ -72,6 +72,8 @@ flutter:
     - lib/assets/images/taxi.png
     - lib/assets/images/car.png
     - lib/assets/images/2taxi.png
+    - lib/assets/images/forgpass.png
+    - lib/assets/images/mess.png
 
 
       # An image asset can refer to one or more resolution-specific "variants", see

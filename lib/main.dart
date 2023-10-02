@@ -16,11 +16,12 @@ import 'pages/order_page.dart';
 import 'pages/flashpick.dart';
 import 'pages/searchingdriver.dart';
 import 'pages/flashride_page.dart';
-import 'pages/imagebutton.dart';
 import 'pages/moveperson_page.dart';
 import 'pages/signuppage.dart';
 import 'pages/forgotpasswordpage.dart';
 import 'pages/landingpage.dart';
+import 'pages/paymenmethod.dart';
+import 'pages/emailhbspage.dart';
 import 'pages/template/templatehead.dart';
 import 'pages/template/back-button.dart';
 import 'pages/edit_profile_page.dart';
@@ -43,7 +44,8 @@ class MyApp extends StatelessWidget {
           OrderPage.idScreen: (context) => OrderPage(),
           HistoryPage.idScreen: (context) => HistoryPage(),
           AccountPage.idScreen: (context) => AccountPage(),
+          LoginPage.idScreen: (context) => LoginPage(),
         },
-        home: OrderPage());
+        home: MoveitemPage());
   }
 }
