@@ -62,15 +62,19 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - lib/assets/images/
     - lib/assets/images/flashicon_rounded.png
-    # - lib/assets/images/flashicon.png
     - lib/assets/images/1.png
     - lib/assets/images/waitingdriver.png
     - lib/assets/images/waiting.png
-    # - lib/assets/images/1.png
-    - lib/assets/images/
     - lib/assets/images/startingpage.png
     - lib/assets/images/search.png
+    - lib/assets/images/taxi.png
+    - lib/assets/images/car.png
+    - lib/assets/images/2taxi.png
+    - lib/assets/images/forgpass.png
+    - lib/assets/images/mess.png
+
 
       # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
