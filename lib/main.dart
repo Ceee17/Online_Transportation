@@ -40,7 +40,8 @@ class MyApp extends StatelessWidget {
           OrderPage.idScreen: (context) => OrderPage(),
           HistoryPage.idScreen: (context) => HistoryPage(),
           AccountPage.idScreen: (context) => AccountPage(),
+          LoginPage.idScreen: (context) => LoginPage(),
         },
-        home: OrderPage());
+        home: LoadingPage());
   }
 }
