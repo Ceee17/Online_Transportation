@@ -8,7 +8,8 @@ class ForgotPasswordPage extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
               padding: EdgeInsets.all(16.0),
@@ -24,6 +25,11 @@ class ForgotPasswordPage extends StatelessWidget {
                   textAlign: TextAlign.left,
                 ),
               ),
+            ),
+            Image.asset(
+              'lib/assets/images/forgpass.png',
+              width: 450,
+              height: 250,
             ),
           ],
         ),
