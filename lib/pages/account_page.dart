@@ -286,7 +286,7 @@ class _AccountPageState extends State<AccountPage> {
           ),
         ),
         SizedBox(
-          height: 100,
+          height: 120,
         ),
         ElevatedButton(
           onPressed: () {
