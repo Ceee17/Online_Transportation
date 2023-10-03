@@ -1,6 +1,7 @@
 // ignore_for_file: unused_import
 
 import 'package:flutter/material.dart';
+import 'package:project_uts_online_transportation/pages/flashcar_item_page.dart';
 // import 'package:project_uts_online_transportation/pages/flashcar_item_page.dart';
 // import 'package:project_uts_online_transportation/pages/google_maps.dart';
 // import 'package:project_uts_online_transportation/pages/flashridedestination.dart';
@@ -36,6 +37,7 @@ import 'pages/emailhbspage.dart';
 import 'pages/template/templatehead.dart';
 import 'pages/template/back-button.dart';
 import 'pages/edit_profile_page.dart';
+import 'package:project_uts_online_transportation/pages/flashcar_item_page.dart';
 
 void main() {
   runApp(const MyApp());
