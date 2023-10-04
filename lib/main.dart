@@ -1,8 +1,11 @@
 // ignore_for_file: unused_import
 
 import 'package:flutter/material.dart';
-import 'package:project_uts_online_transportation/pages/flashride_items_page.dart';
-import 'package:project_uts_online_transportation/pages/flashtaxi.dart';
+import 'pages/chatpage.dart';
+import 'pages/faqpage.dart';
+import 'pages/homechatpage.dart';
+import 'pages/flashride_items_page.dart';
+import 'pages/flashtaxi.dart';
 
 import 'pages/loginpage.dart';
 import 'pages/loadingpage.dart';
