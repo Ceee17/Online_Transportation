@@ -236,7 +236,7 @@ class DestinationCarPage extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        'Use Your Current Location',
+                        'Select Via Maps',
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 11,
