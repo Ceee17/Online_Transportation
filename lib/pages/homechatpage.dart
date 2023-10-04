@@ -68,6 +68,12 @@ class _HomeState extends State<Home> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
+                Spacer(),
+                SizedBox(width: 10),
+                Image.asset('lib/assets/images/undraw_Chat_re_re1u.png',
+                width: 50,
+                height: 50,
+                ),
               ],
             ),
           ),
@@ -87,7 +93,9 @@ class _HomeState extends State<Home> {
                     onEditingComplete: _searchContacts,
                     decoration: InputDecoration(
                       hintText: 'Search',
+                      hintStyle: TextStyle(color: Colors.white),
                     ),
+                    style: TextStyle(color: Colors.white),
                   ),
                 ),
                 Expanded(
