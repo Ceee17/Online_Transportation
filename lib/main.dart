@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:project_uts_online_transportation/pages/flashcar_item_page.dart';
 import 'package:project_uts_online_transportation/pages/flashride_items_page.dart';
 import 'package:project_uts_online_transportation/pages/flashtaxi.dart';
+import 'package:project_uts_online_transportation/pages/google_maps.dart';
 
 import 'pages/loginpage.dart';
 import 'pages/loadingpage.dart';
@@ -48,6 +49,6 @@ class MyApp extends StatelessWidget {
           AccountPage.idScreen: (context) => AccountPage(),
           LoginPage.idScreen: (context) => LoginPage(),
         },
-        home: FlashCarPage());
+        home: MapSample());
   }
 }
