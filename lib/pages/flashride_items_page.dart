@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
-import 'flashbtntxt.dart';
+// import 'flashbtntxt.dart';
 
 class MoveitemPage extends StatefulWidget {
   const MoveitemPage({Key? key}) : super(key: key);
@@ -123,12 +123,29 @@ class _MoveitemPageState extends State<MoveitemPage> {
                                           Padding(
                                             padding: const EdgeInsets.only(
                                               top: 10,
-                                              left: 15,
-                                              right: 15,
+                                              left: 5,
+                                              right: 5,
                                             ),
-                                            child: TextField(
-                                              decoration: InputDecoration(
-                                                label: Row(
+                                            child: Container(
+                                              width:
+                                                  330, // Adjust the width as needed
+                                              height:
+                                                  40, // Adjust the height as needed
+                                              child: ElevatedButton(
+                                                onPressed: () {
+                                                  // Handle the button press for "Enter Pickup Location"
+                                                },
+                                                style: ElevatedButton.styleFrom(
+                                                  primary: Color(0xff8DA2E2),
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            15.0),
+                                                  ),
+                                                ),
+                                                child: Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
                                                   children: [
                                                     Icon(
                                                       Icons.location_on,
@@ -136,27 +153,13 @@ class _MoveitemPageState extends State<MoveitemPage> {
                                                       color: Colors.blue[300],
                                                     ),
                                                     Text(
-                                                        'Enter Pickup Location')
+                                                      'Enter Pickup Location',
+                                                      style: TextStyle(
+                                                        fontSize: 15,
+                                                        color: Colors.white,
+                                                      ),
+                                                    ),
                                                   ],
-                                                ),
-                                                border: OutlineInputBorder(
-                                                  borderRadius:
-                                                      BorderRadius.circular(25),
-                                                ),
-                                                contentPadding:
-                                                    EdgeInsets.symmetric(
-                                                  vertical: 8,
-                                                  horizontal: 20,
-                                                ),
-                                                filled: true,
-                                                fillColor: Color(0xffffffff),
-                                                // prefixIcon: Icon(
-                                                //     Icons.location_on,
-                                                //     size:20),
-                                                // labelText:
-                                                //     'Enter Pickup Location',
-                                                labelStyle: TextStyle(
-                                                  fontSize: 15,
                                                 ),
                                               ),
                                             ),
@@ -208,26 +211,26 @@ class _MoveitemPageState extends State<MoveitemPage> {
                                                   ),
                                                   child: TextField(
                                                     decoration: InputDecoration(
-                                                        border:
-                                                            OutlineInputBorder(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(25),
-                                                        ),
-                                                        contentPadding:
-                                                            EdgeInsets
-                                                                .symmetric(
-                                                          vertical: 8,
-                                                          horizontal: 20,
-                                                        ),
-                                                        filled: true,
-                                                        fillColor:
-                                                            Color(0xffffffff),
-                                                        labelText:
-                                                            'Enter Sender Number...',
-                                                        labelStyle: TextStyle(
-                                                          fontSize: 10,
-                                                        )),
+                                                      border:
+                                                          OutlineInputBorder(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(25),
+                                                      ),
+                                                      contentPadding:
+                                                          EdgeInsets.symmetric(
+                                                        vertical: 8,
+                                                        horizontal: 20,
+                                                      ),
+                                                      filled: true,
+                                                      fillColor:
+                                                          Color(0xffffffff),
+                                                      labelText:
+                                                          'Enter Sender Number...',
+                                                      labelStyle: TextStyle(
+                                                        fontSize: 10,
+                                                      ),
+                                                    ),
                                                   ),
                                                 ),
                                               ),
@@ -242,7 +245,7 @@ class _MoveitemPageState extends State<MoveitemPage> {
                             );
                           case 2:
                             return Positioned(
-                              top: 30,
+                              top: 5,
                               child: Column(
                                 children: <Widget>[
                                   SizedBox(height: 30),
@@ -261,34 +264,43 @@ class _MoveitemPageState extends State<MoveitemPage> {
                                           Padding(
                                             padding: const EdgeInsets.only(
                                               top: 10,
-                                              left: 15,
-                                              right: 15,
+                                              left: 5,
+                                              right: 5,
                                             ),
-                                            child: TextField(
-                                              decoration: InputDecoration(
-                                                label: Row(
+                                            child: Container(
+                                              width:
+                                                  330, // Adjust the width as needed
+                                              height:
+                                                  40, // Adjust the height as needed
+                                              child: ElevatedButton(
+                                                onPressed: () {
+                                                  // Handle the button press for "Enter Pickup Location"
+                                                },
+                                                style: ElevatedButton.styleFrom(
+                                                  primary: Color(0xff8DA2E2),
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            15.0),
+                                                  ),
+                                                ),
+                                                child: Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
                                                   children: [
                                                     Icon(
                                                       Icons.location_on,
                                                       size: 15,
                                                       color: Colors.blue[300],
                                                     ),
-                                                    Text('Where to deliver')
+                                                    Text(
+                                                      'Where to deliver',
+                                                      style: TextStyle(
+                                                        fontSize: 15,
+                                                        color: Colors.white,
+                                                      ),
+                                                    ),
                                                   ],
-                                                ),
-                                                border: OutlineInputBorder(
-                                                  borderRadius:
-                                                      BorderRadius.circular(25),
-                                                ),
-                                                contentPadding:
-                                                    EdgeInsets.symmetric(
-                                                  vertical: 8,
-                                                  horizontal: 20,
-                                                ),
-                                                filled: true,
-                                                fillColor: Color(0xffffffff),
-                                                labelStyle: TextStyle(
-                                                  fontSize: 15,
                                                 ),
                                               ),
                                             ),
@@ -376,110 +388,126 @@ class _MoveitemPageState extends State<MoveitemPage> {
                             // Call the function to calculate a random price
                             calculateRandomPrice();
 
-                            return Positioned(
-                              right: 530,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                children: <Widget>[
-                                  SizedBox(height: 30),
-                                  Container(
-                                    width: 180,
-                                    height: 175,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xff8DA2E2),
-                                      borderRadius: BorderRadius.circular(15.0),
-                                    ),
-                                    child: Column(
-                                      children: [
-                                        Text(
-                                          'Select Item Weight',
-                                          style: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                        SizedBox(height: 10),
-                                        Container(
-                                          width: 167,
-                                          height: 40,
-                                          decoration: BoxDecoration(
-                                            color: Colors.white,
-                                            borderRadius:
-                                                BorderRadius.circular(15.0),
-                                          ),
-                                          child: Center(
-                                            child: DropdownButton<String>(
-                                              value: selectedValue,
-                                              onChanged: (String? newValue) {
-                                                setState(() {
-                                                  selectedValue = newValue!;
-                                                });
-                                              },
-                                              items: <String>[
-                                                'Item Weight', // Include the initial value
-                                                'Small',
-                                                'Medium',
-                                                'Large',
-                                              ].map<DropdownMenuItem<String>>(
-                                                (String value) {
-                                                  return DropdownMenuItem<
-                                                      String>(
-                                                    value: value,
-                                                    child: Text(
-                                                      value,
-                                                      style: TextStyle(
-                                                        fontSize: 12,
-                                                      ),
-                                                    ),
-                                                  );
-                                                },
-                                              ).toList(),
+                            return Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 38.0), // Add top padding here
+                                  child: Container(
+                                    width: 178.5, // Adjust the width as needed
+                                    height:
+                                        178.5, // Adjust the height as needed
+                                    child: Image.asset(
+                                      'lib/assets/images/ItemBox.png',
+                                    ), // Replace 'your_image.png' with your image asset path
+                                  ),
+                                ),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    SizedBox(height: 30),
+                                    Container(
+                                      width: 180,
+                                      height: 175,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xff8DA2E2),
+                                        borderRadius:
+                                            BorderRadius.circular(15.0),
+                                      ),
+                                      child: Column(
+                                        children: [
+                                          Text(
+                                            'Select Item Weight',
+                                            style: TextStyle(
+                                              fontSize: 14,
+                                              color: Colors.white,
                                             ),
                                           ),
-                                        ),
-                                        SizedBox(height: 10),
-                                        Text(
-                                          'Price: \$${randomPrice.toStringAsFixed(2)}',
-                                          style: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.white,
+                                          SizedBox(height: 10),
+                                          Container(
+                                            width: 167,
+                                            height: 40,
+                                            decoration: BoxDecoration(
+                                              color: Colors.white,
+                                              borderRadius:
+                                                  BorderRadius.circular(15.0),
+                                            ),
+                                            child: Center(
+                                              child: DropdownButton<String>(
+                                                value: selectedValue,
+                                                onChanged: (String? newValue) {
+                                                  setState(() {
+                                                    selectedValue = newValue!;
+                                                  });
+                                                },
+                                                items: <String>[
+                                                  'Item Weight', // Include the initial value
+                                                  'Small',
+                                                  'Medium',
+                                                  'Large',
+                                                ].map<DropdownMenuItem<String>>(
+                                                  (String value) {
+                                                    return DropdownMenuItem<
+                                                        String>(
+                                                      value: value,
+                                                      child: Text(
+                                                        value,
+                                                        style: TextStyle(
+                                                          fontSize: 12,
+                                                        ),
+                                                      ),
+                                                    );
+                                                  },
+                                                ).toList(),
+                                              ),
+                                            ),
                                           ),
-                                        ),
-                                        SizedBox(height: 10),
-                                        Container(
-                                          width: 150,
-                                          height: 40,
-                                          decoration: BoxDecoration(
-                                            color: Color(0xffFFFFFF),
-                                            borderRadius:
-                                                BorderRadius.circular(25.0),
+                                          SizedBox(height: 10),
+                                          Text(
+                                            'Price: \$${randomPrice.toStringAsFixed(2)}',
+                                            style: TextStyle(
+                                              fontSize: 14,
+                                              color: Colors.white,
+                                            ),
                                           ),
-                                          child: ElevatedButton(
-                                            style: ElevatedButton.styleFrom(
-                                              primary: Colors.transparent,
-                                              elevation: 0,
-                                              shape: RoundedRectangleBorder(
-                                                borderRadius: BorderRadius.all(
-                                                  Radius.circular(25),
+                                          SizedBox(height: 10),
+                                          Container(
+                                            width: 150,
+                                            height: 40,
+                                            decoration: BoxDecoration(
+                                              color: Color(0xffFFFFFF),
+                                              borderRadius:
+                                                  BorderRadius.circular(25.0),
+                                            ),
+                                            child: ElevatedButton(
+                                              style: ElevatedButton.styleFrom(
+                                                primary: Colors.transparent,
+                                                elevation: 0,
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                    Radius.circular(25),
+                                                  ),
+                                                ),
+                                              ),
+                                              onPressed: () {
+                                                // Handle the onPressed event
+                                              },
+                                              child: Text(
+                                                'Order',
+                                                style: TextStyle(
+                                                  color: Colors.black,
                                                 ),
                                               ),
                                             ),
-                                            onPressed: () {
-                                              // Handle the onPressed event
-                                            },
-                                            child: Text(
-                                              'Order',
-                                              style: TextStyle(
-                                                color: Colors.black,
-                                              ),
-                                            ),
                                           ),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
-                                  ),
-                                ],
-                              ),
+                                  ],
+                                ),
+                              ],
                             );
                           default:
                             return null;
