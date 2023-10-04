@@ -88,132 +88,165 @@ class DestinationbikePage extends StatelessWidget {
             top: 108,
             child: Column(
               children: [
-                Container(
-                  width: 370,
-                  height: 79,
-                  margin: EdgeInsets.only(bottom: 40),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(36),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.2),
-                        spreadRadius: 2,
-                        blurRadius: 4,
-                        offset: Offset(0, 3),
-                      ),
-                    ],
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 14),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Tarumanagara university1',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                        SizedBox(height: 6),
-                        Text(
-                          'Letjen S. Parman St no.1, RT.6/RW.16, Tomang, Grogol',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 11,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Container(
-                  width: 360,
-                  height: 79,
-                  margin: EdgeInsets.only(bottom: 40),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(36),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.2),
-                        spreadRadius: 2,
-                        blurRadius: 4,
-                        offset: Offset(0, 3),
-                      ),
-                    ],
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 14),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Tarumanagara university2',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                        SizedBox(height: 6),
-                        Text(
-                          'Letjen S. Parman St no.1, RT.6/RW.16, Tomang, Grogol',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 11,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Container(
-                  width: 360,
-                  height: 79,
-                  margin: EdgeInsets.only(bottom: 50),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(36),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.2),
-                        spreadRadius: 2,
-                        blurRadius: 4,
-                        offset: Offset(0, 3),
-                      ),
-                    ],
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 14),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Tarumanagara university3',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                        SizedBox(height: 6),
-                        Text(
-                          'Letjen S. Parman St no.1, RT.6/RW.16, Tomang, Grogol',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 11,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                ElevatedButton(
+  onPressed: () {
+    // Add your button click logic here
+  },
+  style: ElevatedButton.styleFrom(
+    padding: EdgeInsets.zero, // Remove default padding
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(36),
+    ),
+    elevation: 4,
+    primary: Colors.white,
+  ),
+  child: Container(
+    width: 360,
+    height: 79,
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(36),
+      boxShadow: [
+        BoxShadow(
+          color: Colors.black.withOpacity(0.2),
+          spreadRadius: 2,
+          blurRadius: 4,
+          offset: Offset(0, 3),
+        ),
+      ],
+    ),
+    child: Padding(
+      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Tarumanagara university2',
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          SizedBox(height: 6),
+          Text(
+            'Letjen S. Parman St no.1, RT.6/RW.16, Tomang, Grogol',
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 11,
+              fontWeight: FontWeight.w400,
+            ),
+          ),
+        ],
+      ),
+    ),
+  ),
+),
+                ElevatedButton(
+  onPressed: () {
+    // Add your button click logic here
+  },
+  style: ElevatedButton.styleFrom(
+    padding: EdgeInsets.zero, // Remove default padding
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(36),
+    ),
+    elevation: 4,
+    primary: Colors.white,
+  ),
+  child: Container(
+    width: 360,
+    height: 79,
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(36),
+      boxShadow: [
+        BoxShadow(
+          color: Colors.black.withOpacity(0.2),
+          spreadRadius: 2,
+          blurRadius: 4,
+          offset: Offset(0, 3),
+        ),
+      ],
+    ),
+    child: Padding(
+      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Tarumanagara university2',
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          SizedBox(height: 6),
+          Text(
+            'Letjen S. Parman St no.1, RT.6/RW.16, Tomang, Grogol',
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 11,
+              fontWeight: FontWeight.w400,
+            ),
+          ),
+        ],
+      ),
+    ),
+  ),
+),
+                ElevatedButton(
+  onPressed: () {
+    // Add your button click logic here
+  },
+  style: ElevatedButton.styleFrom(
+    padding: EdgeInsets.zero, // Remove default padding
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(36),
+    ),
+    elevation: 4,
+    primary: Colors.white,
+  ),
+  child: Container(
+    width: 360,
+    height: 79,
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(36),
+      boxShadow: [
+        BoxShadow(
+          color: Colors.black.withOpacity(0.2),
+          spreadRadius: 2,
+          blurRadius: 4,
+          offset: Offset(0, 3),
+        ),
+      ],
+    ),
+    child: Padding(
+      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Tarumanagara university2',
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          SizedBox(height: 6),
+          Text(
+            'Letjen S. Parman St no.1, RT.6/RW.16, Tomang, Grogol',
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 11,
+              fontWeight: FontWeight.w400,
+            ),
+          ),
+        ],
+      ),
+    ),
+  ),
+),
                 Container(
                   width: 312,
                   height: 59,
