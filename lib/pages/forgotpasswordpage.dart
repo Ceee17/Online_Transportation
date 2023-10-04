@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_uts_online_transportation/pages/loginpage.dart';
 
 class ForgotPasswordPage extends StatelessWidget {
   const ForgotPasswordPage({Key? key}) : super(key: key);
@@ -108,7 +109,13 @@ class ForgotPasswordPage extends StatelessWidget {
                   height: 35,
                   width: 100,
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => LoginPage(),
+                          ));
+                    },
                     child: Text(
                       'Log in',
                       style: TextStyle(
