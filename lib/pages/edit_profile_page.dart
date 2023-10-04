@@ -96,7 +96,7 @@ class _EditProfileState extends State<EditProfile> {
             ),
             buildTextField(
               'Phone Number',
-              '081281692004',
+              '0800-0000-0000',
               false,
             ),
             buildTextField(
