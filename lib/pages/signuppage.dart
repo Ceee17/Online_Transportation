@@ -96,7 +96,6 @@ class SignupPage extends StatelessWidget {
                       SizedBox(height: 15),
                       TextField(
                         controller: emailTextEditingController,
-                        obscureText: true,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(7),
@@ -111,7 +110,6 @@ class SignupPage extends StatelessWidget {
                       SizedBox(height: 15),
                       TextField(
                         controller: phonenumberTextEditingController,
-                        obscureText: true,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(7),
@@ -126,7 +124,6 @@ class SignupPage extends StatelessWidget {
                       SizedBox(height: 15),
                       TextField(
                         controller: usernameTextEditingController,
-                        obscureText: true,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(7),
