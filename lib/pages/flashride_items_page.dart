@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
-// import 'flashbtntxt.dart';
+import 'destinationbike.dart';
 
 class MoveitemPage extends StatefulWidget {
   const MoveitemPage({Key? key}) : super(key: key);
@@ -24,7 +24,7 @@ class _MoveitemPageState extends State<MoveitemPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(247.0),
+        preferredSize: Size.fromHeight(200.0),
         child: ClipRRect(
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(25.0),
@@ -38,7 +38,7 @@ class _MoveitemPageState extends State<MoveitemPage> {
                 centerTitle: true,
               ),
               Positioned(
-                top: 130,
+                top: 80,
                 left: 15,
                 child: Container(
                   width: 230,
@@ -46,7 +46,7 @@ class _MoveitemPageState extends State<MoveitemPage> {
                 ),
               ),
               Positioned(
-                top: 180,
+                top: 130,
                 left: 250,
                 child: Container(
                   child: Text(
@@ -107,7 +107,7 @@ class _MoveitemPageState extends State<MoveitemPage> {
                               top: 5,
                               child: Column(
                                 children: <Widget>[
-                                  SizedBox(height: 30),
+                                  SizedBox(height: 35),
                                   SizedBox(
                                     width: 375,
                                     height:
@@ -136,7 +136,7 @@ class _MoveitemPageState extends State<MoveitemPage> {
                                                   // Handle the button press for "Enter Pickup Location"
                                                 },
                                                 style: ElevatedButton.styleFrom(
-                                                  primary: Color(0xff8DA2E2),
+                                                  primary: Color(0xffFFFFFF),
                                                   shape: RoundedRectangleBorder(
                                                     borderRadius:
                                                         BorderRadius.circular(
@@ -150,13 +150,14 @@ class _MoveitemPageState extends State<MoveitemPage> {
                                                     Icon(
                                                       Icons.location_on,
                                                       size: 15,
-                                                      color: Colors.blue[300],
+                                                      color: Color(0xff8DA2E2),
                                                     ),
                                                     Text(
                                                       'Enter Pickup Location',
                                                       style: TextStyle(
                                                         fontSize: 15,
-                                                        color: Colors.white,
+                                                        color:
+                                                            Color(0xff828282),
                                                       ),
                                                     ),
                                                   ],
@@ -245,10 +246,10 @@ class _MoveitemPageState extends State<MoveitemPage> {
                             );
                           case 2:
                             return Positioned(
-                              top: 5,
+                              // top: 100,
                               child: Column(
                                 children: <Widget>[
-                                  SizedBox(height: 30),
+                                  SizedBox(height: 40),
                                   SizedBox(
                                     width: 375,
                                     height:
@@ -274,10 +275,15 @@ class _MoveitemPageState extends State<MoveitemPage> {
                                                   40, // Adjust the height as needed
                                               child: ElevatedButton(
                                                 onPressed: () {
-                                                  // Handle the button press for "Enter Pickup Location"
+                                                  Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            DestinationbikePage()), // Ganti TujuanPage() dengan halaman yang ingin Anda navigasikan
+                                                  );
                                                 },
                                                 style: ElevatedButton.styleFrom(
-                                                  primary: Color(0xff8DA2E2),
+                                                  primary: Color(0xffFFFFFF),
                                                   shape: RoundedRectangleBorder(
                                                     borderRadius:
                                                         BorderRadius.circular(
@@ -291,13 +297,14 @@ class _MoveitemPageState extends State<MoveitemPage> {
                                                     Icon(
                                                       Icons.location_on,
                                                       size: 15,
-                                                      color: Colors.blue[300],
+                                                      color: Color(0xff8DA2E2),
                                                     ),
                                                     Text(
                                                       'Where to deliver',
                                                       style: TextStyle(
                                                         fontSize: 15,
-                                                        color: Colors.white,
+                                                        color:
+                                                            Color(0xff828282),
                                                       ),
                                                     ),
                                                   ],
@@ -393,7 +400,7 @@ class _MoveitemPageState extends State<MoveitemPage> {
                               children: <Widget>[
                                 Padding(
                                   padding: const EdgeInsets.only(
-                                      top: 38.0), // Add top padding here
+                                      top: 33.0), // Add top padding here
                                   child: Container(
                                     width: 178.5, // Adjust the width as needed
                                     height:
@@ -406,7 +413,7 @@ class _MoveitemPageState extends State<MoveitemPage> {
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: <Widget>[
-                                    SizedBox(height: 30),
+                                    SizedBox(height: 40),
                                     Container(
                                       width: 180,
                                       height: 175,
