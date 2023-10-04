@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'destinationbike.dart';
+import 'flashride_pickup.dart';
 
 class MoveitemPage extends StatefulWidget {
   const MoveitemPage({Key? key}) : super(key: key);
@@ -133,7 +134,12 @@ class _MoveitemPageState extends State<MoveitemPage> {
                                                   40, // Adjust the height as needed
                                               child: ElevatedButton(
                                                 onPressed: () {
-                                                  // Handle the button press for "Enter Pickup Location"
+                                                  Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            PickupBikePage()), // Ganti TujuanPage() dengan halaman yang ingin Anda navigasikan
+                                                  );
                                                 },
                                                 style: ElevatedButton.styleFrom(
                                                   primary: Color(0xffFFFFFF),

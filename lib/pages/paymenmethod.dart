@@ -27,7 +27,7 @@ class PaymenPage extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  height: 80,
+                  height: 40,
                   child: Text(
                     'Your Payment Method',
                     style: TextStyle(
@@ -53,7 +53,7 @@ class PaymenPage extends StatelessWidget {
                     children: [
                       SizedBox(height: 20,),
                       CustomCardButton(
-                        svgAsset: 'lib/assets/images/cash.svg',
+                        svgAsset: 'lib/assets/images/FlashCoin.svg',
                         svgHeight: 80,
                         svgWidth: 80,
                         title: 'Flash Coins',
@@ -79,10 +79,10 @@ class PaymenPage extends StatelessWidget {
 
                       SizedBox(height: 20,),
                       CustomCardButton(
-                        svgAsset: 'lib/assets/images/cash.svg',
-                        svgHeight: 80,
-                        svgWidth: 80,
-                        title: 'Ovo',
+                        svgAsset: 'lib/assets/images/ovo.svg',
+                        svgHeight: 30,
+                        svgWidth: 30,
+                        title: 'ovo',
                         description:
                             'make payments \ndirectly to drivers \nusing cash',
                         color: Color(0xFF8DA2E2),
@@ -92,9 +92,9 @@ class PaymenPage extends StatelessWidget {
 
                       SizedBox(height: 20,),
                       CustomCardButton(
-                        svgAsset: 'lib/assets/images/cash.svg',
-                        svgHeight: 80,
-                        svgWidth: 80,
+                        svgAsset: 'lib/assets/images/gopay.svg',
+                        svgHeight: 25,
+                        svgWidth: 25,
                         title: 'Gopay',
                         description:
                             'make payments \ndirectly to drivers \nusing cash',
