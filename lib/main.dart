@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:project_uts_online_transportation/pages/chatpage.dart';
+import 'package:project_uts_online_transportation/pages/faqpage.dart';
+import 'package:project_uts_online_transportation/pages/homechatpage.dart';
 import 'pages/startingpage.dart';
 import 'pages/flashcar_page.dart';
 import 'pages/order_page.dart';
-import 'pages/templatehead.dart';
+import 'pages/template/templatehead.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,6 +22,6 @@ class MyApp extends StatelessWidget {
           fontFamily: "Poppins",
         ),
         debugShowCheckedModeBanner: false,
-        home: OrderPage());
+        home: FigmaToCodeApp());
   }
 }
