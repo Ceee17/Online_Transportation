@@ -1,11 +1,33 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
-import 'package:project_uts_online_transportation/pages/chatpage.dart';
-import 'package:project_uts_online_transportation/pages/faqpage.dart';
-import 'package:project_uts_online_transportation/pages/homechatpage.dart';
+import 'pages/chatpage.dart';
+import 'pages/faqpage.dart';
+import 'pages/homechatpage.dart';
+import 'pages/flashride_items_page.dart';
+import 'pages/flashtaxi.dart';
+
+import 'pages/loginpage.dart';
+import 'pages/loadingpage.dart';
+import 'package:project_uts_online_transportation/pages/account_page.dart';
+import 'package:project_uts_online_transportation/pages/destinationcar.dart';
+import 'package:project_uts_online_transportation/pages/flashcar_pickup.dart';
+import 'package:project_uts_online_transportation/pages/history_page.dart';
 import 'pages/startingpage.dart';
 import 'pages/flashcar_page.dart';
 import 'pages/order_page.dart';
+import 'pages/flashpick.dart';
+import 'pages/searchingdriver.dart';
+import 'pages/flashride_page.dart';
+import 'pages/moveperson_page.dart';
+import 'pages/signuppage.dart';
+import 'pages/forgotpasswordpage.dart';
+import 'pages/landingpage.dart';
+import 'pages/paymenmethod.dart';
+import 'pages/emailhbspage.dart';
 import 'pages/template/templatehead.dart';
+import 'pages/template/back-button.dart';
+import 'pages/edit_profile_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +36,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -22,6 +43,12 @@ class MyApp extends StatelessWidget {
           fontFamily: "Poppins",
         ),
         debugShowCheckedModeBanner: false,
-        home: Home());
+        routes: {
+          OrderPage.idScreen: (context) => OrderPage(),
+          HistoryPage.idScreen: (context) => HistoryPage(),
+          AccountPage.idScreen: (context) => AccountPage(),
+          LoginPage.idScreen: (context) => LoginPage(),
+        },
+        home: MoveitemPage());
   }
 }

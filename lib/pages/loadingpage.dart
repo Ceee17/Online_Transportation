@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project_uts_online_transportation/pages/order_page.dart';
+import 'package:project_uts_online_transportation/pages/startingpage.dart';
 // import 'package:flutter/widgets.dart';
 
 class LoadingPage extends StatefulWidget {
@@ -16,13 +17,11 @@ class _LoadingPageState extends State<LoadingPage> {
     _navigatetohome();
   }
 
-_navigatetohome()async{
-  await Future.delayed(Duration(milliseconds: 1500), () {});
-  Navigator.pushReplacement(
-    context, 
-    MaterialPageRoute(
-      builder: (context)=>OrderPage()));
-}
+  _navigatetohome() async {
+    await Future.delayed(Duration(milliseconds: 2000), () {});
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => StartingPage()));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,33 +31,11 @@ _navigatetohome()async{
         // SizedBox(height: 50),
         Center(
           child: Image.asset(
-            'lib/assets/images/1.png',
-            width: 110,
-            height: 110,
+            'lib/assets/images/2.png',
+            width: 200,
+            height: 200,
           ),
         ),
-        // SizedBox(height: 100),
-        // Row(
-        //   children: [
-        //     Text(
-        //       'Fla',
-        //       style: TextStyle(
-        //         fontSize: 30,
-        //       ),
-        //     ),
-        //     Icon(
-        //       Icons.bolt,
-        //       size: 100,
-        //       color: Color(0xFFE5FF70),
-        //     ),
-        //     Text(
-        //       'hMover',
-        //       style: TextStyle(
-        //         fontSize: 30,
-        //       ),
-        //     )
-        //   ],
-        // )
       ]),
     );
   }
