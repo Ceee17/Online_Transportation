@@ -2,22 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:project_uts_online_transportation/pages/flashcar_item_page.dart';
-// import 'package:project_uts_online_transportation/pages/flashcar_item_page.dart';
-// import 'package:project_uts_online_transportation/pages/google_maps.dart';
-// import 'package:project_uts_online_transportation/pages/flashridedestination.dart';
-// import 'pages/flashpick_driverotw.dart';
-// import 'package:project_uts_online_transportation/pages/flashcar_destination.dart';
-// import 'package:project_uts_online_transportation/pages/flashride_pickup.dart';
-// import 'package:project_uts_online_transportation/pages/flashcar_item_page.dart';
-// import 'pages/flashride_confirmationpage.dart';
-// import 'pages/flashridedestination.dart';
-// import 'pages/flashride_mainpage.dart';
+import 'package:project_uts_online_transportation/pages/flashride_items_page.dart';
+import 'package:project_uts_online_transportation/pages/flashtaxi.dart';
+import 'package:project_uts_online_transportation/pages/google_maps.dart';
 
-import 'pages/chatpage.dart';
-import 'pages/faqpage.dart';
-import 'pages/homechatpage.dart';
-import 'pages/flashride_items_page.dart';
-import 'pages/flashtaxi.dart';
 import 'pages/loginpage.dart';
 import 'pages/loadingpage.dart';
 import 'package:project_uts_online_transportation/pages/account_page.dart';

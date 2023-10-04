@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:project_uts_online_transportation/pages/google_maps.dart';
 import 'package:project_uts_online_transportation/pages/template/back-button.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class DestinationCarPage extends StatefulWidget {
   const DestinationCarPage({Key? key});
@@ -27,6 +29,7 @@ class _DestinationCarPageState extends State<DestinationCarPage> {
                 backgroundColor: Color(0xff8DA2E2),
                 elevation: 0.0,
                 centerTitle: true,
+                // leading: Icon(Icons.abc),
               ),
               Positioned(
                 top: 80,
@@ -103,6 +106,12 @@ class _DestinationCarPageState extends State<DestinationCarPage> {
               children: [
                 GestureDetector(
                   onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              MapSample()), // Navigate to CarPickupPage
+                    );
                     // Add action for Tarumanagara University 1
                   },
                   child: Container(
@@ -151,7 +160,12 @@ class _DestinationCarPageState extends State<DestinationCarPage> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.pop(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              MapSample()), // Navigate to CarPickupPage
+                    );
                     // Add action for Tarumanagara University 2
                   },
                   child: Container(
@@ -200,6 +214,12 @@ class _DestinationCarPageState extends State<DestinationCarPage> {
                 ),
                 GestureDetector(
                   onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              MapSample()), // Navigate to CarPickupPage
+                    );
                     // Add action for Tarumanagara University 3
                   },
                   child: Container(
