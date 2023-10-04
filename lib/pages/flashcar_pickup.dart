@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:project_uts_online_transportation/pages/destinationcar.dart';
+import 'package:project_uts_online_transportation/pages/google_maps.dart';
+import 'package:project_uts_online_transportation/pages/template/back-button.dart';
 
 class CarPickupPage extends StatefulWidget {
   const CarPickupPage({Key? key});
@@ -14,6 +17,11 @@ class _CarPickupPageState extends State<CarPickupPage> {
     return Scaffold(
       body: Stack(
         children: [
+          Positioned(
+            top: 80,
+            left: 20,
+            child: BackBtn(),
+          ),
           Positioned(
             top: 20,
             left: 83,
@@ -92,6 +100,12 @@ class _CarPickupPageState extends State<CarPickupPage> {
                 children: [
                   GestureDetector(
                     onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                DestinationCarPage()), // Navigate to CarPickupPage
+                      );
                       // Add your onPressed logic here
                     },
                     child: Container(
@@ -140,6 +154,12 @@ class _CarPickupPageState extends State<CarPickupPage> {
                   ),
                   GestureDetector(
                     onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                DestinationCarPage()), // Navigate to CarPickupPage
+                      );
                       // Add your onPressed logic here
                     },
                     child: Container(
@@ -188,6 +208,12 @@ class _CarPickupPageState extends State<CarPickupPage> {
                   ),
                   GestureDetector(
                     onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                DestinationCarPage()), // Navigate to CarPickupPage
+                      );
                       // Add your onPressed logic here
                     },
                     child: Container(
@@ -236,6 +262,12 @@ class _CarPickupPageState extends State<CarPickupPage> {
                   ),
                   GestureDetector(
                     onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                DestinationCarPage()), // Navigate to CarPickupPage
+                      );
                       // Add your onPressed logic here
                     },
                     child: Container(
