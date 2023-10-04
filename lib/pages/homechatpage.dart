@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:project_uts_online_transportation/pages/chatpage.dart';
 import 'package:project_uts_online_transportation/pages/template/template_nav_bar.dart';
 
-class Home extends StatefulWidget {
-  const Home({Key? key});
+class HomeChatPage extends StatefulWidget {
+  const HomeChatPage({Key? key});
 
   @override
-  _HomeState createState() => _HomeState();
+  _HomeChatPageState createState() => _HomeChatPageState();
 }
 
-class _HomeState extends State<Home> {
+class _HomeChatPageState extends State<HomeChatPage> {
   TextEditingController _searchController = TextEditingController();
   String searchText = '';
   List<Message> chatMessages = [];
