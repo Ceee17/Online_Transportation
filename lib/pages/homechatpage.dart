@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project_uts_online_transportation/pages/account_page.dart';
 import 'package:project_uts_online_transportation/pages/chatpage.dart';
+import 'package:project_uts_online_transportation/pages/landingpage.dart';
 import 'package:project_uts_online_transportation/pages/order_page.dart';
 import 'package:project_uts_online_transportation/pages/template/template_nav_bar.dart';
 
@@ -17,16 +18,16 @@ class _HomeChatPageState extends State<HomeChatPage> {
   List<Message> chatMessages = [];
 
   List<String> contacts = [
-    "richard dajal",
-    "deni",
-    "celin",
-    "joko",
-    "jefri",
-    "loli",
-    "jordi",
-    "lesti",
-    "joni",
-    "rudi",
+    "Richard",
+    "Deni",
+    "Celin",
+    "Joko",
+    "Jefri",
+    "Loli",
+    "Jordi",
+    "Lesti",
+    "Joni",
+    "Rudi",
   ];
 
   List<String> filteredContacts = [];
@@ -45,6 +46,13 @@ class _HomeChatPageState extends State<HomeChatPage> {
     setState(() {
       _selectedIndex = index;
       switch (index) {
+        case 0:
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => LandingPage(),
+            ),
+          );
         case 2:
           Navigator.push(
             context,
@@ -60,13 +68,12 @@ class _HomeChatPageState extends State<HomeChatPage> {
             ),
           );
       }
-
-      _pageController.animateToPage(
-        _selectedIndex,
-        duration: Duration(milliseconds: 500),
-        curve: Curves.easeOutQuad,
-      );
     });
+    _pageController.animateToPage(
+      _selectedIndex,
+      duration: Duration(milliseconds: 500),
+      curve: Curves.easeOutQuad,
+    );
   }
 
   void _searchContacts() {
@@ -125,42 +132,32 @@ class _HomeChatPageState extends State<HomeChatPage> {
                   height: 50,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(
-                  top: 25,
-                  right: 2,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    SizedBox(
-                      height: 20,
-                    ),
-                    // Expanded(
-                    //   flex: 19,
-                    Container(
-                      height: 50,
-                      width: 250,
-                      // color: Colors.black,
-                      child: TextField(
-                        controller: _searchController,
-                        onChanged: (value) {
-                          setState(() {
-                            searchText = value;
-                          });
-                        },
-                        onEditingComplete: _searchContacts,
-                        decoration: InputDecoration(
-                          hintText: 'Search',
-                          hintStyle: TextStyle(color: Colors.white),
+              Positioned(
+                top: 25,
+                right: 5,
+                child: Container(
+                  height: 50,
+                  width: 280,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Expanded(
+                        child: TextField(
+                          controller: _searchController,
+                          onChanged: (value) {
+                            setState(() {
+                              searchText = value;
+                            });
+                          },
+                          onEditingComplete: _searchContacts,
+                          decoration: InputDecoration(
+                            hintText: 'Search',
+                            hintStyle: TextStyle(color: Colors.white),
+                          ),
+                          style: TextStyle(color: Colors.white),
                         ),
-                        style: TextStyle(color: Colors.white),
                       ),
-                    ),
-                    Positioned(
-                      top: 40,
-                      right: 10,
-                      child: GestureDetector(
+                      GestureDetector(
                         onTap: _searchContacts,
                         child: Container(
                           padding: EdgeInsets.all(6),
@@ -174,8 +171,8 @@ class _HomeChatPageState extends State<HomeChatPage> {
                           ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ],
