@@ -31,6 +31,7 @@ import 'pages/emailhbspage.dart';
 import 'pages/template/templatehead.dart';
 import 'pages/template/back-button.dart';
 import 'pages/edit_profile_page.dart';
+import 'package:project_uts_online_transportation/pages/flashcar_item_page.dart';
 
 void main() {
   runApp(const MyApp());
