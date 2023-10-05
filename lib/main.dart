@@ -42,16 +42,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        theme: ThemeData(
-          fontFamily: "Poppins",
-        ),
-        debugShowCheckedModeBanner: false,
-        routes: {
-          OrderPage.idScreen: (context) => OrderPage(),
-          HistoryPage.idScreen: (context) => HistoryPage(),
-          AccountPage.idScreen: (context) => AccountPage(),
-          LoginPage.idScreen: (context) => LoginPage(),
-        },
-        home: Home());
+      theme: ThemeData(
+        fontFamily: "Poppins",
+      ),
+      debugShowCheckedModeBanner: false,
+      routes: {
+        OrderPage.idScreen: (context) => OrderPage(),
+        HistoryPage.idScreen: (context) => HistoryPage(),
+        AccountPage.idScreen: (context) => AccountPage(),
+        LoginPage.idScreen: (context) => LoginPage(),
+      },
+      home: LandingPage(),
+    );
   }
 }
