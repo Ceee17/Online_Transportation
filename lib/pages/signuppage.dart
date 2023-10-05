@@ -95,7 +95,12 @@ class SignupPage extends StatelessWidget {
                       ),
                       SizedBox(height: 15),
                       TextField(
+<<<<<<< HEAD
                         // controller: emailTextEditingController,
+=======
+                        controller: emailTextEditingController,
+                        obscureText: true,
+>>>>>>> parent of e27e543 (firebase signup page selesaiii)
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(7),
@@ -109,7 +114,12 @@ class SignupPage extends StatelessWidget {
                       ),
                       SizedBox(height: 15),
                       TextField(
+<<<<<<< HEAD
                         // controller: phonenumberTextEditingController,
+=======
+                        controller: phonenumberTextEditingController,
+                        obscureText: true,
+>>>>>>> parent of e27e543 (firebase signup page selesaiii)
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(7),
@@ -123,7 +133,12 @@ class SignupPage extends StatelessWidget {
                       ),
                       SizedBox(height: 15),
                       TextField(
+<<<<<<< HEAD
                         // controller: usernameTextEditingController,
+=======
+                        controller: usernameTextEditingController,
+                        obscureText: true,
+>>>>>>> parent of e27e543 (firebase signup page selesaiii)
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(7),
