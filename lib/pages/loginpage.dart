@@ -9,14 +9,14 @@ import 'package:project_uts_online_transportation/pages/signuppage.dart';
 class LoginPage extends StatelessWidget {
   LoginPage({Key? key}) : super(key: key);
 
-  TextEditingController emailTextEditingController = TextEditingController();
-  TextEditingController passwordTextEditingController = TextEditingController();
+  // TextEditingController emailTextEditingController = TextEditingController();
+  // TextEditingController passwordTextEditingController = TextEditingController();
 
-  @override
-  void dispose() {
-    emailTextEditingController.dispose();
-    passwordTextEditingController.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   emailTextEditingController.dispose();
+  //   passwordTextEditingController.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +76,7 @@ class LoginPage extends StatelessWidget {
                   children: [
                     SizedBox(height: 50),
                     TextField(
-                      controller: emailTextEditingController,
+                      // controller: emailTextEditingController,
                       decoration: InputDecoration(
                         // enabledBorder: OutlineInputBorder(
                         // borderSide: BorderSide(width: 13, color: Colors.black),
@@ -94,7 +94,7 @@ class LoginPage extends StatelessWidget {
                     ),
                     SizedBox(height: 15),
                     TextField(
-                      controller: passwordTextEditingController,
+                      // controller: passwordTextEditingController,
                       obscureText: true,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
@@ -133,14 +133,14 @@ class LoginPage extends StatelessWidget {
                     ),
                     ElevatedButton(
                       onPressed: () {
-                        if (!emailTextEditingController.text.contains("@")) {
-                          displayToastMessage(
-                              "Email address is not Valid", context);
-                        } else if (passwordTextEditingController.text.isEmpty) {
-                          displayToastMessage("Password is mandatory", context);
-                        } else {
-                          loginAndAuthenticateUser(context);
-                        }
+                        // if (!emailTextEditingController.text.contains("@")) {
+                        //   displayToastMessage(
+                        //       "Email address is not Valid", context);
+                        // } else if (passwordTextEditingController.text.isEmpty) {
+                        //   displayToastMessage("Password is mandatory", context);
+                        // } else {
+                        //   loginAndAuthenticateUser(context);
+                        // }
                       },
                       style: ElevatedButton.styleFrom(
                         primary: Color(0xFF111d41), // Ubah backgroundColor
@@ -238,37 +238,37 @@ class LoginPage extends StatelessWidget {
     );
   }
 
-  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+  // final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 
-  void loginAndAuthenticateUser(BuildContext context) async {
-    final User? firebaseUser = (await _firebaseAuth
-            .signInWithEmailAndPassword(
-                email: emailTextEditingController.text,
-                password: passwordTextEditingController.text)
-            .catchError((errMsg) {
-      displayToastMessage("Error: " + errMsg.toString(), context);
-    }))
-        .user;
+  // void loginAndAuthenticateUser(BuildContext context) async {
+  //   final User? firebaseUser = (await _firebaseAuth
+  //           .signInWithEmailAndPassword(
+  //               email: emailTextEditingController.text,
+  //               password: passwordTextEditingController.text)
+  //           .catchError((errMsg) {
+  //     displayToastMessage("Error: " + errMsg.toString(), context);
+  //   }))
+  //       .user;
 
-    if (firebaseUser != null) {
-      // DatabaseEvent snapshot = await usersRef.child(firebaseUser.uid).once();
-      usersRef
-          .child(firebaseUser.uid)
-          .once()
-          .then((value) => (DataSnapshot snap) {
-                if (snap.value != null) {
-                  Navigator.pushNamedAndRemoveUntil(
-                      context, LandingPage.idScreen, (route) => false);
-                  displayToastMessage("You are logged in now", context);
-                } else {
-                  _firebaseAuth.signOut();
-                  displayToastMessage(
-                      "No record exists for this user. Please create a new account",
-                      context);
-                }
-              });
-    } else {
-      displayToastMessage("Error occured", context);
-    }
-  }
+  //   if (firebaseUser != null) {
+  //     // DatabaseEvent snapshot = await usersRef.child(firebaseUser.uid).once();
+  //     usersRef
+  //         .child(firebaseUser.uid)
+  //         .once()
+  //         .then((value) => (DataSnapshot snap) {
+  //               if (snap.value != null) {
+  //                 Navigator.pushNamedAndRemoveUntil(
+  //                     context, LandingPage.idScreen, (route) => false);
+  //                 displayToastMessage("You are logged in now", context);
+  //               } else {
+  //                 _firebaseAuth.signOut();
+  //                 displayToastMessage(
+  //                     "No record exists for this user. Please create a new account",
+  //                     context);
+  //               }
+  //             });
+  //   } else {
+  //     displayToastMessage("Error occured", context);
+  //   }
+  // }
 }

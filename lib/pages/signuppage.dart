@@ -8,12 +8,12 @@ import 'package:project_uts_online_transportation/pages/loginpage.dart';
 class SignupPage extends StatelessWidget {
   SignupPage({Key? key}) : super(key: key);
 
-  TextEditingController fullnameTextEditingController = TextEditingController();
-  TextEditingController emailTextEditingController = TextEditingController();
-  TextEditingController phonenumberTextEditingController =
-      TextEditingController();
-  TextEditingController usernameTextEditingController = TextEditingController();
-  TextEditingController passwordTextEditingController = TextEditingController();
+  // TextEditingController fullnameTextEditingController = TextEditingController();
+  // TextEditingController emailTextEditingController = TextEditingController();
+  // TextEditingController phonenumberTextEditingController =
+  //     TextEditingController();
+  // TextEditingController usernameTextEditingController = TextEditingController();
+  // TextEditingController passwordTextEditingController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -77,7 +77,7 @@ class SignupPage extends StatelessWidget {
                     children: [
                       SizedBox(height: 50),
                       TextField(
-                        controller: fullnameTextEditingController,
+                        // controller: fullnameTextEditingController,
                         decoration: InputDecoration(
                           // enabledBorder: OutlineInputBorder(
                           // borderSide: BorderSide(width: 13, color: Colors.black),
@@ -95,7 +95,7 @@ class SignupPage extends StatelessWidget {
                       ),
                       SizedBox(height: 15),
                       TextField(
-                        controller: emailTextEditingController,
+                        // controller: emailTextEditingController,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(7),
@@ -109,7 +109,7 @@ class SignupPage extends StatelessWidget {
                       ),
                       SizedBox(height: 15),
                       TextField(
-                        controller: phonenumberTextEditingController,
+                        // controller: phonenumberTextEditingController,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(7),
@@ -123,7 +123,7 @@ class SignupPage extends StatelessWidget {
                       ),
                       SizedBox(height: 15),
                       TextField(
-                        controller: usernameTextEditingController,
+                        // controller: usernameTextEditingController,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(7),
@@ -137,7 +137,7 @@ class SignupPage extends StatelessWidget {
                       ),
                       SizedBox(height: 15),
                       TextField(
-                        controller: passwordTextEditingController,
+                        // controller: passwordTextEditingController,
                         obscureText: true,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
@@ -155,28 +155,28 @@ class SignupPage extends StatelessWidget {
                       ),
                       ElevatedButton(
                         onPressed: () {
-                          if (fullnameTextEditingController.text.length < 3) {
-                            displayToastMessage(
-                                "Name must be at least 3 characters", context);
-                          } else if (!emailTextEditingController.text
-                              .contains("@")) {
-                            displayToastMessage(
-                                "Email address is not Valid", context);
-                          } else if (phonenumberTextEditingController
-                              .text.isEmpty) {
-                            displayToastMessage(
-                                "Phone number is mandatory", context);
-                          } else if (usernameTextEditingController
-                              .text.isEmpty) {
-                            displayToastMessage("Username is invalid", context);
-                          } else if (passwordTextEditingController.text.length <
-                              6) {
-                            displayToastMessage(
-                                "Password must be at least 6 characters",
-                                context);
-                          } else {
-                            registerNewUser(context);
-                          }
+                          // if (fullnameTextEditingController.text.length < 3) {
+                          //   displayToastMessage(
+                          //       "Name must be at least 3 characters", context);
+                          // } else if (!emailTextEditingController.text
+                          //     .contains("@")) {
+                          //   displayToastMessage(
+                          //       "Email address is not Valid", context);
+                          // } else if (phonenumberTextEditingController
+                          //     .text.isEmpty) {
+                          //   displayToastMessage(
+                          //       "Phone number is mandatory", context);
+                          // } else if (usernameTextEditingController
+                          //     .text.isEmpty) {
+                          //   displayToastMessage("Username is invalid", context);
+                          // } else if (passwordTextEditingController.text.length <
+                          //     6) {
+                          //   displayToastMessage(
+                          //       "Password must be at least 6 characters",
+                          //       context);
+                          // } else {
+                          //   registerNewUser(context);
+                          // }
                         },
                         style: ElevatedButton.styleFrom(
                           primary: Color(0xFF111d41), // Ubah backgroundColor
@@ -244,36 +244,36 @@ class SignupPage extends StatelessWidget {
     );
   }
 
-  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+//   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 
-  void registerNewUser(BuildContext context) async {
-    final User? firebaseUser = (await _firebaseAuth
-            .createUserWithEmailAndPassword(
-                email: emailTextEditingController.text,
-                password: passwordTextEditingController.text)
-            .catchError((errMsg) {
-      displayToastMessage("Error: " + errMsg.toString(), context);
-    }))
-        .user;
+//   void registerNewUser(BuildContext context) async {
+//     final User? firebaseUser = (await _firebaseAuth
+//             .createUserWithEmailAndPassword(
+//                 email: emailTextEditingController.text,
+//                 password: passwordTextEditingController.text)
+//             .catchError((errMsg) {
+//       displayToastMessage("Error: " + errMsg.toString(), context);
+//     }))
+//         .user;
 
-    if (firebaseUser != null) {
-      Map userDataMap = {
-        "Full Name": fullnameTextEditingController.text.trim(),
-        "E-mail": emailTextEditingController.text.trim(),
-        "Phone Number": phonenumberTextEditingController.text.trim(),
-      };
+//     if (firebaseUser != null) {
+//       Map userDataMap = {
+//         "Full Name": fullnameTextEditingController.text.trim(),
+//         "E-mail": emailTextEditingController.text.trim(),
+//         "Phone Number": phonenumberTextEditingController.text.trim(),
+//       };
 
-      usersRef.child(firebaseUser.uid).set(userDataMap);
-      displayToastMessage("Your account has been created!", context);
+//       usersRef.child(firebaseUser.uid).set(userDataMap);
+//       displayToastMessage("Your account has been created!", context);
 
-      Navigator.pushNamedAndRemoveUntil(
-          context, LandingPage.idScreen, (route) => false);
-    } else {
-      displayToastMessage("New user account has not been created", context);
-    }
-  }
+//       Navigator.pushNamedAndRemoveUntil(
+//           context, LandingPage.idScreen, (route) => false);
+//     } else {
+//       displayToastMessage("New user account has not been created", context);
+//     }
+//   }
 }
 
-displayToastMessage(String message, BuildContext context) {
-  Fluttertoast.showToast(msg: message);
-}
+// displayToastMessage(String message, BuildContext context) {
+//   Fluttertoast.showToast(msg: message);
+// }
