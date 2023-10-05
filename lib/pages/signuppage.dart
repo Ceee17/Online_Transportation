@@ -8,12 +8,12 @@ import 'package:project_uts_online_transportation/pages/loginpage.dart';
 class SignupPage extends StatelessWidget {
   SignupPage({Key? key}) : super(key: key);
 
-  // TextEditingController fullnameTextEditingController = TextEditingController();
-  // TextEditingController emailTextEditingController = TextEditingController();
-  // TextEditingController phonenumberTextEditingController =
-  //     TextEditingController();
-  // TextEditingController usernameTextEditingController = TextEditingController();
-  // TextEditingController passwordTextEditingController = TextEditingController();
+  TextEditingController fullnameTextEditingController = TextEditingController();
+  TextEditingController emailTextEditingController = TextEditingController();
+  TextEditingController phonenumberTextEditingController =
+      TextEditingController();
+  TextEditingController usernameTextEditingController = TextEditingController();
+  TextEditingController passwordTextEditingController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -95,12 +95,7 @@ class SignupPage extends StatelessWidget {
                       ),
                       SizedBox(height: 15),
                       TextField(
-<<<<<<< HEAD
-                        // controller: emailTextEditingController,
-=======
                         controller: emailTextEditingController,
-                        obscureText: true,
->>>>>>> parent of e27e543 (firebase signup page selesaiii)
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(7),
@@ -114,12 +109,7 @@ class SignupPage extends StatelessWidget {
                       ),
                       SizedBox(height: 15),
                       TextField(
-<<<<<<< HEAD
-                        // controller: phonenumberTextEditingController,
-=======
                         controller: phonenumberTextEditingController,
-                        obscureText: true,
->>>>>>> parent of e27e543 (firebase signup page selesaiii)
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(7),
@@ -133,12 +123,7 @@ class SignupPage extends StatelessWidget {
                       ),
                       SizedBox(height: 15),
                       TextField(
-<<<<<<< HEAD
-                        // controller: usernameTextEditingController,
-=======
                         controller: usernameTextEditingController,
-                        obscureText: true,
->>>>>>> parent of e27e543 (firebase signup page selesaiii)
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(7),
