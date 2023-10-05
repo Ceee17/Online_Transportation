@@ -1,11 +1,26 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
-import 'destinationbike.dart';
-import 'flashride_pickup.dart';
+import 'flashridedestinationitem.dart';
+import 'flashride_pickupitem.dart';
+
+// class MoveitemPage extends StatefulWidget {
+//   const MoveitemPage({Key? key}) : super(key: key);
+
+//   @override
+//   _MoveitemPageState createState() => _MoveitemPageState();
+// }
+
+// class _MoveitemPageState extends State<MoveitemPage> {
+bool showAdditionalText = true;
 
 class MoveitemPage extends StatefulWidget {
-  const MoveitemPage({Key? key}) : super(key: key);
+  final String destination;
+  final String pickup;
 
+  MoveitemPage({
+    required this.destination,
+    required this.pickup,
+  });
   @override
   _MoveitemPageState createState() => _MoveitemPageState();
 }
@@ -20,6 +35,8 @@ class _MoveitemPageState extends State<MoveitemPage> {
     // Generate a random price between $10 and $100 with 2 decimal places
     randomPrice = (random.nextDouble() * 90 + 10);
   }
+
+ 
 
   @override
   Widget build(BuildContext context) {
@@ -134,11 +151,22 @@ class _MoveitemPageState extends State<MoveitemPage> {
                                                   40, // Adjust the height as needed
                                               child: ElevatedButton(
                                                 onPressed: () {
+                                                  setState(() {
+                                                    showAdditionalText =
+                                                        false; // Set to false to hide additional text after clicking
+                                                  });
+
                                                   Navigator.push(
                                                     context,
                                                     MaterialPageRoute(
-                                                        builder: (context) =>
-                                                            PickupBikePage()), // Ganti TujuanPage() dengan halaman yang ingin Anda navigasikan
+                                                      builder: (context) =>
+                                                          PickupItemBikePage(
+                                                        pickup: widget
+                                                            .pickup, // Do not concatenate the additional text here
+                                                        destination:
+                                                            widget.destination,
+                                                      ),
+                                                    ),
                                                   );
                                                 },
                                                 style: ElevatedButton.styleFrom(
@@ -148,18 +176,25 @@ class _MoveitemPageState extends State<MoveitemPage> {
                                                         BorderRadius.circular(
                                                             15.0),
                                                   ),
+                                                  minimumSize: Size(350, 50),
                                                 ),
                                                 child: Column(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.center,
+                                                  mainAxisAlignment:MainAxisAlignment.center,
                                                   children: [
-                                                    Icon(
-                                                      Icons.location_on,
-                                                      size: 15,
-                                                      color: Color(0xff8DA2E2),
+                                                    Visibility(
+                                                      visible:
+                                                          showAdditionalText,
+                                                      child: Text(
+                                                        "pickup location",
+                                                        style: TextStyle(
+                                                          fontSize: 12,
+                                                          color:
+                                                              Color(0xff828282),
+                                                        ),
+                                                      ),
                                                     ),
                                                     Text(
-                                                      'Enter Pickup Location',
+                                                      widget.pickup,
                                                       style: TextStyle(
                                                         fontSize: 15,
                                                         color:
@@ -281,11 +316,22 @@ class _MoveitemPageState extends State<MoveitemPage> {
                                                   40, // Adjust the height as needed
                                               child: ElevatedButton(
                                                 onPressed: () {
+                                                  setState(() {
+                                                    showAdditionalText =
+                                                        false; // Set to false to hide additional text after clicking
+                                                  });
+
                                                   Navigator.push(
                                                     context,
                                                     MaterialPageRoute(
-                                                        builder: (context) =>
-                                                            DestinationbikePage()), // Ganti TujuanPage() dengan halaman yang ingin Anda navigasikan
+                                                      builder: (context) =>
+                                                          PickupItemBikePage(
+                                                        pickup: widget
+                                                            .pickup, // Do not concatenate the additional text here
+                                                        destination:
+                                                            widget.destination,
+                                                      ),
+                                                    ),
                                                   );
                                                 },
                                                 style: ElevatedButton.styleFrom(
@@ -295,18 +341,25 @@ class _MoveitemPageState extends State<MoveitemPage> {
                                                         BorderRadius.circular(
                                                             15.0),
                                                   ),
+                                                  minimumSize: Size(350, 50),
                                                 ),
                                                 child: Column(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.center,
+                                                  mainAxisAlignment:MainAxisAlignment.center,
                                                   children: [
-                                                    Icon(
-                                                      Icons.location_on,
-                                                      size: 15,
-                                                      color: Color(0xff8DA2E2),
+                                                    Visibility(
+                                                      visible:
+                                                          showAdditionalText,
+                                                      child: Text(
+                                                        "Your Destination",
+                                                        style: TextStyle(
+                                                          fontSize: 12,
+                                                          color:
+                                                              Color(0xff828282),
+                                                        ),
+                                                      ),
                                                     ),
                                                     Text(
-                                                      'Where to deliver',
+                                                      widget.pickup,
                                                       style: TextStyle(
                                                         fontSize: 15,
                                                         color:

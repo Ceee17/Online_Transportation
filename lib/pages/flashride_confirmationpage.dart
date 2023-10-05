@@ -1,13 +1,23 @@
 import 'package:flutter/material.dart';
 import 'template/templatehead.dart';
-import 'destinationbike.dart';
+import 'flashridedestination.dart';
 import 'flashride_pickup.dart';
 import 'flashbtntxt.dart';
+// import 'searchingdriver.dart';
 
-class ConfirmPage extends StatelessWidget {
-  const ConfirmPage({Key? key}) : super(key: key);
-  static const String idScreen = "Confirmpage";
+class ConfirmPage extends StatefulWidget {
+  final String destination;
+  final String pickup;
 
+  ConfirmPage({
+    required this.destination,
+    required this.pickup,
+  });
+@override
+  _ConfirmPageState createState() => _ConfirmPageState();
+}
+
+class _ConfirmPageState extends State<ConfirmPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +49,10 @@ class ConfirmPage extends StatelessWidget {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => PickupBikePage(),
+                                  builder: (context) => PickupBikePage(
+                                    pickup: widget.pickup,
+                                    destination: widget.destination,
+                                  ),
                                 ),
                               );
                             },
@@ -54,7 +67,7 @@ class ConfirmPage extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  'Pickup Location',
+                                  widget.pickup,
                                   style: TextStyle(
                                     fontSize: 15,
                                     color: Color(0xff828282),
@@ -70,7 +83,10 @@ class ConfirmPage extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                        DestinationbikePage()), // Ganti TujuanPage() dengan halaman yang ingin Anda navigasikan
+                                        DestinationbikePage(
+                                          destination: widget.destination,
+                                          pickup: widget.pickup,
+                                        )), // Ganti TujuanPage() dengan halaman yang ingin Anda navigasikan
                               );
                             },
                             style: ElevatedButton.styleFrom(
@@ -84,7 +100,7 @@ class ConfirmPage extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  'Destination',
+                                  widget.destination,
                                   style: TextStyle(
                                     fontSize: 15,
                                     color: Color(0xff828282),
@@ -98,7 +114,9 @@ class ConfirmPage extends StatelessWidget {
                       SizedBox(height: 30),
                       ElevatedButton(
                         style: flashbtntxt,
-                        onPressed: () {},
+                        onPressed: () {
+
+                        },
                         child: Text(
                           'Confirm',
                           style: TextStyle(
