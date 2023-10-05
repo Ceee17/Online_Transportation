@@ -1,11 +1,30 @@
 import 'package:flutter/material.dart';
 import 'template/templatehead.dart';
 import 'flashbtntxt.dart';
-// import 'top_circular_clipper.dart';
+import 'flashpick_driverotw.dart';
 
-class SearchingDrivPage extends StatelessWidget {
-  const SearchingDrivPage({Key? key}) : super(key: key);
-  static const String idScreen = "searchingdriver";
+// class SearchingDrivPage extends StatelessWidget {
+//   const SearchingDrivPage({Key? key}) : super(key: key);
+//   static const String idScreen = "searchingdriver";
+class SearchingDrivPage extends StatefulWidget {
+  _SearchingDrivPageState createState() => _SearchingDrivPageState();
+}
+
+class _SearchingDrivPageState extends State<SearchingDrivPage> {
+  @override
+  void initState() {
+    super.initState();
+
+    // Add a 10-second delay before auto-navigation
+    Future.delayed(Duration(seconds: 10), () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => FlashpickPage(),
+        ),
+      );
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

@@ -1,9 +1,26 @@
 import 'package:flutter/material.dart';
 import 'flashbtnimg.dart';
+import 'flashride_pickup.dart';
+import 'flashride_itemspage.dart';
 
-class FlashRidePage extends StatelessWidget {
-  const FlashRidePage({Key? key}) : super(key: key);
-  static const String idScreen = "flashride";
+
+// class FlashRidePage extends StatelessWidget {
+//   const FlashRidePage({Key? key}) : super(key: key);
+//   static const String idScreen = "flashride";
+
+class FlashRidePage extends StatefulWidget {
+  final String pickup;
+  final String destination;
+
+  FlashRidePage({
+    required this.pickup,
+    required this.destination,
+  });
+  @override
+  _FlashRidePageState createState() => _FlashRidePageState();
+}
+
+class _FlashRidePageState extends State<FlashRidePage> {
 
   @override
   Widget build(BuildContext context) {
@@ -126,7 +143,19 @@ class FlashRidePage extends StatelessWidget {
                                   SizedBox(height: 50),
                                   ElevatedButton(
                                     style: flashbtnimg,
-                                    onPressed: () {},
+                                    onPressed: () {
+                                                  Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            PickupBikePage(
+                                                              destination:
+                                                                  widget.destination,
+                                                              pickup:
+                                                                  widget.pickup,
+                                                            )), // Ganti TujuanPage() dengan halaman yang ingin Anda navigasikan
+                                                  );
+                                                },
                                     child: Image.asset(
                                         'lib/assets/images/movepeoplebtn.png'),
                                   ),
@@ -149,7 +178,19 @@ class FlashRidePage extends StatelessWidget {
                                   SizedBox(height: 50),
                                   ElevatedButton(
                                     style: flashbtnimg,
-                                    onPressed: () {},
+                                    onPressed: () {
+                                                  Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            MoveitemPage(
+                                                              destination:
+                                                                  widget.destination,
+                                                              pickup:
+                                                                  widget.pickup,
+                                                            )), // Ganti TujuanPage() dengan halaman yang ingin Anda navigasikan
+                                                  );
+                                                },
                                     child: Image.asset(
                                         'lib/assets/images/moveitembtn.png'),
                                   ),
