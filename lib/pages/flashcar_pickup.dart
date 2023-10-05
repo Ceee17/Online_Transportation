@@ -138,7 +138,7 @@ class _CarPickupPageState extends State<CarPickupPage> {
                                   ),
                                 ),
                                 Text(
-                                  'Letjen S. Parman St no.1, RT.6/RW.16, Tomang, Grogol',
+                                  'Location A',
                                   style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 11,
@@ -184,7 +184,7 @@ class _CarPickupPageState extends State<CarPickupPage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Tarumanagara university',
+                                  'Central Park Mall',
                                   style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 18,
@@ -192,7 +192,7 @@ class _CarPickupPageState extends State<CarPickupPage> {
                                   ),
                                 ),
                                 Text(
-                                  'Letjen S. Parman St no.1, RT.6/RW.16, Tomang, Grogol',
+                                  'Location B',
                                   style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 11,
@@ -238,7 +238,7 @@ class _CarPickupPageState extends State<CarPickupPage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Tarumanagara university',
+                                  'Krendang',
                                   style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 18,
@@ -246,7 +246,7 @@ class _CarPickupPageState extends State<CarPickupPage> {
                                   ),
                                 ),
                                 Text(
-                                  'Letjen S. Parman St no.1, RT.6/RW.16, Tomang, Grogol',
+                                  'Location C',
                                   style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 11,
