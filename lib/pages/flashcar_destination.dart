@@ -32,7 +32,7 @@ class _DestinationCarPageState extends State<DestinationCarPage> {
                 // leading: Icon(Icons.abc),
               ),
               Positioned(
-                top: 80,
+                top: 40,
                 left: 20,
                 child: BackBtn(),
               ),
@@ -105,15 +105,7 @@ class _DestinationCarPageState extends State<DestinationCarPage> {
             child: Column(
               children: [
                 GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              MapSample()), // Navigate to CarPickupPage
-                    );
-                    // Add action for Tarumanagara University 1
-                  },
+                  onTap: () {},
                   child: Container(
                     width: 370,
                     height: 79,
@@ -159,15 +151,7 @@ class _DestinationCarPageState extends State<DestinationCarPage> {
                   ),
                 ),
                 GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              MapSample()), // Navigate to CarPickupPage
-                    );
-                    // Add action for Tarumanagara University 2
-                  },
+                  onTap: () {},
                   child: Container(
                     width: 360,
                     height: 79,
@@ -213,15 +197,7 @@ class _DestinationCarPageState extends State<DestinationCarPage> {
                   ),
                 ),
                 GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              MapSample()), // Navigate to CarPickupPage
-                    );
-                    // Add action for Tarumanagara University 3
-                  },
+                  onTap: () {},
                   child: Container(
                     width: 360,
                     height: 79,

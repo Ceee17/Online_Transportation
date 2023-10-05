@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:project_uts_online_transportation/pages/location_service.dart';
 import 'package:project_uts_online_transportation/pages/template/back-button.dart';
 
 class MapSample extends StatefulWidget {
@@ -76,7 +77,9 @@ class MapSampleState extends State<MapSample> {
                     }),
               ),
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  LocationService().getPlaceId(_searchController.text);
+                },
                 icon: Icon(Icons.search),
               ),
             ],
