@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'flashridedestination.dart';
-import 'flashride_confirmationpage.dart';
+import 'flashride_itemspage.dart';
 
 // class PickupBikePage extends StatefulWidget {
 //   const PickupBikePage({Key? key});
@@ -11,19 +11,19 @@ import 'flashride_confirmationpage.dart';
 // }
 
 // class _CarPickupPageState extends State<PickupBikePage> {
-class PickupBikePage extends StatefulWidget {
+class PickupItemBikePage extends StatefulWidget {
   final String pickup;
   final String destination;
 
-  PickupBikePage({
+  PickupItemBikePage({
     required this.pickup,
     required this.destination,
   });
   @override
-  _PickupBikePageState createState() => _PickupBikePageState();
+  _PickupItemBikePageState createState() => _PickupItemBikePageState();
 }
 
-class _PickupBikePageState extends State<PickupBikePage> {
+class _PickupItemBikePageState extends State<PickupItemBikePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -110,7 +110,7 @@ class _PickupBikePageState extends State<PickupBikePage> {
                         context,
                         MaterialPageRoute(
                             builder: (context) =>
-                                DestinationbikePage(
+                                MoveitemPage(
                                   pickup:
                                 'Tarumanagara university 1',
                             destination: widget.destination,
@@ -168,7 +168,7 @@ class _PickupBikePageState extends State<PickupBikePage> {
                         context,
                         MaterialPageRoute(
                             builder: (context) =>
-                                DestinationbikePage(
+                                MoveitemPage(
                                   pickup:
                                 'Tarumanagara university 2',
                             destination: widget.destination,
@@ -226,7 +226,7 @@ class _PickupBikePageState extends State<PickupBikePage> {
                         context,
                         MaterialPageRoute(
                             builder: (context) =>
-                                DestinationbikePage(
+                                MoveitemPage(
                                   pickup:
                                 'Alfa X Untar',
                                 destination: widget.destination,
@@ -284,7 +284,7 @@ class _PickupBikePageState extends State<PickupBikePage> {
                         context,
                         MaterialPageRoute(
                             builder: (context) =>
-                                DestinationbikePage(
+                                MoveitemPage(
                                   pickup:
                                 'Indomaret Taman S Parman. TCMJ',
                             destination: widget.destination,
