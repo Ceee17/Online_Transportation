@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:project_uts_online_transportation/pages/google_maps.dart';
 import 'flashride_confirmationpage.dart';
+import 'template/FadeandSlidetransition.dart';
 
 // class DestinationbikePage extends StatelessWidget {
 //   const DestinationbikePage({Key? key});
@@ -104,16 +105,15 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
               children: [
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => MapSample(
-                          destination: 'Monumen Nasional',
-                          pickup: widget.pickup, // Use the text directly
-                        ),
-                      ),
-                    );
-                  },
+                    Navigator.of(context).push(
+                      FadeAndSlideTransition(
+                        page: ConfirmPage(
+                                destination: 'Monumen Nasional',
+                                pickup: widget.pickup,
+                              ),
+                            ),
+                          );
+                        },
                   child: Container(
                     width: 360,
                     height: 79,
@@ -160,16 +160,15 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => MapSample(
-                          destination: 'Season City',
-                          pickup: widget.pickup,
-                        ),
-                      ),
-                    );
-                  },
+                    Navigator.of(context).push(
+                      FadeAndSlideTransition(
+                        page: ConfirmPage(
+                                destination: 'Season City',
+                                pickup: widget.pickup,
+                              ),
+                            ),
+                          );
+                        },
                   child: Container(
                     width: 360,
                     height: 79,
@@ -202,7 +201,7 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                           ),
                           SizedBox(height: 6),
                           Text(
-                            'Jl. Prof. Dr. Latumeten No.33, Jemb. Besi, Kec. Tambora',
+                            'Jl. Prof. Dr. Latumenten No.33, Jemb. Besi, Kec. Tambora',
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 11,
@@ -216,16 +215,15 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => MapSample(
-                          destination: 'Plaza Senayan',
-                          pickup: widget.pickup,
-                        ),
-                      ),
-                    );
-                  },
+                    Navigator.of(context).push(
+                      FadeAndSlideTransition(
+                        page: ConfirmPage(
+                                destination: 'Plaza Senayan',
+                                pickup: widget.pickup,
+                              ),
+                            ),
+                          );
+                        },
                   child: Container(
                     width: 360,
                     height: 79,
@@ -258,7 +256,7 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                           ),
                           SizedBox(height: 6),
                           Text(
-                            'Jl. Asia Afrika No.8, Gelora, Kecamatan Tanah Abang,',
+                            'Jl. Asia Afrika No.8, Gelora, Kecamatan Tanah Abang',
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 11,
@@ -272,16 +270,15 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => MapSample(
-                          destination: 'Tokyo Riverside',
-                          pickup: widget.pickup,
-                        ),
-                      ),
-                    );
-                  },
+                    Navigator.of(context).push(
+                      FadeAndSlideTransition(
+                        page: ConfirmPage(
+                                destination: 'Tokyo Riverside',
+                                pickup: widget.pickup,
+                              ),
+                            ),
+                          );
+                        },
                   child: Container(
                     width: 360,
                     height: 79,

@@ -3,10 +3,22 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:project_uts_online_transportation/pages/template/DraggableScrollableSheet.dart';
 import 'package:project_uts_online_transportation/pages/template/back-button.dart';
 
-class FlashCarPage extends StatelessWidget {
-  const FlashCarPage({Key? key});
-  static const String idScreen = 'flashcar';
+// class FlashCarPage extends StatelessWidget {
+//   const FlashCarPage({Key? key});
+//   static const String idScreen = 'flashcar';
+class FlashCarPage extends StatefulWidget {
+  final String pickup;
+  final String destination;
 
+  FlashCarPage({
+    required this.pickup,
+    required this.destination,
+  });
+  @override
+  _FlashCarPageState createState() => _FlashCarPageState();
+}
+
+class _FlashCarPageState extends State<FlashCarPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -80,7 +92,7 @@ class FlashCarPage extends StatelessWidget {
       ),
       extendBody: true, // This allows the DragSheet to extend below the app bar
       bottomNavigationBar:
-          DragSheet(), // Use bottomNavigationBar instead of bottomSheet
+          DragSheet(pickup: '', destination: '',), // Use bottomNavigationBar instead of bottomSheet
     );
   }
 }

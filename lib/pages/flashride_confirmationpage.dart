@@ -3,8 +3,9 @@ import 'package:project_uts_online_transportation/pages/searchingdriver.dart';
 import 'template/templatehead.dart';
 import 'flashridedestination.dart';
 import 'flashride_pickup.dart';
+import 'searchingdriver.dart';
 import 'flashbtntxt.dart';
-// import 'searchingdriver.dart';
+import 'template/FadeandSlidetransition.dart';
 
 class ConfirmPage extends StatefulWidget {
   final String destination;
@@ -49,10 +50,9 @@ class _ConfirmPageState extends State<ConfirmPage> {
                         children: [
                           ElevatedButton(
                             onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => PickupBikePage(
+                              Navigator.of(context).push(
+                                FadeAndSlideTransition(
+                                  page: PickupBikePage(
                                     pickup: widget.pickup,
                                     destination: widget.destination,
                                   ),
@@ -83,13 +83,13 @@ class _ConfirmPageState extends State<ConfirmPage> {
                           SizedBox(height: 10),
                           ElevatedButton(
                             onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => DestinationbikePage(
-                                          destination: widget.destination,
-                                          pickup: widget.pickup,
-                                        )), // Ganti TujuanPage() dengan halaman yang ingin Anda navigasikan
+                              Navigator.of(context).push(
+                                FadeAndSlideTransition(
+                                  page: DestinationbikePage(
+                                    destination: widget.destination,
+                                    pickup: widget.pickup,
+                                  ),
+                                ),
                               );
                             },
                             style: ElevatedButton.styleFrom(
@@ -118,11 +118,16 @@ class _ConfirmPageState extends State<ConfirmPage> {
                       ElevatedButton(
                         style: flashbtntxt,
                         onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    SearchingDrivPage()), // Navigate to CarPickupPage
+                          Navigator.of(context).push(
+                            PageRouteBuilder(
+                              pageBuilder:
+                                  (context, animation, secondaryAnimation) {
+                                return FadeTransition(
+                                  opacity: animation,
+                                  child: SearchingDrivPage(),
+                                );
+                              },
+                            ),
                           );
                         },
                         child: Text(
