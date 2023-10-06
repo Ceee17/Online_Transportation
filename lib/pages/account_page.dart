@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:project_uts_online_transportation/pages/homechatpage.dart';
+import 'package:project_uts_online_transportation/pages/landingpage.dart';
 import 'package:project_uts_online_transportation/pages/order_page.dart';
 import 'package:project_uts_online_transportation/pages/template/template_nav_bar.dart';
 import 'package:project_uts_online_transportation/pages/template/templatehead.dart';
@@ -107,9 +109,28 @@ class _AccountPageState extends State<AccountPage> {
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
-      if (index == 2) {
-        Navigator.pushNamed(context, OrderPage.idScreen);
-        return;
+      switch (index) {
+        case 0:
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => LandingPage(),
+            ),
+          );
+        case 1:
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => HomeChatPage(),
+            ),
+          );
+        case 2:
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => OrderPage(),
+            ),
+          );
       }
 
       _pageController.animateToPage(
