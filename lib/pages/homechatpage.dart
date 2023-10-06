@@ -6,7 +6,7 @@ import 'package:project_uts_online_transportation/pages/order_page.dart';
 import 'package:project_uts_online_transportation/pages/template/template_nav_bar.dart';
 
 class HomeChatPage extends StatefulWidget {
-  const HomeChatPage({Key? key});
+  const HomeChatPage({super.key});
 
   @override
   _HomeChatPageState createState() => _HomeChatPageState();
@@ -18,28 +18,26 @@ class _HomeChatPageState extends State<HomeChatPage> {
   List<Message> chatMessages = [];
 
   List<String> contacts = [
-    "richard dajal",
-    "deni",
-    "celin",
-    "joko",
-    "jefri",
-    "loli",
-    "jordi",
-    "lesti",
-    "joni",
-    "rudi",
+    "Richard",
+    "Deni",
+    "Celin",
+    "Joko",
+    "Jefri",
+    "Loli",
+    "Jordi",
+    "Lesti",
+    "Joni",
+    "Rudi",
   ];
 
   List<String> filteredContacts = [];
 
   late PageController _pageController;
   int _selectedIndex = 1;
-  // index gw 2 karna order page urutan ke-3
-  // 0 - 1 - 2 - 3
+
   @override
   void initState() {
     super.initState();
-    // Inisialisasi daftar kontak yang telah difilter dengan semua kontak awal.
     filteredContacts = contacts;
     _pageController = PageController(initialPage: _selectedIndex);
   }
@@ -91,52 +89,59 @@ class _HomeChatPageState extends State<HomeChatPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xff213A82),
-      body: Column(
+      body: PageView(
+        physics: NeverScrollableScrollPhysics(),
+        controller: _pageController,
         children: [
-          Container(
-            // padding: EdgeInsets.only(
-            //   left: 20.0,
-            //   right: 20.0,
-            //   top: 50.0,
-            //   bottom: 20.0,
+          homeChatPageContent(),
+        ],
+      ),
+      bottomNavigationBar: CustomNavBar(
+        selectedIndex: _selectedIndex,
+        onItemSelected: _onItemTapped,
+      ),
+    );
+  }
 
-            // ),
-            height: 85,
-            width: 420,
-            // color: Colors.black,
-            child: Stack(
-              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Positioned(
-                  left: 40,
-                  bottom: 10,
-                  child: Text(
-                    "Chat",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
-                    ),
+  Column homeChatPageContent() {
+    return Column(
+      children: [
+        Container(
+          height: 85,
+          width: 420,
+          child: Stack(
+            children: [
+              Positioned(
+                left: 40,
+                bottom: 10,
+                child: Text(
+                  "Chat",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-                // Spacer(),
-                // SizedBox(width: 10),
-                Positioned(
-                  bottom: 10,
-                  left: 20,
-                  child: Image.asset(
-                    'lib/assets/images/undraw_Chat_re_re1u.png',
-                    width: 50,
-                    height: 50,
-                  ),
+              ),
+              Positioned(
+                bottom: 10,
+                left: 20,
+                child: Image.asset(
+                  'lib/assets/images/undraw_Chat_re_re1u.png',
+                  width: 50,
+                  height: 50,
                 ),
-                Positioned(
-                  right: 10,
-                  bottom: 10,
+              ),
+              Positioned(
+                top: 25,
+                right: 5,
+                child: Container(
+                  height: 50,
+                  width: 280,
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Expanded(
-                        flex: 9,
                         child: TextField(
                           controller: _searchController,
                           onChanged: (value) {
@@ -152,60 +157,47 @@ class _HomeChatPageState extends State<HomeChatPage> {
                           style: TextStyle(color: Colors.white),
                         ),
                       ),
-                      Positioned(
-                        top: 40,
-                        right: 10,
-                        child: Expanded(
-                          flex: 1,
-                          child: GestureDetector(
-                            onTap: _searchContacts,
-                            child: Container(
-                              padding: EdgeInsets.all(6),
-                              decoration: BoxDecoration(
-                                color: Color(0xff213A82),
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: Icon(
-                                Icons.search,
-                                color: Colors.white,
-                              ),
-                            ),
+                      GestureDetector(
+                        onTap: _searchContacts,
+                        child: Container(
+                          padding: EdgeInsets.all(6),
+                          decoration: BoxDecoration(
+                            color: Color(0xff213A82),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Icon(
+                            Icons.search,
+                            color: Colors.white,
                           ),
                         ),
                       ),
                     ],
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
-
-          // Contact list
-          Expanded(
-            flex: 18,
-            child: SingleChildScrollView(
-              child: Container(
-                color: Colors.white,
-                padding: EdgeInsets.all(16.0),
-                child: Column(
-                  children: filteredContacts
-                      .map((contact) => _buildContact(
-                            "lib/assets/images/undraw_Pic_profile_re_7g2h.png",
-                            contact,
-                            "Pesan Terbaru",
-                            "09.00",
-                          ))
-                      .toList(),
-                ),
+        ),
+        Expanded(
+          flex: 18,
+          child: SingleChildScrollView(
+            child: Container(
+              color: Colors.white,
+              padding: EdgeInsets.all(16.0),
+              child: Column(
+                children: filteredContacts
+                    .map((contact) => _buildContact(
+                          "lib/assets/images/undraw_Pic_profile_re_7g2h.png",
+                          contact,
+                          "Pesan Terbaru",
+                          "09.00",
+                        ))
+                    .toList(),
               ),
             ),
           ),
-        ],
-      ),
-      bottomNavigationBar: CustomNavBar(
-        selectedIndex: _selectedIndex,
-        onItemSelected: _onItemTapped,
-      ),
+        ),
+      ],
     );
   }
 
@@ -232,13 +224,12 @@ class _HomeChatPageState extends State<HomeChatPage> {
       ),
       trailing: Text(time),
       onTap: () {
-        // Navigate to the ChatScreen when a contact is tapped.
         Navigator.push(
           context,
           MaterialPageRoute(
             builder: (context) => ChatScreen(
               contactName: name,
-              contactImage: pngAsset, // Mengimpor profil kontak ke ChatScreen
+              contactImage: pngAsset,
             ),
           ),
         );

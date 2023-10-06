@@ -427,23 +427,7 @@ class _LandingPageState extends State<LandingPage> {
       ),
       bottomNavigationBar: CustomNavBar(
         selectedIndex: _selectedIndex,
-        onItemSelected: (index) {
-          setState(() {
-            _selectedIndex = index;
-            if (index == 2) {
-              Navigator.pushNamed(
-                context,
-                OrderPage.idScreen,
-              );
-            }
-            if (index == 3) {
-              Navigator.pushNamed(context, AccountPage.idScreen);
-            }
-          });
-          _pageController.animateToPage(_selectedIndex,
-              duration: const Duration(milliseconds: 400),
-              curve: Curves.easeOutQuad);
-        },
+        onItemSelected: _onItemTapped,
       ),
     );
   }
