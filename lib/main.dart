@@ -56,7 +56,7 @@ class MyApp extends StatelessWidget {
         AccountPage.idScreen: (context) => AccountPage(),
         LoginPage.idScreen: (context) => LoginPage(),
       },
-      home: LandingPage(),
+      home: ChatScreen(),
     );
   }
 }
