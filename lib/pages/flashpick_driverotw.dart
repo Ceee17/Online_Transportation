@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:project_uts_online_transportation/pages/flashride_pickup.dart';
 import 'template/templatehead.dart';
 import 'flashbtntxt.dart';
-// import 'top_circular_clipper.dart';
+import 'landingpage.dart';
 
 class FlashpickPage extends StatelessWidget {
   const FlashpickPage({Key? key}) : super(key: key);
@@ -51,13 +51,16 @@ class FlashpickPage extends StatelessWidget {
                       ElevatedButton(
                         style: flashbtntxt,
                         onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => PickupBikePage(
-                                      pickup: '',
-                                      destination: '',
-                                    )), // Navigate to CarPickupPage
+                          Navigator.of(context).push(
+                            PageRouteBuilder(
+                              pageBuilder:
+                                  (context, animation, secondaryAnimation) {
+                                return FadeTransition(
+                                  opacity: animation,
+                                  child: LandingPage(),
+                                );
+                              },
+                            ),
                           );
                         },
                         child: Text(
@@ -66,7 +69,7 @@ class FlashpickPage extends StatelessWidget {
                             color: Colors.black,
                           ),
                         ),
-                      ),
+                      )
                     ],
                   ),
                 ),

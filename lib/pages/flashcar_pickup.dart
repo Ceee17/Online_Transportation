@@ -3,16 +3,30 @@ import 'package:flutter/material.dart';
 import 'flashcar_destination.dart';
 import 'package:project_uts_online_transportation/pages/google_maps.dart';
 import 'package:project_uts_online_transportation/pages/template/back-button.dart';
+import 'template/FadeandSlidetransition.dart';
 
-class CarPickupPage extends StatefulWidget {
-  const CarPickupPage({Key? key});
-  static const String idScreen = 'carpickup';
+// class PickupBikePage extends StatefulWidget {
+//   const PickupBikePage({Key? key});
+//   static const String idScreen = 'pickupbike';
 
+//  @override
+//   State<PickupBikePage> createState() => _CarPickupPageState();
+// }
+
+// class _CarPickupPageState extends State<PickupBikePage> {
+class PickupCarPage extends StatefulWidget {
+  final String pickup;
+  final String destination;
+
+  PickupCarPage({
+    required this.pickup,
+    required this.destination,
+  });
   @override
-  State<CarPickupPage> createState() => _CarPickupPageState();
+  _PickupCarPageState createState() => _PickupCarPageState();
 }
 
-class _CarPickupPageState extends State<CarPickupPage> {
+class _PickupCarPageState extends State<PickupCarPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +46,6 @@ class _CarPickupPageState extends State<CarPickupPage> {
               child: Image.asset('lib/assets/images/flashcarlogo.png'),
             ),
           ),
-          // Add your other widgets here
         ],
       ),
       bottomNavigationBar: Stack(
@@ -101,67 +114,14 @@ class _CarPickupPageState extends State<CarPickupPage> {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                DestinationCarPage()), // Navigate to CarPickupPage
-                      );
-                      // Add your onPressed logic here
-                    },
-                    child: Container(
-                      width: 360,
-                      height: 87,
-                      margin: EdgeInsets.only(bottom: 10),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(36),
-                      ),
-                      child: Center(
-                        child: Align(
-                          alignment: Alignment.centerLeft,
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(
-                              vertical: 0,
-                              horizontal: 20,
-                            ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment
-                                  .center, // Center text vertically
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Tarumanagara university',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                                Text(
-                                  'Letjen S. Parman St no.1, RT.6/RW.16, Tomang, Grogol',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 11,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ),
-                              ],
-                            ),
+                      Navigator.of(context).push(
+                        FadeAndSlideTransition(
+                          page: DestinationcarPage(
+                            pickup: 'Tarumanagara university',
+                            destination: widget.destination,
                           ),
                         ),
-                      ),
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                DestinationCarPage()), // Navigate to CarPickupPage
                       );
-                      // Add your onPressed logic here
                     },
                     child: Container(
                       width: 370,
@@ -209,13 +169,14 @@ class _CarPickupPageState extends State<CarPickupPage> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                DestinationCarPage()), // Navigate to CarPickupPage
+                      Navigator.of(context).push(
+                        FadeAndSlideTransition(
+                          page: DestinationcarPage(
+                            pickup: 'Central Park',
+                            destination: widget.destination,
+                          ),
+                        ),
                       );
-                      // Add your onPressed logic here
                     },
                     child: Container(
                       width: 370,
@@ -239,7 +200,7 @@ class _CarPickupPageState extends State<CarPickupPage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Tarumanagara university',
+                                  'Central Park',
                                   style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 18,
@@ -247,7 +208,7 @@ class _CarPickupPageState extends State<CarPickupPage> {
                                   ),
                                 ),
                                 Text(
-                                  'Letjen S. Parman St no.1, RT.6/RW.16, Tomang, Grogol',
+                                  'Jl. Letjen S. Parman No.Kavling 28, Tanjung Duren, Grogol',
                                   style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 11,
@@ -263,13 +224,69 @@ class _CarPickupPageState extends State<CarPickupPage> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                DestinationCarPage()), // Navigate to CarPickupPage
+                      Navigator.of(context).push(
+                        FadeAndSlideTransition(
+                          page: DestinationcarPage(
+                            pickup: 'Alfa X Untar',
+                            destination: widget.destination,
+                          ),
+                        ),
                       );
-                      // Add your onPressed logic here
+                    },
+                    child: Container(
+                      width: 370,
+                      height: 87,
+                      margin: EdgeInsets.only(bottom: 10),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(36),
+                      ),
+                      child: Center(
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                              vertical: 0,
+                              horizontal: 20,
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment
+                                  .center, // Center text vertically
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Alfa X Untar',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                                Text(
+                                  'Jl. Taman S. Parman, RT.7/RW.8, Grogol',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 11,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        FadeAndSlideTransition(
+                          page: DestinationcarPage(
+                            pickup: 'Your Current Location',
+                            destination: widget.destination,
+                          ),
+                        ),
+                      );
                     },
                     child: Container(
                       width: 332,

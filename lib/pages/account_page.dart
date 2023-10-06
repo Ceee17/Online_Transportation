@@ -5,7 +5,7 @@ import 'package:project_uts_online_transportation/pages/faqpage.dart';
 import 'package:project_uts_online_transportation/pages/homechatpage.dart';
 import 'package:project_uts_online_transportation/pages/landingpage.dart';
 import 'package:project_uts_online_transportation/pages/order_page.dart';
-import 'package:project_uts_online_transportation/pages/paymenmethod.dart';
+// import 'package:project_uts_online_transportation/pages/paymenmethod.dart';
 import 'package:project_uts_online_transportation/pages/template/template_nav_bar.dart';
 import 'package:project_uts_online_transportation/pages/template/templatehead.dart';
 import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
