@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:project_uts_online_transportation/pages/searchingdriver.dart';
 import 'template/templatehead.dart';
 import 'flashridedestination.dart';
 import 'flashride_pickup.dart';
+import 'searchingdriver.dart';
 import 'flashbtntxt.dart';
-// import 'searchingdriver.dart';
+import 'template/FadeandSlidetransition.dart';
 
 class ConfirmPage extends StatefulWidget {
   final String destination;
@@ -13,7 +15,7 @@ class ConfirmPage extends StatefulWidget {
     required this.destination,
     required this.pickup,
   });
-@override
+  @override
   _ConfirmPageState createState() => _ConfirmPageState();
 }
 
@@ -24,6 +26,7 @@ class _ConfirmPageState extends State<ConfirmPage> {
       body: Column(
         children: [
           TemplateHead(title: "Confirmation"),
+
           //maps
           SizedBox(height: 150),
           Expanded(
@@ -39,17 +42,17 @@ class _ConfirmPageState extends State<ConfirmPage> {
                   height: 250,
                   color: Color(0xFF8DA2E2),
                   child: Column(
-                    children: [// Adjust the height here
+                    children: [
+                      // Adjust the height here
                       SizedBox(height: 20), // Adjust the height here
                       Column(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           ElevatedButton(
                             onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => PickupBikePage(
+                              Navigator.of(context).push(
+                                FadeAndSlideTransition(
+                                  page: PickupBikePage(
                                     pickup: widget.pickup,
                                     destination: widget.destination,
                                   ),
@@ -61,7 +64,8 @@ class _ConfirmPageState extends State<ConfirmPage> {
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(15.0),
                               ),
-                              minimumSize: Size(350, 50), // Set the minimum width here
+                              minimumSize:
+                                  Size(350, 50), // Set the minimum width here
                             ),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -79,14 +83,13 @@ class _ConfirmPageState extends State<ConfirmPage> {
                           SizedBox(height: 10),
                           ElevatedButton(
                             onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        DestinationbikePage(
-                                          destination: widget.destination,
-                                          pickup: widget.pickup,
-                                        )), // Ganti TujuanPage() dengan halaman yang ingin Anda navigasikan
+                              Navigator.of(context).push(
+                                FadeAndSlideTransition(
+                                  page: DestinationbikePage(
+                                    destination: widget.destination,
+                                    pickup: widget.pickup,
+                                  ),
+                                ),
                               );
                             },
                             style: ElevatedButton.styleFrom(
@@ -115,7 +118,17 @@ class _ConfirmPageState extends State<ConfirmPage> {
                       ElevatedButton(
                         style: flashbtntxt,
                         onPressed: () {
-
+                          Navigator.of(context).push(
+                            PageRouteBuilder(
+                              pageBuilder:
+                                  (context, animation, secondaryAnimation) {
+                                return FadeTransition(
+                                  opacity: animation,
+                                  child: SearchingDrivPage(),
+                                );
+                              },
+                            ),
+                          );
                         },
                         child: Text(
                           'Confirm',
