@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:project_uts_online_transportation/pages/google_maps.dart';
+import 'package:project_uts_online_transportation/pages/history_page.dart';
 import 'package:project_uts_online_transportation/pages/template/back-button.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -110,7 +111,7 @@ class _DestinationCarPageState extends State<DestinationCarPage> {
                       context,
                       MaterialPageRoute(
                           builder: (context) =>
-                              MapSample()), // Navigate to CarPickupPage
+                              HistoryPage()), // Navigate to CarPickupPage
                     );
                     // Add action for Tarumanagara University 1
                   },
@@ -164,7 +165,7 @@ class _DestinationCarPageState extends State<DestinationCarPage> {
                       context,
                       MaterialPageRoute(
                           builder: (context) =>
-                              MapSample()), // Navigate to CarPickupPage
+                              HistoryPage()), // Navigate to CarPickupPage
                     );
                     // Add action for Tarumanagara University 2
                   },
@@ -218,7 +219,7 @@ class _DestinationCarPageState extends State<DestinationCarPage> {
                       context,
                       MaterialPageRoute(
                           builder: (context) =>
-                              MapSample()), // Navigate to CarPickupPage
+                              HistoryPage()), // Navigate to CarPickupPage
                     );
                     // Add action for Tarumanagara University 3
                   },

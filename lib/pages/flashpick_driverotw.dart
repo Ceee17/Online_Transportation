@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_uts_online_transportation/pages/flashride_pickup.dart';
 import 'template/templatehead.dart';
 import 'flashbtntxt.dart';
 // import 'top_circular_clipper.dart';
@@ -49,7 +50,16 @@ class FlashpickPage extends StatelessWidget {
                       SizedBox(height: 40),
                       ElevatedButton(
                         style: flashbtntxt,
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => PickupBikePage(
+                                      pickup: '',
+                                      destination: '',
+                                    )), // Navigate to CarPickupPage
+                          );
+                        },
                         child: Text(
                           'Cancel',
                           style: TextStyle(

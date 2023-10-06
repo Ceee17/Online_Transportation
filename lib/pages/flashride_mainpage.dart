@@ -3,7 +3,6 @@ import 'flashbtnimg.dart';
 import 'flashride_pickup.dart';
 import 'flashride_itemspage.dart';
 
-
 // class FlashRidePage extends StatelessWidget {
 //   const FlashRidePage({Key? key}) : super(key: key);
 //   static const String idScreen = "flashride";
@@ -21,7 +20,6 @@ class FlashRidePage extends StatefulWidget {
 }
 
 class _FlashRidePageState extends State<FlashRidePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,6 +39,7 @@ class _FlashRidePageState extends State<FlashRidePage> {
               ),
               Positioned(
                 top: 50,
+                left: 282,
                 child: Container(
                   width: 130,
                   child: Image.asset('lib/assets/images/FlashrideLogo.png'),
@@ -87,15 +86,16 @@ class _FlashRidePageState extends State<FlashRidePage> {
               ),
             ),
           ),
-           Positioned(
-      top: 100, // Adjust the top value to position the image vertically
-      left: 50, // Adjust the left value to position the image horizontally
-      child: Image.asset(
-        'lib/assets/images/movepeoplebtn.png', // Replace with your image path
-        width: 300, // Adjust the width as needed
-        height: 300, // Adjust the height as needed
-      ),
-    ),
+          Positioned(
+            top: 100, // Adjust the top value to position the image vertically
+            left:
+                50, // Adjust the left value to position the image horizontally
+            child: Image.asset(
+              'lib/assets/images/movepeoplebtn.png', // Replace with your image path
+              width: 300, // Adjust the width as needed
+              height: 300, // Adjust the height as needed
+            ),
+          ),
           SizedBox.expand(
             child: DraggableScrollableSheet(
               initialChildSize: 0.4,
@@ -123,7 +123,7 @@ class _FlashRidePageState extends State<FlashRidePage> {
                                   SizedBox(height: 15),
                                   Container(
                                     width: 150,
-                                    height:5,
+                                    height: 5,
                                     decoration: BoxDecoration(
                                       color: Color(0xffFFFFFF),
                                       borderRadius: BorderRadius.vertical(
@@ -144,18 +144,17 @@ class _FlashRidePageState extends State<FlashRidePage> {
                                   ElevatedButton(
                                     style: flashbtnimg,
                                     onPressed: () {
-                                                  Navigator.push(
-                                                    context,
-                                                    MaterialPageRoute(
-                                                        builder: (context) =>
-                                                            PickupBikePage(
-                                                              destination:
-                                                                  widget.destination,
-                                                              pickup:
-                                                                  widget.pickup,
-                                                            )), // Ganti TujuanPage() dengan halaman yang ingin Anda navigasikan
-                                                  );
-                                                },
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                PickupBikePage(
+                                                  destination:
+                                                      widget.destination,
+                                                  pickup: widget.pickup,
+                                                )), // Ganti TujuanPage() dengan halaman yang ingin Anda navigasikan
+                                      );
+                                    },
                                     child: Image.asset(
                                         'lib/assets/images/movepeoplebtn.png'),
                                   ),
@@ -179,18 +178,16 @@ class _FlashRidePageState extends State<FlashRidePage> {
                                   ElevatedButton(
                                     style: flashbtnimg,
                                     onPressed: () {
-                                                  Navigator.push(
-                                                    context,
-                                                    MaterialPageRoute(
-                                                        builder: (context) =>
-                                                            MoveitemPage(
-                                                              destination:
-                                                                  widget.destination,
-                                                              pickup:
-                                                                  widget.pickup,
-                                                            )), // Ganti TujuanPage() dengan halaman yang ingin Anda navigasikan
-                                                  );
-                                                },
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => MoveitemPage(
+                                                  destination:
+                                                      widget.destination,
+                                                  pickup: widget.pickup,
+                                                )), // Ganti TujuanPage() dengan halaman yang ingin Anda navigasikan
+                                      );
+                                    },
                                     child: Image.asset(
                                         'lib/assets/images/moveitembtn.png'),
                                   ),

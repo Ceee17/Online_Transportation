@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:project_uts_online_transportation/pages/account_page.dart';
+import 'package:project_uts_online_transportation/pages/flashride_mainpage.dart';
 import 'package:project_uts_online_transportation/pages/homechatpage.dart';
 import 'package:project_uts_online_transportation/pages/order_page.dart';
 import 'package:project_uts_online_transportation/pages/template/template_nav_bar.dart';
@@ -208,6 +209,15 @@ class _LandingPageState extends State<LandingPage> {
                     return GestureDetector(
                       onTap: () {
                         _carouselController.animateToPage(entry.key);
+                        // if (_currentIndex == 0) {
+                        //   Navigator.push(
+                        //     context,
+                        //     MaterialPageRoute(
+                        //       builder: (context) =>
+                        //           FlashRidePage(pickup: '', destination: ''),
+                        //     ),
+                        //   );
+                        // }
                       },
                       child: Container(
                         width: 10,

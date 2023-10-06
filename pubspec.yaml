@@ -76,7 +76,7 @@ flutter:
     - lib/assets/images/2taxi.png
     - lib/assets/images/forgpass.png
     - lib/assets/images/mess.png
-
+    - lib/assets/images/maps.png
 
       # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
