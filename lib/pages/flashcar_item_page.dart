@@ -55,8 +55,8 @@ class _MoveitemCarPageState extends State<MoveitemCarPage> {
                 ),
               ),
               Positioned(
-                top: 40,
-                left: 20,
+                top: 35,
+                left: -10,
                 child: BackBtn(),
               ),
               Positioned(

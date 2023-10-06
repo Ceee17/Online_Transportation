@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:project_uts_online_transportation/pages/google_maps.dart';
 import 'flashride_confirmationpage.dart';
 
 // class DestinationbikePage extends StatelessWidget {
@@ -35,11 +37,11 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                 centerTitle: true,
               ),
               Positioned(
-                top: 23,
-                left: 288,
+                top: 60,
+                left: 292,
                 child: Container(
-                  width: 190,
-                  child: Image.asset('lib/assets/images/flashcarlogo.png'),
+                  width: 120,
+                  child: Image.asset('lib/assets/images/FlashrideLogo.png'),
                 ),
               ),
               Positioned(
@@ -105,8 +107,8 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => ConfirmPage(
-                          destination: 'Tarumanagara university 1',
+                        builder: (context) => MapSample(
+                          destination: 'Monumen Nasional',
                           pickup: widget.pickup, // Use the text directly
                         ),
                       ),
@@ -135,7 +137,7 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Tarumanagara university 1',
+                            'Monumen Nasional',
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 16,
@@ -144,7 +146,7 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                           ),
                           SizedBox(height: 6),
                           Text(
-                            'Letjen S. Parman St No.1, RT.6/RW.16, Tomang, Grogol',
+                            'RT.5/RW.2, Gambir, Central Jakarta City',
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 11,
@@ -161,64 +163,8 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => ConfirmPage(
-                          destination:'Tarumanagara university 2',
-                          pickup: widget.pickup,                       
-                           ),
-                      ),
-                    );
-                  },
-                  child: Container(
-                    width: 360,
-                    height: 79,
-                    margin: EdgeInsets.only(bottom: 40),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(36),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.2),
-                          spreadRadius: 2,
-                          blurRadius: 4,
-                          offset: Offset(0, 3),
-                        ),
-                      ],
-                    ),
-                    child: Padding(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 20, vertical: 14),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Tarumanagara university 2',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                          SizedBox(height: 6),
-                          Text(
-                            'Parking lot, Jl. Universitas Tarumanagara Kampus II No.11',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 11,
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => ConfirmPage(
-                          destination:'Alfa X Untar',
+                        builder: (context) => MapSample(
+                          destination: 'Season City',
                           pickup: widget.pickup,
                         ),
                       ),
@@ -247,7 +193,7 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Alfa X Untar',
+                            'Season City',
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 16,
@@ -256,7 +202,7 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                           ),
                           SizedBox(height: 6),
                           Text(
-                            'Jl. Taman S. Parman, RT.7/RW.8, Grogol',
+                            'Jl. Prof. Dr. Latumeten No.33, Jemb. Besi, Kec. Tambora',
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 11,
@@ -273,8 +219,8 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => ConfirmPage(
-                          destination:'Indomaret Taman S Parman. TCMJ',
+                        builder: (context) => MapSample(
+                          destination: 'Plaza Senayan',
                           pickup: widget.pickup,
                         ),
                       ),
@@ -303,7 +249,7 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Indomaret Taman S Parman. TCMJ',
+                            'Plaza Senayan',
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 16,
@@ -312,7 +258,7 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                           ),
                           SizedBox(height: 6),
                           Text(
-                            'Letjen S. Parman St no.1, RT.6/RW.16, Tomang, Grogol',
+                            'Jl. Asia Afrika No.8, Gelora, Kecamatan Tanah Abang,',
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 11,
@@ -324,35 +270,60 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                     ),
                   ),
                 ),
-                Container(
-                  width: 312,
-                  height: 59,
-                  decoration: BoxDecoration(
-                    color: Color(0xff3B60CE),
-                    borderRadius: BorderRadius.circular(34),
-                  ),
-                  child: Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      Positioned(
-                        top: -10,
-                        left: 25,
-                        child: Image.asset(
-                          'lib/assets/images/location1.png',
-                          width: 80,
-                          height: 80,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MapSample(
+                          destination: 'Tokyo Riverside',
+                          pickup: widget.pickup,
                         ),
                       ),
-                      Text(
-                        'Select Via Maps',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 11,
-                          fontWeight: FontWeight.w100,
-                          decoration: TextDecoration.underline,
+                    );
+                  },
+                  child: Container(
+                    width: 360,
+                    height: 79,
+                    margin: EdgeInsets.only(bottom: 40),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(36),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.2),
+                          spreadRadius: 2,
+                          blurRadius: 4,
+                          offset: Offset(0, 3),
                         ),
+                      ],
+                    ),
+                    child: Padding(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Tokyo Riverside',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          SizedBox(height: 6),
+                          Text(
+                            'Jl. Marina Indah Raya No.1, Pantai Indah Kapuk',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 11,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
                 ),
               ],

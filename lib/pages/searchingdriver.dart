@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_uts_online_transportation/pages/flashride_pickup.dart';
 import 'template/templatehead.dart';
 import 'flashbtntxt.dart';
 import 'flashpick_driverotw.dart';
@@ -16,7 +17,7 @@ class _SearchingDrivPageState extends State<SearchingDrivPage> {
     super.initState();
 
     // Add a 10-second delay before auto-navigation
-    Future.delayed(Duration(seconds: 10), () {
+    Future.delayed(Duration(seconds: 5), () {
       Navigator.push(
         context,
         MaterialPageRoute(
@@ -68,7 +69,16 @@ class _SearchingDrivPageState extends State<SearchingDrivPage> {
                       SizedBox(height: 40),
                       ElevatedButton(
                         style: flashbtntxt,
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => PickupBikePage(
+                                      pickup: '',
+                                      destination: '',
+                                    )), // Navigate to CarPickupPage
+                          );
+                        },
                         child: Text(
                           'Cancel',
                           style: TextStyle(

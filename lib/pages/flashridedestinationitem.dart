@@ -13,7 +13,8 @@ class DestinationitembikePage extends StatefulWidget {
     required this.destination,
   });
   @override
-  _DestinationitembikePageState createState() => _DestinationitembikePageState();
+  _DestinationitembikePageState createState() =>
+      _DestinationitembikePageState();
 }
 
 class _DestinationitembikePageState extends State<DestinationitembikePage> {
@@ -162,9 +163,9 @@ class _DestinationitembikePageState extends State<DestinationitembikePage> {
                       context,
                       MaterialPageRoute(
                         builder: (context) => MoveitemPage(
-                          destination:'Tarumanagara university 2',
-                          pickup: widget.pickup,                       
-                           ),
+                          destination: 'Tarumanagara university 2',
+                          pickup: widget.pickup,
+                        ),
                       ),
                     );
                   },
@@ -218,7 +219,7 @@ class _DestinationitembikePageState extends State<DestinationitembikePage> {
                       context,
                       MaterialPageRoute(
                         builder: (context) => MoveitemPage(
-                          destination:'Alfa X Untar',
+                          destination: 'Alfa X Untar',
                           pickup: widget.pickup,
                         ),
                       ),
@@ -274,7 +275,7 @@ class _DestinationitembikePageState extends State<DestinationitembikePage> {
                       context,
                       MaterialPageRoute(
                         builder: (context) => MoveitemPage(
-                          destination:'Indomaret Taman S Parman. TCMJ',
+                          destination: 'Indomaret Taman S Parman. TCMJ',
                           pickup: widget.pickup,
                         ),
                       ),

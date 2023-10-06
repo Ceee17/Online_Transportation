@@ -2,10 +2,15 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:project_uts_online_transportation/pages/template/back-button.dart';
+import 'package:project_uts_online_transportation/pages/flashride_pickup.dart';
+import 'package:project_uts_online_transportation/pages/flashridedestination.dart';
+import 'package:project_uts_online_transportation/pages/searchingdriver.dart';
 
 class MapSample extends StatefulWidget {
-  const MapSample({super.key});
+  final String pickup;
+  final String destination;
+
+  MapSample({required this.pickup, required this.destination});
 
   @override
   State<MapSample> createState() => MapSampleState();
@@ -17,102 +22,121 @@ class MapSampleState extends State<MapSample> {
   TextEditingController _searchController = TextEditingController();
 
   static const CameraPosition _kGooglePlex = CameraPosition(
-    target: LatLng(37.42796133580664, -122.085749655962),
+    target: LatLng(-6.168757691815309, 106.78946886372276),
     zoom: 14.4746,
   );
-  static final Marker _kGooglePlexMarker = Marker(
-    markerId: MarkerId('_kGooglePlex'),
-    infoWindow: InfoWindow(title: 'Google plex'),
+
+  static final Marker Untar = Marker(
+    markerId: MarkerId('Universitas Tarumanagara'),
+    infoWindow: InfoWindow(title: 'Universitas Tarumanagara'),
     icon: BitmapDescriptor.defaultMarker,
-    position: LatLng(37.42796133580664, -122.085749655962),
+    position: LatLng(-6.168757691815309, 106.78946886372276),
   );
-  static const CameraPosition _kLake = CameraPosition(
-      bearing: 192.8334901395799,
-      target: LatLng(37.43296265331129, -122.08832357078792),
-      tilt: 59.440717697143555,
-      zoom: 19.151926040649414);
 
-  static final Marker _kLakeMarker = Marker(
-    markerId: MarkerId('_kLakeMarker'),
-    infoWindow: InfoWindow(title: 'Lake'),
-    icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueBlue),
-    position: LatLng(37.43296265331129, -122.08832357078792),
-  );
-  static final Polyline _kPolyline = Polyline(
-      polylineId: PolylineId('_kPolyline'),
-      points: [
-        LatLng(37.43296265331129, -122.08832357078792),
-        LatLng(37.42796133580664, -122.085749655962),
-      ],
-      width: 5);
-
-  static final Polygon _kPolygon = Polygon(
-      polygonId: PolygonId('_kPolygon'),
-      points: [
-        LatLng(37.43296265331129, -122.08832357078792),
-        LatLng(37.42796133580664, -122.085749655962),
-        LatLng(37.418, -122.092),
-        LatLng(37.435, -122.092),
-      ],
-      strokeWidth: 5,
-      fillColor: Colors.transparent);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Google Maps'),
-      ),
-      body: Column(
+      body: Stack(
         children: [
-          Row(
-            children: [
-              Expanded(
-                child: TextFormField(
-                    controller: _searchController,
-                    textCapitalization: TextCapitalization.words,
-                    decoration: InputDecoration(hintText: 'Search by City'),
-                    onChanged: (value) {
-                      print(value);
-                    }),
-              ),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.search),
-              ),
-            ],
+          GoogleMap(
+            mapType: MapType.normal,
+            // markers: {
+            //   Untar,
+            // },
+            initialCameraPosition: _kGooglePlex,
+            onMapCreated: (GoogleMapController controller) {
+              _controller.complete(controller);
+            },
           ),
-          Expanded(
-            child: GoogleMap(
-              mapType: MapType.normal,
-              markers: {
-                _kGooglePlexMarker,
-                // _kLakeMarker
+          Positioned(
+            top: 40,
+            left: 30,
+            width: 350,
+            height: 50,
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(25),
+                ),
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => PickupBikePage(
+                      pickup: widget.pickup, // Replace with actual data
+                      destination:
+                          widget.destination, // Replace with actual data
+                    ),
+                  ),
+                );
               },
-              // polylines: {
-              //   // _kPolyline,
-              // },
-              // polygons: {
-              //   _kPolygon,
-              // },
-
-              initialCameraPosition: _kGooglePlex,
-              onMapCreated: (GoogleMapController controller) {
-                _controller.complete(controller);
+              child: Text(
+                widget.pickup,
+                style: TextStyle(color: Color(0xff828282)),
+              ),
+            ),
+          ),
+          Positioned(
+            top: 100,
+            left: 30,
+            width: 350,
+            height: 50,
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(25),
+                ),
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DestinationbikePage(
+                      destination:
+                          widget.destination, // Replace with actual data
+                      pickup: widget.pickup, // Replace with actual data
+                    ),
+                  ),
+                );
               },
+              child: Text(
+                widget.destination,
+                style: TextStyle(color: Color(0xff828282)),
+              ),
+            ),
+          ),
+          Positioned(
+            top: 800,
+            left: 30,
+            width: 350,
+            height: 50,
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(25),
+                ), // Change button color here
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          SearchingDrivPage()), // Navigate to CarPickupPage
+                );
+              },
+              child: Text(
+                'Confirm',
+                style: TextStyle(
+                    color: Color(0xff828282)), // Change text color here
+              ),
             ),
           ),
         ],
       ),
     );
-    // floatingActionButton: FloatingActionButton.extended(
-    //   onPressed: _goToTheLake,
-    //   label: const Text('To the lake!'),
-    //   icon: const Icon(Icons.directions_boat),
-    // ),
   }
-
-  // Future<void> _goToTheLake() async {
-  //   final GoogleMapController controller = await _controller.future;
-  //   await controller.animateCamera(CameraUpdate.newCameraPosition(_kLake));
-  // }
 }

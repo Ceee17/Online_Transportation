@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_uts_online_transportation/pages/template/back-button.dart';
 import 'flashridedestination.dart';
 import 'flashride_confirmationpage.dart';
 
@@ -31,12 +32,17 @@ class _PickupBikePageState extends State<PickupBikePage> {
         children: [
           Positioned(
             top: 20,
-            left: 83,
+            left: 292,
             child: Container(
-              width: 600,
+              width: 120,
               height: 160,
-              child: Image.asset('lib/assets/images/flashcarlogo.png'),
+              child: Image.asset('lib/assets/images/FlashrideLogo.png'),
             ),
+          ),
+          Positioned(
+            top: 60,
+            left: 10,
+            child: BackBtn(),
           ),
         ],
       ),
@@ -109,11 +115,9 @@ class _PickupBikePageState extends State<PickupBikePage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) =>
-                                DestinationbikePage(
-                                  pickup:
-                                'Tarumanagara university 1',
-                            destination: widget.destination,
+                            builder: (context) => DestinationbikePage(
+                                  pickup: 'Tarumanagara university',
+                                  destination: widget.destination,
                                 )), // Navigate to CarPickupPage
                       );
                       // Add your onPressed logic here
@@ -140,7 +144,7 @@ class _PickupBikePageState extends State<PickupBikePage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Tarumanagara university 1',
+                                  'Tarumanagara university',
                                   style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 18,
@@ -167,11 +171,9 @@ class _PickupBikePageState extends State<PickupBikePage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) =>
-                                DestinationbikePage(
-                                  pickup:
-                                'Tarumanagara university 2',
-                            destination: widget.destination,
+                            builder: (context) => DestinationbikePage(
+                                  pickup: 'Central Park',
+                                  destination: widget.destination,
                                 )), // Navigate to CarPickupPage
                       );
                       // Add your onPressed logic here
@@ -198,7 +200,7 @@ class _PickupBikePageState extends State<PickupBikePage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Tarumanagara university 2',
+                                  'Central Park',
                                   style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 18,
@@ -206,7 +208,7 @@ class _PickupBikePageState extends State<PickupBikePage> {
                                   ),
                                 ),
                                 Text(
-                                  'Parking lot, Jl. Universitas Tarumanagara Kampus II No.11',
+                                  'Letjen S. Parman St No.Kavling 28, North Tanjung Duren, Grogol',
                                   style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 11,
@@ -225,11 +227,9 @@ class _PickupBikePageState extends State<PickupBikePage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) =>
-                                DestinationbikePage(
-                                  pickup:
-                                'Alfa X Untar',
-                                destination: widget.destination,
+                            builder: (context) => DestinationbikePage(
+                                  pickup: 'Alfa X Untar',
+                                  destination: widget.destination,
                                 )), // Navigate to CarPickupPage
                       );
                       // Add your onPressed logic here
@@ -283,11 +283,9 @@ class _PickupBikePageState extends State<PickupBikePage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) =>
-                                DestinationbikePage(
-                                  pickup:
-                                'Indomaret Taman S Parman. TCMJ',
-                            destination: widget.destination,
+                            builder: (context) => DestinationbikePage(
+                                  pickup: 'Live Location',
+                                  destination: widget.destination,
                                 )), // Navigate to CarPickupPage
                       );
                       // Add your onPressed logic here
