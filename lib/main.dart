@@ -2,15 +2,19 @@
 
 import 'package:flutter/material.dart';
 import 'package:project_uts_online_transportation/pages/flashcar_item_page.dart';
-import 'package:project_uts_online_transportation/pages/flashride_items_page.dart';
+// import 'package:project_uts_online_transportation/pages/flashride_items_page.dart';
 import 'package:project_uts_online_transportation/pages/flashtaxi.dart';
 import 'package:project_uts_online_transportation/pages/google_maps.dart';
+import 'pages/chatpage.dart';
+import 'pages/faqpage.dart';
+import 'pages/homechatpage.dart';
+// import 'pages/flashride_items_page.dart';
+import 'pages/flashtaxi.dart';
 
 import 'pages/loginpage.dart';
 import 'pages/loadingpage.dart';
 import 'package:project_uts_online_transportation/pages/account_page.dart';
 import 'package:project_uts_online_transportation/pages/flashcar_destination.dart';
-import 'package:project_uts_online_transportation/pages/flashridedestination.dart';
 import 'package:project_uts_online_transportation/pages/flashcar_pickup.dart';
 import 'package:project_uts_online_transportation/pages/flashride_pickup.dart';
 import 'package:project_uts_online_transportation/pages/history_page.dart';
@@ -31,7 +35,6 @@ import 'pages/emailhbspage.dart';
 import 'pages/template/templatehead.dart';
 import 'pages/template/back-button.dart';
 import 'pages/edit_profile_page.dart';
-import 'package:project_uts_online_transportation/pages/flashcar_item_page.dart';
 
 void main() {
   runApp(const MyApp());
