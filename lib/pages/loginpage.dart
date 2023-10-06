@@ -1,22 +1,29 @@
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_database/firebase_database.dart';
+// import 'dart:js';';
 import 'package:flutter/material.dart';
-import 'package:project_uts_online_transportation/main.dart';
+// import 'package:project_uts_online_transportation/firebase/firebase_auth_services.dart';
+import '../firebase/firebase_auth_services.dart';
+// import 'package:project_uts_online_transportation/main.dart';
 import 'package:project_uts_online_transportation/pages/forgotpasswordpage.dart';
 import 'package:project_uts_online_transportation/pages/landingpage.dart';
 import 'package:project_uts_online_transportation/pages/signuppage.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:firebase_database/firebase_database.dart
 
+// ignore: must_be_immutable
 class LoginPage extends StatelessWidget {
   LoginPage({Key? key}) : super(key: key);
 
-  // TextEditingController emailTextEditingController = TextEditingController();
-  // TextEditingController passwordTextEditingController = TextEditingController();
+  final FirebaseAuthService _auth = FirebaseAuthService();
 
-  // @override
-  // void dispose() {
-  //   emailTextEditingController.dispose();
-  //   passwordTextEditingController.dispose();
-  // }
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    // super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +83,7 @@ class LoginPage extends StatelessWidget {
                   children: [
                     SizedBox(height: 50),
                     TextField(
-                      // controller: emailTextEditingController,
+                      controller: _emailController,
                       decoration: InputDecoration(
                         // enabledBorder: OutlineInputBorder(
                         // borderSide: BorderSide(width: 13, color: Colors.black),
@@ -94,7 +101,7 @@ class LoginPage extends StatelessWidget {
                     ),
                     SizedBox(height: 15),
                     TextField(
-                      // controller: passwordTextEditingController,
+                      controller: _passwordController,
                       obscureText: true,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
@@ -132,16 +139,17 @@ class LoginPage extends StatelessWidget {
                       height: 0,
                     ),
                     ElevatedButton(
-                      onPressed: () {
-                        // if (!emailTextEditingController.text.contains("@")) {
-                        //   displayToastMessage(
-                        //       "Email address is not Valid", context);
-                        // } else if (passwordTextEditingController.text.isEmpty) {
-                        //   displayToastMessage("Password is mandatory", context);
-                        // } else {
-                        //   loginAndAuthenticateUser(context);
-                        // }
-                      },
+                      onPressed: () => _signIn(context),
+                      // () {
+                      //   if (!emailTextEditingController.text.contains("@")) {
+                      //     displayToastMessage(
+                      //         "Email address is not Valid", context);
+                      //   } else if (passwordTextEditingController.text.isEmpty) {
+                      //     displayToastMessage("Password is mandatory", context);
+                      //   } else {
+                      //     loginAndAuthenticateUser(context);
+                      //   }
+                      // },
                       style: ElevatedButton.styleFrom(
                         primary: Color(0xFF111d41), // Ubah backgroundColor
                         onPrimary: Colors.white, // Ubah textColor
@@ -238,6 +246,20 @@ class LoginPage extends StatelessWidget {
     );
   }
 
+  void _signIn(BuildContext context) async {
+    String email = _emailController.text;
+    String password = _passwordController.text;
+
+    User? user = await _auth.signInWithEmailAndPassword(email, password);
+
+    if (user != null) {
+      print("User is successfully signedIn");
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => LandingPage()));
+    } else {
+      print("Error");
+    }
+  }
   // final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 
   // void loginAndAuthenticateUser(BuildContext context) async {

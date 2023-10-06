@@ -53,6 +53,6 @@ class MyApp extends StatelessWidget {
           HistoryPage.idScreen: (context) => HistoryPage(),
           AccountPage.idScreen: (context) => AccountPage(),
         },
-        home: SignupPage());
+        home: LoginPage());
   }
 }
