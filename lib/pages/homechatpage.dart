@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:project_uts_online_transportation/pages/account_page.dart';
 import 'package:project_uts_online_transportation/pages/chatpage.dart';
+import 'package:project_uts_online_transportation/pages/landingpage.dart';
+import 'package:project_uts_online_transportation/pages/order_page.dart';
 import 'package:project_uts_online_transportation/pages/template/template_nav_bar.dart';
 
-class Home extends StatefulWidget {
-  const Home({Key? key});
+class HomeChatPage extends StatefulWidget {
+  const HomeChatPage({Key? key});
 
   @override
-  _HomeState createState() => _HomeState();
+  _HomeChatPageState createState() => _HomeChatPageState();
 }
 
-class _HomeState extends State<Home> {
+class _HomeChatPageState extends State<HomeChatPage> {
   TextEditingController _searchController = TextEditingController();
   String searchText = '';
   List<Message> chatMessages = [];
@@ -44,20 +47,35 @@ class _HomeState extends State<Home> {
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
-      // if (index == 3) {
-      //   Navigator.pushNamed(
-      //     context,
-      //     AccountPage.idScreen,
-      //   );
-      //   return;
-      // }
-
-      _pageController.animateToPage(
-        _selectedIndex,
-        duration: Duration(milliseconds: 500),
-        curve: Curves.easeOutQuad,
-      );
+      switch (index) {
+        case 0:
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => LandingPage(),
+            ),
+          );
+        case 2:
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => OrderPage(),
+            ),
+          );
+        case 3:
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => AccountPage(),
+            ),
+          );
+      }
     });
+    _pageController.animateToPage(
+      _selectedIndex,
+      duration: Duration(milliseconds: 500),
+      curve: Curves.easeOutQuad,
+    );
   }
 
   void _searchContacts() {
