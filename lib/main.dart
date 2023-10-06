@@ -8,7 +8,6 @@ import 'pages/faqpage.dart';
 import 'pages/homechatpage.dart';
 // import 'pages/flashride_items_page.dart';
 import 'pages/flashtaxi.dart';
-
 import 'pages/loginpage.dart';
 import 'pages/loadingpage.dart';
 import 'package:project_uts_online_transportation/pages/account_page.dart';
@@ -22,6 +21,7 @@ import 'pages/order_page.dart';
 import 'pages/flashpick_driverotw.dart';
 import 'pages/flashride_confirmationpage.dart';
 import 'pages/searchingdriver.dart';
+
 import 'pages/flashridedestination.dart';
 import 'pages/flashride_mainpage.dart';
 import 'pages/moveperson_page.dart';
@@ -44,16 +44,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        theme: ThemeData(
-          fontFamily: "Poppins",
-        ),
-        debugShowCheckedModeBanner: false,
-        routes: {
-          OrderPage.idScreen: (context) => OrderPage(),
-          HistoryPage.idScreen: (context) => HistoryPage(),
-          AccountPage.idScreen: (context) => AccountPage(),
-          LoginPage.idScreen: (context) => LoginPage(),
-        },
-        home: FlashCarPage());
+      theme: ThemeData(
+        fontFamily: "Poppins",
+      ),
+      debugShowCheckedModeBanner: false,
+      routes: {
+        OrderPage.idScreen: (context) => OrderPage(),
+        HistoryPage.idScreen: (context) => HistoryPage(),
+        AccountPage.idScreen: (context) => AccountPage(),
+        LoginPage.idScreen: (context) => LoginPage(),
+      },
+      home: LandingPage(),
+    );
   }
 }

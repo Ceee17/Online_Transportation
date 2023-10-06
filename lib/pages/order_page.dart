@@ -12,7 +12,15 @@ import 'template/template_nav_bar.dart';
 
 class OrderPage extends StatefulWidget {
 // pastiin classnya extend nya STATEFULWIDGET BUKAN STATELESS
-  const OrderPage({super.key});
+
+  const OrderPage({
+    Key? key,
+    // required this.id,
+    // required this.svgAsset,
+    // required this.title,
+    // required this.description,
+  });
+
   static const String idScreen = "order";
   @override
   _OrderPageState createState() => _OrderPageState();
