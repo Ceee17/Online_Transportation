@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-// import 'package:project_uts_online_transportation/pages/destinationcar.dart';
-import 'flashcar_destination.dart';
-import 'package:project_uts_online_transportation/pages/google_maps.dart';
 import 'package:project_uts_online_transportation/pages/template/back-button.dart';
+import 'flashridedestination.dart';
 import 'template/FadeandSlidetransition.dart';
 
 // class PickupBikePage extends StatefulWidget {
@@ -14,37 +12,37 @@ import 'template/FadeandSlidetransition.dart';
 // }
 
 // class _CarPickupPageState extends State<PickupBikePage> {
-class PickupCarPage extends StatefulWidget {
+class PickupBikePage extends StatefulWidget {
   final String pickup;
   final String destination;
 
-  PickupCarPage({
+  PickupBikePage({
     required this.pickup,
     required this.destination,
   });
   @override
-  _PickupCarPageState createState() => _PickupCarPageState();
+  _PickupBikePageState createState() => _PickupBikePageState();
 }
 
-class _PickupCarPageState extends State<PickupCarPage> {
+class _PickupBikePageState extends State<PickupBikePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         children: [
           Positioned(
-            top: 80,
-            left: 20,
-            child: BackBtn(),
+            top: 20,
+            left: 292,
+            child: Container(
+              width: 120,
+              height: 160,
+              child: Image.asset('lib/assets/images/FlashrideLogo.png'),
+            ),
           ),
           Positioned(
-            top: 20,
-            left: 83,
-            child: Container(
-              width: 600,
-              height: 160,
-              child: Image.asset('lib/assets/images/flashcarlogo.png'),
-            ),
+            top: 60,
+            left: 10,
+            child: BackBtn(),
           ),
         ],
       ),
@@ -116,7 +114,7 @@ class _PickupCarPageState extends State<PickupCarPage> {
                     onTap: () {
                       Navigator.of(context).push(
                         FadeAndSlideTransition(
-                          page: DestinationcarPage(
+                          page: DestinationbikePage(
                             pickup: 'Tarumanagara university',
                             destination: widget.destination,
                           ),
@@ -171,7 +169,7 @@ class _PickupCarPageState extends State<PickupCarPage> {
                     onTap: () {
                       Navigator.of(context).push(
                         FadeAndSlideTransition(
-                          page: DestinationcarPage(
+                          page: DestinationbikePage(
                             pickup: 'Central Park',
                             destination: widget.destination,
                           ),
@@ -226,7 +224,7 @@ class _PickupCarPageState extends State<PickupCarPage> {
                     onTap: () {
                       Navigator.of(context).push(
                         FadeAndSlideTransition(
-                          page: DestinationcarPage(
+                          page: DestinationbikePage(
                             pickup: 'Alfa X Untar',
                             destination: widget.destination,
                           ),
@@ -281,7 +279,7 @@ class _PickupCarPageState extends State<PickupCarPage> {
                     onTap: () {
                       Navigator.of(context).push(
                         FadeAndSlideTransition(
-                          page: DestinationcarPage(
+                          page: DestinationbikePage(
                             pickup: 'Your Current Location',
                             destination: widget.destination,
                           ),

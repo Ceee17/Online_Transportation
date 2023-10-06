@@ -1,11 +1,41 @@
 import 'package:flutter/material.dart';
+import 'package:project_uts_online_transportation/pages/flashride_pickup.dart';
 import 'template/templatehead.dart';
 import 'flashbtntxt.dart';
-// import 'top_circular_clipper.dart';
+import 'flashpick_driverotw.dart';
+import 'landingpage.dart';
+import 'dart:async';
 
-class SearchingDrivPage extends StatelessWidget {
-  const SearchingDrivPage({Key? key}) : super(key: key);
-  static const String idScreen = "searchingdriver";
+// class SearchingDrivPage extends StatelessWidget {
+//   const SearchingDrivPage({Key? key}) : super(key: key);
+//   static const String idScreen = "searchingdriver";
+class SearchingDrivPage extends StatefulWidget {
+  _SearchingDrivPageState createState() => _SearchingDrivPageState();
+}
+
+class _SearchingDrivPageState extends State<SearchingDrivPage> {
+  late Timer _timer; // Declare a Timer variable
+
+  @override
+  void initState() {
+    super.initState();
+
+    // Add a 10-second delay before auto-navigation
+    _timer = Timer(Duration(seconds: 5), () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => FlashpickPage(),
+        ),
+      );
+    });
+  }
+
+  @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,14 +79,32 @@ class SearchingDrivPage extends StatelessWidget {
                       SizedBox(height: 40),
                       ElevatedButton(
                         style: flashbtntxt,
-                        onPressed: () {},
+                        onPressed: () {
+                          _timer.cancel();
+                          Navigator.of(context).push(
+                            PageRouteBuilder(
+                              transitionsBuilder: (context, animation,
+                                  secondaryAnimation, child) {
+                                return FadeTransition(
+                                  opacity: animation,
+                                  child: child,
+                                );
+                              },
+                              pageBuilder:
+                                  (context, animation, secondaryAnimation) {
+                                return LandingPage();
+                              },
+                            ),
+
+                          );
+                        },
                         child: Text(
                           'Cancel',
                           style: TextStyle(
                             color: Colors.black,
                           ),
                         ),
-                      ),
+                      )
                     ],
                   ),
                 ),

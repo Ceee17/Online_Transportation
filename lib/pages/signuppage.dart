@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:project_uts_online_transportation/pages/template/template_nav_bar.dart';
 
 class SignupPage extends StatelessWidget {
   const SignupPage({Key? key}) : super(key: key);
