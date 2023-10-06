@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:project_uts_online_transportation/pages/template/back-button.dart';
 import 'dart:math';
 import 'flashbtntxt.dart';
 
-class MoveitemPage extends StatefulWidget {
-  const MoveitemPage({Key? key}) : super(key: key);
+class MoveitemCarPage extends StatefulWidget {
+  const MoveitemCarPage({Key? key}) : super(key: key);
 
   @override
-  _MoveitemPageState createState() => _MoveitemPageState();
+  _MoveitemCarPageState createState() => _MoveitemCarPageState();
 }
 
-class _MoveitemPageState extends State<MoveitemPage> {
+class _MoveitemCarPageState extends State<MoveitemCarPage> {
   String selectedValue = 'Item Weight'; // Set an initial value
   double randomPrice = 0.0; // Initialize the price with 0.0
 
@@ -24,7 +25,7 @@ class _MoveitemPageState extends State<MoveitemPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(247.0),
+        preferredSize: Size.fromHeight(227.0),
         child: ClipRRect(
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(25.0),
@@ -38,15 +39,28 @@ class _MoveitemPageState extends State<MoveitemPage> {
                 centerTitle: true,
               ),
               Positioned(
-                top: 130,
-                left: 15,
+                top: 85,
+                left: -10,
                 child: Container(
-                  width: 230,
-                  child: Image.asset('lib/assets/images/moto1.png'),
+                  width: 270,
+                  child: Image.asset('lib/assets/images/carmoveitem.png'),
                 ),
               ),
               Positioned(
-                top: 180,
+                top: 23,
+                left: 288,
+                child: Container(
+                  width: 190,
+                  child: Image.asset('lib/assets/images/flashcarlogo.png'),
+                ),
+              ),
+              Positioned(
+                top: 40,
+                left: 20,
+                child: BackBtn(),
+              ),
+              Positioned(
+                top: 160,
                 left: 250,
                 child: Container(
                   child: Text(
@@ -65,8 +79,8 @@ class _MoveitemPageState extends State<MoveitemPage> {
         children: <Widget>[
           SizedBox.expand(
             child: DraggableScrollableSheet(
-              initialChildSize: 0.615,
-              minChildSize: 0.615,
+              initialChildSize: 0.595,
+              minChildSize: 0.595,
               maxChildSize: 0.950,
               builder:
                   (BuildContext context, ScrollController scrollController) {

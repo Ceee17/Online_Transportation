@@ -1,27 +1,34 @@
 import 'package:flutter/material.dart';
-import 'package:project_uts_online_transportation/pages/destinationcar.dart';
-import 'package:project_uts_online_transportation/pages/google_maps.dart';
-import 'package:project_uts_online_transportation/pages/template/back-button.dart';
+import 'flashridedestination.dart';
+import 'flashride_itemspage.dart';
 
-class CarPickupPage extends StatefulWidget {
-  const CarPickupPage({Key? key});
-  static const String idScreen = 'carpickup';
+// class PickupBikePage extends StatefulWidget {
+//   const PickupBikePage({Key? key});
+//   static const String idScreen = 'pickupbike';
 
+//  @override
+//   State<PickupBikePage> createState() => _CarPickupPageState();
+// }
+
+// class _CarPickupPageState extends State<PickupBikePage> {
+class PickupItemBikePage extends StatefulWidget {
+  final String pickup;
+  final String destination;
+
+  PickupItemBikePage({
+    required this.pickup,
+    required this.destination,
+  });
   @override
-  State<CarPickupPage> createState() => _CarPickupPageState();
+  _PickupItemBikePageState createState() => _PickupItemBikePageState();
 }
 
-class _CarPickupPageState extends State<CarPickupPage> {
+class _PickupItemBikePageState extends State<PickupItemBikePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         children: [
-          Positioned(
-            top: 80,
-            left: 20,
-            child: BackBtn(),
-          ),
           Positioned(
             top: 20,
             left: 83,
@@ -31,7 +38,6 @@ class _CarPickupPageState extends State<CarPickupPage> {
               child: Image.asset('lib/assets/images/flashcarlogo.png'),
             ),
           ),
-          // Add your other widgets here
         ],
       ),
       bottomNavigationBar: Stack(
@@ -104,61 +110,11 @@ class _CarPickupPageState extends State<CarPickupPage> {
                         context,
                         MaterialPageRoute(
                             builder: (context) =>
-                                DestinationCarPage()), // Navigate to CarPickupPage
-                      );
-                      // Add your onPressed logic here
-                    },
-                    child: Container(
-                      width: 360,
-                      height: 87,
-                      margin: EdgeInsets.only(bottom: 10),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(36),
-                      ),
-                      child: Center(
-                        child: Align(
-                          alignment: Alignment.centerLeft,
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(
-                              vertical: 0,
-                              horizontal: 20,
-                            ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment
-                                  .center, // Center text vertically
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Tarumanagara university',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                                Text(
-                                  'Letjen S. Parman St no.1, RT.6/RW.16, Tomang, Grogol',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 11,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                DestinationCarPage()), // Navigate to CarPickupPage
+                                MoveitemPage(
+                                  pickup:
+                                'Tarumanagara university 1',
+                            destination: widget.destination,
+                                )), // Navigate to CarPickupPage
                       );
                       // Add your onPressed logic here
                     },
@@ -184,7 +140,7 @@ class _CarPickupPageState extends State<CarPickupPage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Tarumanagara university',
+                                  'Tarumanagara university 1',
                                   style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 18,
@@ -212,7 +168,11 @@ class _CarPickupPageState extends State<CarPickupPage> {
                         context,
                         MaterialPageRoute(
                             builder: (context) =>
-                                DestinationCarPage()), // Navigate to CarPickupPage
+                                MoveitemPage(
+                                  pickup:
+                                'Tarumanagara university 2',
+                            destination: widget.destination,
+                                )), // Navigate to CarPickupPage
                       );
                       // Add your onPressed logic here
                     },
@@ -238,7 +198,7 @@ class _CarPickupPageState extends State<CarPickupPage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Tarumanagara university',
+                                  'Tarumanagara university 2',
                                   style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 18,
@@ -246,7 +206,7 @@ class _CarPickupPageState extends State<CarPickupPage> {
                                   ),
                                 ),
                                 Text(
-                                  'Letjen S. Parman St no.1, RT.6/RW.16, Tomang, Grogol',
+                                  'Parking lot, Jl. Universitas Tarumanagara Kampus II No.11',
                                   style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 11,
@@ -266,7 +226,69 @@ class _CarPickupPageState extends State<CarPickupPage> {
                         context,
                         MaterialPageRoute(
                             builder: (context) =>
-                                DestinationCarPage()), // Navigate to CarPickupPage
+                                MoveitemPage(
+                                  pickup:
+                                'Alfa X Untar',
+                                destination: widget.destination,
+                                )), // Navigate to CarPickupPage
+                      );
+                      // Add your onPressed logic here
+                    },
+                    child: Container(
+                      width: 370,
+                      height: 87,
+                      margin: EdgeInsets.only(bottom: 10),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(36),
+                      ),
+                      child: Center(
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                              vertical: 0,
+                              horizontal: 20,
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment
+                                  .center, // Center text vertically
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Alfa X Untar',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                                Text(
+                                  'Jl. Taman S. Parman, RT.7/RW.8, Grogol',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 11,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                MoveitemPage(
+                                  pickup:
+                                'Indomaret Taman S Parman. TCMJ',
+                            destination: widget.destination,
+                                )), // Navigate to CarPickupPage
                       );
                       // Add your onPressed logic here
                     },

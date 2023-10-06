@@ -5,6 +5,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:project_uts_online_transportation/pages/account_page.dart';
 import 'package:project_uts_online_transportation/pages/history_page.dart';
+import 'package:project_uts_online_transportation/pages/homechatpage.dart';
+import 'package:project_uts_online_transportation/pages/landingpage.dart';
 import 'package:project_uts_online_transportation/pages/template/template-card-button.dart';
 import 'package:water_drop_nav_bar/water_drop_nav_bar.dart';
 import 'template/templatehead.dart';
@@ -34,18 +36,33 @@ class _OrderPageState extends State<OrderPage> {
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
-      if (index == 3) {
-        Navigator.pushNamed(
-          context,
-          AccountPage.idScreen,
-        );
-        return;
+      switch (index) {
+        case 0:
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => LandingPage(),
+            ),
+          );
+        case 1:
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => HomeChatPage(),
+            ),
+          );
+        case 3:
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => AccountPage(),
+            ),
+          );
       }
-
       _pageController.animateToPage(
         _selectedIndex,
         duration: Duration(milliseconds: 500),
-        curve: Curves.easeOutQuad,
+        curve: Curves.easeInOutQuad,
       );
     });
   }
