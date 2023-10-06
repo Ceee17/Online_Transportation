@@ -1,5 +1,6 @@
 // import 'dart:js';';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 // import 'package:project_uts_online_transportation/firebase/firebase_auth_services.dart';
 import '../firebase/firebase_auth_services.dart';
 // import 'package:project_uts_online_transportation/main.dart';
@@ -250,14 +251,21 @@ class LoginPage extends StatelessWidget {
     String email = _emailController.text;
     String password = _passwordController.text;
 
-    User? user = await _auth.signInWithEmailAndPassword(email, password);
-
-    if (user != null) {
-      print("User is successfully signedIn");
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => LandingPage()));
+    if (!_emailController.text.contains("@")) {
+      displayToastMessage("Email address is not Valid", context);
+    } else if (_passwordController.text.isEmpty) {
+      displayToastMessage("Password is mandatory", context);
     } else {
-      print("Error");
+      User? user = await _auth.signInWithEmailAndPassword(email, password);
+
+      if (user != null) {
+        print("User is successfully signedIn");
+
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => LandingPage()));
+      } else {
+        print("Error");
+      }
     }
   }
   // final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
@@ -293,4 +301,8 @@ class LoginPage extends StatelessWidget {
   //     displayToastMessage("Error occured", context);
   //   }
   // }
+}
+
+displayToastMessage(String message, BuildContext context) {
+  Fluttertoast.showToast(msg: message);
 }

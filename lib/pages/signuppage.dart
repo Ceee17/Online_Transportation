@@ -2,6 +2,7 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 // import 'package:fluttertoast/fluttertoast.dart';
 import 'package:project_uts_online_transportation/firebase/firebase_auth_services.dart';
 // import 'package:project_uts_online_transportation/main.dart';
@@ -194,7 +195,8 @@ class _SignupPageState extends State<SignupPage> {
                         //   displayToastMessage(
                         //       "Password must be at least 6 characters",
                         //       context);
-                        // } else {
+                        // }
+                        //else {
                         //   registerNewUser(context);
                         // }
                         // },
@@ -272,24 +274,35 @@ class _SignupPageState extends State<SignupPage> {
     String password = _passwordController.text;
 
     try {
-      User? user = await _auth.signUpWithEmailAndPassword(
-        email,
-        password,
-        fullname,
-        username,
-        phonenumber,
-      );
-
-      if (user != null) {
-        print("You're already become a Flasher!");
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) => LandingPage(),
-          ),
-        );
+      if (_fullnameController.text.length < 3) {
+        displayToastMessage("Name must be at least 3 characters", context);
+      } else if (!_emailController.text.contains("@")) {
+        displayToastMessage("Email address is not Valid", context);
+      } else if (_phonenumberController.text.isEmpty) {
+        displayToastMessage("Phone number is mandatory", context);
+      } else if (_usernameController.text.isEmpty) {
+        displayToastMessage("Username is invalid", context);
+      } else if (_passwordController.text.length < 6) {
+        displayToastMessage("Password must be at least 6 characters", context);
       } else {
-        print("Error! : SignUp Failed");
+        User? user = await _auth.signUpWithEmailAndPassword(
+          email,
+          password,
+          fullname,
+          username,
+          phonenumber,
+        );
+        if (user != null) {
+          print("You're already become a Flasher!");
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => LandingPage(),
+            ),
+          );
+        } else {
+          print("Error! : SignUp Failed");
+        }
       }
     } catch (e) {
       print("Error: $e");
@@ -325,7 +338,8 @@ class _SignupPageState extends State<SignupPage> {
 //     }
 //   }
 // }
+}
 
-// displayToastMessage(String message, BuildContext context) {
-//   Fluttertoast.showToast(msg: message);
+displayToastMessage(String message, BuildContext context) {
+  Fluttertoast.showToast(msg: message);
 }
