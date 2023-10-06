@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'flashride_confirmationpage.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:project_uts_online_transportation/pages/google_maps.dart';
+import 'package:project_uts_online_transportation/pages/history_page.dart';
 import 'package:project_uts_online_transportation/pages/template/back-button.dart';
 import 'template/FadeandSlidetransition.dart';
 

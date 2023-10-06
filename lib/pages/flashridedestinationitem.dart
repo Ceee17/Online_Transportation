@@ -14,7 +14,8 @@ class DestinationitembikePage extends StatefulWidget {
     required this.destination,
   });
   @override
-  _DestinationitembikePageState createState() => _DestinationitembikePageState();
+  _DestinationitembikePageState createState() =>
+      _DestinationitembikePageState();
 }
 
 class _DestinationitembikePageState extends State<DestinationitembikePage> {
@@ -277,6 +278,7 @@ class _DestinationitembikePageState extends State<DestinationitembikePage> {
                             ),
                           );
                         },
+
                   child: Container(
                     width: 360,
                     height: 79,

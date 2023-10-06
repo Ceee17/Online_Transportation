@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_uts_online_transportation/pages/flashride_pickup.dart';
 import 'template/templatehead.dart';
 import 'flashbtntxt.dart';
 import 'flashpick_driverotw.dart';
@@ -94,6 +95,7 @@ class _SearchingDrivPageState extends State<SearchingDrivPage> {
                                 return LandingPage();
                               },
                             ),
+
                           );
                         },
                         child: Text(

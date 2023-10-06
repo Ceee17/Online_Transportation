@@ -14,12 +14,12 @@ class CustomCardButton extends StatelessWidget {
   const CustomCardButton({
     Key? key,
     required this.svgAsset,
-    required this.svgHeight,
-    required this.svgWidth,
+    this.svgHeight = 80,
+    this.svgWidth = 80,
     required this.title,
     required this.description,
-    required this.color,
-    this.textColor = const Color(0xFFffffff),
+    this.color = const Color(0xFFFFFFFF),
+    this.textColor = const Color(0xFF000000),
     this.heightButton = 154,
   }) : super(key: key);
 

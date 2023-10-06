@@ -154,6 +154,7 @@ class _FlashRidePageState extends State<FlashRidePage> {
                                             pickup: widget.pickup,
                                           ),
                                         ),
+
                                       );
                                     },
                                     child: Image.asset(

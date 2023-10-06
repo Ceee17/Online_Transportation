@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:project_uts_online_transportation/pages/google_maps.dart';
 import 'flashride_confirmationpage.dart';
 import 'template/FadeandSlidetransition.dart';
 
@@ -36,11 +38,11 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                 centerTitle: true,
               ),
               Positioned(
-                top: 23,
-                left: 288,
+                top: 60,
+                left: 292,
                 child: Container(
-                  width: 190,
-                  child: Image.asset('lib/assets/images/flashcarlogo.png'),
+                  width: 120,
+                  child: Image.asset('lib/assets/images/FlashrideLogo.png'),
                 ),
               ),
               Positioned(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_uts_online_transportation/pages/template/back-button.dart';
 import 'flashridedestination.dart';
 import 'template/FadeandSlidetransition.dart';
 
@@ -31,12 +32,17 @@ class _PickupBikePageState extends State<PickupBikePage> {
         children: [
           Positioned(
             top: 20,
-            left: 83,
+            left: 292,
             child: Container(
-              width: 600,
+              width: 120,
               height: 160,
-              child: Image.asset('lib/assets/images/flashcarlogo.png'),
+              child: Image.asset('lib/assets/images/FlashrideLogo.png'),
             ),
+          ),
+          Positioned(
+            top: 60,
+            left: 10,
+            child: BackBtn(),
           ),
         ],
       ),
