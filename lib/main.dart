@@ -56,6 +56,6 @@ class MyApp extends StatelessWidget {
           AccountPage.idScreen: (context) => AccountPage(),
           LoginPage.idScreen: (context) => LoginPage(),
         },
-        home: FlashCarPage());
+        home: Home());
   }
 }
