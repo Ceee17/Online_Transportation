@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:project_uts_online_transportation/pages/account_page.dart';
-import 'package:project_uts_online_transportation/pages/homechatpage.dart';
 import 'package:project_uts_online_transportation/pages/order_page.dart';
 import 'package:project_uts_online_transportation/pages/template/template_nav_bar.dart';
 
@@ -42,47 +41,23 @@ class _LandingPageState extends State<LandingPage> {
     _pageController = PageController(initialPage: _selectedIndex);
   }
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-      // if (index == 2) {
-      //   Navigator.pushNamed(
-      //     context,
-      //     OrderPage.idScreen,
-      //   );
-      // }
-      switch (index) {
-        case 1:
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => HomeChatPage(),
-            ),
-          );
-        case 2:
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => OrderPage(),
-            ),
-          );
+  // void _onItemTapped(int index) {
+  //   setState(() {
+  //     _selectedIndex = index;
+  //     // if (index == 2) {
+  //     //   Navigator.pushNamed(
+  //     //     context,
+  //     //     OrderPage.idScreen,
+  //     //   );
+  //     // }
 
-        case 3:
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => AccountPage(),
-            ),
-          );
-      }
-
-      _pageController.animateToPage(
-        _selectedIndex,
-        duration: Duration(milliseconds: 500),
-        curve: Curves.easeOutQuad,
-      );
-    });
-  }
+  //     _pageController.animateToPage(
+  //       _selectedIndex,
+  //       duration: Duration(milliseconds: 500),
+  //       curve: Curves.easeOutQuad,
+  //     );
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -427,24 +402,23 @@ class _LandingPageState extends State<LandingPage> {
       ),
       bottomNavigationBar: CustomNavBar(
         selectedIndex: _selectedIndex,
-        onItemSelected: _onItemTapped,
-        // (index) {
-        //   setState(() {
-        //     _selectedIndex = index;
-        //     if (index == 2) {
-        //       Navigator.pushNamed(
-        //         context,
-        //         OrderPage.idScreen,
-        //       );
-        //     }
-        //     if (index == 3) {
-        //       Navigator.pushNamed(context, AccountPage.idScreen);
-        //     }
-        //   });
-        //   _pageController.animateToPage(_selectedIndex,
-        //       duration: const Duration(milliseconds: 400),
-        //       curve: Curves.easeOutQuad);
-        // },
+        onItemSelected: (index) {
+          setState(() {
+            _selectedIndex = index;
+            if (index == 2) {
+              Navigator.pushNamed(
+                context,
+                OrderPage.idScreen,
+              );
+            }
+            if (index == 3) {
+              Navigator.pushNamed(context, AccountPage.idScreen);
+            }
+          });
+          _pageController.animateToPage(_selectedIndex,
+              duration: const Duration(milliseconds: 400),
+              curve: Curves.easeOutQuad);
+        },
       ),
     );
   }
