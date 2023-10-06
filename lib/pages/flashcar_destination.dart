@@ -1,18 +1,25 @@
 import 'package:flutter/material.dart';
+import 'flashride_confirmationpage.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:project_uts_online_transportation/pages/google_maps.dart';
 import 'package:project_uts_online_transportation/pages/template/back-button.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'template/FadeandSlidetransition.dart';
 
-class DestinationCarPage extends StatefulWidget {
-  const DestinationCarPage({Key? key});
-  static const String idScreen = 'destinationcar';
+// class DestinationbikePage extends StatelessWidget {
+//   const DestinationbikePage({Key? key});
+//   static const String idScreen = 'destinationbike';
+class DestinationcarPage extends StatefulWidget {
+  final String pickup;
+  final String destination;
 
+  DestinationcarPage({
+    required this.pickup,
+    required this.destination,
+  });
   @override
-  State<DestinationCarPage> createState() => _DestinationCarPageState();
+  _DestinationcarPageState createState() => _DestinationcarPageState();
 }
 
-class _DestinationCarPageState extends State<DestinationCarPage> {
+class _DestinationcarPageState extends State<DestinationcarPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +36,6 @@ class _DestinationCarPageState extends State<DestinationCarPage> {
                 backgroundColor: Color(0xff8DA2E2),
                 elevation: 0.0,
                 centerTitle: true,
-                // leading: Icon(Icons.abc),
               ),
               Positioned(
                 top: 80,
@@ -106,67 +112,14 @@ class _DestinationCarPageState extends State<DestinationCarPage> {
               children: [
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              MapSample()), // Navigate to CarPickupPage
-                    );
-                    // Add action for Tarumanagara University 1
-                  },
-                  child: Container(
-                    width: 370,
-                    height: 79,
-                    margin: EdgeInsets.only(bottom: 40),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(36),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.2),
-                          spreadRadius: 2,
-                          blurRadius: 4,
-                          offset: Offset(0, 3),
+                    Navigator.of(context).push(
+                      FadeAndSlideTransition(
+                        page: ConfirmPage(
+                          destination: 'Monumen Nasional',
+                          pickup: widget.pickup,
                         ),
-                      ],
-                    ),
-                    child: Padding(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 20, vertical: 14),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Tarumanagara university1',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                          SizedBox(height: 6),
-                          Text(
-                            'Letjen S. Parman St no.1, RT.6/RW.16, Tomang, Grogol',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 11,
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
-                        ],
                       ),
-                    ),
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              MapSample()), // Navigate to CarPickupPage
                     );
-                    // Add action for Tarumanagara University 2
                   },
                   child: Container(
                     width: 360,
@@ -191,7 +144,7 @@ class _DestinationCarPageState extends State<DestinationCarPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Tarumanagara university2',
+                            'Monumen Nasional',
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 16,
@@ -200,7 +153,7 @@ class _DestinationCarPageState extends State<DestinationCarPage> {
                           ),
                           SizedBox(height: 6),
                           Text(
-                            'Letjen S. Parman St no.1, RT.6/RW.16, Tomang, Grogol',
+                            'RT.5/RW.2, Gambir, Central Jakarta City',
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 11,
@@ -214,18 +167,19 @@ class _DestinationCarPageState extends State<DestinationCarPage> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              MapSample()), // Navigate to CarPickupPage
+                    Navigator.of(context).push(
+                      FadeAndSlideTransition(
+                        page: ConfirmPage(
+                          destination: 'Season City',
+                          pickup: widget.pickup,
+                        ),
+                      ),
                     );
-                    // Add action for Tarumanagara University 3
                   },
                   child: Container(
                     width: 360,
                     height: 79,
-                    margin: EdgeInsets.only(bottom: 50),
+                    margin: EdgeInsets.only(bottom: 40),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(36),
@@ -245,7 +199,7 @@ class _DestinationCarPageState extends State<DestinationCarPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Tarumanagara university3',
+                            'Season City',
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 16,
@@ -254,7 +208,7 @@ class _DestinationCarPageState extends State<DestinationCarPage> {
                           ),
                           SizedBox(height: 6),
                           Text(
-                            'Letjen S. Parman St no.1, RT.6/RW.16, Tomang, Grogol',
+                            'Jl. Prof. Dr. Latumenten No.33, Jemb. Besi, Kec. Tambora',
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 11,
@@ -266,35 +220,114 @@ class _DestinationCarPageState extends State<DestinationCarPage> {
                     ),
                   ),
                 ),
-                Container(
-                  width: 312,
-                  height: 59,
-                  decoration: BoxDecoration(
-                    color: Color(0xff3B60CE),
-                    borderRadius: BorderRadius.circular(34),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      FadeAndSlideTransition(
+                        page: ConfirmPage(
+                          destination: 'Plaza Senayan',
+                          pickup: widget.pickup,
+                        ),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    width: 360,
+                    height: 79,
+                    margin: EdgeInsets.only(bottom: 40),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(36),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.2),
+                          spreadRadius: 2,
+                          blurRadius: 4,
+                          offset: Offset(0, 3),
+                        ),
+                      ],
+                    ),
+                    child: Padding(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Plaza Senayan',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          SizedBox(height: 6),
+                          Text(
+                            'Jl. Asia Afrika No.8, Gelora, Kecamatan Tanah Abang',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 11,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
-                  child: Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      Positioned(
-                        top: -10,
-                        left: 25,
-                        child: Image.asset(
-                          'lib/assets/images/location1.png',
-                          width: 80,
-                          height: 80,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      FadeAndSlideTransition(
+                        page: ConfirmPage(
+                          destination: 'Tokyo Riverside',
+                          pickup: widget.pickup,
                         ),
                       ),
-                      Text(
-                        'Select Via Maps',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 11,
-                          fontWeight: FontWeight.w100,
-                          decoration: TextDecoration.underline,
+                    );
+                  },
+                  child: Container(
+                    width: 360,
+                    height: 79,
+                    margin: EdgeInsets.only(bottom: 40),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(36),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.2),
+                          spreadRadius: 2,
+                          blurRadius: 4,
+                          offset: Offset(0, 3),
                         ),
+                      ],
+                    ),
+                    child: Padding(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Tokyo Riverside',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          SizedBox(height: 6),
+                          Text(
+                            'Jl. Marina Indah Raya No.1, Pantai Indah Kapuk',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 11,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
                 ),
               ],

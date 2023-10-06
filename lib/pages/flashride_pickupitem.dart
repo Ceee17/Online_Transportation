@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'flashridedestination.dart';
+import 'template/FadeandSlidetransition.dart';
 import 'flashride_itemspage.dart';
 
 // class PickupBikePage extends StatefulWidget {
@@ -106,17 +106,14 @@ class _PickupItemBikePageState extends State<PickupItemBikePage> {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                MoveitemPage(
-                                  pickup:
-                                'Tarumanagara university 1',
+                      Navigator.of(context).push(
+                        FadeAndSlideTransition(
+                          page: MoveitemPage(
+                            pickup: 'Tarumanagara university',
                             destination: widget.destination,
-                                )), // Navigate to CarPickupPage
+                          ),
+                        ),
                       );
-                      // Add your onPressed logic here
                     },
                     child: Container(
                       width: 370,
@@ -140,7 +137,7 @@ class _PickupItemBikePageState extends State<PickupItemBikePage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Tarumanagara university 1',
+                                  'Tarumanagara university',
                                   style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 18,
@@ -164,17 +161,14 @@ class _PickupItemBikePageState extends State<PickupItemBikePage> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                MoveitemPage(
-                                  pickup:
-                                'Tarumanagara university 2',
+                      Navigator.of(context).push(
+                        FadeAndSlideTransition(
+                          page: MoveitemPage(
+                            pickup: 'Central Park',
                             destination: widget.destination,
-                                )), // Navigate to CarPickupPage
+                          ),
+                        ),
                       );
-                      // Add your onPressed logic here
                     },
                     child: Container(
                       width: 370,
@@ -198,7 +192,7 @@ class _PickupItemBikePageState extends State<PickupItemBikePage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Tarumanagara university 2',
+                                  'Central Park',
                                   style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 18,
@@ -206,7 +200,7 @@ class _PickupItemBikePageState extends State<PickupItemBikePage> {
                                   ),
                                 ),
                                 Text(
-                                  'Parking lot, Jl. Universitas Tarumanagara Kampus II No.11',
+                                  'Jl. Letjen S. Parman No.Kavling 28, Tanjung Duren, Grogol',
                                   style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 11,
@@ -222,17 +216,14 @@ class _PickupItemBikePageState extends State<PickupItemBikePage> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                MoveitemPage(
-                                  pickup:
-                                'Alfa X Untar',
-                                destination: widget.destination,
-                                )), // Navigate to CarPickupPage
+                      Navigator.of(context).push(
+                        FadeAndSlideTransition(
+                          page: MoveitemPage(
+                            pickup: 'Alfa X Untar',
+                            destination: widget.destination,
+                          ),
+                        ),
                       );
-                      // Add your onPressed logic here
                     },
                     child: Container(
                       width: 370,
@@ -280,17 +271,14 @@ class _PickupItemBikePageState extends State<PickupItemBikePage> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                MoveitemPage(
-                                  pickup:
-                                'Indomaret Taman S Parman. TCMJ',
+                      Navigator.of(context).push(
+                        FadeAndSlideTransition(
+                          page: MoveitemPage(
+                            pickup: 'Your Current Location',
                             destination: widget.destination,
-                                )), // Navigate to CarPickupPage
+                          ),
+                        ),
                       );
-                      // Add your onPressed logic here
                     },
                     child: Container(
                       width: 332,

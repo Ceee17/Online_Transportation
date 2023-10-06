@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'flashride_itemspage.dart';
+import 'template/FadeandSlidetransition.dart';
 
 // class DestinationbikePage extends StatelessWidget {
 //   const DestinationbikePage({Key? key});
@@ -102,16 +103,15 @@ class _DestinationitembikePageState extends State<DestinationitembikePage> {
               children: [
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => MoveitemPage(
-                          destination: 'Tarumanagara university 1',
-                          pickup: widget.pickup, // Use the text directly
-                        ),
-                      ),
-                    );
-                  },
+                    Navigator.of(context).push(
+                      FadeAndSlideTransition(
+                        page: MoveitemPage(
+                                destination: 'Monumen Nasional',
+                                pickup: widget.pickup,
+                              ),
+                            ),
+                          );
+                        },
                   child: Container(
                     width: 360,
                     height: 79,
@@ -135,7 +135,7 @@ class _DestinationitembikePageState extends State<DestinationitembikePage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Tarumanagara university 1',
+                            'Monumen Nasional',
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 16,
@@ -144,7 +144,7 @@ class _DestinationitembikePageState extends State<DestinationitembikePage> {
                           ),
                           SizedBox(height: 6),
                           Text(
-                            'Letjen S. Parman St No.1, RT.6/RW.16, Tomang, Grogol',
+                            'RT.5/RW.2, Gambir, Central Jakarta City',
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 11,
@@ -158,16 +158,15 @@ class _DestinationitembikePageState extends State<DestinationitembikePage> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => MoveitemPage(
-                          destination:'Tarumanagara university 2',
-                          pickup: widget.pickup,                       
-                           ),
-                      ),
-                    );
-                  },
+                    Navigator.of(context).push(
+                      FadeAndSlideTransition(
+                        page: MoveitemPage(
+                                destination: 'Season City',
+                                pickup: widget.pickup,
+                              ),
+                            ),
+                          );
+                        },
                   child: Container(
                     width: 360,
                     height: 79,
@@ -191,7 +190,7 @@ class _DestinationitembikePageState extends State<DestinationitembikePage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Tarumanagara university 2',
+                            'Season City',
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 16,
@@ -200,7 +199,7 @@ class _DestinationitembikePageState extends State<DestinationitembikePage> {
                           ),
                           SizedBox(height: 6),
                           Text(
-                            'Parking lot, Jl. Universitas Tarumanagara Kampus II No.11',
+                            'Jl. Prof. Dr. Latumenten No.33, Jemb. Besi, Kec. Tambora',
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 11,
@@ -214,16 +213,15 @@ class _DestinationitembikePageState extends State<DestinationitembikePage> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => MoveitemPage(
-                          destination:'Alfa X Untar',
-                          pickup: widget.pickup,
-                        ),
-                      ),
-                    );
-                  },
+                    Navigator.of(context).push(
+                      FadeAndSlideTransition(
+                        page: MoveitemPage(
+                                destination: 'Plaza Senayan',
+                                pickup: widget.pickup,
+                              ),
+                            ),
+                          );
+                        },
                   child: Container(
                     width: 360,
                     height: 79,
@@ -247,7 +245,7 @@ class _DestinationitembikePageState extends State<DestinationitembikePage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Alfa X Untar',
+                            'Plaza Senayan',
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 16,
@@ -256,7 +254,7 @@ class _DestinationitembikePageState extends State<DestinationitembikePage> {
                           ),
                           SizedBox(height: 6),
                           Text(
-                            'Jl. Taman S. Parman, RT.7/RW.8, Grogol',
+                            'Jl. Asia Afrika No.8, Gelora, Kecamatan Tanah Abang',
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 11,
@@ -270,16 +268,15 @@ class _DestinationitembikePageState extends State<DestinationitembikePage> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => MoveitemPage(
-                          destination:'Indomaret Taman S Parman. TCMJ',
-                          pickup: widget.pickup,
-                        ),
-                      ),
-                    );
-                  },
+                    Navigator.of(context).push(
+                      FadeAndSlideTransition(
+                        page: MoveitemPage(
+                                destination: 'Tokyo Riverside',
+                                pickup: widget.pickup,
+                              ),
+                            ),
+                          );
+                        },
                   child: Container(
                     width: 360,
                     height: 79,
@@ -303,7 +300,7 @@ class _DestinationitembikePageState extends State<DestinationitembikePage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Indomaret Taman S Parman. TCMJ',
+                            'Tokyo Riverside',
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 16,
@@ -312,7 +309,7 @@ class _DestinationitembikePageState extends State<DestinationitembikePage> {
                           ),
                           SizedBox(height: 6),
                           Text(
-                            'Letjen S. Parman St no.1, RT.6/RW.16, Tomang, Grogol',
+                            'Jl. Marina Indah Raya No.1, Pantai Indah Kapuk',
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 11,
@@ -322,37 +319,6 @@ class _DestinationitembikePageState extends State<DestinationitembikePage> {
                         ],
                       ),
                     ),
-                  ),
-                ),
-                Container(
-                  width: 312,
-                  height: 59,
-                  decoration: BoxDecoration(
-                    color: Color(0xff3B60CE),
-                    borderRadius: BorderRadius.circular(34),
-                  ),
-                  child: Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      Positioned(
-                        top: -10,
-                        left: 25,
-                        child: Image.asset(
-                          'lib/assets/images/location1.png',
-                          width: 80,
-                          height: 80,
-                        ),
-                      ),
-                      Text(
-                        'Select Via Maps',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 11,
-                          fontWeight: FontWeight.w100,
-                          decoration: TextDecoration.underline,
-                        ),
-                      ),
-                    ],
                   ),
                 ),
               ],

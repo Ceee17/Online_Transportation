@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'flashcar_destination.dart';
-import 'package:project_uts_online_transportation/pages/template/back-button.dart';
+import 'flashcar_item_page.dart';
 import 'template/FadeandSlidetransition.dart';
+import 'package:project_uts_online_transportation/pages/template/back-button.dart';
 
 // class PickupBikePage extends StatefulWidget {
 //   const PickupBikePage({Key? key});
@@ -12,19 +12,19 @@ import 'template/FadeandSlidetransition.dart';
 // }
 
 // class _CarPickupPageState extends State<PickupBikePage> {
-class PickupCarPage extends StatefulWidget {
+class PickupItemCarPage extends StatefulWidget {
   final String pickup;
   final String destination;
 
-  PickupCarPage({
+  PickupItemCarPage({
     required this.pickup,
     required this.destination,
   });
   @override
-  _PickupCarPageState createState() => _PickupCarPageState();
+  _PickupItemCarPageState createState() => _PickupItemCarPageState();
 }
 
-class _PickupCarPageState extends State<PickupCarPage> {
+class _PickupItemCarPageState extends State<PickupItemCarPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -114,7 +114,7 @@ class _PickupCarPageState extends State<PickupCarPage> {
                     onTap: () {
                       Navigator.of(context).push(
                         FadeAndSlideTransition(
-                          page: DestinationcarPage(
+                          page: MoveitemCarPage(
                             pickup: 'Tarumanagara university',
                             destination: widget.destination,
                           ),
@@ -169,7 +169,7 @@ class _PickupCarPageState extends State<PickupCarPage> {
                     onTap: () {
                       Navigator.of(context).push(
                         FadeAndSlideTransition(
-                          page: DestinationcarPage(
+                          page: MoveitemCarPage(
                             pickup: 'Central Park',
                             destination: widget.destination,
                           ),
@@ -224,7 +224,7 @@ class _PickupCarPageState extends State<PickupCarPage> {
                     onTap: () {
                       Navigator.of(context).push(
                         FadeAndSlideTransition(
-                          page: DestinationcarPage(
+                          page: MoveitemCarPage(
                             pickup: 'Alfa X Untar',
                             destination: widget.destination,
                           ),
@@ -279,7 +279,7 @@ class _PickupCarPageState extends State<PickupCarPage> {
                     onTap: () {
                       Navigator.of(context).push(
                         FadeAndSlideTransition(
-                          page: DestinationcarPage(
+                          page: MoveitemCarPage(
                             pickup: 'Your Current Location',
                             destination: widget.destination,
                           ),

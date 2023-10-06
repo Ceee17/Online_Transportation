@@ -1,14 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:project_uts_online_transportation/pages/flashcar_item_page.dart';
 import 'package:project_uts_online_transportation/pages/flashcar_pickup.dart';
-import 'package:project_uts_online_transportation/pages/history_page.dart';
-import 'package:project_uts_online_transportation/pages/loadingpage.dart';
+// import 'package:project_uts_online_transportation/pages/flashcar_pickupitem.dart';
+// import 'package:project_uts_online_transportation/pages/history_page.dart';
+// import 'package:project_uts_online_transportation/pages/loadingpage.dart';
+// import 'package:project_uts_online_transportation/pages/flashcar_item_page.dart';
+// class DragSheet extends StatefulWidget {
+//   const DragSheet({Key? key});
 
+//   @override
+//   State<DragSheet> createState() => _DragSheetState();
+// }
+
+// class DragSheet extends State<DragSheet> {
 class DragSheet extends StatefulWidget {
-  const DragSheet({Key? key});
+  final String pickup;
+  final String destination;
 
+  DragSheet({
+    required this.pickup,
+    required this.destination,
+  });
   @override
-  State<DragSheet> createState() => _DragSheetState();
+  _DragSheetState createState() => _DragSheetState();
 }
 
 class _DragSheetState extends State<DragSheet> {
@@ -63,10 +77,11 @@ class _DragSheetState extends State<DragSheet> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) =>
-                                          CarPickupPage()), // Navigate to CarPickupPage
+                                      builder: (context) => PickupCarPage(
+                                            destination: widget.destination,
+                                            pickup: widget.pickup,
+                                          )), // Ganti TujuanPage() dengan halaman yang ingin Anda navigasikan
                                 );
-                                // Add your onPressed logic here for Move People
                               },
                               style: ElevatedButton.styleFrom(
                                 primary: Color(0xff3B60CE),
@@ -109,10 +124,11 @@ class _DragSheetState extends State<DragSheet> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) =>
-                                          MoveitemCarPage()), // Navigate to CarPickupPage
+                                      builder: (context) => MoveitemCarPage(
+                                            destination: widget.destination,
+                                            pickup: widget.pickup,
+                                          )), // Ganti TujuanPage() dengan halaman yang ingin Anda navigasikan
                                 );
-                                // Add your onPressed logic here for Move Items
                               },
                               style: ElevatedButton.styleFrom(
                                 primary: Color(0xff3B60CE),

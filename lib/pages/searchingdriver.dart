@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'template/templatehead.dart';
 import 'flashbtntxt.dart';
 import 'flashpick_driverotw.dart';
+import 'landingpage.dart';
+import 'dart:async';
 
 // class SearchingDrivPage extends StatelessWidget {
 //   const SearchingDrivPage({Key? key}) : super(key: key);
@@ -11,12 +13,14 @@ class SearchingDrivPage extends StatefulWidget {
 }
 
 class _SearchingDrivPageState extends State<SearchingDrivPage> {
+  late Timer _timer; // Declare a Timer variable
+
   @override
   void initState() {
     super.initState();
 
     // Add a 10-second delay before auto-navigation
-    Future.delayed(Duration(seconds: 10), () {
+    _timer = Timer(Duration(seconds: 5), () {
       Navigator.push(
         context,
         MaterialPageRoute(
@@ -24,6 +28,12 @@ class _SearchingDrivPageState extends State<SearchingDrivPage> {
         ),
       );
     });
+  }
+
+  @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
   }
 
   @override
@@ -68,14 +78,31 @@ class _SearchingDrivPageState extends State<SearchingDrivPage> {
                       SizedBox(height: 40),
                       ElevatedButton(
                         style: flashbtntxt,
-                        onPressed: () {},
+                        onPressed: () {
+                          _timer.cancel();
+                          Navigator.of(context).push(
+                            PageRouteBuilder(
+                              transitionsBuilder: (context, animation,
+                                  secondaryAnimation, child) {
+                                return FadeTransition(
+                                  opacity: animation,
+                                  child: child,
+                                );
+                              },
+                              pageBuilder:
+                                  (context, animation, secondaryAnimation) {
+                                return LandingPage();
+                              },
+                            ),
+                          );
+                        },
                         child: Text(
                           'Cancel',
                           style: TextStyle(
                             color: Colors.black,
                           ),
                         ),
-                      ),
+                      )
                     ],
                   ),
                 ),

@@ -1,23 +1,26 @@
 import 'package:flutter/material.dart';
-import 'flashride_confirmationpage.dart';
+import 'flashcar_item_page.dart';
 import 'template/FadeandSlidetransition.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:project_uts_online_transportation/pages/template/back-button.dart';
+
 
 // class DestinationbikePage extends StatelessWidget {
 //   const DestinationbikePage({Key? key});
 //   static const String idScreen = 'destinationbike';
-class DestinationbikePage extends StatefulWidget {
+class DestinationitemcarPage extends StatefulWidget {
   final String pickup;
   final String destination;
 
-  DestinationbikePage({
+  DestinationitemcarPage({
     required this.pickup,
     required this.destination,
   });
   @override
-  _DestinationbikePageState createState() => _DestinationbikePageState();
+  _DestinationitemcarPageState createState() => _DestinationitemcarPageState();
 }
 
-class _DestinationbikePageState extends State<DestinationbikePage> {
+class _DestinationitemcarPageState extends State<DestinationitemcarPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,6 +39,11 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                 centerTitle: true,
               ),
               Positioned(
+                top: 80,
+                left: 20,
+                child: BackBtn(),
+              ),
+              Positioned(
                 top: 23,
                 left: 288,
                 child: Container(
@@ -44,11 +52,13 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                 ),
               ),
               Positioned(
-                top: 70,
-                left: 110,
+                top: 80,
+                left: 50,
                 child: Container(
-                  width: 210,
-                  child: Image.asset('lib/assets/images/moto3.png'),
+                  width: 300,
+                  child: SvgPicture.asset(
+                    'lib/assets/images/flashcar.svg',
+                  ),
                 ),
               ),
               Positioned(
@@ -105,7 +115,7 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                   onTap: () {
                     Navigator.of(context).push(
                       FadeAndSlideTransition(
-                        page: ConfirmPage(
+                        page: MoveitemCarPage(
                                 destination: 'Monumen Nasional',
                                 pickup: widget.pickup,
                               ),
@@ -160,7 +170,7 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                   onTap: () {
                     Navigator.of(context).push(
                       FadeAndSlideTransition(
-                        page: ConfirmPage(
+                        page: MoveitemCarPage(
                                 destination: 'Season City',
                                 pickup: widget.pickup,
                               ),
@@ -215,7 +225,7 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                   onTap: () {
                     Navigator.of(context).push(
                       FadeAndSlideTransition(
-                        page: ConfirmPage(
+                        page: MoveitemCarPage(
                                 destination: 'Plaza Senayan',
                                 pickup: widget.pickup,
                               ),
@@ -270,7 +280,7 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                   onTap: () {
                     Navigator.of(context).push(
                       FadeAndSlideTransition(
-                        page: ConfirmPage(
+                        page: MoveitemCarPage(
                                 destination: 'Tokyo Riverside',
                                 pickup: widget.pickup,
                               ),

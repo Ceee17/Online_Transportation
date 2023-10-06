@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'template/templatehead.dart';
 import 'flashbtntxt.dart';
-// import 'top_circular_clipper.dart';
+import 'landingpage.dart';
 
 class FlashpickPage extends StatelessWidget {
   const FlashpickPage({Key? key}) : super(key: key);
@@ -49,14 +49,26 @@ class FlashpickPage extends StatelessWidget {
                       SizedBox(height: 40),
                       ElevatedButton(
                         style: flashbtntxt,
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            PageRouteBuilder(
+                              pageBuilder:
+                                  (context, animation, secondaryAnimation) {
+                                return FadeTransition(
+                                  opacity: animation,
+                                  child: LandingPage(),
+                                );
+                              },
+                            ),
+                          );
+                        },
                         child: Text(
                           'Cancel',
                           style: TextStyle(
                             color: Colors.black,
                           ),
                         ),
-                      ),
+                      )
                     ],
                   ),
                 ),

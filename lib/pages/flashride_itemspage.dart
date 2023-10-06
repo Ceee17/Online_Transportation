@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 import 'flashridedestinationitem.dart';
 import 'flashride_pickupitem.dart';
-
+import 'searchingdriver.dart';
+import 'template/FadeandSlidetransition.dart';
 // class MoveitemPage extends StatefulWidget {
 //   const MoveitemPage({Key? key}) : super(key: key);
 
@@ -35,8 +36,6 @@ class _MoveitemPageState extends State<MoveitemPage> {
     // Generate a random price between $10 and $100 with 2 decimal places
     randomPrice = (random.nextDouble() * 90 + 10);
   }
-
- 
 
   @override
   Widget build(BuildContext context) {
@@ -155,14 +154,10 @@ class _MoveitemPageState extends State<MoveitemPage> {
                                                     showAdditionalText =
                                                         false; // Set to false to hide additional text after clicking
                                                   });
-
-                                                  Navigator.push(
-                                                    context,
-                                                    MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          PickupItemBikePage(
-                                                        pickup: widget
-                                                            .pickup, // Do not concatenate the additional text here
+                                                  Navigator.of(context).push(
+                                                    FadeAndSlideTransition(
+                                                      page: PickupItemBikePage(
+                                                        pickup: widget.pickup,
                                                         destination:
                                                             widget.destination,
                                                       ),
@@ -179,7 +174,8 @@ class _MoveitemPageState extends State<MoveitemPage> {
                                                   minimumSize: Size(350, 50),
                                                 ),
                                                 child: Column(
-                                                  mainAxisAlignment:MainAxisAlignment.center,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
                                                   children: [
                                                     Visibility(
                                                       visible:
@@ -321,11 +317,10 @@ class _MoveitemPageState extends State<MoveitemPage> {
                                                         false; // Set to false to hide additional text after clicking
                                                   });
 
-                                                  Navigator.push(
-                                                    context,
-                                                    MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          PickupItemBikePage(
+                                                  Navigator.of(context).push(
+                                                    FadeAndSlideTransition(
+                                                      page:
+                                                          DestinationitembikePage(
                                                         pickup: widget
                                                             .pickup, // Do not concatenate the additional text here
                                                         destination:
@@ -344,7 +339,8 @@ class _MoveitemPageState extends State<MoveitemPage> {
                                                   minimumSize: Size(350, 50),
                                                 ),
                                                 child: Column(
-                                                  mainAxisAlignment:MainAxisAlignment.center,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
                                                   children: [
                                                     Visibility(
                                                       visible:
@@ -359,7 +355,7 @@ class _MoveitemPageState extends State<MoveitemPage> {
                                                       ),
                                                     ),
                                                     Text(
-                                                      widget.pickup,
+                                                      widget.destination,
                                                       style: TextStyle(
                                                         fontSize: 15,
                                                         color:
@@ -453,7 +449,6 @@ class _MoveitemPageState extends State<MoveitemPage> {
                           case 3:
                             // Call the function to calculate a random price
                             calculateRandomPrice();
-
                             return Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: <Widget>[
@@ -558,7 +553,12 @@ class _MoveitemPageState extends State<MoveitemPage> {
                                                 ),
                                               ),
                                               onPressed: () {
-                                                // Handle the onPressed event
+                                                Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          SearchingDrivPage()),
+                                                );
                                               },
                                               child: Text(
                                                 'Order',
