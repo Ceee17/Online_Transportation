@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "255389936944",
+    "project_id": "flashmover-2eaed",
+    "storage_bucket": "flashmover-2eaed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:255389936944:android:b5bb4ac13259dfc0e16cf5",
+        "android_client_info": {
+          "package_name": "com.example.project_uts_online_transportation"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDlMfs1ABRKKWrLq8l713y5B-6obORXYk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

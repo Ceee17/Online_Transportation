@@ -1,9 +1,30 @@
+// import 'dart:js';';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+// import 'package:project_uts_online_transportation/firebase/firebase_auth_services.dart';
+import '../firebase/firebase_auth_services.dart';
+// import 'package:project_uts_online_transportation/main.dart';
+import 'package:project_uts_online_transportation/pages/forgotpasswordpage.dart';
+import 'package:project_uts_online_transportation/pages/landingpage.dart';
+import 'package:project_uts_online_transportation/pages/signuppage.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:firebase_database/firebase_database.dart
 
+// ignore: must_be_immutable
 class LoginPage extends StatelessWidget {
-  static const String idScreen = "login";
-  const LoginPage({Key? key}) : super(key: key);
+  LoginPage({Key? key}) : super(key: key);
 
+  final FirebaseAuthService _auth = FirebaseAuthService();
+
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    // super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,6 +83,7 @@ class LoginPage extends StatelessWidget {
                   children: [
                     SizedBox(height: 50),
                     TextField(
+                      controller: _emailController,
                       decoration: InputDecoration(
                         // enabledBorder: OutlineInputBorder(
                         // borderSide: BorderSide(width: 13, color: Colors.black),
@@ -74,11 +96,12 @@ class LoginPage extends StatelessWidget {
                             EdgeInsets.symmetric(vertical: 8, horizontal: 20),
                         filled: true,
                         fillColor: Color(0xffffffff),
-                        labelText: 'Username',
+                        labelText: 'E-mail',
                       ),
                     ),
                     SizedBox(height: 15),
                     TextField(
+                      controller: _passwordController,
                       obscureText: true,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
@@ -95,7 +118,13 @@ class LoginPage extends StatelessWidget {
                     Align(
                       alignment: Alignment.centerRight,
                       child: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ForgotPasswordPage(),
+                              ));
+                        },
                         child: Text(
                           'Forgot Password?',
                           style: TextStyle(
@@ -110,9 +139,17 @@ class LoginPage extends StatelessWidget {
                       height: 0,
                     ),
                     ElevatedButton(
-                      onPressed: () {
-                        // print('"Login" button pressed');
-                      },
+                      onPressed: () => _signIn(context),
+                      // () {
+                      //   if (!emailTextEditingController.text.contains("@")) {
+                      //     displayToastMessage(
+                      //         "Email address is not Valid", context);
+                      //   } else if (passwordTextEditingController.text.isEmpty) {
+                      //     displayToastMessage("Password is mandatory", context);
+                      //   } else {
+                      //     loginAndAuthenticateUser(context);
+                      //   }
+                      // },
                       style: ElevatedButton.styleFrom(
                         primary: Color(0xFF111d41), // Ubah backgroundColor
                         onPrimary: Colors.white, // Ubah textColor
@@ -181,7 +218,13 @@ class LoginPage extends StatelessWidget {
                           height: 35,
                           width: 100,
                           child: TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => SignupPage(),
+                                  ));
+                            },
                             child: Text(
                               'Sign up',
                               style: TextStyle(
@@ -202,4 +245,63 @@ class LoginPage extends StatelessWidget {
       ),
     );
   }
+
+  void _signIn(BuildContext context) async {
+    String email = _emailController.text;
+    String password = _passwordController.text;
+
+    if (!_emailController.text.contains("@")) {
+      displayToastMessage("Email address is not Valid", context);
+    } else if (_passwordController.text.isEmpty) {
+      displayToastMessage("Password is mandatory", context);
+    } else {
+      User? user = await _auth.signInWithEmailAndPassword(email, password);
+
+      if (user != null) {
+        print("User is successfully signedIn");
+
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => LandingPage()));
+      } else {
+        print("Error");
+      }
+    }
+  }
+  // final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+
+  // void loginAndAuthenticateUser(BuildContext context) async {
+  //   final User? firebaseUser = (await _firebaseAuth
+  //           .signInWithEmailAndPassword(
+  //               email: emailTextEditingController.text,
+  //               password: passwordTextEditingController.text)
+  //           .catchError((errMsg) {
+  //     displayToastMessage("Error: " + errMsg.toString(), context);
+  //   }))
+  //       .user;
+
+  //   if (firebaseUser != null) {
+  //     // DatabaseEvent snapshot = await usersRef.child(firebaseUser.uid).once();
+  //     usersRef
+  //         .child(firebaseUser.uid)
+  //         .once()
+  //         .then((value) => (DataSnapshot snap) {
+  //               if (snap.value != null) {
+  //                 Navigator.pushNamedAndRemoveUntil(
+  //                     context, LandingPage.idScreen, (route) => false);
+  //                 displayToastMessage("You are logged in now", context);
+  //               } else {
+  //                 _firebaseAuth.signOut();
+  //                 displayToastMessage(
+  //                     "No record exists for this user. Please create a new account",
+  //                     context);
+  //               }
+  //             });
+  //   } else {
+  //     displayToastMessage("Error occured", context);
+  //   }
+  // }
+}
+
+displayToastMessage(String message, BuildContext context) {
+  Fluttertoast.showToast(msg: message);
 }
