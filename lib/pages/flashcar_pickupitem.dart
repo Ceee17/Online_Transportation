@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'flashcar_item_page.dart';
-import 'template/FadeandSlidetransition.dart';
+import 'template/RightToLeftFadetransition.dart';
 import 'package:project_uts_online_transportation/pages/template/back-button.dart';
 
 // class PickupBikePage extends StatefulWidget {
@@ -113,7 +113,7 @@ class _PickupItemCarPageState extends State<PickupItemCarPage> {
                   GestureDetector(
                     onTap: () {
                       Navigator.of(context).push(
-                        FadeAndSlideTransition(
+                        RightToLeftFadeTransition(
                           page: MoveitemCarPage(
                             pickup: 'Tarumanagara university',
                             destination: widget.destination,
@@ -168,7 +168,7 @@ class _PickupItemCarPageState extends State<PickupItemCarPage> {
                   GestureDetector(
                     onTap: () {
                       Navigator.of(context).push(
-                        FadeAndSlideTransition(
+                        RightToLeftFadeTransition(
                           page: MoveitemCarPage(
                             pickup: 'Central Park',
                             destination: widget.destination,
@@ -223,7 +223,7 @@ class _PickupItemCarPageState extends State<PickupItemCarPage> {
                   GestureDetector(
                     onTap: () {
                       Navigator.of(context).push(
-                        FadeAndSlideTransition(
+                        RightToLeftFadeTransition(
                           page: MoveitemCarPage(
                             pickup: 'Alfa X Untar',
                             destination: widget.destination,
@@ -278,7 +278,7 @@ class _PickupItemCarPageState extends State<PickupItemCarPage> {
                   GestureDetector(
                     onTap: () {
                       Navigator.of(context).push(
-                        FadeAndSlideTransition(
+                        RightToLeftFadeTransition(
                           page: MoveitemCarPage(
                             pickup: 'Your Current Location',
                             destination: widget.destination,

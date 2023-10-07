@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:project_uts_online_transportation/pages/template/template-card-button.dart';
 import 'package:project_uts_online_transportation/pages/template/templatehead.dart';
+import 'template/RightToLeftFadetransition.dart';
+import 'template/back-button.dart';
+import 'account_page.dart';
 
 class PaymenPage extends StatelessWidget {
   static const String idScreen = "Payment";
@@ -17,6 +20,7 @@ class PaymenPage extends StatelessWidget {
         body: Column(
           children: [
             TemplateHead(title: "Payment Method"),
+            BackBtn(),
             Spacer(),
             Container(
               width: double.infinity,
@@ -43,6 +47,13 @@ class PaymenPage extends StatelessWidget {
                         color: Color(0xffFFFFFF),
                         textColor: Color(0xFF000000),
                         heightButton: 140,
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            RightToLeftFadeTransition(
+                              page: AccountPage(),
+                            ),
+                          );
+                        },
                       ),
                       SizedBox(
                         height: 20,
@@ -57,34 +68,55 @@ class PaymenPage extends StatelessWidget {
                         color: Color(0xffFFFFFF),
                         textColor: Color(0xFF000000),
                         heightButton: 140,
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            RightToLeftFadeTransition(
+                              page: AccountPage(),
+                            ),
+                          );
+                        },
                       ),
                       SizedBox(
                         height: 20,
                       ),
                       CustomCardButton(
                         svgAsset: 'lib/assets/images/ovo.svg',
-                        svgHeight: 30,
-                        svgWidth: 30,
+                        svgHeight: 70,
+                        svgWidth: 70,
                         title: 'ovo',
                         description:
                             'make payments \ndirectly to drivers \nusing cash',
                         color: Color(0xffFFFFFF),
                         textColor: Color(0xFF000000),
                         heightButton: 140,
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            RightToLeftFadeTransition(
+                              page: AccountPage(),
+                            ),
+                          );
+                        },
                       ),
                       SizedBox(
                         height: 20,
                       ),
                       CustomCardButton(
                         svgAsset: 'lib/assets/images/gopay.svg',
-                        svgHeight: 25,
-                        svgWidth: 25,
+                        svgHeight: 70,
+                        svgWidth: 70,
                         title: 'Gopay',
                         description:
                             'make payments \ndirectly to drivers \nusing cash',
                         color: Color(0xffFFFFFF),
                         textColor: Color(0xFF000000),
                         heightButton: 140,
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            RightToLeftFadeTransition(
+                              page: AccountPage(),
+                            ),
+                          );
+                        },
                       ),
                     ],
                   ),

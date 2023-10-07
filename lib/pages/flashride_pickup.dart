@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project_uts_online_transportation/pages/template/back-button.dart';
 import 'flashridedestination.dart';
-import 'template/FadeandSlidetransition.dart';
+import 'template/RightToLeftFadetransition.dart';
 
 // class PickupBikePage extends StatefulWidget {
 //   const PickupBikePage({Key? key});
@@ -113,7 +113,7 @@ class _PickupBikePageState extends State<PickupBikePage> {
                   GestureDetector(
                     onTap: () {
                       Navigator.of(context).push(
-                        FadeAndSlideTransition(
+                        RightToLeftFadeTransition(
                           page: DestinationbikePage(
                             pickup: 'Tarumanagara university',
                             destination: widget.destination,
@@ -168,7 +168,7 @@ class _PickupBikePageState extends State<PickupBikePage> {
                   GestureDetector(
                     onTap: () {
                       Navigator.of(context).push(
-                        FadeAndSlideTransition(
+                        RightToLeftFadeTransition(
                           page: DestinationbikePage(
                             pickup: 'Central Park',
                             destination: widget.destination,
@@ -223,7 +223,7 @@ class _PickupBikePageState extends State<PickupBikePage> {
                   GestureDetector(
                     onTap: () {
                       Navigator.of(context).push(
-                        FadeAndSlideTransition(
+                        RightToLeftFadeTransition(
                           page: DestinationbikePage(
                             pickup: 'Alfa X Untar',
                             destination: widget.destination,
@@ -278,7 +278,7 @@ class _PickupBikePageState extends State<PickupBikePage> {
                   GestureDetector(
                     onTap: () {
                       Navigator.of(context).push(
-                        FadeAndSlideTransition(
+                        RightToLeftFadeTransition(
                           page: DestinationbikePage(
                             pickup: 'Your Current Location',
                             destination: widget.destination,
