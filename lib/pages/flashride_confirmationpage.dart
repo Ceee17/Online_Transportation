@@ -4,8 +4,8 @@ import 'template/templatehead.dart';
 import 'flashridedestination.dart';
 import 'flashride_pickup.dart';
 import 'searchingdriver.dart';
-import 'flashbtntxt.dart';
-import 'template/FadeandSlidetransition.dart';
+import 'template/flashbtntxt.dart';
+import 'template/RightToLeftFadetransition.dart';
 
 class ConfirmPage extends StatefulWidget {
   final String destination;
@@ -51,7 +51,7 @@ class _ConfirmPageState extends State<ConfirmPage> {
                           ElevatedButton(
                             onPressed: () {
                               Navigator.of(context).push(
-                                FadeAndSlideTransition(
+                                RightToLeftFadeTransition(
                                   page: PickupBikePage(
                                     pickup: widget.pickup,
                                     destination: widget.destination,
@@ -84,7 +84,7 @@ class _ConfirmPageState extends State<ConfirmPage> {
                           ElevatedButton(
                             onPressed: () {
                               Navigator.of(context).push(
-                                FadeAndSlideTransition(
+                                RightToLeftFadeTransition(
                                   page: DestinationbikePage(
                                     destination: widget.destination,
                                     pickup: widget.pickup,

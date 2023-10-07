@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'flashcar_destination.dart';
 import 'package:project_uts_online_transportation/pages/google_maps.dart';
 import 'package:project_uts_online_transportation/pages/template/back-button.dart';
-import 'template/FadeandSlidetransition.dart';
+import 'template/RightToLeftFadetransition.dart';
 
 // class PickupBikePage extends StatefulWidget {
 //   const PickupBikePage({Key? key});
@@ -115,7 +115,7 @@ class _PickupCarPageState extends State<PickupCarPage> {
                   GestureDetector(
                     onTap: () {
                       Navigator.of(context).push(
-                        FadeAndSlideTransition(
+                        RightToLeftFadeTransition(
                           page: DestinationcarPage(
                             pickup: 'Tarumanagara university',
                             destination: widget.destination,
@@ -170,7 +170,7 @@ class _PickupCarPageState extends State<PickupCarPage> {
                   GestureDetector(
                     onTap: () {
                       Navigator.of(context).push(
-                        FadeAndSlideTransition(
+                        RightToLeftFadeTransition(
                           page: DestinationcarPage(
                             pickup: 'Central Park',
                             destination: widget.destination,
@@ -225,7 +225,7 @@ class _PickupCarPageState extends State<PickupCarPage> {
                   GestureDetector(
                     onTap: () {
                       Navigator.of(context).push(
-                        FadeAndSlideTransition(
+                        RightToLeftFadeTransition(
                           page: DestinationcarPage(
                             pickup: 'Alfa X Untar',
                             destination: widget.destination,
@@ -280,7 +280,7 @@ class _PickupCarPageState extends State<PickupCarPage> {
                   GestureDetector(
                     onTap: () {
                       Navigator.of(context).push(
-                        FadeAndSlideTransition(
+                        RightToLeftFadeTransition(
                           page: DestinationcarPage(
                             pickup: 'Your Current Location',
                             destination: widget.destination,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'flashride_itemspage.dart';
-import 'template/FadeandSlidetransition.dart';
+import 'template/RightToLeftFadetransition.dart';
 
 // class DestinationbikePage extends StatelessWidget {
 //   const DestinationbikePage({Key? key});
@@ -105,7 +105,7 @@ class _DestinationitembikePageState extends State<DestinationitembikePage> {
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(
-                      FadeAndSlideTransition(
+                      RightToLeftFadeTransition(
                         page: MoveitemPage(
                                 destination: 'Monumen Nasional',
                                 pickup: widget.pickup,
@@ -160,7 +160,7 @@ class _DestinationitembikePageState extends State<DestinationitembikePage> {
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(
-                      FadeAndSlideTransition(
+                      RightToLeftFadeTransition(
                         page: MoveitemPage(
                                 destination: 'Season City',
                                 pickup: widget.pickup,
@@ -215,7 +215,7 @@ class _DestinationitembikePageState extends State<DestinationitembikePage> {
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(
-                      FadeAndSlideTransition(
+                      RightToLeftFadeTransition(
                         page: MoveitemPage(
                                 destination: 'Plaza Senayan',
                                 pickup: widget.pickup,
@@ -270,7 +270,7 @@ class _DestinationitembikePageState extends State<DestinationitembikePage> {
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(
-                      FadeAndSlideTransition(
+                      RightToLeftFadeTransition(
                         page: MoveitemPage(
                                 destination: 'Tokyo Riverside',
                                 pickup: widget.pickup,

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:project_uts_online_transportation/pages/google_maps.dart';
 import 'flashride_confirmationpage.dart';
-import 'template/FadeandSlidetransition.dart';
+import 'template/RightToLeftFadetransition.dart';
 
 // class DestinationbikePage extends StatelessWidget {
 //   const DestinationbikePage({Key? key});
@@ -106,7 +106,7 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(
-                      FadeAndSlideTransition(
+                      RightToLeftFadeTransition(
                         page: ConfirmPage(
                                 destination: 'Monumen Nasional',
                                 pickup: widget.pickup,
@@ -161,7 +161,7 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(
-                      FadeAndSlideTransition(
+                      RightToLeftFadeTransition(
                         page: ConfirmPage(
                                 destination: 'Season City',
                                 pickup: widget.pickup,
@@ -216,7 +216,7 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(
-                      FadeAndSlideTransition(
+                      RightToLeftFadeTransition(
                         page: ConfirmPage(
                                 destination: 'Plaza Senayan',
                                 pickup: widget.pickup,
@@ -271,7 +271,7 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(
-                      FadeAndSlideTransition(
+                      RightToLeftFadeTransition(
                         page: ConfirmPage(
                                 destination: 'Tokyo Riverside',
                                 pickup: widget.pickup,

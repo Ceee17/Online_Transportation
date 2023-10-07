@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'flashcar_item_page.dart';
-import 'template/FadeandSlidetransition.dart';
+import 'template/RightToLeftFadetransition.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:project_uts_online_transportation/pages/template/back-button.dart';
 
@@ -114,7 +114,7 @@ class _DestinationitemcarPageState extends State<DestinationitemcarPage> {
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(
-                      FadeAndSlideTransition(
+                      RightToLeftFadeTransition(
                         page: MoveitemCarPage(
                                 destination: 'Monumen Nasional',
                                 pickup: widget.pickup,
@@ -169,7 +169,7 @@ class _DestinationitemcarPageState extends State<DestinationitemcarPage> {
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(
-                      FadeAndSlideTransition(
+                      RightToLeftFadeTransition(
                         page: MoveitemCarPage(
                                 destination: 'Season City',
                                 pickup: widget.pickup,
@@ -224,7 +224,7 @@ class _DestinationitemcarPageState extends State<DestinationitemcarPage> {
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(
-                      FadeAndSlideTransition(
+                      RightToLeftFadeTransition(
                         page: MoveitemCarPage(
                                 destination: 'Plaza Senayan',
                                 pickup: widget.pickup,
@@ -279,7 +279,7 @@ class _DestinationitemcarPageState extends State<DestinationitemcarPage> {
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(
-                      FadeAndSlideTransition(
+                      RightToLeftFadeTransition(
                         page: MoveitemCarPage(
                                 destination: 'Tokyo Riverside',
                                 pickup: widget.pickup,

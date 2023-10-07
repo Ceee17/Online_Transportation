@@ -3,7 +3,7 @@ import 'dart:math';
 import 'flashridedestinationitem.dart';
 import 'flashride_pickupitem.dart';
 import 'searchingdriver.dart';
-import 'template/FadeandSlidetransition.dart';
+import 'template/RightToLeftFadetransition.dart';
 // class MoveitemPage extends StatefulWidget {
 //   const MoveitemPage({Key? key}) : super(key: key);
 
@@ -155,7 +155,7 @@ class _MoveitemPageState extends State<MoveitemPage> {
                                                         false; // Set to false to hide additional text after clicking
                                                   });
                                                   Navigator.of(context).push(
-                                                    FadeAndSlideTransition(
+                                                    RightToLeftFadeTransition(
                                                       page: PickupItemBikePage(
                                                         pickup: widget.pickup,
                                                         destination:
@@ -318,7 +318,7 @@ class _MoveitemPageState extends State<MoveitemPage> {
                                                   });
 
                                                   Navigator.of(context).push(
-                                                    FadeAndSlideTransition(
+                                                    RightToLeftFadeTransition(
                                                       page:
                                                           DestinationitembikePage(
                                                         pickup: widget

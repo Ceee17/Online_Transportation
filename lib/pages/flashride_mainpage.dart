@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'flashbtnimg.dart';
+import 'template/flashbtnimg.dart';
 import 'flashride_pickup.dart';
 import 'flashride_itemspage.dart';
-import 'template/FadeandSlidetransition.dart';
+import 'template/RightToLeftFadetransition.dart';
 
 class FlashRidePage extends StatefulWidget {
   final String pickup;
@@ -148,7 +148,7 @@ class _FlashRidePageState extends State<FlashRidePage> {
                                     style: flashbtnimg,
                                     onPressed: () {
                                       Navigator.of(context).push(
-                                        FadeAndSlideTransition(
+                                        RightToLeftFadeTransition(
                                           page: PickupBikePage(
                                             destination: widget.destination,
                                             pickup: widget.pickup,
@@ -181,7 +181,7 @@ class _FlashRidePageState extends State<FlashRidePage> {
                                     style: flashbtnimg,
                                     onPressed: () {
                                       Navigator.of(context).push(
-                                        FadeAndSlideTransition(
+                                        RightToLeftFadeTransition(
                                           page: MoveitemPage(
                                             destination: widget.destination,
                                             pickup: widget.pickup,
