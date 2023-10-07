@@ -9,8 +9,10 @@ import 'package:project_uts_online_transportation/pages/searchingdriver.dart';
 class MapSample extends StatefulWidget {
   final String pickup;
   final String destination;
+  final String id;
 
-  MapSample({required this.pickup, required this.destination});
+  MapSample(
+      {required this.pickup, required this.destination, required this.id});
 
   @override
   State<MapSample> createState() => MapSampleState();
@@ -124,8 +126,9 @@ class MapSampleState extends State<MapSample> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) =>
-                          SearchingDrivPage()), // Navigate to CarPickupPage
+                      builder: (context) => SearchingDrivPage(
+                            id: '1',
+                          )), // Navigate to CarPickupPage
                 );
               },
               child: Text(

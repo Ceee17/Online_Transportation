@@ -141,7 +141,13 @@ class _AccountPageState extends State<AccountPage> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => OrderPage(),
+              builder: (context) => OrderPage(
+                id1: '',
+                id2: '',
+                id3: '',
+                id4: '',
+                id5: '',
+              ),
             ),
           );
       }
@@ -297,7 +303,13 @@ class _AccountPageState extends State<AccountPage> {
           onPressed: () {
             Navigator.of(context).push(
               LeftToRightFadeTransition(
-                page: OrderPage(),
+                page: OrderPage(
+                  id1: '',
+                  id2: '',
+                  id3: '',
+                  id4: '',
+                  id5: '',
+                ),
               ),
             );
           },

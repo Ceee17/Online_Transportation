@@ -17,10 +17,12 @@ bool showAdditionalText = true;
 class MoveitemPage extends StatefulWidget {
   final String destination;
   final String pickup;
+  final String id;
 
   MoveitemPage({
     required this.destination,
     required this.pickup,
+    required this.id,
   });
   @override
   _MoveitemPageState createState() => _MoveitemPageState();
@@ -557,7 +559,9 @@ class _MoveitemPageState extends State<MoveitemPage> {
                                                   context,
                                                   MaterialPageRoute(
                                                       builder: (context) =>
-                                                          SearchingDrivPage()),
+                                                          SearchingDrivPage(
+                                                            id: '2',
+                                                          )),
                                                 );
                                               },
                                               child: Text(
