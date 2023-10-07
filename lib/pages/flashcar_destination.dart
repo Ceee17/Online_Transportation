@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:project_uts_online_transportation/pages/google_maps.dart';
 import 'package:project_uts_online_transportation/pages/history_page.dart';
 import 'package:project_uts_online_transportation/pages/template/back-button.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class DestinationCarPage extends StatefulWidget {
   const DestinationCarPage({Key? key});

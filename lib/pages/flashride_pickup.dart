@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project_uts_online_transportation/pages/template/back-button.dart';
 import 'flashridedestination.dart';
-import 'flashride_confirmationpage.dart';
-
+import 'ride_confirmation.dart';
 // class PickupBikePage extends StatefulWidget {
 //   const PickupBikePage({Key? key});
 //   static const String idScreen = 'pickupbike';

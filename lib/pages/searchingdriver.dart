@@ -3,6 +3,7 @@ import 'package:project_uts_online_transportation/pages/flashride_pickup.dart';
 import 'template/templatehead.dart';
 import 'flashbtntxt.dart';
 import 'flashpick_driverotw.dart';
+import 'ride_confirmation.dart';
 
 // class SearchingDrivPage extends StatelessWidget {
 //   const SearchingDrivPage({Key? key}) : super(key: key);

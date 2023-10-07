@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:project_uts_online_transportation/pages/google_maps.dart';
-import 'flashride_confirmationpage.dart';
+import 'package:project_uts_online_transportation/pages/ride_confirmation.dart';
+import 'ride_confirmation.dart';
 
 // class DestinationbikePage extends StatelessWidget {
 //   const DestinationbikePage({Key? key});

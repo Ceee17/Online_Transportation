@@ -4,12 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:project_uts_online_transportation/pages/flashcar_item_page.dart';
 // import 'package:project_uts_online_transportation/pages/flashride_items_page.dart';
 import 'package:project_uts_online_transportation/pages/flashtaxi.dart';
-import 'package:project_uts_online_transportation/pages/google_maps.dart';
+import 'package:project_uts_online_transportation/pages/ride_confirmation.dart';
 import 'pages/chatpage.dart';
 import 'pages/faqpage.dart';
 import 'pages/homechatpage.dart';
 // import 'pages/flashride_items_page.dart';
-import 'pages/flashtaxi.dart';
 
 import 'pages/loginpage.dart';
 import 'pages/loadingpage.dart';
@@ -22,7 +21,6 @@ import 'pages/startingpage.dart';
 import 'pages/flashcar_page.dart';
 import 'pages/order_page.dart';
 import 'pages/flashpick_driverotw.dart';
-import 'pages/flashride_confirmationpage.dart';
 import 'pages/searchingdriver.dart';
 
 import 'pages/flashridedestination.dart';
@@ -57,8 +55,10 @@ class MyApp extends StatelessWidget {
         AccountPage.idScreen: (context) => AccountPage(),
         LoginPage.idScreen: (context) => LoginPage(),
       },
-      home: LandingPage(),
+      home: FlashRidePage(
+        pickup: '',
+        destination: '',
+      ),
     );
-
   }
 }
