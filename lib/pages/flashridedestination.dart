@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:project_uts_online_transportation/pages/ride_confirmation.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'template/FadeandSlidetransition.dart';
 import 'ride_confirmation.dart';
 
 // class DestinationbikePage extends StatelessWidget {
@@ -103,12 +104,11 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
               children: [
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => MapSample(
+                    Navigator.of(context).push(
+                      FadeAndSlideTransition(
+                        page: ConfirmPage(
                           destination: 'Monumen Nasional',
-                          pickup: widget.pickup, // Use the text directly
+                          pickup: widget.pickup,
                         ),
                       ),
                     );
@@ -159,10 +159,9 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => MapSample(
+                    Navigator.of(context).push(
+                      FadeAndSlideTransition(
+                        page: ConfirmPage(
                           destination: 'Season City',
                           pickup: widget.pickup,
                         ),
@@ -201,7 +200,7 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                           ),
                           SizedBox(height: 6),
                           Text(
-                            'Jl. Prof. Dr. Latumeten No.33, Jemb. Besi, Kec. Tambora',
+                            'Jl. Prof. Dr. Latumenten No.33, Jemb. Besi, Kec. Tambora',
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 11,
@@ -215,10 +214,9 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => MapSample(
+                    Navigator.of(context).push(
+                      FadeAndSlideTransition(
+                        page: ConfirmPage(
                           destination: 'Plaza Senayan',
                           pickup: widget.pickup,
                         ),
@@ -257,7 +255,7 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                           ),
                           SizedBox(height: 6),
                           Text(
-                            'Jl. Asia Afrika No.8, Gelora, Kecamatan Tanah Abang,',
+                            'Jl. Asia Afrika No.8, Gelora, Kecamatan Tanah Abang',
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 11,
@@ -271,10 +269,9 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => MapSample(
+                    Navigator.of(context).push(
+                      FadeAndSlideTransition(
+                        page: ConfirmPage(
                           destination: 'Tokyo Riverside',
                           pickup: widget.pickup,
                         ),

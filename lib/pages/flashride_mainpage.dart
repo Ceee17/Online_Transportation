@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 import 'flashbtnimg.dart';
 import 'flashride_pickup.dart';
 import 'flashride_itemspage.dart';
-
-// class FlashRidePage extends StatelessWidget {
-//   const FlashRidePage({Key? key}) : super(key: key);
-//   static const String idScreen = "flashride";
+import 'template/FadeandSlidetransition.dart';
 
 class FlashRidePage extends StatefulWidget {
   final String pickup;
@@ -15,6 +12,7 @@ class FlashRidePage extends StatefulWidget {
     required this.pickup,
     required this.destination,
   });
+
   @override
   _FlashRidePageState createState() => _FlashRidePageState();
 }
@@ -39,7 +37,7 @@ class _FlashRidePageState extends State<FlashRidePage> {
               ),
               Positioned(
                 top: 50,
-                left: 282,
+                right: 0,
                 child: Container(
                   width: 130,
                   child: Image.asset('lib/assets/images/FlashrideLogo.png'),
@@ -54,8 +52,8 @@ class _FlashRidePageState extends State<FlashRidePage> {
                 ),
               ),
               Positioned(
-                top: 100,
-                left: 200,
+                top: 180,
+                left: 220,
                 child: Container(
                   child: Text(
                     'order flashride from\nanywhere and anytime for\ntravel or delivery of items',
@@ -76,24 +74,29 @@ class _FlashRidePageState extends State<FlashRidePage> {
             child: Center(
               child: Align(
                 alignment: Alignment(0.0, -0.9),
-                child: Text(
-                  'Choose Flashride Service',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ),
+                child: Column(
+                  children: [
+                    Text(
+                      'Choose Flashride Service',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(height: 0), // Add some spacing
+                    Padding(
+                      padding: EdgeInsets.only(
+                          // bottom: 900.0,
+                          ), // Adjust the spacing as needed
+                      child: Image.asset(
+                        'lib/assets/images/flashridebackground.png', // Replace with your image path
+                        width: 500,
+                        height: 350,
+                      ),
+                    ),
+                  ],
                 ),
               ),
-            ),
-          ),
-          Positioned(
-            top: 100, // Adjust the top value to position the image vertically
-            left:
-                50, // Adjust the left value to position the image horizontally
-            child: Image.asset(
-              'lib/assets/images/movepeoplebtn.png', // Replace with your image path
-              width: 300, // Adjust the width as needed
-              height: 300, // Adjust the height as needed
             ),
           ),
           SizedBox.expand(
@@ -144,15 +147,14 @@ class _FlashRidePageState extends State<FlashRidePage> {
                                   ElevatedButton(
                                     style: flashbtnimg,
                                     onPressed: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                PickupBikePage(
-                                                  destination:
-                                                      widget.destination,
-                                                  pickup: widget.pickup,
-                                                )), // Ganti TujuanPage() dengan halaman yang ingin Anda navigasikan
+                                      Navigator.of(context).push(
+                                        FadeAndSlideTransition(
+                                          page: PickupBikePage(
+                                            destination: widget.destination,
+                                            pickup: widget.pickup,
+                                          ),
+                                        ),
+
                                       );
                                     },
                                     child: Image.asset(
@@ -178,14 +180,13 @@ class _FlashRidePageState extends State<FlashRidePage> {
                                   ElevatedButton(
                                     style: flashbtnimg,
                                     onPressed: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => MoveitemPage(
-                                                  destination:
-                                                      widget.destination,
-                                                  pickup: widget.pickup,
-                                                )), // Ganti TujuanPage() dengan halaman yang ingin Anda navigasikan
+                                      Navigator.of(context).push(
+                                        FadeAndSlideTransition(
+                                          page: MoveitemPage(
+                                            destination: widget.destination,
+                                            pickup: widget.pickup,
+                                          ),
+                                        ),
                                       );
                                     },
                                     child: Image.asset(

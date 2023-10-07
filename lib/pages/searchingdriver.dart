@@ -3,6 +3,8 @@ import 'package:project_uts_online_transportation/pages/flashride_pickup.dart';
 import 'template/templatehead.dart';
 import 'flashbtntxt.dart';
 import 'flashpick_driverotw.dart';
+import 'landingpage.dart';
+import 'dart:async';
 import 'ride_confirmation.dart';
 
 // class SearchingDrivPage extends StatelessWidget {
@@ -13,12 +15,14 @@ class SearchingDrivPage extends StatefulWidget {
 }
 
 class _SearchingDrivPageState extends State<SearchingDrivPage> {
+  late Timer _timer; // Declare a Timer variable
+
   @override
   void initState() {
     super.initState();
 
     // Add a 10-second delay before auto-navigation
-    Future.delayed(Duration(seconds: 5), () {
+    _timer = Timer(Duration(seconds: 5), () {
       Navigator.push(
         context,
         MaterialPageRoute(
@@ -26,6 +30,12 @@ class _SearchingDrivPageState extends State<SearchingDrivPage> {
         ),
       );
     });
+  }
+
+  @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
   }
 
   @override
@@ -71,13 +81,21 @@ class _SearchingDrivPageState extends State<SearchingDrivPage> {
                       ElevatedButton(
                         style: flashbtntxt,
                         onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => PickupBikePage(
-                                      pickup: '',
-                                      destination: '',
-                                    )), // Navigate to CarPickupPage
+                          _timer.cancel();
+                          Navigator.of(context).push(
+                            PageRouteBuilder(
+                              transitionsBuilder: (context, animation,
+                                  secondaryAnimation, child) {
+                                return FadeTransition(
+                                  opacity: animation,
+                                  child: child,
+                                );
+                              },
+                              pageBuilder:
+                                  (context, animation, secondaryAnimation) {
+                                return LandingPage();
+                              },
+                            ),
                           );
                         },
                         child: Text(
@@ -86,7 +104,7 @@ class _SearchingDrivPageState extends State<SearchingDrivPage> {
                             color: Colors.black,
                           ),
                         ),
-                      ),
+                      )
                     ],
                   ),
                 ),

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:project_uts_online_transportation/pages/template/back-button.dart';
-import 'flashridedestination.dart';
+import 'flashcar_item_page.dart';
 import 'template/FadeandSlidetransition.dart';
+import 'package:project_uts_online_transportation/pages/template/back-button.dart';
 
-import 'ride_confirmation.dart';
 // class PickupBikePage extends StatefulWidget {
 //   const PickupBikePage({Key? key});
 //   static const String idScreen = 'pickupbike';
@@ -13,37 +12,37 @@ import 'ride_confirmation.dart';
 // }
 
 // class _CarPickupPageState extends State<PickupBikePage> {
-class PickupBikePage extends StatefulWidget {
+class PickupItemCarPage extends StatefulWidget {
   final String pickup;
   final String destination;
 
-  PickupBikePage({
+  PickupItemCarPage({
     required this.pickup,
     required this.destination,
   });
   @override
-  _PickupBikePageState createState() => _PickupBikePageState();
+  _PickupItemCarPageState createState() => _PickupItemCarPageState();
 }
 
-class _PickupBikePageState extends State<PickupBikePage> {
+class _PickupItemCarPageState extends State<PickupItemCarPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         children: [
           Positioned(
-            top: 20,
-            left: 292,
-            child: Container(
-              width: 120,
-              height: 160,
-              child: Image.asset('lib/assets/images/FlashrideLogo.png'),
-            ),
+            top: 80,
+            left: 20,
+            child: BackBtn(),
           ),
           Positioned(
-            top: 60,
-            left: 10,
-            child: BackBtn(),
+            top: 20,
+            left: 83,
+            child: Container(
+              width: 600,
+              height: 160,
+              child: Image.asset('lib/assets/images/flashcarlogo.png'),
+            ),
           ),
         ],
       ),
@@ -115,7 +114,7 @@ class _PickupBikePageState extends State<PickupBikePage> {
                     onTap: () {
                       Navigator.of(context).push(
                         FadeAndSlideTransition(
-                          page: DestinationbikePage(
+                          page: MoveitemCarPage(
                             pickup: 'Tarumanagara university',
                             destination: widget.destination,
                           ),
@@ -170,7 +169,7 @@ class _PickupBikePageState extends State<PickupBikePage> {
                     onTap: () {
                       Navigator.of(context).push(
                         FadeAndSlideTransition(
-                          page: DestinationbikePage(
+                          page: MoveitemCarPage(
                             pickup: 'Central Park',
                             destination: widget.destination,
                           ),
@@ -225,7 +224,7 @@ class _PickupBikePageState extends State<PickupBikePage> {
                     onTap: () {
                       Navigator.of(context).push(
                         FadeAndSlideTransition(
-                          page: DestinationbikePage(
+                          page: MoveitemCarPage(
                             pickup: 'Alfa X Untar',
                             destination: widget.destination,
                           ),
@@ -280,7 +279,7 @@ class _PickupBikePageState extends State<PickupBikePage> {
                     onTap: () {
                       Navigator.of(context).push(
                         FadeAndSlideTransition(
-                          page: DestinationbikePage(
+                          page: MoveitemCarPage(
                             pickup: 'Your Current Location',
                             destination: widget.destination,
                           ),

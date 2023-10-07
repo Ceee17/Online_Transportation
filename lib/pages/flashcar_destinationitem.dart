@@ -1,26 +1,26 @@
 import 'package:flutter/material.dart';
-import 'flashride_confirmationpage.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:project_uts_online_transportation/pages/history_page.dart';
-import 'package:project_uts_online_transportation/pages/template/back-button.dart';
+import 'flashcar_item_page.dart';
 import 'template/FadeandSlidetransition.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:project_uts_online_transportation/pages/template/back-button.dart';
+
 
 // class DestinationbikePage extends StatelessWidget {
 //   const DestinationbikePage({Key? key});
 //   static const String idScreen = 'destinationbike';
-class DestinationcarPage extends StatefulWidget {
+class DestinationitemcarPage extends StatefulWidget {
   final String pickup;
   final String destination;
 
-  DestinationcarPage({
+  DestinationitemcarPage({
     required this.pickup,
     required this.destination,
   });
   @override
-  _DestinationcarPageState createState() => _DestinationcarPageState();
+  _DestinationitemcarPageState createState() => _DestinationitemcarPageState();
 }
 
-class _DestinationcarPageState extends State<DestinationcarPage> {
+class _DestinationitemcarPageState extends State<DestinationitemcarPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -115,13 +115,13 @@ class _DestinationcarPageState extends State<DestinationcarPage> {
                   onTap: () {
                     Navigator.of(context).push(
                       FadeAndSlideTransition(
-                        page: ConfirmPage(
-                          destination: 'Monumen Nasional',
-                          pickup: widget.pickup,
-                        ),
-                      ),
-                    );
-                  },
+                        page: MoveitemCarPage(
+                                destination: 'Monumen Nasional',
+                                pickup: widget.pickup,
+                              ),
+                            ),
+                          );
+                        },
                   child: Container(
                     width: 360,
                     height: 79,
@@ -170,13 +170,13 @@ class _DestinationcarPageState extends State<DestinationcarPage> {
                   onTap: () {
                     Navigator.of(context).push(
                       FadeAndSlideTransition(
-                        page: ConfirmPage(
-                          destination: 'Season City',
-                          pickup: widget.pickup,
-                        ),
-                      ),
-                    );
-                  },
+                        page: MoveitemCarPage(
+                                destination: 'Season City',
+                                pickup: widget.pickup,
+                              ),
+                            ),
+                          );
+                        },
                   child: Container(
                     width: 360,
                     height: 79,
@@ -225,13 +225,13 @@ class _DestinationcarPageState extends State<DestinationcarPage> {
                   onTap: () {
                     Navigator.of(context).push(
                       FadeAndSlideTransition(
-                        page: ConfirmPage(
-                          destination: 'Plaza Senayan',
-                          pickup: widget.pickup,
-                        ),
-                      ),
-                    );
-                  },
+                        page: MoveitemCarPage(
+                                destination: 'Plaza Senayan',
+                                pickup: widget.pickup,
+                              ),
+                            ),
+                          );
+                        },
                   child: Container(
                     width: 360,
                     height: 79,
@@ -280,13 +280,13 @@ class _DestinationcarPageState extends State<DestinationcarPage> {
                   onTap: () {
                     Navigator.of(context).push(
                       FadeAndSlideTransition(
-                        page: ConfirmPage(
-                          destination: 'Tokyo Riverside',
-                          pickup: widget.pickup,
-                        ),
-                      ),
-                    );
-                  },
+                        page: MoveitemCarPage(
+                                destination: 'Tokyo Riverside',
+                                pickup: widget.pickup,
+                              ),
+                            ),
+                          );
+                        },
                   child: Container(
                     width: 360,
                     height: 79,
