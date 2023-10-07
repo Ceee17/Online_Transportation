@@ -55,7 +55,8 @@ class StartingPage extends StatelessWidget {
           SizedBox(height: 20),
           ElevatedButton(
             onPressed: () {
-              Navigator.pushNamed(context, LoginPage.idScreen);
+              Navigator.push(context,
+                  MaterialPageRoute(builder: ((context) => LoginPage())));
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: Color(0xFF111d41),

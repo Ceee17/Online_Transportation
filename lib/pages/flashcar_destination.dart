@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'flashride_confirmationpage.dart';
+// import 'flashride_confirmationpage.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:project_uts_online_transportation/pages/google_maps.dart';
-import 'package:project_uts_online_transportation/pages/history_page.dart';
+import 'package:project_uts_online_transportation/pages/ride_confirmation.dart';
 import 'package:project_uts_online_transportation/pages/template/back-button.dart';
 import 'template/RightToLeftFadetransition.dart';
 
@@ -115,8 +114,8 @@ class _DestinationcarPageState extends State<DestinationcarPage> {
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(
-                      RightToLeftFadeTransition(
-                        page: ConfirmPage(
+                      FadeAndSlideTransition(
+                        page: MapSample(
                           destination: 'Monumen Nasional',
                           pickup: widget.pickup,
                         ),
@@ -170,8 +169,8 @@ class _DestinationcarPageState extends State<DestinationcarPage> {
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(
-                      RightToLeftFadeTransition(
-                        page: ConfirmPage(
+                      FadeAndSlideTransition(
+                        page: MapSample(
                           destination: 'Season City',
                           pickup: widget.pickup,
                         ),
@@ -225,8 +224,8 @@ class _DestinationcarPageState extends State<DestinationcarPage> {
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(
-                      RightToLeftFadeTransition(
-                        page: ConfirmPage(
+                      FadeAndSlideTransition(
+                        page: MapSample(
                           destination: 'Plaza Senayan',
                           pickup: widget.pickup,
                         ),
@@ -280,8 +279,8 @@ class _DestinationcarPageState extends State<DestinationcarPage> {
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(
-                      RightToLeftFadeTransition(
-                        page: ConfirmPage(
+                      FadeAndSlideTransition(
+                        page: MapSample(
                           destination: 'Tokyo Riverside',
                           pickup: widget.pickup,
                         ),

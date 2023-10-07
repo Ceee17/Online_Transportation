@@ -3,6 +3,7 @@ import 'package:project_uts_online_transportation/pages/template/back-button.dar
 import 'flashridedestination.dart';
 import 'template/RightToLeftFadetransition.dart';
 
+import 'ride_confirmation.dart';
 // class PickupBikePage extends StatefulWidget {
 //   const PickupBikePage({Key? key});
 //   static const String idScreen = 'pickupbike';

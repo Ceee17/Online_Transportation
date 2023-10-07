@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'package:project_uts_online_transportation/pages/destinationcar.dart';
 import 'flashcar_destination.dart';
-import 'package:project_uts_online_transportation/pages/google_maps.dart';
+import 'package:project_uts_online_transportation/pages/ride_confirmation.dart';
 import 'package:project_uts_online_transportation/pages/template/back-button.dart';
 import 'template/RightToLeftFadetransition.dart';
 
