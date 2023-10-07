@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'template/FadeandSlidetransition.dart';
+import 'template/RightToLeftFadetransition.dart';
 import 'ride_confirmation.dart';
 
 // class DestinationbikePage extends StatelessWidget {

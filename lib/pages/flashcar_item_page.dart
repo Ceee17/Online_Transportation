@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 import 'flashcar_destinationitem.dart';
 import 'flashcar_pickupitem.dart';
-import 'template/FadeandSlidetransition.dart';
+import 'template/RightToLeftFadetransition.dart';
 import 'package:project_uts_online_transportation/pages/template/back-button.dart';
 import 'searchingdriver.dart';
 
@@ -176,7 +176,7 @@ class _MoveitemCarPageState extends State<MoveitemCarPage> {
                                                   });
 
                                                   Navigator.of(context).push(
-                                                    FadeAndSlideTransition(
+                                                    RightToLeftFadeTransition(
                                                       page: PickupItemCarPage(
                                                         pickup: widget
                                                             .pickup, // Do not concatenate the additional text here
@@ -340,7 +340,7 @@ class _MoveitemCarPageState extends State<MoveitemCarPage> {
                                                   });
 
                                                   Navigator.of(context).push(
-                                                    FadeAndSlideTransition(
+                                                    RightToLeftFadeTransition(
                                                       page:
                                                           DestinationitemcarPage(
                                                         pickup: widget
@@ -577,7 +577,7 @@ class _MoveitemCarPageState extends State<MoveitemCarPage> {
                                               ),
                                               onPressed: () {
                                                 Navigator.of(context).push(
-                                                  FadeAndSlideTransition(
+                                                  RightToLeftFadeTransition(
                                                     page: SearchingDrivPage(),
                                                   ),
                                                 );

@@ -8,12 +8,13 @@ import 'package:project_uts_online_transportation/pages/faqpage.dart';
 import 'package:project_uts_online_transportation/pages/homechatpage.dart';
 import 'package:project_uts_online_transportation/pages/landingpage.dart';
 import 'package:project_uts_online_transportation/pages/order_page.dart';
-// import 'package:project_uts_online_transportation/pages/paymenmethod.dart';
+import 'package:project_uts_online_transportation/pages/paymenmethod.dart';
 import 'package:project_uts_online_transportation/pages/template/template_nav_bar.dart';
 import 'package:project_uts_online_transportation/pages/template/templatehead.dart';
 import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
 import 'edit_profile_page.dart';
 import 'template/template-icon-card-button.dart';
+import 'template/LeftToRightFadetransition.dart';
 
 class AccountPage extends StatefulWidget {
   const AccountPage({super.key});
@@ -248,10 +249,9 @@ class _AccountPageState extends State<AccountPage> {
         ),
         IconCardButton(
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => EditProfile(),
+            Navigator.of(context).push(
+              LeftToRightFadeTransition(
+                page: EditProfile(),
               ),
             );
           },
@@ -272,12 +272,11 @@ class _AccountPageState extends State<AccountPage> {
         ),
         IconCardButton(
           onPressed: () {
-            // Navigator.push(
-            //   context,
-            //   MaterialPageRoute(
-            //     builder: (context) => PaymenPage(),
-            //   ),
-            // );
+            Navigator.of(context).push(
+              LeftToRightFadeTransition(
+                page: PaymenPage(),
+              ),
+            );
           },
           icon: Icon(
             Icons.payment_outlined,
@@ -296,10 +295,9 @@ class _AccountPageState extends State<AccountPage> {
         ),
         IconCardButton(
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => OrderPage(),
+            Navigator.of(context).push(
+              LeftToRightFadeTransition(
+                page: OrderPage(),
               ),
             );
           },
@@ -320,10 +318,9 @@ class _AccountPageState extends State<AccountPage> {
         ),
         IconCardButton(
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => FaqPage(),
+            Navigator.of(context).push(
+              LeftToRightFadeTransition(
+                page: FaqPage(),
               ),
             );
           },

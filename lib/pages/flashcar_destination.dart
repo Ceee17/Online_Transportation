@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:project_uts_online_transportation/pages/ride_confirmation.dart';
 import 'package:project_uts_online_transportation/pages/template/back-button.dart';
-import 'template/FadeandSlidetransition.dart';
+import 'template/RightToLeftFadetransition.dart';
 
 // class DestinationbikePage extends StatelessWidget {
 //   const DestinationbikePage({Key? key});
