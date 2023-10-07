@@ -114,7 +114,7 @@ class _DestinationcarPageState extends State<DestinationcarPage> {
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(
-                      FadeAndSlideTransition(
+                      RightToLeftFadeTransition(
                         page: MapSample(
                           destination: 'Monumen Nasional',
                           pickup: widget.pickup,
@@ -169,7 +169,7 @@ class _DestinationcarPageState extends State<DestinationcarPage> {
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(
-                      FadeAndSlideTransition(
+                      RightToLeftFadeTransition(
                         page: MapSample(
                           destination: 'Season City',
                           pickup: widget.pickup,
@@ -224,7 +224,7 @@ class _DestinationcarPageState extends State<DestinationcarPage> {
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(
-                      FadeAndSlideTransition(
+                      RightToLeftFadeTransition(
                         page: MapSample(
                           destination: 'Plaza Senayan',
                           pickup: widget.pickup,
@@ -279,7 +279,7 @@ class _DestinationcarPageState extends State<DestinationcarPage> {
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(
-                      FadeAndSlideTransition(
+                      RightToLeftFadeTransition(
                         page: MapSample(
                           destination: 'Tokyo Riverside',
                           pickup: widget.pickup,
