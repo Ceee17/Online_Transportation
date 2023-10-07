@@ -142,14 +142,20 @@ class _LandingPageState extends State<LandingPage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => FlashRidePage(),
+                              builder: (context) => FlashRidePage(
+                                pickup: '',
+                                destination: '',
+                              ),
                             ),
                           );
                         } else if (_currentIndex == 1) {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => FlashCarPage(),
+                              builder: (context) => FlashCarPage(
+                                pickup: '',
+                                destination: '',
+                              ),
                             ),
                           );
                         } else if (_currentIndex == 2) {
