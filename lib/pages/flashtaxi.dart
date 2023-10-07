@@ -1,10 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:project_uts_online_transportation/pages/template/back-button.dart';
+import 'template/RightToLeftFadetransition.dart';
+import 'flashtaxi_pickup.dart';
+import 'flashtaxi_destination.dart';
+import 'searchingdriver.dart';
 
-class FlashTaxiPage extends StatelessWidget {
-  const FlashTaxiPage({Key? key});
-  static const String idScreen = 'FlashTaxi';
+bool showAdditionalText = true;
 
+class FlashTaxiPage extends StatefulWidget {
+  final String destination;
+  final String pickup;
+
+  FlashTaxiPage({
+    required this.destination,
+    required this.pickup,
+  });
+
+  @override
+  _FlashTaxiPageState createState() => _FlashTaxiPageState();
+}
+
+class _FlashTaxiPageState extends State<FlashTaxiPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -117,15 +133,49 @@ class FlashTaxiPage extends StatelessWidget {
                               left: 70,
                               child: Container(
                                 width: 270,
-                                child: TextField(
-                                  decoration: InputDecoration(
-                                    hintText: 'Your Location Here',
-                                    border: InputBorder.none,
-                                    hintStyle: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 11,
-                                      fontWeight: FontWeight.w100,
+                                child: ElevatedButton(
+                                  onPressed: () {
+                                    setState(() {
+                                      showAdditionalText =
+                                          false; // Set to false to hide additional text after clicking
+                                    });
+                                    Navigator.of(context).push(
+                                      RightToLeftFadeTransition(
+                                        page: PickupTaxiPage(
+                                          pickup: widget.pickup,
+                                          destination: widget.destination,
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                  style: ElevatedButton.styleFrom(
+                                    primary: Color(0xffFFFFFF),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(15.0),
                                     ),
+                                    minimumSize: Size(350, 50),
+                                  ),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Visibility(
+                                        visible: showAdditionalText,
+                                        child: Text(
+                                          "pickup location",
+                                          style: TextStyle(
+                                            fontSize: 12,
+                                            color: Color(0xff828282),
+                                          ),
+                                        ),
+                                      ),
+                                      Text(
+                                        widget.pickup,
+                                        style: TextStyle(
+                                          fontSize: 15,
+                                          color: Color(0xff828282),
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ),
@@ -135,15 +185,51 @@ class FlashTaxiPage extends StatelessWidget {
                               left: 70,
                               child: Container(
                                 width: 270,
-                                child: TextField(
-                                  decoration: InputDecoration(
-                                    hintText: 'Please Select Your Destination',
-                                    border: InputBorder.none,
-                                    hintStyle: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 11,
-                                      fontWeight: FontWeight.w400,
+                                child: ElevatedButton(
+                                  onPressed: () {
+                                    setState(() {
+                                      showAdditionalText =
+                                          false; // Set to false to hide additional text after clicking
+                                    });
+
+                                    Navigator.of(context).push(
+                                      RightToLeftFadeTransition(
+                                        page: DestinationTaxiPage(
+                                          pickup: widget
+                                              .pickup, // Do not concatenate the additional text here
+                                          destination: widget.destination,
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                  style: ElevatedButton.styleFrom(
+                                    primary: Color(0xffFFFFFF),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(15.0),
                                     ),
+                                    minimumSize: Size(350, 50),
+                                  ),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Visibility(
+                                        visible: showAdditionalText,
+                                        child: Text(
+                                          "Your Destination",
+                                          style: TextStyle(
+                                            fontSize: 12,
+                                            color: Color(0xff828282),
+                                          ),
+                                        ),
+                                      ),
+                                      Text(
+                                        widget.destination,
+                                        style: TextStyle(
+                                          fontSize: 15,
+                                          color: Color(0xff828282),
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ),
@@ -218,7 +304,11 @@ class FlashTaxiPage extends StatelessWidget {
                     ),
                     child: ElevatedButton(
                       onPressed: () {
-                        // Add your button's onPressed logic here
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SearchingDrivPage()),
+                        );
                       },
                       style: ElevatedButton.styleFrom(
                         primary: Color(0xff111D41), // Set button color here
