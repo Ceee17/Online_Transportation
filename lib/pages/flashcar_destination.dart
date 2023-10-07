@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'flashride_confirmationpage.dart';
+// import 'flashride_confirmationpage.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:project_uts_online_transportation/pages/history_page.dart';
+import 'package:project_uts_online_transportation/pages/ride_confirmation.dart';
 import 'package:project_uts_online_transportation/pages/template/back-button.dart';
 import 'template/FadeandSlidetransition.dart';
 
@@ -115,7 +115,7 @@ class _DestinationcarPageState extends State<DestinationcarPage> {
                   onTap: () {
                     Navigator.of(context).push(
                       FadeAndSlideTransition(
-                        page: ConfirmPage(
+                        page: MapSample(
                           destination: 'Monumen Nasional',
                           pickup: widget.pickup,
                         ),
@@ -170,7 +170,7 @@ class _DestinationcarPageState extends State<DestinationcarPage> {
                   onTap: () {
                     Navigator.of(context).push(
                       FadeAndSlideTransition(
-                        page: ConfirmPage(
+                        page: MapSample(
                           destination: 'Season City',
                           pickup: widget.pickup,
                         ),
@@ -225,7 +225,7 @@ class _DestinationcarPageState extends State<DestinationcarPage> {
                   onTap: () {
                     Navigator.of(context).push(
                       FadeAndSlideTransition(
-                        page: ConfirmPage(
+                        page: MapSample(
                           destination: 'Plaza Senayan',
                           pickup: widget.pickup,
                         ),
@@ -280,7 +280,7 @@ class _DestinationcarPageState extends State<DestinationcarPage> {
                   onTap: () {
                     Navigator.of(context).push(
                       FadeAndSlideTransition(
-                        page: ConfirmPage(
+                        page: MapSample(
                           destination: 'Tokyo Riverside',
                           pickup: widget.pickup,
                         ),

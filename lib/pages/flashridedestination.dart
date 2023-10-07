@@ -106,7 +106,7 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                   onTap: () {
                     Navigator.of(context).push(
                       FadeAndSlideTransition(
-                        page: ConfirmPage(
+                        page: MapSample(
                           destination: 'Monumen Nasional',
                           pickup: widget.pickup,
                         ),
@@ -161,7 +161,7 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                   onTap: () {
                     Navigator.of(context).push(
                       FadeAndSlideTransition(
-                        page: ConfirmPage(
+                        page: MapSample(
                           destination: 'Season City',
                           pickup: widget.pickup,
                         ),
@@ -216,7 +216,7 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                   onTap: () {
                     Navigator.of(context).push(
                       FadeAndSlideTransition(
-                        page: ConfirmPage(
+                        page: MapSample(
                           destination: 'Plaza Senayan',
                           pickup: widget.pickup,
                         ),
@@ -271,7 +271,7 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                   onTap: () {
                     Navigator.of(context).push(
                       FadeAndSlideTransition(
-                        page: ConfirmPage(
+                        page: MapSample(
                           destination: 'Tokyo Riverside',
                           pickup: widget.pickup,
                         ),
