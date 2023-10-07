@@ -44,6 +44,11 @@ dependencies:
   firebase_database: ^10.2.6
   fluttertoast: ^8.2.2
   firebase_storage: ^11.2.4
+  provider: ^6.0.5
+  shared_preferences: ^2.2.1
+  path_provider: ^2.1.1
+  sqflite: ^2.3.0
+  google_maps_flutter: ^2.5.0
 
 dev_dependencies:
   flutter_test:
@@ -74,12 +79,14 @@ flutter:
     - lib/assets/images/waitingdriver.png
     - lib/assets/images/waiting.png
     - lib/assets/images/startingpage.png
+    - lib/assets/images/undraw_Chat_re_re1u.png
     - lib/assets/images/search.png
     - lib/assets/images/taxi.png
     - lib/assets/images/car.png
     - lib/assets/images/2taxi.png
     - lib/assets/images/forgpass.png
     - lib/assets/images/mess.png
+    - lib/assets/images/maps.png
 
       # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

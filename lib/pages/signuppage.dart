@@ -3,9 +3,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-// import 'package:fluttertoast/fluttertoast.dart';
 import 'package:project_uts_online_transportation/firebase/firebase_auth_services.dart';
-// import 'package:project_uts_online_transportation/main.dart';
 import 'package:project_uts_online_transportation/pages/landingpage.dart';
 import 'package:project_uts_online_transportation/pages/loginpage.dart';
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_uts_online_transportation/pages/template/back-button.dart';
 
 class FlashTaxiPage extends StatelessWidget {
   const FlashTaxiPage({Key? key});
@@ -20,6 +21,11 @@ class FlashTaxiPage extends StatelessWidget {
                 backgroundColor: Color(0xff8DA2E2),
                 elevation: 0.0,
                 centerTitle: true,
+              ),
+              Positioned(
+                top: 40,
+                left: 20,
+                child: BackBtn(),
               ),
               Positioned(
                 top: 52,
