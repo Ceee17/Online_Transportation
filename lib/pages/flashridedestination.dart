@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'template/FadeandSlidetransition.dart';
+import 'template/RightToLeftFadetransition.dart';
 import 'ride_confirmation.dart';
 
 // class DestinationbikePage extends StatelessWidget {
@@ -105,7 +105,7 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(
-                      FadeAndSlideTransition(
+                      RightToLeftFadeTransition(
                         page: MapSample(
                           destination: 'Monumen Nasional',
                           pickup: widget.pickup,
@@ -160,7 +160,7 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(
-                      FadeAndSlideTransition(
+                      RightToLeftFadeTransition(
                         page: MapSample(
                           destination: 'Season City',
                           pickup: widget.pickup,
@@ -215,7 +215,7 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(
-                      FadeAndSlideTransition(
+                      RightToLeftFadeTransition(
                         page: MapSample(
                           destination: 'Plaza Senayan',
                           pickup: widget.pickup,
@@ -270,7 +270,7 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(
-                      FadeAndSlideTransition(
+                      RightToLeftFadeTransition(
                         page: MapSample(
                           destination: 'Tokyo Riverside',
                           pickup: widget.pickup,

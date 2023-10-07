@@ -10,6 +10,7 @@ class CustomCardButton extends StatelessWidget {
   final Color color;
   final Color textColor;
   final double heightButton;
+  final VoidCallback? onPressed;
 
   const CustomCardButton({
     Key? key,
@@ -21,6 +22,7 @@ class CustomCardButton extends StatelessWidget {
     this.color = const Color(0xFFFFFFFF),
     this.textColor = const Color(0xFF000000),
     this.heightButton = 154,
+    this.onPressed,
   }) : super(key: key);
 
   @override
@@ -33,7 +35,7 @@ class CustomCardButton extends StatelessWidget {
         color: Colors.white,
       ),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           backgroundColor: color,
           // side: BorderSide(
