@@ -5,7 +5,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:project_uts_online_transportation/pages/flashcar_item_page.dart';
 // import 'package:project_uts_online_transportation/pages/flashride_items_page.dart';
-import 'package:project_uts_online_transportation/pages/flashtaxi.dart';
+// import 'package:project_uts_online_transportation/pages/flashtaxi.dart';
 import 'package:project_uts_online_transportation/pages/google_maps.dart';
 import 'pages/chatpage.dart';
 import 'pages/faqpage.dart';
@@ -59,7 +59,6 @@ class MyApp extends StatelessWidget {
         OrderPage.idScreen: (context) => OrderPage(),
         HistoryPage.idScreen: (context) => HistoryPage(),
         AccountPage.idScreen: (context) => AccountPage(),
-        LoginPage.idScreen: (context) => LoginPage(),
       },
       home: LandingPage(),
     );
