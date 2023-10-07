@@ -1,5 +1,7 @@
 // ignore_for_file: unused_import
 
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:project_uts_online_transportation/pages/flashcar_item_page.dart';
 // import 'package:project_uts_online_transportation/pages/flashride_items_page.dart';
@@ -34,9 +36,14 @@ import 'pages/template/templatehead.dart';
 import 'pages/template/back-button.dart';
 import 'pages/edit_profile_page.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
+
+DatabaseReference usersRef =
+    FirebaseDatabase.instance.reference().child("users");
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -51,7 +58,6 @@ class MyApp extends StatelessWidget {
         OrderPage.idScreen: (context) => OrderPage(),
         HistoryPage.idScreen: (context) => HistoryPage(),
         AccountPage.idScreen: (context) => AccountPage(),
-        LoginPage.idScreen: (context) => LoginPage(),
       },
       home: FlashRidePage(
         pickup: '',

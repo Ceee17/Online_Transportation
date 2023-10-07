@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+// import 'package:flutter_svg/flutter_svg.dart';
 import 'package:project_uts_online_transportation/pages/account_page.dart';
+import 'package:project_uts_online_transportation/pages/flashcar_page.dart';
+import 'package:project_uts_online_transportation/pages/flashtaxi.dart';
 import 'package:project_uts_online_transportation/pages/flashride_mainpage.dart';
 import 'package:project_uts_online_transportation/pages/homechatpage.dart';
 import 'package:project_uts_online_transportation/pages/order_page.dart';
@@ -133,29 +135,73 @@ class _LandingPageState extends State<LandingPage> {
                 SizedBox(height: 25),
                 CarouselSlider(
                   items: menuItems.map((menu) {
-                    return Container(
-                      margin: EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        color: Color(0xff111d41),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
+                    return GestureDetector(
+                      onTap: () {
+                        // Handle the click event for the carousel item here
+                        if (_currentIndex == 0) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => FlashRidePage(
+                                pickup: '',
+                                destination: '',
+                              ),
+                            ),
+                          );
+                        } else if (_currentIndex == 1) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => FlashCarPage(
+                                pickup: '',
+                                destination: '',
+                              ),
+                            ),
+                          );
+                        } else if (_currentIndex == 2) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => FlashTaxiPage(),
+                            ),
+                          );
+                        }
+                      },
                       child: Container(
-                        width: 293.4,
-                        height: 165,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                        margin: EdgeInsets.all(8),
+                        width: 450,
+                        decoration: BoxDecoration(
+                          color: Color(0xff111d41),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                        child: Stack(
                           children: [
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                    left: 10,
-                                    top: 20,
+                            // Gambar di pojok kiri atas
+                            Positioned(
+                              right: 15,
+                              bottom: 15,
+                              child: Image.asset(
+                                menu['imagePath'] ?? '',
+                                width: 150,
+                                height: 100,
+                              ),
+                            ),
+                            // Teks di pojok kanan bawah (dengan transform untuk efek diagonal)
+                            Positioned(
+                              left: 20,
+                              top: 15,
+                              child: Transform.rotate(
+                                angle: 0, // Ubah sudut sesuai keinginan Anda
+                                child: Container(
+                                  padding: EdgeInsets.all(10),
+                                  decoration: BoxDecoration(
+                                    // color: Color(0xFF333333),
+                                    borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(8.0),
+                                    ),
                                   ),
                                   child: Text(
-                                    menu['text'] ?? 'undefined image',
+                                    menu['text'] ?? 'undefined text',
                                     style: TextStyle(
                                       fontSize: 24,
                                       color: Colors.white,
@@ -163,23 +209,7 @@ class _LandingPageState extends State<LandingPage> {
                                     ),
                                   ),
                                 ),
-                              ],
-                            ),
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                    right: 10,
-                                    bottom: 20,
-                                  ),
-                                  child: Image.asset(
-                                    menu['imagePath'] ?? '',
-                                    width: 150,
-                                    height: 100,
-                                  ),
-                                ),
-                              ],
+                              ),
                             ),
                           ],
                         ),
@@ -189,7 +219,7 @@ class _LandingPageState extends State<LandingPage> {
                   options: CarouselOptions(
                     height: 165,
                     aspectRatio: 16 / 9,
-                    viewportFraction: 0.8,
+                    viewportFraction: 0.72,
                     initialPage: 0,
                     enableInfiniteScroll: false,
                     reverse: false,
