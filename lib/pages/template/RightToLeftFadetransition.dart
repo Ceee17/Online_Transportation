@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class FadeAndSlideTransition extends PageRouteBuilder {
+class RightToLeftFadeTransition extends PageRouteBuilder {
   final Widget page;
   final Duration duration;
 
-  FadeAndSlideTransition({
+  RightToLeftFadeTransition({
     required this.page,
-    this.duration = const Duration(milliseconds: 100),
+    this.duration = const Duration(milliseconds: 200),
   }) : super(
           pageBuilder: (context, animation, secondaryAnimation) => page,
           transitionsBuilder: (context, animation, secondaryAnimation, child) {

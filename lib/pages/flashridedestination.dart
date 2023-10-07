@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:project_uts_online_transportation/pages/google_maps.dart';
-import 'flashride_confirmationpage.dart';
-import 'template/FadeandSlidetransition.dart';
+import 'template/RightToLeftFadetransition.dart';
+import 'ride_confirmation.dart';
 
 // class DestinationbikePage extends StatelessWidget {
 //   const DestinationbikePage({Key? key});
@@ -106,14 +105,14 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(
-                      FadeAndSlideTransition(
-                        page: ConfirmPage(
-                                destination: 'Monumen Nasional',
-                                pickup: widget.pickup,
-                              ),
-                            ),
-                          );
-                        },
+                      RightToLeftFadeTransition(
+                        page: MapSample(
+                          destination: 'Monumen Nasional',
+                          pickup: widget.pickup,
+                        ),
+                      ),
+                    );
+                  },
                   child: Container(
                     width: 360,
                     height: 79,
@@ -161,14 +160,14 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(
-                      FadeAndSlideTransition(
-                        page: ConfirmPage(
-                                destination: 'Season City',
-                                pickup: widget.pickup,
-                              ),
-                            ),
-                          );
-                        },
+                      RightToLeftFadeTransition(
+                        page: MapSample(
+                          destination: 'Season City',
+                          pickup: widget.pickup,
+                        ),
+                      ),
+                    );
+                  },
                   child: Container(
                     width: 360,
                     height: 79,
@@ -216,14 +215,14 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(
-                      FadeAndSlideTransition(
-                        page: ConfirmPage(
-                                destination: 'Plaza Senayan',
-                                pickup: widget.pickup,
-                              ),
-                            ),
-                          );
-                        },
+                      RightToLeftFadeTransition(
+                        page: MapSample(
+                          destination: 'Plaza Senayan',
+                          pickup: widget.pickup,
+                        ),
+                      ),
+                    );
+                  },
                   child: Container(
                     width: 360,
                     height: 79,
@@ -271,14 +270,14 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(
-                      FadeAndSlideTransition(
-                        page: ConfirmPage(
-                                destination: 'Tokyo Riverside',
-                                pickup: widget.pickup,
-                              ),
-                            ),
-                          );
-                        },
+                      RightToLeftFadeTransition(
+                        page: MapSample(
+                          destination: 'Tokyo Riverside',
+                          pickup: widget.pickup,
+                        ),
+                      ),
+                    );
+                  },
                   child: Container(
                     width: 360,
                     height: 79,

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:project_uts_online_transportation/pages/flashride_pickup.dart';
 import 'template/templatehead.dart';
-import 'flashbtntxt.dart';
+import 'template/flashbtntxt.dart';
 import 'flashpick_driverotw.dart';
 import 'landingpage.dart';
 import 'dart:async';
+import 'ride_confirmation.dart';
 
 // class SearchingDrivPage extends StatelessWidget {
 //   const SearchingDrivPage({Key? key}) : super(key: key);
@@ -95,7 +96,6 @@ class _SearchingDrivPageState extends State<SearchingDrivPage> {
                                 return LandingPage();
                               },
                             ),
-
                           );
                         },
                         child: Text(

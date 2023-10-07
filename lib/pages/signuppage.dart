@@ -1,7 +1,37 @@
-import 'package:flutter/material.dart';
+// import 'dart:js';
 
-class SignupPage extends StatelessWidget {
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:project_uts_online_transportation/firebase/firebase_auth_services.dart';
+import 'package:project_uts_online_transportation/pages/landingpage.dart';
+import 'package:project_uts_online_transportation/pages/loginpage.dart';
+
+class SignupPage extends StatefulWidget {
   const SignupPage({Key? key}) : super(key: key);
+
+  @override
+  State<SignupPage> createState() => _SignupPageState();
+}
+
+class _SignupPageState extends State<SignupPage> {
+  final FirebaseAuthService _auth = FirebaseAuthService();
+
+  TextEditingController _fullnameController = TextEditingController();
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _phonenumberController = TextEditingController();
+  TextEditingController _usernameController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    _fullnameController.dispose();
+    _emailController.dispose();
+    _phonenumberController.dispose();
+    _usernameController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -65,6 +95,7 @@ class SignupPage extends StatelessWidget {
                     children: [
                       SizedBox(height: 50),
                       TextField(
+                        controller: _fullnameController,
                         decoration: InputDecoration(
                           // enabledBorder: OutlineInputBorder(
                           // borderSide: BorderSide(width: 13, color: Colors.black),
@@ -82,7 +113,7 @@ class SignupPage extends StatelessWidget {
                       ),
                       SizedBox(height: 15),
                       TextField(
-                        obscureText: true,
+                        controller: _emailController,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(7),
@@ -96,7 +127,7 @@ class SignupPage extends StatelessWidget {
                       ),
                       SizedBox(height: 15),
                       TextField(
-                        obscureText: true,
+                        controller: _phonenumberController,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(7),
@@ -110,7 +141,7 @@ class SignupPage extends StatelessWidget {
                       ),
                       SizedBox(height: 15),
                       TextField(
-                        obscureText: true,
+                        controller: _usernameController,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(7),
@@ -124,6 +155,7 @@ class SignupPage extends StatelessWidget {
                       ),
                       SizedBox(height: 15),
                       TextField(
+                        controller: _passwordController,
                         obscureText: true,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
@@ -140,9 +172,32 @@ class SignupPage extends StatelessWidget {
                         height: 30,
                       ),
                       ElevatedButton(
-                        onPressed: () {
-                          print('"Login" button pressed');
-                        },
+                        onPressed: _signUp,
+                        // () {
+                        // if (fullnameTextEditingController.text.length < 3) {
+                        //   displayToastMessage(
+                        //       "Name must be at least 3 characters", context);
+                        // } else if (!emailTextEditingController.text
+                        //     .contains("@")) {
+                        //   displayToastMessage(
+                        //       "Email address is not Valid", context);
+                        // } else if (phonenumberTextEditingController
+                        //     .text.isEmpty) {
+                        //   displayToastMessage(
+                        //       "Phone number is mandatory", context);
+                        // } else if (usernameTextEditingController
+                        //     .text.isEmpty) {
+                        //   displayToastMessage("Username is invalid", context);
+                        // } else if (passwordTextEditingController.text.length <
+                        //     6) {
+                        //   displayToastMessage(
+                        //       "Password must be at least 6 characters",
+                        //       context);
+                        // }
+                        //else {
+                        //   registerNewUser(context);
+                        // }
+                        // },
                         style: ElevatedButton.styleFrom(
                           primary: Color(0xFF111d41), // Ubah backgroundColor
                           onPrimary: Colors.white, // Ubah textColor
@@ -154,10 +209,10 @@ class SignupPage extends StatelessWidget {
                           ),
                         ),
                         child: Text(
-                          'Login',
+                          'Sign up',
                           style: TextStyle(
                             fontSize: 22,
-                            fontWeight: FontWeight.w600,
+                            fontWeight: FontWeight.w700,
                           ),
                         ),
                       ),
@@ -180,7 +235,13 @@ class SignupPage extends StatelessWidget {
                             height: 35,
                             width: 100,
                             child: TextButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => LoginPage(),
+                                    ));
+                              },
                               child: Text(
                                 'Log in',
                                 style: TextStyle(
@@ -202,4 +263,88 @@ class SignupPage extends StatelessWidget {
       ),
     );
   }
+
+  void _signUp() async {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return Center(child: CircularProgressIndicator());
+      },
+    );
+
+    String fullname = _fullnameController.text;
+    String email = _emailController.text;
+    String phonenumber = _phonenumberController.text;
+    String username = _usernameController.text;
+    String password = _passwordController.text;
+
+    try {
+      if (_fullnameController.text.length < 3) {
+        displayToastMessage("Name must be at least 3 characters", context);
+      } else if (!_emailController.text.contains("@")) {
+        displayToastMessage("Email address is not Valid", context);
+      } else if (_phonenumberController.text.isEmpty) {
+        displayToastMessage("Phone number is mandatory", context);
+      } else if (_usernameController.text.isEmpty) {
+        displayToastMessage("Username is invalid", context);
+      } else if (_passwordController.text.length < 6) {
+        displayToastMessage("Password must be at least 6 characters", context);
+      } else {
+        User? user = await _auth.signUpWithEmailAndPassword(
+          email,
+          password,
+          fullname,
+          username,
+          phonenumber,
+        );
+        if (user != null) {
+          print("You're already become a Flasher!");
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => LandingPage(),
+            ),
+          );
+        } else {
+          print("Error! : SignUp Failed");
+        }
+      }
+    } catch (e) {
+      print("Error: $e");
+    }
+  }
+
+//   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+
+//   void registerNewUser(BuildContext context) async {
+//     final User? firebaseUser = (await _firebaseAuth
+//             .createUserWithEmailAndPassword(
+//                 email: emailTextEditingController.text,
+//                 password: passwordTextEditingController.text)
+//             .catchError((errMsg) {
+//       displayToastMessage("Error: " + errMsg.toString(), context);
+//     }))
+//         .user;
+
+//     if (firebaseUser != null) {
+//       Map userDataMap = {
+//         "Full Name": fullnameTextEditingController.text.trim(),
+//         "E-mail": emailTextEditingController.text.trim(),
+//         "Phone Number": phonenumberTextEditingController.text.trim(),
+//       };
+
+//       usersRef.child(firebaseUser.uid).set(userDataMap);
+//       displayToastMessage("Your account has been created!", context);
+
+//       Navigator.pushNamedAndRemoveUntil(
+//           context, LandingPage.idScreen, (route) => false);
+//     } else {
+//       displayToastMessage("New user account has not been created", context);
+//     }
+//   }
+// }
+}
+
+displayToastMessage(String message, BuildContext context) {
+  Fluttertoast.showToast(msg: message);
 }

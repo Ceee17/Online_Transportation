@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'template/FadeandSlidetransition.dart';
+import 'template/RightToLeftFadetransition.dart';
 import 'flashride_itemspage.dart';
 
 // class PickupBikePage extends StatefulWidget {
@@ -107,7 +107,7 @@ class _PickupItemBikePageState extends State<PickupItemBikePage> {
                   GestureDetector(
                     onTap: () {
                       Navigator.of(context).push(
-                        FadeAndSlideTransition(
+                        RightToLeftFadeTransition(
                           page: MoveitemPage(
                             pickup: 'Tarumanagara university',
                             destination: widget.destination,
@@ -162,7 +162,7 @@ class _PickupItemBikePageState extends State<PickupItemBikePage> {
                   GestureDetector(
                     onTap: () {
                       Navigator.of(context).push(
-                        FadeAndSlideTransition(
+                        RightToLeftFadeTransition(
                           page: MoveitemPage(
                             pickup: 'Central Park',
                             destination: widget.destination,
@@ -217,7 +217,7 @@ class _PickupItemBikePageState extends State<PickupItemBikePage> {
                   GestureDetector(
                     onTap: () {
                       Navigator.of(context).push(
-                        FadeAndSlideTransition(
+                        RightToLeftFadeTransition(
                           page: MoveitemPage(
                             pickup: 'Alfa X Untar',
                             destination: widget.destination,
@@ -272,7 +272,7 @@ class _PickupItemBikePageState extends State<PickupItemBikePage> {
                   GestureDetector(
                     onTap: () {
                       Navigator.of(context).push(
-                        FadeAndSlideTransition(
+                        RightToLeftFadeTransition(
                           page: MoveitemPage(
                             pickup: 'Your Current Location',
                             destination: widget.destination,

@@ -1,32 +1,21 @@
 import 'package:flutter/material.dart';
-// import 'package:project_uts_online_transportation/pages/destinationcar.dart';
-import 'flashcar_destination.dart';
-import 'package:project_uts_online_transportation/pages/ride_confirmation.dart';
-import 'package:project_uts_online_transportation/pages/template/back-button.dart';
+import 'flashtaxi.dart';
 import 'template/RightToLeftFadetransition.dart';
+import 'package:project_uts_online_transportation/pages/template/back-button.dart';
 
-// class PickupBikePage extends StatefulWidget {
-//   const PickupBikePage({Key? key});
-//   static const String idScreen = 'pickupbike';
-
-//  @override
-//   State<PickupBikePage> createState() => _CarPickupPageState();
-// }
-
-// class _CarPickupPageState extends State<PickupBikePage> {
-class PickupCarPage extends StatefulWidget {
+class PickupTaxiPage extends StatefulWidget {
   final String pickup;
   final String destination;
 
-  PickupCarPage({
+  PickupTaxiPage({
     required this.pickup,
     required this.destination,
   });
   @override
-  _PickupCarPageState createState() => _PickupCarPageState();
+  _PickupTaxiPageState createState() => _PickupTaxiPageState();
 }
 
-class _PickupCarPageState extends State<PickupCarPage> {
+class _PickupTaxiPageState extends State<PickupTaxiPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -116,7 +105,7 @@ class _PickupCarPageState extends State<PickupCarPage> {
                     onTap: () {
                       Navigator.of(context).push(
                         RightToLeftFadeTransition(
-                          page: DestinationcarPage(
+                          page: FlashTaxiPage(
                             pickup: 'Tarumanagara university',
                             destination: widget.destination,
                           ),
@@ -171,7 +160,7 @@ class _PickupCarPageState extends State<PickupCarPage> {
                     onTap: () {
                       Navigator.of(context).push(
                         RightToLeftFadeTransition(
-                          page: DestinationcarPage(
+                          page: FlashTaxiPage(
                             pickup: 'Central Park',
                             destination: widget.destination,
                           ),
@@ -226,7 +215,7 @@ class _PickupCarPageState extends State<PickupCarPage> {
                     onTap: () {
                       Navigator.of(context).push(
                         RightToLeftFadeTransition(
-                          page: DestinationcarPage(
+                          page: FlashTaxiPage(
                             pickup: 'Alfa X Untar',
                             destination: widget.destination,
                           ),
@@ -281,7 +270,7 @@ class _PickupCarPageState extends State<PickupCarPage> {
                     onTap: () {
                       Navigator.of(context).push(
                         RightToLeftFadeTransition(
-                          page: DestinationcarPage(
+                          page: FlashTaxiPage(
                             pickup: 'Your Current Location',
                             destination: widget.destination,
                           ),
