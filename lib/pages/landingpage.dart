@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-// import 'package:flutter_svg/flutter_svg.dart';
 import 'package:project_uts_online_transportation/pages/account_page.dart';
 import 'package:project_uts_online_transportation/pages/flashcar_page.dart';
 import 'package:project_uts_online_transportation/pages/flashtaxi.dart';
@@ -137,35 +136,52 @@ class _LandingPageState extends State<LandingPage> {
                   items: menuItems.map((menu) {
                     return GestureDetector(
                       onTap: () {
-                        // Handle the click event for the carousel item here
                         if (_currentIndex == 0) {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => FlashRidePage(
-                                pickup: '',
-                                destination: '',
-                              ),
+                          Navigator.of(context).push(
+                            PageRouteBuilder(
+                              transitionDuration: Duration(milliseconds: 250),
+                              pageBuilder:
+                                  (context, animation, secondaryAnimation) {
+                                return FadeTransition(
+                                  opacity: animation,
+                                  child: FlashRidePage(
+                                    pickup: '',
+                                    destination: '',
+                                  ),
+                                );
+                              },
                             ),
                           );
                         } else if (_currentIndex == 1) {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => FlashCarPage(
-                                pickup: '',
-                                destination: '',
-                              ),
+                          Navigator.of(context).push(
+                            PageRouteBuilder(
+                              transitionDuration: Duration(milliseconds: 250),
+                              pageBuilder:
+                                  (context, animation, secondaryAnimation) {
+                                return FadeTransition(
+                                  opacity: animation,
+                                  child: FlashCarPage(
+                                    pickup: '',
+                                    destination: '',
+                                  ),
+                                );
+                              },
                             ),
                           );
                         } else if (_currentIndex == 2) {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => FlashTaxiPage(
-                                destination: ' ',
-                                pickup: ' ',
-                              ),
+                          Navigator.of(context).push(
+                            PageRouteBuilder(
+                              transitionDuration: Duration(milliseconds: 250),
+                              pageBuilder:
+                                  (context, animation, secondaryAnimation) {
+                                return FadeTransition(
+                                  opacity: animation,
+                                  child: FlashTaxiPage(
+                                    pickup: '',
+                                    destination: '',
+                                  ),
+                                );
+                              },
                             ),
                           );
                         }
@@ -179,7 +195,6 @@ class _LandingPageState extends State<LandingPage> {
                         ),
                         child: Stack(
                           children: [
-                            // Gambar di pojok kiri atas
                             Positioned(
                               right: 15,
                               bottom: 15,
@@ -189,12 +204,11 @@ class _LandingPageState extends State<LandingPage> {
                                 height: 100,
                               ),
                             ),
-                            // Teks di pojok kanan bawah (dengan transform untuk efek diagonal)
                             Positioned(
                               left: 20,
                               top: 15,
                               child: Transform.rotate(
-                                angle: 0, // Ubah sudut sesuai keinginan Anda
+                                angle: 0,
                                 child: Container(
                                   padding: EdgeInsets.all(10),
                                   decoration: BoxDecoration(

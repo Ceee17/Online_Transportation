@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:project_uts_online_transportation/pages/template/template-card-button.dart';
 import 'package:project_uts_online_transportation/pages/template/templatehead.dart';
-import 'template/RightToLeftFadetransition.dart';
+import 'template/LeftToRightFadetransition.dart';
 import 'template/back-button.dart';
 import 'account_page.dart';
 
@@ -47,9 +47,10 @@ class PaymenPage extends StatelessWidget {
                         color: Color(0xffFFFFFF),
                         textColor: Color(0xFF000000),
                         heightButton: 140,
+                        svgBorderRadius: BorderRadius.circular(0),
                         onPressed: () {
                           Navigator.of(context).push(
-                            RightToLeftFadeTransition(
+                            LeftToRightFadeTransition(
                               page: AccountPage(),
                             ),
                           );
@@ -68,9 +69,10 @@ class PaymenPage extends StatelessWidget {
                         color: Color(0xffFFFFFF),
                         textColor: Color(0xFF000000),
                         heightButton: 140,
+                        svgBorderRadius: BorderRadius.circular(0),
                         onPressed: () {
                           Navigator.of(context).push(
-                            RightToLeftFadeTransition(
+                            LeftToRightFadeTransition(
                               page: AccountPage(),
                             ),
                           );
@@ -85,13 +87,14 @@ class PaymenPage extends StatelessWidget {
                         svgWidth: 70,
                         title: 'ovo',
                         description:
-                            'make payments \ndirectly to drivers \nusing cash',
+                            'cashless payment \nin collaboration  \nwith ovo',
                         color: Color(0xffFFFFFF),
                         textColor: Color(0xFF000000),
                         heightButton: 140,
+                        svgBorderRadius: BorderRadius.circular(50),
                         onPressed: () {
                           Navigator.of(context).push(
-                            RightToLeftFadeTransition(
+                            LeftToRightFadeTransition(
                               page: AccountPage(),
                             ),
                           );
@@ -106,13 +109,14 @@ class PaymenPage extends StatelessWidget {
                         svgWidth: 70,
                         title: 'Gopay',
                         description:
-                            'make payments \ndirectly to drivers \nusing cash',
+                            'cashless payment \nin collaboration \nwith Gojek',
                         color: Color(0xffFFFFFF),
                         textColor: Color(0xFF000000),
                         heightButton: 140,
+                        svgBorderRadius: BorderRadius.circular(20),
                         onPressed: () {
                           Navigator.of(context).push(
-                            RightToLeftFadeTransition(
+                            LeftToRightFadeTransition(
                               page: AccountPage(),
                             ),
                           );

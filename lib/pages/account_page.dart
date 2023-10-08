@@ -15,6 +15,7 @@ import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
 import 'edit_profile_page.dart';
 import 'template/template-icon-card-button.dart';
 import 'template/LeftToRightFadetransition.dart';
+import 'template/RightToLeftFadetransition.dart';
 
 class AccountPage extends StatefulWidget {
   const AccountPage({super.key});
@@ -273,7 +274,7 @@ class _AccountPageState extends State<AccountPage> {
         IconCardButton(
           onPressed: () {
             Navigator.of(context).push(
-              LeftToRightFadeTransition(
+              RightToLeftFadeTransition(
                 page: PaymenPage(),
               ),
             );

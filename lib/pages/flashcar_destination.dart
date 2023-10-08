@@ -5,9 +5,6 @@ import 'package:project_uts_online_transportation/pages/ride_confirmation.dart';
 import 'package:project_uts_online_transportation/pages/template/back-button.dart';
 import 'template/RightToLeftFadetransition.dart';
 
-// class DestinationbikePage extends StatelessWidget {
-//   const DestinationbikePage({Key? key});
-//   static const String idScreen = 'destinationbike';
 class DestinationcarPage extends StatefulWidget {
   final String pickup;
   final String destination;

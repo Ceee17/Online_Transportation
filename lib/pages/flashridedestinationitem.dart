@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 import 'flashride_itemspage.dart';
 import 'template/RightToLeftFadetransition.dart';
 
-// class DestinationbikePage extends StatelessWidget {
-//   const DestinationbikePage({Key? key});
-//   static const String idScreen = 'destinationbike';
 class DestinationitembikePage extends StatefulWidget {
   final String pickup;
   final String destination;
@@ -37,11 +34,11 @@ class _DestinationitembikePageState extends State<DestinationitembikePage> {
                 centerTitle: true,
               ),
               Positioned(
-                top: 23,
-                left: 288,
+                top: 63,
+                right: 0,
                 child: Container(
-                  width: 190,
-                  child: Image.asset('lib/assets/images/flashcarlogo.png'),
+                  width: 100,
+                  child: Image.asset('lib/assets/images/FlashrideLogo.png'),
                 ),
               ),
               Positioned(
@@ -107,12 +104,12 @@ class _DestinationitembikePageState extends State<DestinationitembikePage> {
                     Navigator.of(context).push(
                       RightToLeftFadeTransition(
                         page: MoveitemPage(
-                                destination: 'Monumen Nasional',
-                                pickup: widget.pickup,
-                              ),
-                            ),
-                          );
-                        },
+                          destination: 'Monumen Nasional',
+                          pickup: widget.pickup,
+                        ),
+                      ),
+                    );
+                  },
                   child: Container(
                     width: 360,
                     height: 79,
@@ -162,12 +159,12 @@ class _DestinationitembikePageState extends State<DestinationitembikePage> {
                     Navigator.of(context).push(
                       RightToLeftFadeTransition(
                         page: MoveitemPage(
-                                destination: 'Season City',
-                                pickup: widget.pickup,
-                              ),
-                            ),
-                          );
-                        },
+                          destination: 'Season City',
+                          pickup: widget.pickup,
+                        ),
+                      ),
+                    );
+                  },
                   child: Container(
                     width: 360,
                     height: 79,
@@ -217,12 +214,12 @@ class _DestinationitembikePageState extends State<DestinationitembikePage> {
                     Navigator.of(context).push(
                       RightToLeftFadeTransition(
                         page: MoveitemPage(
-                                destination: 'Plaza Senayan',
-                                pickup: widget.pickup,
-                              ),
-                            ),
-                          );
-                        },
+                          destination: 'Plaza Senayan',
+                          pickup: widget.pickup,
+                        ),
+                      ),
+                    );
+                  },
                   child: Container(
                     width: 360,
                     height: 79,
@@ -272,13 +269,12 @@ class _DestinationitembikePageState extends State<DestinationitembikePage> {
                     Navigator.of(context).push(
                       RightToLeftFadeTransition(
                         page: MoveitemPage(
-                                destination: 'Tokyo Riverside',
-                                pickup: widget.pickup,
-                              ),
-                            ),
-                          );
-                        },
-
+                          destination: 'Tokyo Riverside',
+                          pickup: widget.pickup,
+                        ),
+                      ),
+                    );
+                  },
                   child: Container(
                     width: 360,
                     height: 79,

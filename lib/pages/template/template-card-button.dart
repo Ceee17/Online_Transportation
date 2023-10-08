@@ -9,7 +9,9 @@ class CustomCardButton extends StatelessWidget {
   final String description;
   final Color color;
   final Color textColor;
+  final BorderRadius svgBorderRadius;
   final double heightButton;
+  
   final VoidCallback? onPressed;
 
   const CustomCardButton({
@@ -22,6 +24,7 @@ class CustomCardButton extends StatelessWidget {
     this.color = const Color(0xFFFFFFFF),
     this.textColor = const Color(0xFF000000),
     this.heightButton = 154,
+    required this.svgBorderRadius,
     this.onPressed,
   }) : super(key: key);
 
@@ -51,10 +54,13 @@ class CustomCardButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SvgPicture.asset(
-              svgAsset,
-              height: svgHeight,
-              width: svgWidth,
+            ClipRRect(
+              borderRadius: svgBorderRadius, // Apply the border radius to the SVG
+              child: SvgPicture.asset(
+                svgAsset,
+                height: svgHeight,
+                width: svgWidth,
+              ),
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,

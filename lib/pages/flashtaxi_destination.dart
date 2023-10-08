@@ -13,7 +13,8 @@ class DestinationTaxiPage extends StatefulWidget {
     required this.destination,
   });
   @override
-  _DestinationTaxiPagePageState createState() => _DestinationTaxiPagePageState();
+  _DestinationTaxiPagePageState createState() =>
+      _DestinationTaxiPagePageState();
 }
 
 class _DestinationTaxiPagePageState extends State<DestinationTaxiPage> {
@@ -43,8 +44,8 @@ class _DestinationTaxiPagePageState extends State<DestinationTaxiPage> {
                 top: 23,
                 left: 288,
                 child: Container(
-                  width: 190,
-                  child: Image.asset('lib/assets/images/flashcarlogo.png'),
+                  width: 90,
+                  child: Image.asset('lib/assets/images/flashtaxilogo.png'),
                 ),
               ),
               Positioned(
@@ -112,12 +113,12 @@ class _DestinationTaxiPagePageState extends State<DestinationTaxiPage> {
                     Navigator.of(context).push(
                       RightToLeftFadeTransition(
                         page: FlashTaxiPage(
-                                destination: 'Monumen Nasional',
-                                pickup: widget.pickup,
-                              ),
-                            ),
-                          );
-                        },
+                          destination: 'Monumen Nasional',
+                          pickup: widget.pickup,
+                        ),
+                      ),
+                    );
+                  },
                   child: Container(
                     width: 360,
                     height: 79,
@@ -167,12 +168,12 @@ class _DestinationTaxiPagePageState extends State<DestinationTaxiPage> {
                     Navigator.of(context).push(
                       RightToLeftFadeTransition(
                         page: FlashTaxiPage(
-                                destination: 'Season City',
-                                pickup: widget.pickup,
-                              ),
-                            ),
-                          );
-                        },
+                          destination: 'Season City',
+                          pickup: widget.pickup,
+                        ),
+                      ),
+                    );
+                  },
                   child: Container(
                     width: 360,
                     height: 79,
@@ -222,12 +223,12 @@ class _DestinationTaxiPagePageState extends State<DestinationTaxiPage> {
                     Navigator.of(context).push(
                       RightToLeftFadeTransition(
                         page: FlashTaxiPage(
-                                destination: 'Plaza Senayan',
-                                pickup: widget.pickup,
-                              ),
-                            ),
-                          );
-                        },
+                          destination: 'Plaza Senayan',
+                          pickup: widget.pickup,
+                        ),
+                      ),
+                    );
+                  },
                   child: Container(
                     width: 360,
                     height: 79,
@@ -277,12 +278,12 @@ class _DestinationTaxiPagePageState extends State<DestinationTaxiPage> {
                     Navigator.of(context).push(
                       RightToLeftFadeTransition(
                         page: FlashTaxiPage(
-                                destination: 'Tokyo Riverside',
-                                pickup: widget.pickup,
-                              ),
-                            ),
-                          );
-                        },
+                          destination: 'Tokyo Riverside',
+                          pickup: widget.pickup,
+                        ),
+                      ),
+                    );
+                  },
                   child: Container(
                     width: 360,
                     height: 79,

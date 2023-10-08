@@ -2,17 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:project_uts_online_transportation/pages/template/back-button.dart';
 import 'flashridedestination.dart';
 import 'template/RightToLeftFadetransition.dart';
-
 import 'ride_confirmation.dart';
-// class PickupBikePage extends StatefulWidget {
-//   const PickupBikePage({Key? key});
-//   static const String idScreen = 'pickupbike';
-
-//  @override
-//   State<PickupBikePage> createState() => _CarPickupPageState();
-// }
-
-// class _CarPickupPageState extends State<PickupBikePage> {
 class PickupBikePage extends StatefulWidget {
   final String pickup;
   final String destination;
@@ -140,7 +130,7 @@ class _PickupBikePageState extends State<PickupBikePage> {
                             ),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment
-                                  .center, // Center text vertically
+                                  .center,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
@@ -195,7 +185,7 @@ class _PickupBikePageState extends State<PickupBikePage> {
                             ),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment
-                                  .center, // Center text vertically
+                                  .center,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
@@ -250,7 +240,7 @@ class _PickupBikePageState extends State<PickupBikePage> {
                             ),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment
-                                  .center, // Center text vertically
+                                  .center,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
@@ -299,9 +289,9 @@ class _PickupBikePageState extends State<PickupBikePage> {
                         children: [
                           Positioned(
                             top:
-                                -10, // Adjust the top value to move the image down
+                                -10,
                             left:
-                                25, // Adjust the left value to move the image right
+                                15,
                             child: Image.asset(
                               'lib/assets/images/location1.png',
                               width: 80,
@@ -311,11 +301,11 @@ class _PickupBikePageState extends State<PickupBikePage> {
                           Text(
                             'Use Your Current Location',
                             style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 11,
+                              color: Colors.white,
+                              fontSize: 14,
                               fontWeight: FontWeight.w100,
                               decoration:
-                                  TextDecoration.underline, // Add this line
+                                  TextDecoration.underline,
                             ),
                           ),
                         ],

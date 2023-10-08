@@ -33,11 +33,11 @@ class FlashpickPage extends StatelessWidget {
                   color: Color(0xFF8DA2E2),
                   child: Column(
                     children: [
-                      SizedBox(height: 30), // Adjust the height here
+                      SizedBox(height: 30),
                       Container(
                         padding: EdgeInsets.all(2.0),
                         child: Align(
-                          alignment: Alignment.center, // Center align the text
+                          alignment: Alignment.center,
                           child: Text(
                             'Your Driver is On The Way',
                             style: TextStyle(
@@ -66,6 +66,7 @@ class FlashpickPage extends StatelessWidget {
                         child: Text(
                           'Cancel',
                           style: TextStyle(
+                            fontSize: 14,
                             color: Colors.black,
                           ),
                         ),

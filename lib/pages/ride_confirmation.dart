@@ -65,9 +65,9 @@ class MapSampleState extends State<MapSample> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => PickupBikePage(
-                      pickup: widget.pickup, // Replace with actual data
+                      pickup: widget.pickup,
                       destination:
-                          widget.destination, // Replace with actual data
+                          widget.destination,
                     ),
                   ),
                 );
@@ -96,8 +96,8 @@ class MapSampleState extends State<MapSample> {
                   MaterialPageRoute(
                     builder: (context) => DestinationbikePage(
                       destination:
-                          widget.destination, // Replace with actual data
-                      pickup: widget.pickup, // Replace with actual data
+                          widget.destination,
+                      pickup: widget.pickup,
                     ),
                   ),
                 );
@@ -118,20 +118,20 @@ class MapSampleState extends State<MapSample> {
                 primary: Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25),
-                ), // Change button color here
+                ),
               ),
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                       builder: (context) =>
-                          SearchingDrivPage()), // Navigate to CarPickupPage
+                          SearchingDrivPage()),
                 );
               },
               child: Text(
                 'Confirm',
                 style: TextStyle(
-                    color: Color(0xff828282)), // Change text color here
+                    color: Color(0xff828282)),
               ),
             ),
           ),
