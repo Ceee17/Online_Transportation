@@ -63,7 +63,7 @@ class MyApp extends StatelessWidget {
         HistoryPage.idScreen: (context) => HistoryPage(),
         AccountPage.idScreen: (context) => AccountPage(),
       },
-      home: LandingPage(),
+      home: LoadingPage(),
     );
   }
 }
