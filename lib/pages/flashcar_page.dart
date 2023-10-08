@@ -34,11 +34,11 @@ class _FlashCarPageState extends State<FlashCarPage> {
                 elevation: 0.0,
                 centerTitle: true,
               ),
-              Positioned(
-                top: 40,
-                left: 20,
-                child: BackBtn(),
-              ),
+              // Positioned(
+              //   top: 40,
+              //   left: 20,
+              //   child: BackBtn(),
+              // ),
               Positioned(
                 top: 23,
                 left: 288,
@@ -48,23 +48,24 @@ class _FlashCarPageState extends State<FlashCarPage> {
                 ),
               ),
               Positioned(
-                top: 120,
-                left: -25,
+                top: 60,
+                left: 0,
                 child: Container(
-                  width: 230,
+                  height: 170,
+                  width: 170,
                   child: SvgPicture.asset(
                     'lib/assets/images/2cars.svg',
                   ),
                 ),
               ),
               Positioned(
-                top: 120,
-                left: 190,
+                top: 140,
+                left: 210,
                 child: Container(
                   child: Text(
-                    'Book a FlashCar\nto get to places\nand send items\nconveniently',
+                    'Book a FlashCarn \nto get to places and \nsend items conveniently',
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: 16,
                     ),
                   ),
                 ),
@@ -89,8 +90,10 @@ class _FlashCarPageState extends State<FlashCarPage> {
         ),
       ),
       extendBody: true,
-      bottomNavigationBar:
-          DragSheet(pickup: '', destination: '',),
+      bottomNavigationBar: DragSheet(
+        pickup: '',
+        destination: '',
+      ),
     );
   }
 }

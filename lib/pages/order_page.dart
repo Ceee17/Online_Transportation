@@ -179,6 +179,14 @@ class _OrderPageState extends State<OrderPage> {
                   textColor: Color(0xFF000000),
                   svgBorderRadius: BorderRadius.circular(0),
                 ),
+              if (widget.id1 == '')
+                Text(
+                  "You don't have any orders yet.",
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
               SizedBox(
                 height: 20,
               ),

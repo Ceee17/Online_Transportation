@@ -129,8 +129,7 @@ class _PickupTaxiPageState extends State<PickupTaxiPage> {
                               horizontal: 20,
                             ),
                             child: Column(
-                              mainAxisAlignment: MainAxisAlignment
-                                  .center,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
@@ -145,7 +144,7 @@ class _PickupTaxiPageState extends State<PickupTaxiPage> {
                                   'Letjen S. Parman St no.1, RT.6/RW.16, Tomang, Grogol',
                                   style: TextStyle(
                                     color: Colors.black,
-                                    fontSize: 11,
+                                    fontSize: 13,
                                     fontWeight: FontWeight.w400,
                                   ),
                                 ),
@@ -184,8 +183,7 @@ class _PickupTaxiPageState extends State<PickupTaxiPage> {
                               horizontal: 20,
                             ),
                             child: Column(
-                              mainAxisAlignment: MainAxisAlignment
-                                  .center,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
@@ -200,7 +198,7 @@ class _PickupTaxiPageState extends State<PickupTaxiPage> {
                                   'Jl. Letjen S. Parman No.Kavling 28, Tanjung Duren, Grogol',
                                   style: TextStyle(
                                     color: Colors.black,
-                                    fontSize: 11,
+                                    fontSize: 13,
                                     fontWeight: FontWeight.w400,
                                   ),
                                 ),
@@ -239,8 +237,7 @@ class _PickupTaxiPageState extends State<PickupTaxiPage> {
                               horizontal: 20,
                             ),
                             child: Column(
-                              mainAxisAlignment: MainAxisAlignment
-                                  .center,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
@@ -255,7 +252,7 @@ class _PickupTaxiPageState extends State<PickupTaxiPage> {
                                   'Jl. Taman S. Parman, RT.7/RW.8, Grogol',
                                   style: TextStyle(
                                     color: Colors.black,
-                                    fontSize: 11,
+                                    fontSize: 13,
                                     fontWeight: FontWeight.w400,
                                   ),
                                 ),
@@ -288,10 +285,8 @@ class _PickupTaxiPageState extends State<PickupTaxiPage> {
                         alignment: Alignment.center,
                         children: [
                           Positioned(
-                            top:
-                                -10,
-                            left:
-                                25,
+                            top: -10,
+                            left: 25,
                             child: Image.asset(
                               'lib/assets/images/location1.png',
                               width: 80,
@@ -302,10 +297,9 @@ class _PickupTaxiPageState extends State<PickupTaxiPage> {
                             'Use Your Current Location',
                             style: TextStyle(
                               color: Colors.black,
-                              fontSize: 11,
-                              fontWeight: FontWeight.w100,
-                              decoration:
-                                  TextDecoration.underline,
+                              fontSize: 13,
+                              fontWeight: FontWeight.w400,
+                              decoration: TextDecoration.underline,
                             ),
                           ),
                         ],

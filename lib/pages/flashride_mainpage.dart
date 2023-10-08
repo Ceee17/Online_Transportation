@@ -44,7 +44,7 @@ class _FlashRidePageState extends State<FlashRidePage> {
                 ),
               ),
               Positioned(
-                top: 50,
+                top: 75,
                 left: 0,
                 child: Container(
                   width: 220,
@@ -57,7 +57,7 @@ class _FlashRidePageState extends State<FlashRidePage> {
                 left: 190,
                 child: Container(
                   child: Text(
-                    'order flashride from\nanywhere and anytime for\ntravel or delivery of items',
+                    'Order flashride from\nanywhere and anytime for\ntravel or delivery of items',
                     style: TextStyle(
                       fontSize: 16,
                     ),
