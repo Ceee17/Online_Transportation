@@ -44,6 +44,7 @@ class _HistoryPageState extends State<HistoryPage> {
                       color: Color(0xFFffffff),
                       textColor: Color(0xFF000000),
                       heightButton: 100,
+                      svgBorderRadius: BorderRadius.circular(0),
                     ),
                     SizedBox(height: 20),
                     CustomCardButton(
@@ -55,6 +56,7 @@ class _HistoryPageState extends State<HistoryPage> {
                       color: Color(0xFFffffff),
                       textColor: Color(0xFF000000),
                       heightButton: 100,
+                      svgBorderRadius: BorderRadius.circular(0),
                     ),
                     SizedBox(height: 20),
                     CustomCardButton(
@@ -66,6 +68,7 @@ class _HistoryPageState extends State<HistoryPage> {
                       color: Color(0xFFffffff),
                       textColor: Color(0xFF000000),
                       heightButton: 100,
+                      svgBorderRadius: BorderRadius.circular(0),
                     ),
                     SizedBox(height: 20),
                     CustomCardButton(
@@ -77,6 +80,7 @@ class _HistoryPageState extends State<HistoryPage> {
                       color: Color(0xFFffffff),
                       textColor: Color(0xFF000000),
                       heightButton: 100,
+                      svgBorderRadius: BorderRadius.circular(0),
                     ),
                     SizedBox(height: 20),
                     CustomCardButton(
@@ -88,6 +92,7 @@ class _HistoryPageState extends State<HistoryPage> {
                       color: Color(0xFFffffff),
                       textColor: Color(0xFF000000),
                       heightButton: 100,
+                      svgBorderRadius: BorderRadius.circular(0),
                     ),
                     SizedBox(height: 20),
                     CustomCardButton(
@@ -99,6 +104,7 @@ class _HistoryPageState extends State<HistoryPage> {
                       color: Color(0xFFffffff),
                       textColor: Color(0xFF000000),
                       heightButton: 100,
+                      svgBorderRadius: BorderRadius.circular(0),
                     ),
                     SizedBox(height: 20),
                     CustomCardButton(
@@ -110,6 +116,7 @@ class _HistoryPageState extends State<HistoryPage> {
                       color: Color(0xFFffffff),
                       textColor: Color(0xFF000000),
                       heightButton: 100,
+                      svgBorderRadius: BorderRadius.circular(0),
                     ),
                   ],
                 ),

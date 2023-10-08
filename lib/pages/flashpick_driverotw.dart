@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:project_uts_online_transportation/pages/flashride_pickup.dart';
+import 'package:project_uts_online_transportation/pages/order_page.dart';
 import 'template/templatehead.dart';
 import 'template/flashbtntxt.dart';
 import 'landingpage.dart';
 
 class FlashpickPage extends StatelessWidget {
-  const FlashpickPage({Key? key}) : super(key: key);
   static const String idScreen = "flashpick";
+  final String id;
+  const FlashpickPage({Key? key, required this.id}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,11 +35,11 @@ class FlashpickPage extends StatelessWidget {
                   color: Color(0xFF8DA2E2),
                   child: Column(
                     children: [
-                      SizedBox(height: 30), // Adjust the height here
+                      SizedBox(height: 30),
                       Container(
                         padding: EdgeInsets.all(2.0),
                         child: Align(
-                          alignment: Alignment.center, // Center align the text
+                          alignment: Alignment.center,
                           child: Text(
                             'Your Driver is On The Way',
                             style: TextStyle(
@@ -57,15 +59,22 @@ class FlashpickPage extends StatelessWidget {
                                   (context, animation, secondaryAnimation) {
                                 return FadeTransition(
                                   opacity: animation,
-                                  child: LandingPage(),
+                                  child: OrderPage(
+                                    id1: '1',
+                                    id2: '2',
+                                    id3: '3',
+                                    id4: '4',
+                                    id5: '5',
+                                  ),
                                 );
                               },
                             ),
                           );
                         },
                         child: Text(
-                          'Cancel',
+                          'Confirm',
                           style: TextStyle(
+                            fontSize: 14,
                             color: Colors.black,
                           ),
                         ),

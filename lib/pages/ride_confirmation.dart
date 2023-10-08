@@ -9,8 +9,10 @@ import 'package:project_uts_online_transportation/pages/searchingdriver.dart';
 class MapSample extends StatefulWidget {
   final String pickup;
   final String destination;
+  final String id;
 
-  MapSample({required this.pickup, required this.destination});
+  MapSample(
+      {required this.pickup, required this.destination, required this.id});
 
   @override
   State<MapSample> createState() => MapSampleState();
@@ -65,9 +67,9 @@ class MapSampleState extends State<MapSample> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => PickupBikePage(
-                      pickup: widget.pickup, // Replace with actual data
+                      pickup: widget.pickup,
                       destination:
-                          widget.destination, // Replace with actual data
+                          widget.destination,
                     ),
                   ),
                 );
@@ -96,8 +98,8 @@ class MapSampleState extends State<MapSample> {
                   MaterialPageRoute(
                     builder: (context) => DestinationbikePage(
                       destination:
-                          widget.destination, // Replace with actual data
-                      pickup: widget.pickup, // Replace with actual data
+                          widget.destination,
+                      pickup: widget.pickup,
                     ),
                   ),
                 );
@@ -118,20 +120,21 @@ class MapSampleState extends State<MapSample> {
                 primary: Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25),
-                ), // Change button color here
+                ),
               ),
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) =>
-                          SearchingDrivPage()), // Navigate to CarPickupPage
+                      builder: (context) => SearchingDrivPage(
+                            id: '1',
+                          )), // Navigate to CarPickupPage
                 );
               },
               child: Text(
                 'Confirm',
                 style: TextStyle(
-                    color: Color(0xff828282)), // Change text color here
+                    color: Color(0xff828282)),
               ),
             ),
           ),

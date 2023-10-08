@@ -28,11 +28,11 @@ class _PickupTaxiPageState extends State<PickupTaxiPage> {
           ),
           Positioned(
             top: 20,
-            left: 83,
+            left: 293,
             child: Container(
-              width: 600,
+              width: 140,
               height: 160,
-              child: Image.asset('lib/assets/images/flashcarlogo.png'),
+              child: Image.asset('lib/assets/images/flashtaxilogo.png'),
             ),
           ),
         ],
@@ -130,7 +130,7 @@ class _PickupTaxiPageState extends State<PickupTaxiPage> {
                             ),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment
-                                  .center, // Center text vertically
+                                  .center,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
@@ -185,7 +185,7 @@ class _PickupTaxiPageState extends State<PickupTaxiPage> {
                             ),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment
-                                  .center, // Center text vertically
+                                  .center,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
@@ -240,7 +240,7 @@ class _PickupTaxiPageState extends State<PickupTaxiPage> {
                             ),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment
-                                  .center, // Center text vertically
+                                  .center,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
@@ -289,9 +289,9 @@ class _PickupTaxiPageState extends State<PickupTaxiPage> {
                         children: [
                           Positioned(
                             top:
-                                -10, // Adjust the top value to move the image down
+                                -10,
                             left:
-                                25, // Adjust the left value to move the image right
+                                25,
                             child: Image.asset(
                               'lib/assets/images/location1.png',
                               width: 80,
@@ -305,7 +305,7 @@ class _PickupTaxiPageState extends State<PickupTaxiPage> {
                               fontSize: 11,
                               fontWeight: FontWeight.w100,
                               decoration:
-                                  TextDecoration.underline, // Add this line
+                                  TextDecoration.underline,
                             ),
                           ),
                         ],

@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 // import 'flashride_confirmationpage.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:project_uts_online_transportation/pages/flashcar_confirmationpage.dart';
 import 'package:project_uts_online_transportation/pages/ride_confirmation.dart';
 import 'package:project_uts_online_transportation/pages/template/back-button.dart';
 import 'template/RightToLeftFadetransition.dart';
 
-// class DestinationbikePage extends StatelessWidget {
-//   const DestinationbikePage({Key? key});
-//   static const String idScreen = 'destinationbike';
 class DestinationcarPage extends StatefulWidget {
   final String pickup;
   final String destination;
@@ -115,9 +113,10 @@ class _DestinationcarPageState extends State<DestinationcarPage> {
                   onTap: () {
                     Navigator.of(context).push(
                       RightToLeftFadeTransition(
-                        page: MapSample(
+                        page: CarConfirmation(
                           destination: 'Monumen Nasional',
                           pickup: widget.pickup,
+                          id: '',
                         ),
                       ),
                     );
@@ -170,9 +169,10 @@ class _DestinationcarPageState extends State<DestinationcarPage> {
                   onTap: () {
                     Navigator.of(context).push(
                       RightToLeftFadeTransition(
-                        page: MapSample(
+                        page: CarConfirmation(
                           destination: 'Season City',
                           pickup: widget.pickup,
+                          id: '',
                         ),
                       ),
                     );
@@ -225,9 +225,10 @@ class _DestinationcarPageState extends State<DestinationcarPage> {
                   onTap: () {
                     Navigator.of(context).push(
                       RightToLeftFadeTransition(
-                        page: MapSample(
+                        page: CarConfirmation(
                           destination: 'Plaza Senayan',
                           pickup: widget.pickup,
+                          id: '',
                         ),
                       ),
                     );
@@ -280,9 +281,10 @@ class _DestinationcarPageState extends State<DestinationcarPage> {
                   onTap: () {
                     Navigator.of(context).push(
                       RightToLeftFadeTransition(
-                        page: MapSample(
+                        page: CarConfirmation(
                           destination: 'Tokyo Riverside',
                           pickup: widget.pickup,
+                          id: '',
                         ),
                       ),
                     );

@@ -19,8 +19,17 @@ class _LoadingPageState extends State<LoadingPage> {
 
   _navigatetohome() async {
     await Future.delayed(Duration(milliseconds: 2000), () {});
-    Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => StartingPage()));
+    Navigator.of(context).pushReplacement(
+      PageRouteBuilder(
+        pageBuilder: (context, animation, secondaryAnimation) {
+          return FadeTransition(
+            opacity: animation,
+            child: StartingPage(),
+          );
+        },
+        transitionDuration: Duration(milliseconds: 500), // Adjust the duration as needed
+      ),
+    );
   }
 
   @override

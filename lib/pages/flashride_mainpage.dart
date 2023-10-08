@@ -44,21 +44,22 @@ class _FlashRidePageState extends State<FlashRidePage> {
                 ),
               ),
               Positioned(
-                top: 130,
-                left: 15,
+                top: 50,
+                left: 0,
                 child: Container(
-                  width: 230,
-                  child: Image.asset('lib/assets/images/moto3.png'),
+                  width: 220,
+                  child:
+                      Image.asset('lib/assets/images/flashridebackground.png'),
                 ),
               ),
               Positioned(
-                top: 180,
-                left: 220,
+                top: 150,
+                left: 190,
                 child: Container(
                   child: Text(
                     'order flashride from\nanywhere and anytime for\ntravel or delivery of items',
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: 16,
                     ),
                   ),
                 ),
@@ -70,10 +71,10 @@ class _FlashRidePageState extends State<FlashRidePage> {
       body: Stack(
         children: <Widget>[
           Container(
-            padding: EdgeInsets.all(0.0),
+            padding: EdgeInsets.all(25),
             child: Center(
               child: Align(
-                alignment: Alignment(0.0, -0.9),
+                alignment: Alignment(0, 100.0),
                 child: Column(
                   children: [
                     Text(
@@ -81,17 +82,6 @@ class _FlashRidePageState extends State<FlashRidePage> {
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    SizedBox(height: 0), // Add some spacing
-                    Padding(
-                      padding: EdgeInsets.only(
-                          // bottom: 900.0,
-                          ), // Adjust the spacing as needed
-                      child: Image.asset(
-                        'lib/assets/images/flashridebackground.png', // Replace with your image path
-                        width: 500,
-                        height: 350,
                       ),
                     ),
                   ],
@@ -119,8 +109,7 @@ class _FlashRidePageState extends State<FlashRidePage> {
                       itemBuilder: (BuildContext context, int index) {
                         switch (index) {
                           case 0:
-                            return Positioned(
-                              top: 0,
+                            return Container(
                               child: Column(
                                 children: <Widget>[
                                   SizedBox(height: 15),
@@ -139,8 +128,7 @@ class _FlashRidePageState extends State<FlashRidePage> {
                               ),
                             );
                           case 1:
-                            return Positioned(
-                              top: 50,
+                            return Container(
                               child: Column(
                                 children: <Widget>[
                                   SizedBox(height: 50),
@@ -171,8 +159,7 @@ class _FlashRidePageState extends State<FlashRidePage> {
                               ),
                             );
                           case 2:
-                            return Positioned(
-                              top: 40,
+                            return Container(
                               child: Column(
                                 children: <Widget>[
                                   SizedBox(height: 50),
@@ -182,6 +169,7 @@ class _FlashRidePageState extends State<FlashRidePage> {
                                       Navigator.of(context).push(
                                         RightToLeftFadeTransition(
                                           page: MoveitemPage(
+                                            id: '',
                                             destination: widget.destination,
                                             pickup: widget.pickup,
                                           ),
@@ -203,7 +191,7 @@ class _FlashRidePageState extends State<FlashRidePage> {
                               ),
                             );
                           default:
-                            return null;
+                            return Container();
                         }
                       },
                     ),

@@ -2,15 +2,6 @@ import 'package:flutter/material.dart';
 import 'template/RightToLeftFadetransition.dart';
 import 'flashride_itemspage.dart';
 
-// class PickupBikePage extends StatefulWidget {
-//   const PickupBikePage({Key? key});
-//   static const String idScreen = 'pickupbike';
-
-//  @override
-//   State<PickupBikePage> createState() => _CarPickupPageState();
-// }
-
-// class _CarPickupPageState extends State<PickupBikePage> {
 class PickupItemBikePage extends StatefulWidget {
   final String pickup;
   final String destination;
@@ -31,11 +22,11 @@ class _PickupItemBikePageState extends State<PickupItemBikePage> {
         children: [
           Positioned(
             top: 20,
-            left: 83,
+            right: 0,
             child: Container(
-              width: 600,
+              width: 120,
               height: 160,
-              child: Image.asset('lib/assets/images/flashcarlogo.png'),
+              child: Image.asset('lib/assets/images/FlashrideLogo.png'),
             ),
           ),
         ],
@@ -111,6 +102,7 @@ class _PickupItemBikePageState extends State<PickupItemBikePage> {
                           page: MoveitemPage(
                             pickup: 'Tarumanagara university',
                             destination: widget.destination,
+                            id: '',
                           ),
                         ),
                       );
@@ -133,7 +125,7 @@ class _PickupItemBikePageState extends State<PickupItemBikePage> {
                             ),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment
-                                  .center, // Center text vertically
+                                  .center,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
@@ -166,6 +158,7 @@ class _PickupItemBikePageState extends State<PickupItemBikePage> {
                           page: MoveitemPage(
                             pickup: 'Central Park',
                             destination: widget.destination,
+                            id: '',
                           ),
                         ),
                       );
@@ -188,7 +181,7 @@ class _PickupItemBikePageState extends State<PickupItemBikePage> {
                             ),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment
-                                  .center, // Center text vertically
+                                  .center,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
@@ -221,6 +214,7 @@ class _PickupItemBikePageState extends State<PickupItemBikePage> {
                           page: MoveitemPage(
                             pickup: 'Alfa X Untar',
                             destination: widget.destination,
+                            id: '',
                           ),
                         ),
                       );
@@ -243,7 +237,7 @@ class _PickupItemBikePageState extends State<PickupItemBikePage> {
                             ),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment
-                                  .center, // Center text vertically
+                                  .center,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
@@ -276,6 +270,7 @@ class _PickupItemBikePageState extends State<PickupItemBikePage> {
                           page: MoveitemPage(
                             pickup: 'Your Current Location',
                             destination: widget.destination,
+                            id: '',
                           ),
                         ),
                       );
@@ -292,9 +287,9 @@ class _PickupItemBikePageState extends State<PickupItemBikePage> {
                         children: [
                           Positioned(
                             top:
-                                -10, // Adjust the top value to move the image down
+                                -10,
                             left:
-                                25, // Adjust the left value to move the image right
+                                25,
                             child: Image.asset(
                               'lib/assets/images/location1.png',
                               width: 80,
@@ -308,7 +303,7 @@ class _PickupItemBikePageState extends State<PickupItemBikePage> {
                               fontSize: 11,
                               fontWeight: FontWeight.w100,
                               decoration:
-                                  TextDecoration.underline, // Add this line
+                                  TextDecoration.underline,
                             ),
                           ),
                         ],

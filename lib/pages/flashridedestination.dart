@@ -3,9 +3,6 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'template/RightToLeftFadetransition.dart';
 import 'ride_confirmation.dart';
 
-// class DestinationbikePage extends StatelessWidget {
-//   const DestinationbikePage({Key? key});
-//   static const String idScreen = 'destinationbike';
 class DestinationbikePage extends StatefulWidget {
   final String pickup;
   final String destination;
@@ -109,6 +106,7 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                         page: MapSample(
                           destination: 'Monumen Nasional',
                           pickup: widget.pickup,
+                          id: '',
                         ),
                       ),
                     );
@@ -164,6 +162,7 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                         page: MapSample(
                           destination: 'Season City',
                           pickup: widget.pickup,
+                          id: '',
                         ),
                       ),
                     );
@@ -219,6 +218,7 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                         page: MapSample(
                           destination: 'Plaza Senayan',
                           pickup: widget.pickup,
+                          id: '',
                         ),
                       ),
                     );
@@ -274,6 +274,7 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                         page: MapSample(
                           destination: 'Tokyo Riverside',
                           pickup: widget.pickup,
+                          id: '',
                         ),
                       ),
                     );
