@@ -24,6 +24,12 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
   }
 
   Future resetPassword() async {
+    // showDialog(
+    //   context: context,
+    //   builder: (context) {
+    //     return Center(child: CircularProgressIndicator());
+    //   },
+    // );
     try {
       await FirebaseAuth.instance
           .sendPasswordResetEmail(email: _emailController.text.trim());
