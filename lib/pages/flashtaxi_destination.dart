@@ -35,27 +35,25 @@ class _DestinationTaxiPagePageState extends State<DestinationTaxiPage> {
                 elevation: 0.0,
                 centerTitle: true,
               ),
+              // Positioned(
+              //   top: 80,
+              //   left: 20,
+              //   child: BackBtn(),
+              // ),
               Positioned(
-                top: 80,
-                left: 20,
-                child: BackBtn(),
-              ),
-              Positioned(
-                top: 23,
-                left: 288,
+                top: 43,
+                left: 310,
                 child: Container(
-                  width: 90,
+                  width: 120,
                   child: Image.asset('lib/assets/images/flashtaxilogo.png'),
                 ),
               ),
               Positioned(
-                top: 80,
-                left: 50,
+                top: -30,
+                left: 60,
                 child: Container(
                   width: 300,
-                  child: SvgPicture.asset(
-                    'lib/assets/images/flashcar.svg',
-                  ),
+                  child: Image.asset('lib/assets/images/taxihead.png'),
                 ),
               ),
               Positioned(
@@ -154,7 +152,7 @@ class _DestinationTaxiPagePageState extends State<DestinationTaxiPage> {
                             'RT.5/RW.2, Gambir, Central Jakarta City',
                             style: TextStyle(
                               color: Colors.black,
-                              fontSize: 13,
+                              fontSize: 11,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -209,7 +207,7 @@ class _DestinationTaxiPagePageState extends State<DestinationTaxiPage> {
                             'Jl. Prof. Dr. Latumenten No.33, Jemb. Besi, Kec. Tambora',
                             style: TextStyle(
                               color: Colors.black,
-                              fontSize: 13,
+                              fontSize: 11,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -264,7 +262,7 @@ class _DestinationTaxiPagePageState extends State<DestinationTaxiPage> {
                             'Jl. Asia Afrika No.8, Gelora, Kecamatan Tanah Abang',
                             style: TextStyle(
                               color: Colors.black,
-                              fontSize: 13,
+                              fontSize: 11,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -319,7 +317,7 @@ class _DestinationTaxiPagePageState extends State<DestinationTaxiPage> {
                             'Jl. Marina Indah Raya No.1, Pantai Indah Kapuk',
                             style: TextStyle(
                               color: Colors.black,
-                              fontSize: 13,
+                              fontSize: 11,
                               fontWeight: FontWeight.w400,
                             ),
                           ),

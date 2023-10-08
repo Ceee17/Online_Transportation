@@ -58,11 +58,11 @@ class _MoveitemCarPageState extends State<MoveitemCarPage> {
                 elevation: 0.0,
                 centerTitle: true,
               ),
-              Positioned(
-                top: 40,
-                left: 20,
-                child: BackBtn(),
-              ),
+              // Positioned(
+              //   top: 40,
+              //   left: 20,
+              //   child: BackBtn(),
+              // ),
               Positioned(
                 top: 65,
                 left: -10,
@@ -79,13 +79,13 @@ class _MoveitemCarPageState extends State<MoveitemCarPage> {
                   child: Image.asset('lib/assets/images/flashcarlogo.png'),
                 ),
               ),
+              // Positioned(
+              //   top: 35,
+              //   left: -10,
+              //   child: BackBtn(),
+              // ),
               Positioned(
-                top: 35,
-                left: -10,
-                child: BackBtn(),
-              ),
-              Positioned(
-                top: 160,
+                top: 130,
                 left: 250,
                 child: Container(
                   child: Text(

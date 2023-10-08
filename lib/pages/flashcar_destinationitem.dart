@@ -34,11 +34,11 @@ class _DestinationitemcarPageState extends State<DestinationitemcarPage> {
                 elevation: 0.0,
                 centerTitle: true,
               ),
-              Positioned(
-                top: 80,
-                left: 20,
-                child: BackBtn(),
-              ),
+              // Positioned(
+              //   top: 80,
+              //   left: 20,
+              //   child: BackBtn(),
+              // ),
               Positioned(
                 top: 23,
                 left: 288,
