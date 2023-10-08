@@ -107,12 +107,13 @@ class _DestinationitembikePageState extends State<DestinationitembikePage> {
                     Navigator.of(context).push(
                       RightToLeftFadeTransition(
                         page: MoveitemPage(
-                                destination: 'Monumen Nasional',
-                                pickup: widget.pickup,
-                              ),
-                            ),
-                          );
-                        },
+                          destination: 'Monumen Nasional',
+                          pickup: widget.pickup,
+                          id: '',
+                        ),
+                      ),
+                    );
+                  },
                   child: Container(
                     width: 360,
                     height: 79,
@@ -162,12 +163,13 @@ class _DestinationitembikePageState extends State<DestinationitembikePage> {
                     Navigator.of(context).push(
                       RightToLeftFadeTransition(
                         page: MoveitemPage(
-                                destination: 'Season City',
-                                pickup: widget.pickup,
-                              ),
-                            ),
-                          );
-                        },
+                          destination: 'Season City',
+                          pickup: widget.pickup,
+                          id: '',
+                        ),
+                      ),
+                    );
+                  },
                   child: Container(
                     width: 360,
                     height: 79,
@@ -217,12 +219,13 @@ class _DestinationitembikePageState extends State<DestinationitembikePage> {
                     Navigator.of(context).push(
                       RightToLeftFadeTransition(
                         page: MoveitemPage(
-                                destination: 'Plaza Senayan',
-                                pickup: widget.pickup,
-                              ),
-                            ),
-                          );
-                        },
+                          destination: 'Plaza Senayan',
+                          pickup: widget.pickup,
+                          id: '',
+                        ),
+                      ),
+                    );
+                  },
                   child: Container(
                     width: 360,
                     height: 79,
@@ -272,13 +275,13 @@ class _DestinationitembikePageState extends State<DestinationitembikePage> {
                     Navigator.of(context).push(
                       RightToLeftFadeTransition(
                         page: MoveitemPage(
-                                destination: 'Tokyo Riverside',
-                                pickup: widget.pickup,
-                              ),
-                            ),
-                          );
-                        },
-
+                          destination: 'Tokyo Riverside',
+                          pickup: widget.pickup,
+                          id: '',
+                        ),
+                      ),
+                    );
+                  },
                   child: Container(
                     width: 360,
                     height: 79,

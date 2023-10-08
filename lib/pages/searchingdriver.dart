@@ -11,6 +11,9 @@ import 'ride_confirmation.dart';
 //   const SearchingDrivPage({Key? key}) : super(key: key);
 //   static const String idScreen = "searchingdriver";
 class SearchingDrivPage extends StatefulWidget {
+  final String id;
+
+  SearchingDrivPage({required this.id});
   _SearchingDrivPageState createState() => _SearchingDrivPageState();
 }
 
@@ -26,7 +29,7 @@ class _SearchingDrivPageState extends State<SearchingDrivPage> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => FlashpickPage(),
+          builder: (context) => FlashpickPage(id: widget.id),
         ),
       );
     });

@@ -68,6 +68,7 @@ class _LandingPageState extends State<LandingPage> {
             RightToLeftFadeTransition(page: HomeChatPage()),
           );
         case 2:
+
           // Navigator.push(
           //   context,
           //   MaterialPageRoute(
@@ -75,7 +76,13 @@ class _LandingPageState extends State<LandingPage> {
           //   ),
           // );
           Navigator.of(context).push(
-            RightToLeftFadeTransition(page: OrderPage()),
+            RightToLeftFadeTransition(page: OrderPage(
+                id1: '',
+                id2: '',
+                id3: '',
+                id4: '',
+                id5: '',            
+            )),
           );
 
         case 3:

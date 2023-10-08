@@ -202,7 +202,13 @@ class _AccountPageState extends State<AccountPage> {
           //   ),
           // );
           Navigator.of(context).push(
-            LeftToRightFadeTransition(page: OrderPage()),
+            LeftToRightFadeTransition(page: OrderPage(
+                id1: '',
+                id2: '',
+                id3: '',
+                id4: '',
+                id5: '',
+            )),
           );
       }
 
@@ -357,10 +363,15 @@ class _AccountPageState extends State<AccountPage> {
         ),
         IconCardButton(
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => OrderPage(),
+            Navigator.of(context).push(
+              LeftToRightFadeTransition(
+                page: OrderPage(
+                  id1: '',
+                  id2: '',
+                  id3: '',
+                  id4: '',
+                  id5: '',
+                ),
               ),
             );
           },

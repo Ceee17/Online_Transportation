@@ -4,7 +4,6 @@ import 'template/RightToLeftFadetransition.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:project_uts_online_transportation/pages/template/back-button.dart';
 
-
 class DestinationitemcarPage extends StatefulWidget {
   final String pickup;
   final String destination;
@@ -113,12 +112,13 @@ class _DestinationitemcarPageState extends State<DestinationitemcarPage> {
                     Navigator.of(context).push(
                       RightToLeftFadeTransition(
                         page: MoveitemCarPage(
-                                destination: 'Monumen Nasional',
-                                pickup: widget.pickup,
-                              ),
-                            ),
-                          );
-                        },
+                          destination: 'Monumen Nasional',
+                          pickup: widget.pickup,
+                          id: '',
+                        ),
+                      ),
+                    );
+                  },
                   child: Container(
                     width: 360,
                     height: 79,
@@ -168,12 +168,13 @@ class _DestinationitemcarPageState extends State<DestinationitemcarPage> {
                     Navigator.of(context).push(
                       RightToLeftFadeTransition(
                         page: MoveitemCarPage(
-                                destination: 'Season City',
-                                pickup: widget.pickup,
-                              ),
-                            ),
-                          );
-                        },
+                          destination: 'Season City',
+                          pickup: widget.pickup,
+                          id: '',
+                        ),
+                      ),
+                    );
+                  },
                   child: Container(
                     width: 360,
                     height: 79,
@@ -223,12 +224,13 @@ class _DestinationitemcarPageState extends State<DestinationitemcarPage> {
                     Navigator.of(context).push(
                       RightToLeftFadeTransition(
                         page: MoveitemCarPage(
-                                destination: 'Plaza Senayan',
-                                pickup: widget.pickup,
-                              ),
-                            ),
-                          );
-                        },
+                          destination: 'Plaza Senayan',
+                          pickup: widget.pickup,
+                          id: '',
+                        ),
+                      ),
+                    );
+                  },
                   child: Container(
                     width: 360,
                     height: 79,
@@ -278,12 +280,13 @@ class _DestinationitemcarPageState extends State<DestinationitemcarPage> {
                     Navigator.of(context).push(
                       RightToLeftFadeTransition(
                         page: MoveitemCarPage(
-                                destination: 'Tokyo Riverside',
-                                pickup: widget.pickup,
-                              ),
-                            ),
-                          );
-                        },
+                          destination: 'Tokyo Riverside',
+                          pickup: widget.pickup,
+                          id: '',
+                        ),
+                      ),
+                    );
+                  },
                   child: Container(
                     width: 360,
                     height: 79,
