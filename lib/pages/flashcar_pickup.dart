@@ -22,10 +22,11 @@ class _PickupCarPageState extends State<PickupCarPage> {
     return Scaffold(
       body: Stack(
         children: [
-          Positioned(
-            top: 80,
-            left: 20,
-            child: BackBtn(),
+          AppBar(
+            leading: BackButton(
+              color: Colors.black,
+            ),
+            backgroundColor: Colors.white,
           ),
           Positioned(
             top: 20,

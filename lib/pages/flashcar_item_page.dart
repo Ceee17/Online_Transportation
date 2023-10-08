@@ -54,15 +54,11 @@ class _MoveitemCarPageState extends State<MoveitemCarPage> {
           child: Stack(
             children: <Widget>[
               AppBar(
+                leading: BackButton(),
                 backgroundColor: Color(0xff8DA2E2),
                 elevation: 0.0,
                 centerTitle: true,
               ),
-              // Positioned(
-              //   top: 40,
-              //   left: 20,
-              //   child: BackBtn(),
-              // ),
               Positioned(
                 top: 65,
                 left: -10,
@@ -79,11 +75,6 @@ class _MoveitemCarPageState extends State<MoveitemCarPage> {
                   child: Image.asset('lib/assets/images/flashcarlogo.png'),
                 ),
               ),
-              // Positioned(
-              //   top: 35,
-              //   left: -10,
-              //   child: BackBtn(),
-              // ),
               Positioned(
                 top: 130,
                 left: 250,

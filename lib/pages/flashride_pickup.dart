@@ -21,6 +21,12 @@ class _PickupBikePageState extends State<PickupBikePage> {
     return Scaffold(
       body: Stack(
         children: [
+          AppBar(
+            leading: BackButton(
+              color: Colors.black,
+            ),
+            backgroundColor: Colors.white,
+          ),
           Positioned(
             top: 20,
             left: 292,
@@ -29,11 +35,6 @@ class _PickupBikePageState extends State<PickupBikePage> {
               height: 160,
               child: Image.asset('lib/assets/images/FlashrideLogo.png'),
             ),
-          ),
-          Positioned(
-            top: 60,
-            left: 10,
-            child: BackBtn(),
           ),
         ],
       ),

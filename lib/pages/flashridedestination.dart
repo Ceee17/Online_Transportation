@@ -29,6 +29,7 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
           child: Stack(
             children: <Widget>[
               AppBar(
+                leading: BackButton(),
                 backgroundColor: Color(0xff8DA2E2),
                 elevation: 0.0,
                 centerTitle: true,

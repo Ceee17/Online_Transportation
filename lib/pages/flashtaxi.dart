@@ -34,15 +34,11 @@ class _FlashTaxiPageState extends State<FlashTaxiPage> {
           child: Stack(
             children: <Widget>[
               AppBar(
+                leading: BackButton(),
                 backgroundColor: Color(0xff8DA2E2),
                 elevation: 0.0,
                 centerTitle: true,
               ),
-              // Positioned(
-              //   top: 40,
-              //   left: 20,
-              //   child: BackBtn(),
-              // ),
               Positioned(
                 top: 52,
                 left: 285,

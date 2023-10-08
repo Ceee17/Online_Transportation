@@ -20,6 +20,12 @@ class _PickupItemBikePageState extends State<PickupItemBikePage> {
     return Scaffold(
       body: Stack(
         children: [
+          AppBar(
+            leading: BackButton(
+              color: Colors.black,
+            ),
+            backgroundColor: Colors.white,
+          ),
           Positioned(
             top: 20,
             right: 0,
