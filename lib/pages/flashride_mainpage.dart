@@ -148,7 +148,7 @@ class _FlashRidePageState extends State<FlashRidePage> {
                                         'lib/assets/images/movepeoplebtn.png'),
                                   ),
                                   Text(
-                                    'Move people?',
+                                    'Move a Person?',
                                     style: TextStyle(
                                       color: Color(0xffFFFFFF),
                                       fontSize: 18,
