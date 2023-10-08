@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:project_uts_online_transportation/pages/template/DraggableScrollableSheet.dart';
 import 'package:project_uts_online_transportation/pages/template/back-button.dart';
+import 'template/RightToLeftFadetransition.dart';
 
-// class FlashCarPage extends StatelessWidget {
-//   const FlashCarPage({Key? key});
-//   static const String idScreen = 'flashcar';
 class FlashCarPage extends StatefulWidget {
   final String pickup;
   final String destination;
@@ -90,9 +88,9 @@ class _FlashCarPageState extends State<FlashCarPage> {
           ),
         ),
       ),
-      extendBody: true, // This allows the DragSheet to extend below the app bar
+      extendBody: true,
       bottomNavigationBar:
-          DragSheet(pickup: '', destination: '',), // Use bottomNavigationBar instead of bottomSheet
+          DragSheet(pickup: '', destination: '',),
     );
   }
 }

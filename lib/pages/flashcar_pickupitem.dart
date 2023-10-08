@@ -3,15 +3,6 @@ import 'flashcar_item_page.dart';
 import 'template/RightToLeftFadetransition.dart';
 import 'package:project_uts_online_transportation/pages/template/back-button.dart';
 
-// class PickupBikePage extends StatefulWidget {
-//   const PickupBikePage({Key? key});
-//   static const String idScreen = 'pickupbike';
-
-//  @override
-//   State<PickupBikePage> createState() => _CarPickupPageState();
-// }
-
-// class _CarPickupPageState extends State<PickupBikePage> {
 class PickupItemCarPage extends StatefulWidget {
   final String pickup;
   final String destination;
@@ -140,7 +131,7 @@ class _PickupItemCarPageState extends State<PickupItemCarPage> {
                             ),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment
-                                  .center, // Center text vertically
+                                  .center,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
@@ -196,7 +187,7 @@ class _PickupItemCarPageState extends State<PickupItemCarPage> {
                             ),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment
-                                  .center, // Center text vertically
+                                  .center,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
@@ -252,7 +243,7 @@ class _PickupItemCarPageState extends State<PickupItemCarPage> {
                             ),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment
-                                  .center, // Center text vertically
+                                  .center,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
@@ -302,9 +293,9 @@ class _PickupItemCarPageState extends State<PickupItemCarPage> {
                         children: [
                           Positioned(
                             top:
-                                -10, // Adjust the top value to move the image down
+                                -10,
                             left:
-                                25, // Adjust the left value to move the image right
+                                25,
                             child: Image.asset(
                               'lib/assets/images/location1.png',
                               width: 80,
@@ -318,7 +309,7 @@ class _PickupItemCarPageState extends State<PickupItemCarPage> {
                               fontSize: 11,
                               fontWeight: FontWeight.w100,
                               decoration:
-                                  TextDecoration.underline, // Add this line
+                                  TextDecoration.underline,
                             ),
                           ),
                         ],

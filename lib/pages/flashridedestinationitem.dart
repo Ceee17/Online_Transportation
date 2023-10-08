@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 import 'flashride_itemspage.dart';
 import 'template/RightToLeftFadetransition.dart';
 
-// class DestinationbikePage extends StatelessWidget {
-//   const DestinationbikePage({Key? key});
-//   static const String idScreen = 'destinationbike';
 class DestinationitembikePage extends StatefulWidget {
   final String pickup;
   final String destination;
@@ -37,11 +34,11 @@ class _DestinationitembikePageState extends State<DestinationitembikePage> {
                 centerTitle: true,
               ),
               Positioned(
-                top: 23,
-                left: 288,
+                top: 63,
+                right: 0,
                 child: Container(
-                  width: 190,
-                  child: Image.asset('lib/assets/images/flashcarlogo.png'),
+                  width: 100,
+                  child: Image.asset('lib/assets/images/FlashrideLogo.png'),
                 ),
               ),
               Positioned(

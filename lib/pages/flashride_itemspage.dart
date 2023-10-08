@@ -4,14 +4,7 @@ import 'flashridedestinationitem.dart';
 import 'flashride_pickupitem.dart';
 import 'searchingdriver.dart';
 import 'template/RightToLeftFadetransition.dart';
-// class MoveitemPage extends StatefulWidget {
-//   const MoveitemPage({Key? key}) : super(key: key);
 
-//   @override
-//   _MoveitemPageState createState() => _MoveitemPageState();
-// }
-
-// class _MoveitemPageState extends State<MoveitemPage> {
 bool showAdditionalText = true;
 
 class MoveitemPage extends StatefulWidget {
@@ -29,14 +22,12 @@ class MoveitemPage extends StatefulWidget {
 }
 
 class _MoveitemPageState extends State<MoveitemPage> {
-  String selectedValue = 'Item Weight'; // Set an initial value
-  double randomPrice = 0.0; // Initialize the price with 0.0
+  String selectedValue = 'Item Weight';
+  double randomPrice = 0.0; 
 
-  // Function to calculate a random price
-  void calculateRandomPrice() {
+   void calculateRandomPrice() {
     final random = Random();
-    // Generate a random price between $10 and $100 with 2 decimal places
-    randomPrice = (random.nextDouble() * 90 + 10);
+    randomPrice = (random.nextDouble() * 79000 + 20000).toDouble();
   }
 
   @override
@@ -55,6 +46,15 @@ class _MoveitemPageState extends State<MoveitemPage> {
                 backgroundColor: Color(0xff8DA2E2),
                 elevation: 0.0,
                 centerTitle: true,
+              ),
+              Positioned(
+                top: 10,
+                right: 0,
+                child: Container(
+                  width: 120,
+                  height: 160,
+                  child: Image.asset('lib/assets/images/FlashrideLogo.png'),
+                ),
               ),
               Positioned(
                 top: 80,
@@ -102,8 +102,7 @@ class _MoveitemPageState extends State<MoveitemPage> {
                       itemBuilder: (BuildContext context, int index) {
                         switch (index) {
                           case 0:
-                            return Positioned(
-                              top: 0,
+                            return Container(
                               child: Column(
                                 children: <Widget>[
                                   SizedBox(height: 15),
@@ -122,15 +121,14 @@ class _MoveitemPageState extends State<MoveitemPage> {
                               ),
                             );
                           case 1:
-                            return Positioned(
-                              top: 5,
+                            return Container(
                               child: Column(
                                 children: <Widget>[
                                   SizedBox(height: 35),
                                   SizedBox(
                                     width: 375,
                                     height:
-                                        130, // Increased the height to accommodate both TextFields
+                                        130,
                                     child: Container(
                                       decoration: BoxDecoration(
                                         color: Color(0xff8DA2E2),
@@ -147,14 +145,14 @@ class _MoveitemPageState extends State<MoveitemPage> {
                                             ),
                                             child: Container(
                                               width:
-                                                  330, // Adjust the width as needed
+                                                  330,
                                               height:
-                                                  40, // Adjust the height as needed
+                                                  40,
                                               child: ElevatedButton(
                                                 onPressed: () {
                                                   setState(() {
                                                     showAdditionalText =
-                                                        false; // Set to false to hide additional text after clicking
+                                                        false;
                                                   });
                                                   Navigator.of(context).push(
                                                     RightToLeftFadeTransition(
@@ -213,7 +211,7 @@ class _MoveitemPageState extends State<MoveitemPage> {
                                                     top: 15,
                                                     left: 15,
                                                     right:
-                                                        5, // Adjust the right padding
+                                                        5,
                                                   ),
                                                   child: TextField(
                                                     decoration: InputDecoration(
@@ -246,7 +244,7 @@ class _MoveitemPageState extends State<MoveitemPage> {
                                                       const EdgeInsets.only(
                                                     top: 15,
                                                     left:
-                                                        5, // Adjust the left padding
+                                                        5,
                                                     right: 15,
                                                   ),
                                                   child: TextField(
@@ -284,15 +282,14 @@ class _MoveitemPageState extends State<MoveitemPage> {
                               ),
                             );
                           case 2:
-                            return Positioned(
-                              // top: 100,
+                            return Container(
                               child: Column(
                                 children: <Widget>[
                                   SizedBox(height: 40),
                                   SizedBox(
                                     width: 375,
                                     height:
-                                        130, // Increased the height to accommodate both TextFields
+                                        130,
                                     child: Container(
                                       decoration: BoxDecoration(
                                         color: Color(0xff8DA2E2),
@@ -309,14 +306,14 @@ class _MoveitemPageState extends State<MoveitemPage> {
                                             ),
                                             child: Container(
                                               width:
-                                                  330, // Adjust the width as needed
+                                                  330,
                                               height:
-                                                  40, // Adjust the height as needed
+                                                  40,
                                               child: ElevatedButton(
                                                 onPressed: () {
                                                   setState(() {
                                                     showAdditionalText =
-                                                        false; // Set to false to hide additional text after clicking
+                                                        false;
                                                   });
 
                                                   Navigator.of(context).push(
@@ -324,7 +321,7 @@ class _MoveitemPageState extends State<MoveitemPage> {
                                                       page:
                                                           DestinationitembikePage(
                                                         pickup: widget
-                                                            .pickup, // Do not concatenate the additional text here
+                                                            .pickup,
                                                         destination:
                                                             widget.destination,
                                                       ),
@@ -378,7 +375,7 @@ class _MoveitemPageState extends State<MoveitemPage> {
                                                     top: 15,
                                                     left: 15,
                                                     right:
-                                                        5, // Adjust the right padding
+                                                        5,
                                                   ),
                                                   child: TextField(
                                                     decoration: InputDecoration(
@@ -411,7 +408,7 @@ class _MoveitemPageState extends State<MoveitemPage> {
                                                       const EdgeInsets.only(
                                                     top: 15,
                                                     left:
-                                                        5, // Adjust the left padding
+                                                        5,
                                                     right: 15,
                                                   ),
                                                   child: TextField(
@@ -449,21 +446,20 @@ class _MoveitemPageState extends State<MoveitemPage> {
                               ),
                             );
                           case 3:
-                            // Call the function to calculate a random price
                             calculateRandomPrice();
                             return Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: <Widget>[
                                 Padding(
                                   padding: const EdgeInsets.only(
-                                      top: 33.0), // Add top padding here
+                                      top: 33.0),
                                   child: Container(
-                                    width: 178.5, // Adjust the width as needed
+                                    width: 178.5,
                                     height:
-                                        178.5, // Adjust the height as needed
+                                        178.5,
                                     child: Image.asset(
                                       'lib/assets/images/ItemBox.png',
-                                    ), // Replace 'your_image.png' with your image asset path
+                                    ),
                                   ),
                                 ),
                                 Column(
@@ -505,7 +501,7 @@ class _MoveitemPageState extends State<MoveitemPage> {
                                                   });
                                                 },
                                                 items: <String>[
-                                                  'Item Weight', // Include the initial value
+                                                  'Item Weight',
                                                   'Small',
                                                   'Medium',
                                                   'Large',
@@ -528,7 +524,7 @@ class _MoveitemPageState extends State<MoveitemPage> {
                                           ),
                                           SizedBox(height: 10),
                                           Text(
-                                            'Price: \$${randomPrice.toStringAsFixed(2)}',
+                                            'Price: \RP.${randomPrice.toStringAsFixed(0)}',
                                             style: TextStyle(
                                               fontSize: 14,
                                               color: Colors.white,
@@ -580,7 +576,7 @@ class _MoveitemPageState extends State<MoveitemPage> {
                               ],
                             );
                           default:
-                            return null;
+                            return Container();
                         }
                       },
                     ),

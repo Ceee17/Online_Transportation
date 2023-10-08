@@ -1,18 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:project_uts_online_transportation/pages/flashcar_item_page.dart';
 import 'package:project_uts_online_transportation/pages/flashcar_pickup.dart';
-// import 'package:project_uts_online_transportation/pages/flashcar_pickupitem.dart';
-// import 'package:project_uts_online_transportation/pages/history_page.dart';
-// import 'package:project_uts_online_transportation/pages/loadingpage.dart';
-// import 'package:project_uts_online_transportation/pages/flashcar_item_page.dart';
-// class DragSheet extends StatefulWidget {
-//   const DragSheet({Key? key});
+import 'RightToLeftFadetransition.dart';
 
-//   @override
-//   State<DragSheet> createState() => _DragSheetState();
-// }
-
-// class DragSheet extends State<DragSheet> {
 class DragSheet extends StatefulWidget {
   final String pickup;
   final String destination;
@@ -47,8 +37,7 @@ class _DragSheetState extends State<DragSheet> {
                 itemBuilder: (BuildContext context, int index) {
                   switch (index) {
                     case 0:
-                      return Positioned(
-                        top: 0,
+                      return Container(
                         child: Column(
                           children: <Widget>[
                             SizedBox(height: 15),
@@ -67,20 +56,19 @@ class _DragSheetState extends State<DragSheet> {
                         ),
                       );
                     case 1:
-                      return Positioned(
-                        top: 50,
+                      return Container(
                         child: Column(
                           children: <Widget>[
                             SizedBox(height: 45),
                             ElevatedButton(
                               onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => PickupCarPage(
-                                            destination: widget.destination,
-                                            pickup: widget.pickup,
-                                          )), // Ganti TujuanPage() dengan halaman yang ingin Anda navigasikan
+                                Navigator.of(context).push(
+                                  RightToLeftFadeTransition(
+                                    page: PickupCarPage(
+                                      destination: widget.destination,
+                                      pickup: widget.pickup,
+                                    ),
+                                  ),
                                 );
                               },
                               style: ElevatedButton.styleFrom(
@@ -114,21 +102,20 @@ class _DragSheetState extends State<DragSheet> {
                         ),
                       );
                     case 2:
-                      return Positioned(
-                        top: 40,
+                      return Container(
                         child: Column(
                           children: <Widget>[
                             SizedBox(height: 55),
                             ElevatedButton(
                               onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => MoveitemCarPage(
-                                            destination: widget.destination,
-                                            pickup: widget.pickup,
-                                            id: '',
-                                          )), // Ganti TujuanPage() dengan halaman yang ingin Anda navigasikan
+                                Navigator.of(context).push(
+                                  RightToLeftFadeTransition(
+                                    page: MoveitemCarPage(
+                                      destination: widget.destination,
+                                      pickup: widget.pickup,
+                                      id: '',
+                                    ),
+                                  ),
                                 );
                               },
                               style: ElevatedButton.styleFrom(
@@ -163,7 +150,7 @@ class _DragSheetState extends State<DragSheet> {
                       );
 
                     default:
-                      return null;
+                      return Container();
                   }
                 },
               ),

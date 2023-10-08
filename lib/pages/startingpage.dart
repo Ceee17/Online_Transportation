@@ -55,8 +55,17 @@ class StartingPage extends StatelessWidget {
           SizedBox(height: 20),
           ElevatedButton(
             onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: ((context) => LoginPage())));
+              Navigator.of(context).push(
+                PageRouteBuilder(
+                  transitionDuration: Duration(milliseconds: 850),
+                  pageBuilder: (context, animation, secondaryAnimation) {
+                    return FadeTransition(
+                      opacity: animation,
+                      child: LoginPage(),
+                    );
+                  },
+                ),
+              );
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: Color(0xFF111d41),

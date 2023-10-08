@@ -122,8 +122,7 @@ class _MoveitemCarPageState extends State<MoveitemCarPage> {
                       itemBuilder: (BuildContext context, int index) {
                         switch (index) {
                           case 0:
-                            return Positioned(
-                              top: 0,
+                            return Container(
                               child: Column(
                                 children: <Widget>[
                                   SizedBox(height: 15),
@@ -142,8 +141,7 @@ class _MoveitemCarPageState extends State<MoveitemCarPage> {
                               ),
                             );
                           case 1:
-                            return Positioned(
-                              top: 5,
+                            return Container(
                               child: Column(
                                 children: <Widget>[
                                   SizedBox(height: 35),
@@ -306,8 +304,7 @@ class _MoveitemCarPageState extends State<MoveitemCarPage> {
                               ),
                             );
                           case 2:
-                            return Positioned(
-                              // top: 100,
+                            return Container(
                               child: Column(
                                 children: <Widget>[
                                   SizedBox(height: 40),
@@ -602,7 +599,7 @@ class _MoveitemCarPageState extends State<MoveitemCarPage> {
                               ],
                             );
                           default:
-                            return null;
+                            return Container();
                         }
                       },
                     ),

@@ -7,9 +7,6 @@ import 'landingpage.dart';
 import 'dart:async';
 import 'ride_confirmation.dart';
 
-// class SearchingDrivPage extends StatelessWidget {
-//   const SearchingDrivPage({Key? key}) : super(key: key);
-//   static const String idScreen = "searchingdriver";
 class SearchingDrivPage extends StatefulWidget {
   final String id;
 
@@ -18,13 +15,12 @@ class SearchingDrivPage extends StatefulWidget {
 }
 
 class _SearchingDrivPageState extends State<SearchingDrivPage> {
-  late Timer _timer; // Declare a Timer variable
+  late Timer _timer;
 
   @override
   void initState() {
     super.initState();
 
-    // Add a 10-second delay before auto-navigation
     _timer = Timer(Duration(seconds: 5), () {
       Navigator.push(
         context,
@@ -66,11 +62,11 @@ class _SearchingDrivPageState extends State<SearchingDrivPage> {
                   color: Color(0xFF8DA2E2),
                   child: Column(
                     children: [
-                      SizedBox(height: 30), // Adjust the height here
+                      SizedBox(height: 30),
                       Container(
                         padding: EdgeInsets.all(2.0),
                         child: Align(
-                          alignment: Alignment.center, // Center align the text
+                          alignment: Alignment.center,
                           child: Text(
                             'Searching for Driver...',
                             style: TextStyle(
@@ -104,6 +100,7 @@ class _SearchingDrivPageState extends State<SearchingDrivPage> {
                         child: Text(
                           'Cancel',
                           style: TextStyle(
+                            fontSize: 20,
                             color: Colors.black,
                           ),
                         ),

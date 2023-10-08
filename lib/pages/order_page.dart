@@ -134,6 +134,7 @@ class _OrderPageState extends State<OrderPage> {
               SizedBox(
                 height: 80,
               ),
+
               if (widget.id1 == '1')
                 CustomCardButton(
                   svgAsset: 'lib/assets/images/flashride.svg',
@@ -144,6 +145,8 @@ class _OrderPageState extends State<OrderPage> {
                       'On The Way\nETA : 5 Mins\nPickup : Untar\nDestination : Mcdonald',
                   color: Color(0xFFffffff),
                   textColor: Color(0xFF000000),
+                  svgBorderRadius: BorderRadius.circular(0),
+                  
                 ),
               SizedBox(
                 height: 20,
@@ -158,6 +161,8 @@ class _OrderPageState extends State<OrderPage> {
                       'On The Way\nETA : 5 Mins\nPickup : Untar\nDestination : Mcdonald',
                   color: Color(0xFFffffff),
                   textColor: Color(0xFF000000),
+                  svgBorderRadius: BorderRadius.circular(0),
+                  
                 ),
               SizedBox(
                 height: 20,
@@ -172,6 +177,7 @@ class _OrderPageState extends State<OrderPage> {
                       'On The Way\nETA : 5 Mins\nPickup : Untar\nDestination : Mcdonald',
                   color: Color(0xFFffffff),
                   textColor: Color(0xFF000000),
+                  svgBorderRadius: BorderRadius.circular(0),
                 ),
               SizedBox(
                 height: 20,

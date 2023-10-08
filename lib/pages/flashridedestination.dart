@@ -3,9 +3,6 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'template/RightToLeftFadetransition.dart';
 import 'ride_confirmation.dart';
 
-// class DestinationbikePage extends StatelessWidget {
-//   const DestinationbikePage({Key? key});
-//   static const String idScreen = 'destinationbike';
 class DestinationbikePage extends StatefulWidget {
   final String pickup;
   final String destination;

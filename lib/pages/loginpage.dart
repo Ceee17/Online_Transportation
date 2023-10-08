@@ -220,11 +220,36 @@ class LoginPage extends StatelessWidget {
                           width: 100,
                           child: TextButton(
                             onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => SignupPage(),
-                                  ));
+                              Navigator.of(context).push(
+                                PageRouteBuilder(
+                                  pageBuilder:
+                                      (context, animation, secondaryAnimation) {
+                                    const begin =
+                                        Offset(0.0, 1.0); // Start at the bottom
+                                    const end = Offset.zero; // End at the top
+                                    const curve =
+                                        Curves.easeInOut; // Animation curve
+
+                                    var tween = Tween(begin: begin, end: end)
+                                        .chain(CurveTween(curve: curve));
+
+                                    // Create the slide animation
+                                    var offsetAnimation =
+                                        animation.drive(tween);
+
+                                    return FadeTransition(
+                                      opacity: animation,
+                                      child: SlideTransition(
+                                        position: offsetAnimation,
+                                        child: SignupPage(),
+                                      ),
+                                    );
+                                  },
+                                  transitionDuration: Duration(
+                                      milliseconds:
+                                          850), // Adjust the duration as needed
+                                ),
+                              );
                             },
                             child: Text(
                               'Sign up',

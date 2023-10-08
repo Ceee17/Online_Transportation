@@ -199,23 +199,23 @@ class _SignupPageState extends State<SignupPage> {
                         // }
                         // },
                         style: ElevatedButton.styleFrom(
-                          primary: Color(0xFF111d41), // Ubah backgroundColor
-                          onPrimary: Colors.white, // Ubah textColor
+                          primary: Color(0xFF111d41),
+                          onPrimary: Colors.white,
                           padding: EdgeInsets.symmetric(
                               horizontal: 110,
-                              vertical: 5), // Sesuaikan ukuran tombol
+                              vertical: 5),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(50),
                           ),
                         ),
-                        child: Text(
-                          'Sign up',
-                          style: TextStyle(
-                            fontSize: 22,
-                            fontWeight: FontWeight.w700,
+                          child: Text(
+                            'Sign up',
+                            style: TextStyle(
+                              fontSize: 22,
+                              fontWeight: FontWeight.w700,
+                            ),
                           ),
                         ),
-                      ),
                       SizedBox(
                         height: 36,
                       ),
@@ -236,11 +236,36 @@ class _SignupPageState extends State<SignupPage> {
                             width: 100,
                             child: TextButton(
                               onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => LoginPage(),
-                                    ));
+                                Navigator.of(context).push(
+                                  PageRouteBuilder(
+                                    pageBuilder: (context, animation,
+                                        secondaryAnimation) {
+                                      const begin =
+                                          Offset(0.0, -1.0);
+                                      const end =
+                                          Offset.zero;
+                                      const curve =
+                                          Curves.easeInOut;
+
+                                      var tween = Tween(begin: begin, end: end)
+                                          .chain(CurveTween(curve: curve));
+
+                                      var offsetAnimation =
+                                          animation.drive(tween);
+
+                                      return FadeTransition(
+                                        opacity: animation,
+                                        child: SlideTransition(
+                                          position: offsetAnimation,
+                                          child: LoginPage(),
+                                        ),
+                                      );
+                                    },
+                                    transitionDuration: Duration(
+                                        milliseconds:
+                                            850),
+                                  ),
+                                );
                               },
                               child: Text(
                                 'Log in',
