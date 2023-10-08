@@ -30,7 +30,6 @@ import 'pages/signuppage.dart';
 import 'pages/forgotpasswordpage.dart';
 import 'pages/landingpage.dart';
 import 'pages/paymenmethod.dart';
-import 'pages/emailhbspage.dart';
 import 'pages/template/templatehead.dart';
 import 'pages/template/back-button.dart';
 import 'pages/edit_profile_page.dart';

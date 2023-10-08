@@ -173,7 +173,10 @@ class _LandingPageState extends State<LandingPage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => FlashTaxiPage(),
+                              builder: (context) => FlashTaxiPage(
+                                destination: ' ',
+                                pickup: ' ',
+                              ),
                             ),
                           );
                         }

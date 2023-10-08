@@ -265,6 +265,13 @@ class _SignupPageState extends State<SignupPage> {
   }
 
   void _signUp() async {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return Center(child: CircularProgressIndicator());
+      },
+    );
+
     String fullname = _fullnameController.text;
     String email = _emailController.text;
     String phonenumber = _phonenumberController.text;
