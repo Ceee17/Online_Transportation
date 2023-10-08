@@ -74,7 +74,7 @@ class FlashpickPage extends StatelessWidget {
                         child: Text(
                           'Confirm',
                           style: TextStyle(
-                            fontSize: 14,
+                            fontSize: 20,
                             color: Colors.black,
                           ),
                         ),
