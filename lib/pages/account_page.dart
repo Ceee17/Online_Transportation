@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -8,16 +9,26 @@ import 'package:project_uts_online_transportation/pages/faqpage.dart';
 import 'package:project_uts_online_transportation/pages/homechatpage.dart';
 import 'package:project_uts_online_transportation/pages/landingpage.dart';
 import 'package:project_uts_online_transportation/pages/order_page.dart';
-import 'package:project_uts_online_transportation/pages/paymenmethod.dart';
+import 'package:project_uts_online_transportation/pages/template/LeftToRightFadetransition.dart';
+// import 'package:project_uts_online_transportation/pages/paymenmethod.dart';
 import 'package:project_uts_online_transportation/pages/template/template_nav_bar.dart';
 import 'package:project_uts_online_transportation/pages/template/templatehead.dart';
 import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
 import 'edit_profile_page.dart';
+import 'paymenmethod.dart';
+import 'template/RightToLeftFadetransition.dart';
 import 'template/template-icon-card-button.dart';
-import 'template/LeftToRightFadetransition.dart';
 
 class AccountPage extends StatefulWidget {
-  const AccountPage({super.key});
+  final String userName;
+  final String email;
+  final String phoneNumber;
+  const AccountPage({
+    Key? key,
+    this.userName = 'Jessen Chayadi',
+    this.email = 'Jessen.535220023@stu.untar.ac.id',
+    this.phoneNumber = '081281692004',
+  }) : super(key: key);
   static const String idScreen = "account";
 
   @override
@@ -26,7 +37,9 @@ class AccountPage extends StatefulWidget {
 
 class _AccountPageState extends State<AccountPage> {
   late PageController _pageController;
-
+  // late String myEmail;
+  // late String myPhone;
+  // late String myUsername;
   int _selectedIndex = 3;
 
   YYDialog CustomDialog() {
@@ -113,10 +126,46 @@ class _AccountPageState extends State<AccountPage> {
       ..show();
   }
 
+  // Future<void> fetchUserData() async {
+  //   try {
+  //     User? firebaseUser = FirebaseAuth.instance.currentUser;
+
+  //     if (firebaseUser != null) {
+  //       DocumentSnapshot ds = await FirebaseFirestore.instance
+  //           .collection('users')
+  //           .doc(firebaseUser.uid)
+  //           .get();
+
+  //       if (ds.exists) {
+  //         myEmail = ds['email'];
+  //         myPhone = ds['phoneNumber'];
+  //         myUsername = ds['userName'];
+  //         print('Email: $myEmail');
+  //         print('Phone: $myPhone');
+  //         print('Username: $myUsername');
+  //       } else {
+  //         print('User data does not exist!');
+  //       }
+  //     } else {
+  //       print('User is not authenticated!');
+  //     }
+  //   } catch (e) {
+  //     print('Error fetching user data: $e');
+  //   }
+  // }
+
   @override
   void initState() {
     super.initState();
     _pageController = PageController(initialPage: _selectedIndex);
+
+    // myEmail = '';
+    // myPhone = '';
+    // myUsername = '';
+
+    // fetchUserData().then((_) {
+    //   setState(() {});
+    // });
   }
 
   void _onItemTapped(int index) {
@@ -124,32 +173,43 @@ class _AccountPageState extends State<AccountPage> {
       _selectedIndex = index;
       switch (index) {
         case 0:
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => LandingPage(),
-            ),
+          // Navigator.push(
+          //   context,
+          //   MaterialPageRoute(
+          //     builder: (context) => LandingPage(),
+          //   ),
+          // );
+          Navigator.of(context).push(
+            LeftToRightFadeTransition(page: LandingPage()),
           );
+
         case 1:
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => HomeChatPage(),
-            ),
+          // Navigator.push(
+          //   context,
+          //   MaterialPageRoute(
+          //     builder: (context) => HomeChatPage(),
+          //   ),
+          // );
+          Navigator.of(context).push(
+            LeftToRightFadeTransition(page: HomeChatPage()),
           );
+
         case 2:
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => OrderPage(),
-            ),
+          // Navigator.push(
+          //   context,
+          //   MaterialPageRoute(
+          //     builder: (context) => OrderPage(),
+          //   ),
+          // );
+          Navigator.of(context).push(
+            LeftToRightFadeTransition(page: OrderPage()),
           );
       }
 
       _pageController.animateToPage(
         _selectedIndex,
         duration: const Duration(milliseconds: 400),
-        curve: Curves.easeOutQuad,
+        curve: Curves.easeInOutQuad,
       );
     });
   }
@@ -218,7 +278,7 @@ class _AccountPageState extends State<AccountPage> {
                     width: 250,
                     height: 70,
                     child: Text(
-                      'Jessen Chayadi',
+                      widget.userName,
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 20,
@@ -236,7 +296,7 @@ class _AccountPageState extends State<AccountPage> {
                     width: 230,
                     height: 100,
                     child: Text(
-                      'Jessen.535220023@stu.untar.ac.id\n0812-8169-2004',
+                      '${widget.email}\n${widget.phoneNumber}',
                       textAlign: TextAlign.justify,
                       style:
                           TextStyle(fontSize: 13, fontWeight: FontWeight.w400),
@@ -249,9 +309,10 @@ class _AccountPageState extends State<AccountPage> {
         ),
         IconCardButton(
           onPressed: () {
-            Navigator.of(context).push(
-              LeftToRightFadeTransition(
-                page: EditProfile(),
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => EditProfile(),
               ),
             );
           },
@@ -272,9 +333,10 @@ class _AccountPageState extends State<AccountPage> {
         ),
         IconCardButton(
           onPressed: () {
-            Navigator.of(context).push(
-              LeftToRightFadeTransition(
-                page: PaymenPage(),
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => PaymenPage(),
               ),
             );
           },
@@ -295,9 +357,10 @@ class _AccountPageState extends State<AccountPage> {
         ),
         IconCardButton(
           onPressed: () {
-            Navigator.of(context).push(
-              LeftToRightFadeTransition(
-                page: OrderPage(),
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => OrderPage(),
               ),
             );
           },
@@ -318,9 +381,10 @@ class _AccountPageState extends State<AccountPage> {
         ),
         IconCardButton(
           onPressed: () {
-            Navigator.of(context).push(
-              LeftToRightFadeTransition(
-                page: FaqPage(),
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => FaqPage(),
               ),
             );
           },
@@ -366,4 +430,51 @@ class _AccountPageState extends State<AccountPage> {
       ],
     );
   }
+
+  // _fetch() async {
+  //   final firebaseUser = await FirebaseAuth.instance.currentUser();
+  //   if(firebaseUser!=null)
+  //   await Firestore.instance
+  //   .collection('users')
+  //   .document(firebaseUser.uid)
+  //   .get()
+  //   .then((ds) {
+  //     myEmail = ds.data['email'];
+  //     myPhone = ds.data['phoneNumber'];
+  //     myUsername = ds.data['userName'];
+  //     print(myEmail);
+  //     print(myPhone);
+  //     print(myUsername);
+  //   }).catchError((e) {
+  //     print(e);
+  //   });
+  // }
+
+  // Future<void> fetchUserData() async {
+  //   try {
+  //     User? firebaseUser = FirebaseAuth.instance.currentUser;
+
+  //     if (firebaseUser != null) {
+  //       DocumentSnapshot ds = await FirebaseFirestore.instance
+  //           .collection('users')
+  //           .doc(firebaseUser.uid)
+  //           .get();
+
+  //       if (ds.exists) {
+  //         myEmail = ds['email'];
+  //         myPhone = ds['phoneNumber'];
+  //         myUsername = ds['userName'];
+  //         print('Email: $myEmail');
+  //         print('Phone: $myPhone');
+  //         print('Username: $myUsername');
+  //       } else {
+  //         print('User data does not exist!');
+  //       }
+  //     } else {
+  //       print('User is not authenticated!');
+  //     }
+  //   } catch (e) {
+  //     print('Error fetching user data: $e');
+  //   }
+  // }
 }

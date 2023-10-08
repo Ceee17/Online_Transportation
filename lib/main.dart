@@ -5,7 +5,6 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:project_uts_online_transportation/pages/flashcar_item_page.dart';
 // import 'package:project_uts_online_transportation/pages/flashride_items_page.dart';
-import 'package:project_uts_online_transportation/pages/flashtaxi.dart';
 import 'package:project_uts_online_transportation/pages/ride_confirmation.dart';
 import 'pages/chatpage.dart';
 import 'pages/faqpage.dart';
@@ -59,10 +58,7 @@ class MyApp extends StatelessWidget {
         HistoryPage.idScreen: (context) => HistoryPage(),
         AccountPage.idScreen: (context) => AccountPage(),
       },
-      home: FlashRidePage(
-        pickup: '',
-        destination: '',
-      ),
+      home: LoadingPage(),
     );
   }
 }
