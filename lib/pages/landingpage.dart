@@ -7,6 +7,8 @@ import 'package:project_uts_online_transportation/pages/flashtaxi.dart';
 import 'package:project_uts_online_transportation/pages/flashride_mainpage.dart';
 import 'package:project_uts_online_transportation/pages/homechatpage.dart';
 import 'package:project_uts_online_transportation/pages/order_page.dart';
+import 'package:project_uts_online_transportation/pages/template/LeftToRightFadetransition.dart';
+import 'package:project_uts_online_transportation/pages/template/RightToLeftFadetransition.dart';
 import 'package:project_uts_online_transportation/pages/template/template_nav_bar.dart';
 
 class LandingPage extends StatefulWidget {
@@ -56,39 +58,49 @@ class _LandingPageState extends State<LandingPage> {
       // }
       switch (index) {
         case 1:
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => HomeChatPage(),
-            ),
+          // Navigator.push(
+          //   context,
+          //   MaterialPageRoute(
+          //     builder: (context) => HomeChatPage(),
+          //   ),
+          // );
+          Navigator.of(context).push(
+            RightToLeftFadeTransition(page: HomeChatPage()),
           );
         case 2:
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => OrderPage(
+
+          // Navigator.push(
+          //   context,
+          //   MaterialPageRoute(
+          //     builder: (context) => OrderPage(),
+          //   ),
+          // );
+          Navigator.of(context).push(
+            RightToLeftFadeTransition(page: OrderPage(
                 id1: '',
                 id2: '',
                 id3: '',
                 id4: '',
-                id5: '',
-              ),
-            ),
+                id5: '',            
+            )),
           );
 
         case 3:
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => AccountPage(),
-            ),
+          // Navigator.push(
+          //   context,
+          //   MaterialPageRoute(
+          //     builder: (context) => AccountPage(),
+          //   ),
+          // );
+          Navigator.of(context).push(
+            RightToLeftFadeTransition(page: AccountPage()),
           );
       }
 
       _pageController.animateToPage(
         _selectedIndex,
         duration: Duration(milliseconds: 500),
-        curve: Curves.easeOutQuad,
+        curve: Curves.easeInOutQuad,
       );
     });
   }
