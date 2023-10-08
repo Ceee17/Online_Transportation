@@ -273,6 +273,13 @@ class LoginPage extends StatelessWidget {
   }
 
   void _signIn(BuildContext context) async {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return Center(child: CircularProgressIndicator());
+      },
+    );
+
     String email = _emailController.text;
     String password = _passwordController.text;
 
@@ -286,12 +293,13 @@ class LoginPage extends StatelessWidget {
       if (user != null) {
         print("User is successfully signedIn");
 
-        Navigator.push(
+        Navigator.pushReplacement(
             context, MaterialPageRoute(builder: (context) => LandingPage()));
       } else {
         print("Error");
       }
     }
+    // Navigator.of(context).pop();
   }
   // final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 

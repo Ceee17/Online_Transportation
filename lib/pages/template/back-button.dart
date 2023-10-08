@@ -13,14 +13,22 @@ class BackBtn extends StatelessWidget {
         padding: const EdgeInsets.only(
           left: 25,
           top: 0,
+          bottom: 8,
         ),
         child: Container(
           width: 35,
           height: 35,
           decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                spreadRadius: 0.4,
+                blurRadius: 3,
+                color: Colors.black.withOpacity(0.8),
+              ),
+            ],
             border: Border.all(
-              width: 1,
-              color: Colors.black,
+              width: 1.5,
+              color: Color(0xFF213A82),
             ),
             shape: BoxShape.circle,
             color: Color(0xFF3B60CE),

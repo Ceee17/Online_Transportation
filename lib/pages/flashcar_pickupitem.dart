@@ -108,6 +108,7 @@ class _PickupItemCarPageState extends State<PickupItemCarPage> {
                           page: MoveitemCarPage(
                             pickup: 'Tarumanagara university',
                             destination: widget.destination,
+                            id: '',
                           ),
                         ),
                       );
@@ -163,6 +164,7 @@ class _PickupItemCarPageState extends State<PickupItemCarPage> {
                           page: MoveitemCarPage(
                             pickup: 'Central Park',
                             destination: widget.destination,
+                            id: '',
                           ),
                         ),
                       );
@@ -218,6 +220,7 @@ class _PickupItemCarPageState extends State<PickupItemCarPage> {
                           page: MoveitemCarPage(
                             pickup: 'Alfa X Untar',
                             destination: widget.destination,
+                            id: '',
                           ),
                         ),
                       );
@@ -273,6 +276,7 @@ class _PickupItemCarPageState extends State<PickupItemCarPage> {
                           page: MoveitemCarPage(
                             pickup: 'Your Current Location',
                             destination: widget.destination,
+                            id: '',
                           ),
                         ),
                       );

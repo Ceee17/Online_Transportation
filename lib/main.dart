@@ -30,7 +30,6 @@ import 'pages/signuppage.dart';
 import 'pages/forgotpasswordpage.dart';
 import 'pages/landingpage.dart';
 import 'pages/paymenmethod.dart';
-import 'pages/emailhbspage.dart';
 import 'pages/template/templatehead.dart';
 import 'pages/template/back-button.dart';
 import 'pages/edit_profile_page.dart';
@@ -54,11 +53,17 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       routes: {
-        OrderPage.idScreen: (context) => OrderPage(),
+        OrderPage.idScreen: (context) => OrderPage(
+              id1: '1',
+              id2: '2',
+              id3: '3',
+              id4: '4',
+              id5: '5',
+            ),
         HistoryPage.idScreen: (context) => HistoryPage(),
         AccountPage.idScreen: (context) => AccountPage(),
       },
-      home: LandingPage(),
+      home: LoadingPage(),
     );
   }
 }

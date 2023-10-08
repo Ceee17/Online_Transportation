@@ -123,11 +123,12 @@ class PaymenPage extends StatelessWidget {
                         },
                       ),
                     ],
+
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

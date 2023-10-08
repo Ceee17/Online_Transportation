@@ -169,6 +169,7 @@ class _FlashRidePageState extends State<FlashRidePage> {
                                       Navigator.of(context).push(
                                         RightToLeftFadeTransition(
                                           page: MoveitemPage(
+                                            id: '',
                                             destination: widget.destination,
                                             pickup: widget.pickup,
                                           ),

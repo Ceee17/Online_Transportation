@@ -106,6 +106,7 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                         page: MapSample(
                           destination: 'Monumen Nasional',
                           pickup: widget.pickup,
+                          id: '',
                         ),
                       ),
                     );
@@ -161,6 +162,7 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                         page: MapSample(
                           destination: 'Season City',
                           pickup: widget.pickup,
+                          id: '',
                         ),
                       ),
                     );
@@ -216,6 +218,7 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                         page: MapSample(
                           destination: 'Plaza Senayan',
                           pickup: widget.pickup,
+                          id: '',
                         ),
                       ),
                     );
@@ -271,6 +274,7 @@ class _DestinationbikePageState extends State<DestinationbikePage> {
                         page: MapSample(
                           destination: 'Tokyo Riverside',
                           pickup: widget.pickup,
+                          id: '',
                         ),
                       ),
                     );

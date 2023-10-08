@@ -80,7 +80,15 @@ class _FlashTaxiPageState extends State<FlashTaxiPage> {
         ),
       ),
       body: Center(
-        child: Text('*G Maps*'),
+        child: Positioned(
+          top: 50, // Adjust the top position as needed
+          left: 50, // Adjust the left position as needed
+          child: Image.asset(
+            'lib/assets/images/pointsab.png',
+            width: 300,
+            height: 300,
+          ),
+        ),
       ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
@@ -277,7 +285,7 @@ class _FlashTaxiPageState extends State<FlashTaxiPage> {
                               top: 41,
                               left: 150,
                               child: Text(
-                                'Estimated price Rp69,000 - Rp420,000\n nanti ini ngitung jarak',
+                                'Estimated price Rp20,000 - Rp50,000',
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 11,
@@ -306,7 +314,9 @@ class _FlashTaxiPageState extends State<FlashTaxiPage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => SearchingDrivPage()),
+                              builder: (context) => SearchingDrivPage(
+                                    id: '5',
+                                  )),
                         );
                       },
                       style: ElevatedButton.styleFrom(
