@@ -160,6 +160,14 @@ class _OrderPageState extends State<OrderPage> {
                   color: Color(0xFFffffff),
                   textColor: Color(0xFF000000),
                 ),
+              if (widget.id1 == '')
+                Text(
+                  "You don't have any orders yet.",
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
               SizedBox(
                 height: 20,
               ),
