@@ -7,8 +7,6 @@ import 'package:project_uts_online_transportation/pages/account_page.dart';
 import 'package:project_uts_online_transportation/pages/history_page.dart';
 import 'package:project_uts_online_transportation/pages/homechatpage.dart';
 import 'package:project_uts_online_transportation/pages/landingpage.dart';
-import 'package:project_uts_online_transportation/pages/template/LeftToRightFadetransition.dart';
-import 'package:project_uts_online_transportation/pages/template/RightToLeftFadetransition.dart';
 import 'package:project_uts_online_transportation/pages/template/template-card-button.dart';
 import 'package:water_drop_nav_bar/water_drop_nav_bar.dart';
 import 'template/templatehead.dart';
@@ -50,38 +48,27 @@ class _OrderPageState extends State<OrderPage> {
       _selectedIndex = index;
       switch (index) {
         case 0:
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(
-          //     builder: (context) => LandingPage(),
-          //   ),
-          // );
-          Navigator.of(context).push(
-            LeftToRightFadeTransition(page: LandingPage()),
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => LandingPage(),
+            ),
           );
           break;
-
         case 1:
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(
-          //     builder: (context) => HomeChatPage(),
-          //   ),
-          // );
-          Navigator.of(context).push(
-            RightToLeftFadeTransition(page: HomeChatPage()),
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => HomeChatPage(),
+            ),
           );
           break;
-
         case 3:
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(
-          //     builder: (context) => AccountPage(),
-          //   ),
-          // );
-          Navigator.of(context).push(
-            RightToLeftFadeTransition(page: AccountPage()),
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => AccountPage(),
+            ),
           );
           break;
       }
@@ -134,7 +121,6 @@ class _OrderPageState extends State<OrderPage> {
               SizedBox(
                 height: 80,
               ),
-
               if (widget.id1 == '1')
                 CustomCardButton(
                   svgAsset: 'lib/assets/images/flashride.svg',
@@ -146,7 +132,6 @@ class _OrderPageState extends State<OrderPage> {
                   color: Color(0xFFffffff),
                   textColor: Color(0xFF000000),
                   svgBorderRadius: BorderRadius.circular(0),
-                  
                 ),
               SizedBox(
                 height: 20,
@@ -162,7 +147,6 @@ class _OrderPageState extends State<OrderPage> {
                   color: Color(0xFFffffff),
                   textColor: Color(0xFF000000),
                   svgBorderRadius: BorderRadius.circular(0),
-                  
                 ),
               SizedBox(
                 height: 20,
@@ -178,6 +162,14 @@ class _OrderPageState extends State<OrderPage> {
                   color: Color(0xFFffffff),
                   textColor: Color(0xFF000000),
                   svgBorderRadius: BorderRadius.circular(0),
+                ),
+              if (widget.id1 == '')
+                Text(
+                  "You don't have any orders yet.",
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               SizedBox(
                 height: 20,

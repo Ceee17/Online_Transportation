@@ -38,11 +38,11 @@ class _FlashTaxiPageState extends State<FlashTaxiPage> {
                 elevation: 0.0,
                 centerTitle: true,
               ),
-              Positioned(
-                top: 40,
-                left: 20,
-                child: BackBtn(),
-              ),
+              // Positioned(
+              //   top: 40,
+              //   left: 20,
+              //   child: BackBtn(),
+              // ),
               Positioned(
                 top: 52,
                 left: 285,
@@ -144,9 +144,8 @@ class _FlashTaxiPageState extends State<FlashTaxiPage> {
                                 child: ElevatedButton(
                                   onPressed: () {
                                     setState(() {
-                                      showAdditionalText =
-                                          false;
-                                          });
+                                      showAdditionalText = false;
+                                    });
                                     Navigator.of(context).push(
                                       RightToLeftFadeTransition(
                                         page: PickupTaxiPage(
@@ -196,14 +195,12 @@ class _FlashTaxiPageState extends State<FlashTaxiPage> {
                                 child: ElevatedButton(
                                   onPressed: () {
                                     setState(() {
-                                      showAdditionalText =
-                                          false;
-                                          });
+                                      showAdditionalText = false;
+                                    });
                                     Navigator.of(context).push(
                                       RightToLeftFadeTransition(
                                         page: DestinationTaxiPage(
-                                          pickup: widget
-                                              .pickup,
+                                          pickup: widget.pickup,
                                           destination: widget.destination,
                                         ),
                                       ),
@@ -271,7 +268,7 @@ class _FlashTaxiPageState extends State<FlashTaxiPage> {
                             ),
                             Positioned(
                               top: 23,
-                              left: 150,
+                              left: 130,
                               child: Text(
                                 'FlashTaxi (1-4 person)',
                                 style: TextStyle(
@@ -283,7 +280,7 @@ class _FlashTaxiPageState extends State<FlashTaxiPage> {
                             ),
                             Positioned(
                               top: 41,
-                              left: 150,
+                              left: 130,
                               child: Text(
                                 'Estimated price Rp20,000 - Rp50,000',
                                 style: TextStyle(
