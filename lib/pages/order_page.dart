@@ -164,11 +164,25 @@ class _OrderPageState extends State<OrderPage> {
                   svgBorderRadius: BorderRadius.circular(0),
                 ),
               if (widget.id1 == '')
-                Text(
-                  "You don't have any orders yet.",
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w600,
+
+                Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        'lib/assets/images/no_data.png',
+                        height: 330, // Customize the height of the image
+                        width: 330, // Customize the width of the image
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        "You Don't Have Active Order Now.",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               SizedBox(
