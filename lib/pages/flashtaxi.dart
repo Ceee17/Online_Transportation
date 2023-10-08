@@ -276,8 +276,8 @@ class _FlashTaxiPageState extends State<FlashTaxiPage> {
                                 'FlashTaxi (1-4 person)',
                                 style: TextStyle(
                                   color: Colors.black,
-                                  fontSize: 11,
-                                  fontWeight: FontWeight.w500,
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w400,
                                 ),
                               ),
                             ),
@@ -288,8 +288,8 @@ class _FlashTaxiPageState extends State<FlashTaxiPage> {
                                 'Estimated price Rp20,000 - Rp50,000',
                                 style: TextStyle(
                                   color: Colors.black,
-                                  fontSize: 11,
-                                  fontWeight: FontWeight.w500,
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w400,
                                 ),
                               ),
                             ),
