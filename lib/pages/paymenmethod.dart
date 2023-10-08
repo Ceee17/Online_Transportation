@@ -44,7 +44,7 @@ class PaymenPage extends StatelessWidget {
                         title: 'Flash Coins',
                         description:
                             'make payments \neasily and practically \nwithout hassle',
-                        color: Color(0xffFFFFFF),
+                        // color: Color(0xffFFFFFF),
                         textColor: Color(0xFF000000),
                         heightButton: 140,
                         svgBorderRadius: BorderRadius.circular(0),
@@ -66,7 +66,7 @@ class PaymenPage extends StatelessWidget {
                         title: 'Cash',
                         description:
                             'make payments \ndirectly to drivers \nusing cash',
-                        color: Color(0xffFFFFFF),
+                        // color: Color(0xffFFFFFF),
                         textColor: Color(0xFF000000),
                         heightButton: 140,
                         svgBorderRadius: BorderRadius.circular(0),
@@ -88,7 +88,7 @@ class PaymenPage extends StatelessWidget {
                         title: 'ovo',
                         description:
                             'cashless payment \nin collaboration  \nwith ovo',
-                        color: Color(0xffFFFFFF),
+                        // color: Color(0xffFFFFFF),
                         textColor: Color(0xFF000000),
                         heightButton: 140,
                         svgBorderRadius: BorderRadius.circular(50),
@@ -110,7 +110,7 @@ class PaymenPage extends StatelessWidget {
                         title: 'Gopay',
                         description:
                             'cashless payment \nin collaboration \nwith Gojek',
-                        color: Color(0xffFFFFFF),
+                        // color: Color(0xffFFFFFF),
                         textColor: Color(0xFF000000),
                         heightButton: 140,
                         svgBorderRadius: BorderRadius.circular(20),
