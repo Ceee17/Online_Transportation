@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:project_uts_online_transportation/pages/template/back-button.dart';
+// import 'package:project_uts_online_transportation/pages/template/back-button.dart';
 import 'package:project_uts_online_transportation/pages/template/templatehead.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class EditProfile extends StatefulWidget {
   const EditProfile({super.key});
@@ -11,6 +12,17 @@ class EditProfile extends StatefulWidget {
 
 class _EditProfileState extends State<EditProfile> {
   bool isObscurePassword = true;
+  bool isSecondImage = false;
+
+  List<String> profileImages = [
+    'lib/assets/images/fm1.png',
+    'lib/assets/images/m1.png',
+    'lib/assets/images/fm2.png',
+    'lib/assets/images/m2.png',
+  ];
+
+  String selectedProfilImage = 'lib/assets/images/fm1.png';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +38,7 @@ class _EditProfileState extends State<EditProfile> {
               ),
               child: GestureDetector(
                 onTap: () {
-                  FocusScope.of(context).unfocus();
+                  _showProfileImageSelectionDialog();
                 },
                 child: Center(
                   child: Stack(
@@ -49,8 +61,8 @@ class _EditProfileState extends State<EditProfile> {
                           shape: BoxShape.circle,
                           image: DecorationImage(
                             fit: BoxFit.cover,
-                            image: NetworkImage(
-                              'https://cdn.pixabay.com/photo/2023/09/29/15/56/ai-generated-8284112_1280.png',
+                            image: AssetImage(
+                              selectedProfilImage,
                             ),
                           ),
                         ),
@@ -90,13 +102,13 @@ class _EditProfileState extends State<EditProfile> {
               false,
             ),
             buildTextField(
-              'Email',
+              'E-mail',
               'email@gmail.com',
               false,
             ),
             buildTextField(
               'Phone Number',
-              '0800-0000-0000',
+              '0000-0000-0000',
               false,
             ),
             buildTextField(
@@ -130,7 +142,15 @@ class _EditProfileState extends State<EditProfile> {
                   ),
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    // Map<String, dynamic> updatedData = {
+                    //   'username' : newUsername,
+                    //   'email' : newEmail,
+                    //   'phonenumber' : newPhoneNumber,
+                    //   'password' : newPassword,
+                    // }
+                    // updateProfileData(userId, updatedData);
+                  },
                   child: Text(
                     'SAVE',
                     style: TextStyle(
@@ -189,4 +209,44 @@ class _EditProfileState extends State<EditProfile> {
       ),
     );
   }
+
+  void _showProfileImageSelectionDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return SimpleDialog(
+          title: Text("Select Profile Image"),
+          children: profileImages.map((imagePath) {
+            return SimpleDialogOption(
+              onPressed: () {
+                setState(() {
+                  selectedProfilImage = imagePath;
+                });
+                Navigator.of(context).pop();
+              },
+              child: Image.asset(
+                imagePath,
+                width: 150,
+                height: 150,
+                fit: BoxFit.fitHeight,
+              ),
+            );
+          }).toList(),
+        );
+      },
+    );
+  }
 }
+
+// class FirebaseService {
+//   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+
+//   Future<void> updateProfileData(String userId, Map<String, dynamic> newData) async {
+//     try {
+//       await _firestore.collection('users').doc(userId).update(newData);
+//       print('Profile updated successfully.');
+//     } catch (error) {
+//       print('Error updating profile: $error');
+//     }
+//   }
+// }

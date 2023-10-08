@@ -41,10 +41,11 @@ class CustomCardButton extends StatelessWidget {
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           backgroundColor: color,
-          // side: BorderSide(
-          //   width: 2,
-          //   color: Colors.black,
-          // ),
+          // primary: Colors.white,
+          side: BorderSide(
+            width: 2,
+            color: Colors.black.withOpacity(0.1),
+          ),
           elevation: 15,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(25),
