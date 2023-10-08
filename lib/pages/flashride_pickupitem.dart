@@ -140,7 +140,7 @@ class _PickupItemBikePageState extends State<PickupItemBikePage> {
                                   'Letjen S. Parman St no.1, RT.6/RW.16, Tomang, Grogol',
                                   style: TextStyle(
                                     color: Colors.black,
-                                    fontSize: 11,
+                                    fontSize: 13,
                                     fontWeight: FontWeight.w400,
                                   ),
                                 ),
@@ -196,7 +196,7 @@ class _PickupItemBikePageState extends State<PickupItemBikePage> {
                                   'Jl. Letjen S. Parman No.Kavling 28, Tanjung Duren, Grogol',
                                   style: TextStyle(
                                     color: Colors.black,
-                                    fontSize: 11,
+                                    fontSize: 13,
                                     fontWeight: FontWeight.w400,
                                   ),
                                 ),
@@ -252,7 +252,7 @@ class _PickupItemBikePageState extends State<PickupItemBikePage> {
                                   'Jl. Taman S. Parman, RT.7/RW.8, Grogol',
                                   style: TextStyle(
                                     color: Colors.black,
-                                    fontSize: 11,
+                                    fontSize: 13,
                                     fontWeight: FontWeight.w400,
                                   ),
                                 ),
@@ -300,7 +300,7 @@ class _PickupItemBikePageState extends State<PickupItemBikePage> {
                             'Use Your Current Location',
                             style: TextStyle(
                               color: Colors.black,
-                              fontSize: 11,
+                              fontSize: 13,
                               fontWeight: FontWeight.w100,
                               decoration:
                                   TextDecoration.underline,

@@ -100,7 +100,8 @@ class _SearchingDrivPageState extends State<SearchingDrivPage> {
                         child: Text(
                           'Cancel',
                           style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 22,
+                            fontWeight: FontWeight.w600,
                             color: Colors.black,
                           ),
                         ),

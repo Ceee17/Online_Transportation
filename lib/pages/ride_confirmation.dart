@@ -134,6 +134,8 @@ class MapSampleState extends State<MapSample> {
               child: Text(
                 'Confirm',
                 style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.w600,
                     color: Color(0xff828282)),
               ),
             ),
