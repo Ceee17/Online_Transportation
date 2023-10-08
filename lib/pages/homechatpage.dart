@@ -69,12 +69,13 @@ class _HomeChatPageState extends State<HomeChatPage> {
           //   ),
           // );
           Navigator.of(context).push(
-            RightToLeftFadeTransition(page: OrderPage(
-                id1: '',
-                id2: '',
-                id3: '',
-                id4: '',
-                id5: '',            
+            RightToLeftFadeTransition(
+                page: OrderPage(
+              id1: '',
+              id2: '',
+              id3: '',
+              id4: '',
+              id5: '',
             )),
           );
 
@@ -208,7 +209,7 @@ class _HomeChatPageState extends State<HomeChatPage> {
               child: Column(
                 children: filteredContacts
                     .map((contact) => _buildContact(
-                          "lib/assets/images/undraw_Pic_profile_re_7g2h.png",
+                          "lib/assets/images/m1.png",
                           contact,
                           "Pesan Terbaru",
                           "09.00",
