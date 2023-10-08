@@ -134,7 +134,6 @@ class _OrderPageState extends State<OrderPage> {
               SizedBox(
                 height: 80,
               ),
-
               if (widget.id1 == '1')
                 CustomCardButton(
                   svgAsset: 'lib/assets/images/flashride.svg',
@@ -146,7 +145,6 @@ class _OrderPageState extends State<OrderPage> {
                   color: Color(0xFFffffff),
                   textColor: Color(0xFF000000),
                   svgBorderRadius: BorderRadius.circular(0),
-                  
                 ),
               SizedBox(
                 height: 20,
@@ -162,7 +160,6 @@ class _OrderPageState extends State<OrderPage> {
                   color: Color(0xFFffffff),
                   textColor: Color(0xFF000000),
                   svgBorderRadius: BorderRadius.circular(0),
-                  
                 ),
               SizedBox(
                 height: 20,
@@ -180,11 +177,24 @@ class _OrderPageState extends State<OrderPage> {
                   svgBorderRadius: BorderRadius.circular(0),
                 ),
               if (widget.id1 == '')
-                Text(
-                  "You don't have any orders yet.",
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w600,
+                Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        'lib/assets/images/no_data.png',
+                        height: 330, // Customize the height of the image
+                        width: 330, // Customize the width of the image
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        "You Don't Have Active Order Now.",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               SizedBox(
